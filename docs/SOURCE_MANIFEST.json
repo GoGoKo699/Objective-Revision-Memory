@@ -1,0 +1,72 @@
+{
+  "date": "2026-09-22",
+  "archives": [
+    {
+      "name": "A1_bounded_error_checkpoint_v2_2026-09-22.zip",
+      "sha256": "6e874b1d0d07562875cdad1f82291e3130e2e7112476c87dce3bce959903db3e",
+      "bytes": 38478
+    },
+    {
+      "name": "A1_correction_checkpoint_2026-09-22.zip",
+      "sha256": "1d049e533936382160d7fa9ff7b44a6b1996e374f40d72fc78df997b2c1d059c",
+      "bytes": 12628
+    },
+    {
+      "name": "A1_research_checkpoint_01.zip",
+      "sha256": "32b8268caba1db4db513b405a862d4335f1e4f5aff144aa2be2432f805b7acbc",
+      "bytes": 15628
+    }
+  ],
+  "unchanged_imports": [
+    {
+      "path": "checks/verify_bounded_error.py",
+      "source": "A1_bounded_error_checkpoint_v2_2026-09-22/A1_bounded_error_checkpoint_v2/checks/verify_bounded_error.py",
+      "sha256": "28eeb119a65826223ef6123871ee98b3130da8cbed2e3c3a8c8ce56df189b03b",
+      "bytes": 14931,
+      "transformation": "none"
+    },
+    {
+      "path": "checks/verify_exact.py",
+      "source": "A1_bounded_error_checkpoint_v2_2026-09-22/A1_bounded_error_checkpoint_v2/baseline/verify.py",
+      "sha256": "bc327a9b37bd8258f529995c81f249972c3bf7fec604c7f0c8f3e5e9135cdf59",
+      "bytes": 9554,
+      "transformation": "none"
+    },
+    {
+      "path": "results/bounded_error.json",
+      "source": "A1_bounded_error_checkpoint_v2_2026-09-22/A1_bounded_error_checkpoint_v2/checks/results.json",
+      "sha256": "65414d1dfaba7260ab3d703ba934a4ca46664a6c5bd63a60f53afa40801cdf52",
+      "bytes": 7672,
+      "transformation": "none"
+    },
+    {
+      "path": "results/exact_parity.json",
+      "source": "A1_bounded_error_checkpoint_v2_2026-09-22/A1_bounded_error_checkpoint_v2/baseline/results.json",
+      "sha256": "de7fd50fa0308f72d9079c4c41349ee56fa6261b8512bb3a68291cae7f0e0374",
+      "bytes": 3081,
+      "transformation": "none"
+    },
+    {
+      "path": "explorations/conjunction/verify.py",
+      "source": "A1_research_checkpoint_01/A1_research_checkpoint_01/verify.py",
+      "sha256": "b5dda49516ed56aa5a6ba599e5cf221f05d7c50bf49bd8cb014788eca9211ec3",
+      "bytes": 9173,
+      "transformation": "none"
+    },
+    {
+      "path": "explorations/conjunction/verification_results.json",
+      "source": "A1_research_checkpoint_01/A1_research_checkpoint_01/verification_results.json",
+      "sha256": "a70cd559bafed215573b02344433a4e1c1a704da7a380983fdfd745449891eda",
+      "bytes": 2790,
+      "transformation": "none"
+    },
+    {
+      "path": "explorations/conjunction/four_feature_decoder.json",
+      "source": "A1_research_checkpoint_01/A1_research_checkpoint_01/four_feature_decoder.json",
+      "sha256": "23d3bbd27beeb3f27e039f8014919ae4845cbf2ff4fcaa9b816773b76198cbd6",
+      "bytes": 8334,
+      "transformation": "none"
+    }
+  ],
+  "notes": "Original conversation archives are identified, not embedded. Public notes are editorial consolidations; verifiers and recorded results listed above are unchanged. The source fiction PDF is not published here."
+}

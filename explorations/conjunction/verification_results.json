@@ -1,0 +1,111 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact integers; no numerical optimization",
+  "one_probe_exhaustion": [
+    {
+      "n": 2,
+      "cells_examined": 15,
+      "compatible_cells": 13,
+      "maximum_cell_size": 3,
+      "minimum_sketch_labels_for_one_probe": 2,
+      "optimality_check": "maximum compatible-cell cardinality and covering count",
+      "witness_input_query_checks": 16
+    },
+    {
+      "n": 3,
+      "cells_examined": 255,
+      "compatible_cells": 96,
+      "maximum_cell_size": 4,
+      "minimum_sketch_labels_for_one_probe": 3,
+      "optimality_check": "exhaustive absence of two complementary compatible cells",
+      "witness_input_query_checks": 64
+    },
+    {
+      "n": 4,
+      "cells_examined": 65535,
+      "compatible_cells": 1261,
+      "maximum_cell_size": 5,
+      "minimum_sketch_labels_for_one_probe": 4,
+      "optimality_check": "maximum compatible-cell cardinality and covering count",
+      "witness_input_query_checks": 256
+    }
+  ],
+  "hamming_weight_construction": [
+    {
+      "n": 1,
+      "input_query_pairs": 4,
+      "worst_probes": 0,
+      "sketch_labels": 2
+    },
+    {
+      "n": 2,
+      "input_query_pairs": 16,
+      "worst_probes": 1,
+      "sketch_labels": 3
+    },
+    {
+      "n": 3,
+      "input_query_pairs": 64,
+      "worst_probes": 1,
+      "sketch_labels": 4
+    },
+    {
+      "n": 4,
+      "input_query_pairs": 256,
+      "worst_probes": 2,
+      "sketch_labels": 5
+    },
+    {
+      "n": 5,
+      "input_query_pairs": 1024,
+      "worst_probes": 2,
+      "sketch_labels": 6
+    },
+    {
+      "n": 6,
+      "input_query_pairs": 4096,
+      "worst_probes": 3,
+      "sketch_labels": 7
+    },
+    {
+      "n": 7,
+      "input_query_pairs": 16384,
+      "worst_probes": 3,
+      "sketch_labels": 8
+    },
+    {
+      "n": 8,
+      "input_query_pairs": 65536,
+      "worst_probes": 4,
+      "sketch_labels": 9
+    }
+  ],
+  "parity_linear_sketches": [
+    {
+      "n": 1,
+      "row_spaces_checked": 2,
+      "method": "exact adaptive decision-tree dynamic programming",
+      "all_worst_case_depths_equal_n_minus_rank": true
+    },
+    {
+      "n": 2,
+      "row_spaces_checked": 5,
+      "method": "exact adaptive decision-tree dynamic programming",
+      "all_worst_case_depths_equal_n_minus_rank": true
+    },
+    {
+      "n": 3,
+      "row_spaces_checked": 16,
+      "method": "exact adaptive decision-tree dynamic programming",
+      "all_worst_case_depths_equal_n_minus_rank": true
+    },
+    {
+      "n": 4,
+      "row_spaces_checked": 67,
+      "method": "exact adaptive decision-tree dynamic programming",
+      "all_worst_case_depths_equal_n_minus_rank": true
+    }
+  ],
+  "scope": "Finite examples only; general theorems are proved in research_note.md.",
+  "novelty": "Not established by these checks."
+}

@@ -1,0 +1,326 @@
+{
+  "all_cells": {
+    "3": {
+      "decoder_comparisons": 360,
+      "float_tolerance": 1e-10,
+      "minimum_entropy_slack_float": 0.0,
+      "minimum_rank_density_entropy_slack_float": 0.0,
+      "nonempty_cells": 30
+    },
+    "4": {
+      "decoder_comparisons": 15300,
+      "float_tolerance": 1e-10,
+      "minimum_entropy_slack_float": 0.0,
+      "minimum_rank_density_entropy_slack_float": 1.0,
+      "nonempty_cells": 510
+    },
+    "5": {
+      "decoder_comparisons": 7864200,
+      "float_tolerance": 1e-10,
+      "minimum_entropy_slack_float": 0.0,
+      "minimum_rank_density_entropy_slack_float": 2.0,
+      "nonempty_cells": 131070
+    }
+  },
+  "asymptotic_evaluations": {
+    "rows": [
+      {
+        "arbitrary_encoder_lower_rate_float": 0.7157586661023574,
+        "error": "1/100",
+        "optimal_affine_rate_float": 0.8585786437626906,
+        "standard_rac_achievable_rate_float": 0.9192068641040888
+      },
+      {
+        "arbitrary_encoder_lower_rate_float": 0.3151674704066101,
+        "error": "1/10",
+        "optimal_affine_rate_float": 0.5527864045000421,
+        "standard_rac_achievable_rate_float": 0.5310044064107188
+      },
+      {
+        "arbitrary_encoder_lower_rate_float": 0.09929021074536282,
+        "error": "1/4",
+        "optimal_affine_rate_float": 0.2928932188134524,
+        "standard_rac_achievable_rate_float": 0.18872187554086717
+      },
+      {
+        "arbitrary_encoder_lower_rate_float": 0.036484524050149125,
+        "error": "11/32",
+        "optimal_affine_rate_float": 0.17084380241115005,
+        "standard_rac_achievable_rate_float": 0.07163792760513243
+      }
+    ],
+    "status": "algebraic evaluations, not experimental estimates"
+  },
+  "entropy_checks": "double precision only; see stated tolerance",
+  "finite_separation": {
+    "1001": {
+      "affine_necessary_bits": 171,
+      "arithmetic": "exact integer / Fraction; not a floating square root",
+      "error": "11/32",
+      "nonlinear_achievable_bits": 144,
+      "twice_phi_at_nonlinear_bits": 267696,
+      "twice_required_pair_count": "625625/2"
+    },
+    "49": {
+      "affine_necessary_bits": 9,
+      "arithmetic": "exact integer / Fraction; not a floating square root",
+      "error": "11/32",
+      "nonlinear_achievable_bits": 8,
+      "twice_phi_at_nonlinear_bits": 728,
+      "twice_required_pair_count": "735"
+    }
+  },
+  "full_majority_decoders": {
+    "n10_k5": {
+      "decisions": 46080,
+      "distinct_memories": 8,
+      "error_every_pair": "5/16",
+      "input_strings": 1024,
+      "max_probes": 1,
+      "memory_bits": 3,
+      "pairs": 45
+    },
+    "n14_k7": {
+      "decisions": 1490944,
+      "distinct_memories": 8,
+      "error_every_pair": "11/32",
+      "input_strings": 16384,
+      "max_probes": 1,
+      "memory_bits": 3,
+      "pairs": 91
+    },
+    "n6_k3": {
+      "decisions": 960,
+      "distinct_memories": 8,
+      "error_every_pair": "1/4",
+      "input_strings": 64,
+      "max_probes": 1,
+      "memory_bits": 3,
+      "pairs": 15
+    },
+    "n7_k7": {
+      "decisions": 2688,
+      "distinct_memories": 4,
+      "error_every_pair": "11/32",
+      "input_strings": 128,
+      "max_probes": 1,
+      "memory_bits": 2,
+      "pairs": 21
+    }
+  },
+  "general_proof": "RESEARCH_NOTE.md, not finite extrapolation",
+  "majority_truth_tables": {
+    "1": {
+      "error_probability": "0",
+      "inputs": 2,
+      "wrong_predictions_each_coordinate": 0
+    },
+    "11": {
+      "error_probability": "193/512",
+      "inputs": 2048,
+      "wrong_predictions_each_coordinate": 772
+    },
+    "15": {
+      "error_probability": "1619/4096",
+      "inputs": 32768,
+      "wrong_predictions_each_coordinate": 12952
+    },
+    "3": {
+      "error_probability": "1/4",
+      "inputs": 8,
+      "wrong_predictions_each_coordinate": 2
+    },
+    "5": {
+      "error_probability": "5/16",
+      "inputs": 32,
+      "wrong_predictions_each_coordinate": 10
+    },
+    "7": {
+      "error_probability": "11/32",
+      "inputs": 128,
+      "wrong_predictions_each_coordinate": 44
+    },
+    "9": {
+      "error_probability": "93/256",
+      "inputs": 512,
+      "wrong_predictions_each_coordinate": 186
+    }
+  },
+  "public_mask_symmetry": {
+    "n5_k5": {
+      "decisions": 10240,
+      "error_for_every_fixed_input_and_pair": "5/16",
+      "input_strings": 32,
+      "public_masks_per_input": 32
+    },
+    "n6_k3": {
+      "decisions": 61440,
+      "error_for_every_fixed_input_and_pair": "1/4",
+      "input_strings": 64,
+      "public_masks_per_input": 64
+    }
+  },
+  "standard_library_only": true,
+  "status": "PASS",
+  "subset_construction": {
+    "exact_error_probabilities": {
+      "n3_b0": "1/2",
+      "n3_b1": "1/6",
+      "n3_b2": "0",
+      "n3_b3": "0",
+      "n4_b0": "1/2",
+      "n4_b1": "1/4",
+      "n4_b2": "1/12",
+      "n4_b3": "0",
+      "n4_b4": "0",
+      "n5_b0": "1/2",
+      "n5_b1": "3/10",
+      "n5_b2": "3/20",
+      "n5_b3": "1/20",
+      "n5_b4": "0",
+      "n5_b5": "0",
+      "n6_b0": "1/2",
+      "n6_b1": "1/3",
+      "n6_b2": "1/5",
+      "n6_b3": "1/10",
+      "n6_b4": "1/30",
+      "n6_b5": "0",
+      "n6_b6": "0",
+      "n7_b0": "1/2",
+      "n7_b1": "5/14",
+      "n7_b2": "5/21",
+      "n7_b3": "1/7",
+      "n7_b4": "1/14",
+      "n7_b5": "1/42",
+      "n7_b6": "0",
+      "n7_b7": "0",
+      "n8_b0": "1/2",
+      "n8_b1": "3/8",
+      "n8_b2": "15/56",
+      "n8_b3": "5/28",
+      "n8_b4": "3/28",
+      "n8_b5": "3/56",
+      "n8_b6": "1/56",
+      "n8_b7": "0",
+      "n8_b8": "0",
+      "n9_b0": "1/2",
+      "n9_b1": "7/18",
+      "n9_b2": "7/24",
+      "n9_b3": "5/24",
+      "n9_b4": "5/36",
+      "n9_b5": "1/12",
+      "n9_b6": "1/24",
+      "n9_b7": "1/72",
+      "n9_b8": "0",
+      "n9_b9": "0"
+    },
+    "settings": 49
+  },
+  "subspaces": {
+    "3": {
+      "max_recoverable_pairs_by_rank": [
+        0,
+        3,
+        3,
+        3
+      ],
+      "max_recoverable_pairs_by_rank_with_total_parity": [
+        -1,
+        3,
+        3,
+        3
+      ],
+      "minimum_exact_affine_bits": 1,
+      "subspaces": 16,
+      "subspaces_containing_total_parity": 5
+    },
+    "4": {
+      "max_recoverable_pairs_by_rank": [
+        0,
+        3,
+        6,
+        6,
+        6
+      ],
+      "max_recoverable_pairs_by_rank_with_total_parity": [
+        -1,
+        0,
+        6,
+        6,
+        6
+      ],
+      "minimum_exact_affine_bits": 2,
+      "subspaces": 67,
+      "subspaces_containing_total_parity": 16
+    },
+    "5": {
+      "max_recoverable_pairs_by_rank": [
+        0,
+        4,
+        7,
+        10,
+        10,
+        10
+      ],
+      "max_recoverable_pairs_by_rank_with_total_parity": [
+        -1,
+        0,
+        4,
+        10,
+        10,
+        10
+      ],
+      "minimum_exact_affine_bits": 3,
+      "subspaces": 374,
+      "subspaces_containing_total_parity": 67
+    },
+    "6": {
+      "max_recoverable_pairs_by_rank": [
+        0,
+        5,
+        9,
+        12,
+        15,
+        15,
+        15
+      ],
+      "max_recoverable_pairs_by_rank_with_total_parity": [
+        -1,
+        0,
+        6,
+        11,
+        15,
+        15,
+        15
+      ],
+      "minimum_exact_affine_bits": 4,
+      "subspaces": 2825,
+      "subspaces_containing_total_parity": 374
+    },
+    "7": {
+      "max_recoverable_pairs_by_rank": [
+        0,
+        6,
+        11,
+        15,
+        21,
+        21,
+        21,
+        21
+      ],
+      "max_recoverable_pairs_by_rank_with_total_parity": [
+        -1,
+        0,
+        6,
+        12,
+        21,
+        21,
+        21,
+        21
+      ],
+      "minimum_exact_affine_bits": 4,
+      "subspaces": 29212,
+      "subspaces_containing_total_parity": 2825
+    }
+  }
+}

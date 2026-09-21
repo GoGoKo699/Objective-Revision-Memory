@@ -1,0 +1,129 @@
+{
+  "status": "PASS",
+  "scope": "finite exact arithmetic; no claim of formal proof-assistant verification or novelty clearance",
+  "cell_enumerations": [
+    {
+      "n": 3,
+      "nonempty_parity_homogeneous_cells_checked": 30,
+      "admissible_cells": 30,
+      "largest_admissible_cell": 4,
+      "cell_size_histogram": {
+        "1": 8,
+        "2": 12,
+        "3": 8,
+        "4": 2
+      },
+      "arbitrary_parity_decidability_checks": 240,
+      "maximal_size_affine_cell_checks": 2
+    },
+    {
+      "n": 4,
+      "nonempty_parity_homogeneous_cells_checked": 510,
+      "admissible_cells": 152,
+      "largest_admissible_cell": 4,
+      "cell_size_histogram": {
+        "1": 16,
+        "2": 56,
+        "3": 64,
+        "4": 16
+      },
+      "arbitrary_parity_decidability_checks": 2432,
+      "maximal_size_affine_cell_checks": 16
+    },
+    {
+      "n": 5,
+      "nonempty_parity_homogeneous_cells_checked": 131070,
+      "admissible_cells": 1072,
+      "largest_admissible_cell": 4,
+      "cell_size_histogram": {
+        "1": 32,
+        "2": 240,
+        "3": 640,
+        "4": 160
+      },
+      "arbitrary_parity_decidability_checks": 0,
+      "maximal_size_affine_cell_checks": 160
+    }
+  ],
+  "construction_enumerations": [
+    {
+      "n": 3,
+      "memory_bits": 1,
+      "raw_inputs_checked": 8,
+      "distinct_memories": 2,
+      "inputs_per_memory": 4,
+      "pair_deletion_checks": 24,
+      "arbitrary_parity_checks": 0,
+      "raw_read_histogram": {
+        "1": 24
+      }
+    },
+    {
+      "n": 4,
+      "memory_bits": 2,
+      "raw_inputs_checked": 16,
+      "distinct_memories": 4,
+      "inputs_per_memory": 4,
+      "pair_deletion_checks": 96,
+      "arbitrary_parity_checks": 0,
+      "raw_read_histogram": {
+        "1": 96
+      }
+    },
+    {
+      "n": 5,
+      "memory_bits": 3,
+      "raw_inputs_checked": 32,
+      "distinct_memories": 8,
+      "inputs_per_memory": 4,
+      "pair_deletion_checks": 320,
+      "arbitrary_parity_checks": 0,
+      "raw_read_histogram": {
+        "0": 32,
+        "1": 288
+      }
+    },
+    {
+      "n": 7,
+      "memory_bits": 4,
+      "raw_inputs_checked": 128,
+      "distinct_memories": 16,
+      "inputs_per_memory": 8,
+      "pair_deletion_checks": 2688,
+      "arbitrary_parity_checks": 16384,
+      "raw_read_histogram": {
+        "1": 2688
+      }
+    },
+    {
+      "n": 8,
+      "memory_bits": 5,
+      "raw_inputs_checked": 256,
+      "distinct_memories": 32,
+      "inputs_per_memory": 8,
+      "pair_deletion_checks": 7168,
+      "arbitrary_parity_checks": 0,
+      "raw_read_histogram": {
+        "1": 7168
+      }
+    },
+    {
+      "n": 15,
+      "memory_bits": 11,
+      "raw_inputs_checked": 32768,
+      "distinct_memories": 2048,
+      "inputs_per_memory": 16,
+      "pair_deletion_checks": 3440640,
+      "arbitrary_parity_checks": 0,
+      "raw_read_histogram": {
+        "1": 3440640
+      }
+    }
+  ],
+  "symbolic_construction": {
+    "n_min": 3,
+    "n_max": 127,
+    "pair_identities_checked": 341375,
+    "method": "exact integer bitmasks of F2 linear coefficients"
+  }
+}

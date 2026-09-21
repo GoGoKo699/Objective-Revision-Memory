@@ -1,0 +1,411 @@
+{
+  "coordinates": "coordinate 1 is the rightmost displayed bit",
+  "empty_subset": "0000; conjunction equals 1",
+  "cells": [
+    {
+      "label": 0,
+      "states": [
+        "0000",
+        "0001",
+        "0010",
+        "0111"
+      ],
+      "rules": [
+        {
+          "subset_mask": "0000",
+          "kind": "constant",
+          "value": 1
+        },
+        {
+          "subset_mask": "0001",
+          "kind": "probe",
+          "coordinate": 1,
+          "xor": 0
+        },
+        {
+          "subset_mask": "0010",
+          "kind": "probe",
+          "coordinate": 2,
+          "xor": 0
+        },
+        {
+          "subset_mask": "0011",
+          "kind": "probe",
+          "coordinate": 3,
+          "xor": 0
+        },
+        {
+          "subset_mask": "0100",
+          "kind": "probe",
+          "coordinate": 3,
+          "xor": 0
+        },
+        {
+          "subset_mask": "0101",
+          "kind": "probe",
+          "coordinate": 3,
+          "xor": 0
+        },
+        {
+          "subset_mask": "0110",
+          "kind": "probe",
+          "coordinate": 3,
+          "xor": 0
+        },
+        {
+          "subset_mask": "0111",
+          "kind": "probe",
+          "coordinate": 3,
+          "xor": 0
+        },
+        {
+          "subset_mask": "1000",
+          "kind": "constant",
+          "value": 0
+        },
+        {
+          "subset_mask": "1001",
+          "kind": "constant",
+          "value": 0
+        },
+        {
+          "subset_mask": "1010",
+          "kind": "constant",
+          "value": 0
+        },
+        {
+          "subset_mask": "1011",
+          "kind": "constant",
+          "value": 0
+        },
+        {
+          "subset_mask": "1100",
+          "kind": "constant",
+          "value": 0
+        },
+        {
+          "subset_mask": "1101",
+          "kind": "constant",
+          "value": 0
+        },
+        {
+          "subset_mask": "1110",
+          "kind": "constant",
+          "value": 0
+        },
+        {
+          "subset_mask": "1111",
+          "kind": "constant",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "label": 1,
+      "states": [
+        "0011",
+        "0101",
+        "0110",
+        "1011"
+      ],
+      "rules": [
+        {
+          "subset_mask": "0000",
+          "kind": "constant",
+          "value": 1
+        },
+        {
+          "subset_mask": "0001",
+          "kind": "probe",
+          "coordinate": 1,
+          "xor": 0
+        },
+        {
+          "subset_mask": "0010",
+          "kind": "probe",
+          "coordinate": 2,
+          "xor": 0
+        },
+        {
+          "subset_mask": "0011",
+          "kind": "probe",
+          "coordinate": 3,
+          "xor": 1
+        },
+        {
+          "subset_mask": "0100",
+          "kind": "probe",
+          "coordinate": 3,
+          "xor": 0
+        },
+        {
+          "subset_mask": "0101",
+          "kind": "probe",
+          "coordinate": 2,
+          "xor": 1
+        },
+        {
+          "subset_mask": "0110",
+          "kind": "probe",
+          "coordinate": 1,
+          "xor": 1
+        },
+        {
+          "subset_mask": "0111",
+          "kind": "constant",
+          "value": 0
+        },
+        {
+          "subset_mask": "1000",
+          "kind": "probe",
+          "coordinate": 4,
+          "xor": 0
+        },
+        {
+          "subset_mask": "1001",
+          "kind": "probe",
+          "coordinate": 4,
+          "xor": 0
+        },
+        {
+          "subset_mask": "1010",
+          "kind": "probe",
+          "coordinate": 4,
+          "xor": 0
+        },
+        {
+          "subset_mask": "1011",
+          "kind": "probe",
+          "coordinate": 4,
+          "xor": 0
+        },
+        {
+          "subset_mask": "1100",
+          "kind": "constant",
+          "value": 0
+        },
+        {
+          "subset_mask": "1101",
+          "kind": "constant",
+          "value": 0
+        },
+        {
+          "subset_mask": "1110",
+          "kind": "constant",
+          "value": 0
+        },
+        {
+          "subset_mask": "1111",
+          "kind": "constant",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "label": 2,
+      "states": [
+        "0100",
+        "1100",
+        "1101",
+        "1110"
+      ],
+      "rules": [
+        {
+          "subset_mask": "0000",
+          "kind": "constant",
+          "value": 1
+        },
+        {
+          "subset_mask": "0001",
+          "kind": "probe",
+          "coordinate": 1,
+          "xor": 0
+        },
+        {
+          "subset_mask": "0010",
+          "kind": "probe",
+          "coordinate": 2,
+          "xor": 0
+        },
+        {
+          "subset_mask": "0011",
+          "kind": "constant",
+          "value": 0
+        },
+        {
+          "subset_mask": "0100",
+          "kind": "constant",
+          "value": 1
+        },
+        {
+          "subset_mask": "0101",
+          "kind": "probe",
+          "coordinate": 1,
+          "xor": 0
+        },
+        {
+          "subset_mask": "0110",
+          "kind": "probe",
+          "coordinate": 2,
+          "xor": 0
+        },
+        {
+          "subset_mask": "0111",
+          "kind": "constant",
+          "value": 0
+        },
+        {
+          "subset_mask": "1000",
+          "kind": "probe",
+          "coordinate": 4,
+          "xor": 0
+        },
+        {
+          "subset_mask": "1001",
+          "kind": "probe",
+          "coordinate": 1,
+          "xor": 0
+        },
+        {
+          "subset_mask": "1010",
+          "kind": "probe",
+          "coordinate": 2,
+          "xor": 0
+        },
+        {
+          "subset_mask": "1011",
+          "kind": "constant",
+          "value": 0
+        },
+        {
+          "subset_mask": "1100",
+          "kind": "probe",
+          "coordinate": 4,
+          "xor": 0
+        },
+        {
+          "subset_mask": "1101",
+          "kind": "probe",
+          "coordinate": 1,
+          "xor": 0
+        },
+        {
+          "subset_mask": "1110",
+          "kind": "probe",
+          "coordinate": 2,
+          "xor": 0
+        },
+        {
+          "subset_mask": "1111",
+          "kind": "constant",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "label": 3,
+      "states": [
+        "1000",
+        "1001",
+        "1010",
+        "1111"
+      ],
+      "rules": [
+        {
+          "subset_mask": "0000",
+          "kind": "constant",
+          "value": 1
+        },
+        {
+          "subset_mask": "0001",
+          "kind": "probe",
+          "coordinate": 1,
+          "xor": 0
+        },
+        {
+          "subset_mask": "0010",
+          "kind": "probe",
+          "coordinate": 2,
+          "xor": 0
+        },
+        {
+          "subset_mask": "0011",
+          "kind": "probe",
+          "coordinate": 3,
+          "xor": 0
+        },
+        {
+          "subset_mask": "0100",
+          "kind": "probe",
+          "coordinate": 3,
+          "xor": 0
+        },
+        {
+          "subset_mask": "0101",
+          "kind": "probe",
+          "coordinate": 3,
+          "xor": 0
+        },
+        {
+          "subset_mask": "0110",
+          "kind": "probe",
+          "coordinate": 3,
+          "xor": 0
+        },
+        {
+          "subset_mask": "0111",
+          "kind": "probe",
+          "coordinate": 3,
+          "xor": 0
+        },
+        {
+          "subset_mask": "1000",
+          "kind": "constant",
+          "value": 1
+        },
+        {
+          "subset_mask": "1001",
+          "kind": "probe",
+          "coordinate": 1,
+          "xor": 0
+        },
+        {
+          "subset_mask": "1010",
+          "kind": "probe",
+          "coordinate": 2,
+          "xor": 0
+        },
+        {
+          "subset_mask": "1011",
+          "kind": "probe",
+          "coordinate": 3,
+          "xor": 0
+        },
+        {
+          "subset_mask": "1100",
+          "kind": "probe",
+          "coordinate": 3,
+          "xor": 0
+        },
+        {
+          "subset_mask": "1101",
+          "kind": "probe",
+          "coordinate": 3,
+          "xor": 0
+        },
+        {
+          "subset_mask": "1110",
+          "kind": "probe",
+          "coordinate": 3,
+          "xor": 0
+        },
+        {
+          "subset_mask": "1111",
+          "kind": "probe",
+          "coordinate": 3,
+          "xor": 0
+        }
+      ]
+    }
+  ]
+}
