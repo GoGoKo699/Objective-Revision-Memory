@@ -904,3 +904,102 @@ collaboration. Follow specific new evidence or a scientifically useful
 extension. Manuscript preparation stays on hold; another general novelty
 search is not the default next task. The report commit, pull request, final
 checks, and integration state are recorded in the PR and issue #1 handoff.
+
+## 15. Rendering and consistency sanity check
+
+Session: 22 September 2026. Reviewed `main` commit:
+`558baab228c64491fc5910efcfd3b8bb74c65611` (merged PR #10).
+Review branch: `review/rendering-sanity`. The user requested a full sanity
+check after noticing visual layout problems. This pass checks the research
+packet's rendering, internal consistency, and reproducibility; it does not
+restart the completed bounded novelty assessment.
+
+### 15.1 Confirmed rendering defects and repairs
+
+Passing numerical tests had not detected several actual GitHub rendering
+failures. Inspection of the live rendered pages found:
+
+- Markdown removed TeX escapes from ordinary math delimiters, dropping set
+  braces and turning thin-space commands into printed commas. Some resulting
+  delimiters caused MathJax errors. Inline expressions now use GitHub's
+  protected backtick math delimiters, and displays use fenced `math` blocks.
+- The inspected GitHub renderer rejected `\operatorname`. Fourteen instances
+  now use `\mathrm` for the same upright function names.
+- Thirty `\tag` labels generated native MathML rows that stacked formula
+  symbols vertically. Ordinary trailing mathematical labels retain every
+  equation number without that layout failure.
+- Raw strict inequality signs broke some summation limits or risked silent
+  truncation. All 125 such signs in math now use `\lt` or `\gt`.
+- Two italic bibliography titles joined their final formula to later prose,
+  swallowing that prose into a wide mathematical expression. Moving the
+  formula outside the italic marker preserves the title and expression.
+- Two indented display fences in the historical audit appeared as raw code.
+  Their surrounding numbered entries are now bold lead paragraphs with
+  top-level display fences.
+- Nine wide displays now use explicit aligned rows. Source line breaks alone
+  had not produced mathematical line breaks in the rendered pages.
+
+All 19 Markdown files received consistent math delimiters, including the
+historical baseline and separate conjunction notes. Their historical content
+and mathematical statements are retained; those Markdown files are not
+claimed to be byte-identical. No baseline verification artifact was altered.
+The contribution guide now documents the observed rendering conventions and
+the need to inspect actual rendered pages after math edits.
+
+### 15.2 Scientific and status consistency
+
+The current research note, brief, and pair-query note no longer describe the
+bounded contribution assessment as pending. The audit distinguishes current
+conclusions from historical research queues. The affirmative narrow
+assessment in Section 14 remains the current decision, with its original
+limits on historical coverage and significance.
+
+Two local clarifications were made. The literature ledger now explicitly
+restricts the inadequacy of an infinite parity penalty to the
+excess-distortion/partial-cover criterion: a finite expected distortion with
+an infinite penalty instead forces zero parity error. In the weighted-ball
+proof, the logarithm paired with a natural-log exponent is now written `ln`
+rather than the ambiguous `log`. Neither changes the theorem or its proof
+obligations. All storage and probe accounting, error quantifiers, and fixed
+interior-error asymptotic restrictions are preserved.
+
+A normalized comparison against the reviewed commit accounted for all 1,675
+mathematical expressions. After removing delimiter, whitespace, equivalent
+macro, and equation-label changes, only ten intentional differences remained:
+the nine display reflows and the logarithm clarification. A separate internal
+read-only pass checked that the reflows preserve indices, coefficients,
+inequalities, quantifiers, and asymptotic terms. It found no new central
+mathematical defect. This is not independent human expert validation.
+
+### 15.3 Executed checks and limits
+
+The live GitHub pass at layout commit
+`3c1594441545e2b54cb5e50ffbac3e6291a397aa` inspected all 19 Markdown pages.
+All **1,675 of 1,675 expressions** compiled. The inspection found no MathJax
+error boxes, swallowed prose, raw math code blocks, broken labeled MathML
+rows, formula overflow at the inspected desktop width, or inconsistent table
+column counts. The repaired central theorem was also visually inspected.
+This is a check of the actual GitHub desktop rendering, not a guarantee for
+every browser, device width, or alternate Markdown renderer.
+
+Executed `python3 checks/run_all.py --include-conjunction`: **PASS**. The
+seven imported-file hashes, ten interface checks, and all five recorded
+reports reproduced successfully, with the reports byte-identical. The final
+documentation check passed with 195 local links; a separate check resolved
+all ten local heading links. `git diff --check` passed.
+
+All six optional audit scripts also passed: asymmetric cover, low-rank
+coverage, endpoint scope, excess distortion, strategy translation, and
+priority obstructions. These exact finite checks support their specified
+claims; they do not establish a limiting theorem or priority. No script,
+tolerance, expected output, source manifest, or workflow was changed. All
+19 non-Markdown license, provenance, verification, result, and workflow files
+were byte-identical to the reviewed commit.
+
+**Outcome:** the confirmed visual defects and stale current-status statements
+are repaired, without a new theorem or novelty claim. Historical priority
+remains subject to concrete new evidence, and independent human review is
+still absent. Manuscript preparation remains **on hold**; the existing
+invitation to contact Ruge Lin at `gogoko699@gmail.com` remains in place.
+The report commit, pull request, final checks, and merge state are recorded
+in the PR and issue #1 handoff.

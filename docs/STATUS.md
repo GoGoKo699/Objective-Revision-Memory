@@ -1,6 +1,6 @@
 # Research status
 
-Updated 22 September 2026, following the completed bounded contribution assessment. Reviewed main: `2b240fa20b9c8d585106edb512a5f18200aafd33` (merged PR #9). The [reading guide](READING_GUIDE.md) introduces the model and maps the proof; the [self-contained pair-query note](PAIR_QUERY_NOTE.md) remains the central proof packet. The [compact brief](THEOREM_BRIEF.md) gives the review question and the [operational reduction](OPERATIONAL_REDUCTION.md) records the general coding comparisons.
+Updated 22 September 2026, following the rendering and consistency sanity check. Reviewed main: `558baab228c64491fc5910efcfd3b8bb74c65611` (merged PR #10). The [reading guide](READING_GUIDE.md) introduces the model and maps the proof; the [self-contained pair-query note](PAIR_QUERY_NOTE.md) remains the central proof packet. The [compact brief](THEOREM_BRIEF.md) gives the review question and the [operational reduction](OPERATIONAL_REDUCTION.md) records the general coding comparisons.
 
 **Manuscript preparation is on hold.** Potential collaborators are welcome to
 contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
@@ -63,12 +63,24 @@ The update preserves 23 existing license, proof, source-manifest, verification,
 result, exploration, and workflow files byte-for-byte against the reviewed
 main. This is documentation validation; it adds no theorem or novelty finding.
 
-For the present contribution assessment, full reproduction passed again with
+At the PR #10 contribution-assessment checkpoint, full reproduction passed again with
 all five reports byte-identical. The final documentation check passed with 190
 local links, and all 23 protected files remained byte-identical to reviewed
 main. Exact enumeration of 504 inputs checked the cut-support examples in
 the new local-compression comparison. These findings inform source reductions;
 passing checks do not establish novelty.
+
+The subsequent sanity check repaired GitHub math parsing, equation-number
+layout, long displays, and stale status wording across the research packet.
+All 19 Markdown pages were inspected in GitHub's rendered view: all 1,675
+expressions compiled, with no detected math errors or formula overflow at the
+inspected desktop width. Full reproduction and all six optional audit scripts
+passed; the five recorded reports and 19 protected provenance, verification,
+result, license, and workflow files stayed byte-identical. Historical notes
+retain their mathematics and content, with normalized Markdown formatting.
+Audit Section 15 records the precise scope and checks. Two wording corrections
+clarify natural logarithms and the excess-distortion scope of an infinite
+parity penalty; no theorem or novelty conclusion changed.
 
 There is no independent expert review, proof-assistant certificate, or efficient implementation of the large covering codes. Numerical integrations illustrate an analytic theorem rather than establish it. The 1024-bit example's 529-bit upper bound is an existence certificate, not a constructed large encoder.
 
