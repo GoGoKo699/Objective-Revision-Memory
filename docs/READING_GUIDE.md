@@ -10,13 +10,13 @@ and [contribution assessment](CONTRIBUTION_ASSESSMENT.md) record current decisio
 
 A mathematically trained reader needs:
 
-- Binary arithmetic: XOR is addition in $\mathbb F_2$; parity is the XOR of bits.
+- Binary arithmetic: XOR is addition in $`\mathbb F_2`$; parity is the XOR of bits.
 - Linear algebra: rank, bases, quotient spaces, and invertible coordinate changes.
 - Basic probability: expectation, variance, independence, and Chebyshev's inequality.
 - Shannon entropy, conditional entropy, and binary entropy
-  $h_2(p)=-p\log_2p-(1-p)\log_2(1-p)$.
+  $`h_2(p)=-p\log_2p-(1-p)\log_2(1-p)`$.
 - Elementary calculus and asymptotics: Riemann sums, integration by parts,
-  and the distinction between $o(n)$ bits and a fixed number of bits.
+  and the distinction between $`o(n)`$ bits and a fixed number of bits.
 
 Prior expertise in matroids, coding theory, or data structures is helpful but
 not required to follow the note's proof. Its coding constructions are existence
@@ -41,14 +41,14 @@ than prerequisite reading.
 
 ## Resource accounting
 
-An encoder sees $x\in\{0,1\}^n$ before learning a pair $\{i,j\}$. Write
-$p(x)=\bigoplus_{k=1}^n x_k$. The revision query asks for
-$p(x)\oplus x_i\oplus x_j$: parity with those two coordinates excluded.
+An encoder sees $`x\in\{0,1\}^n`$ before learning a pair $`\{i,j\}`$. Write
+$`p(x)=\bigoplus_{k=1}^n x_k`$. The revision query asks for
+$`p(x)\oplus x_i\oplus x_j`$: parity with those two coordinates excluded.
 
 | Resource | Rule |
 | --- | --- |
-| Retained summary | At most $B$ input-dependent bits in the worst case; arbitrary nonlinear encoding is allowed. |
-| Original archive | Remains available externally and is not counted in $B$. The theorem is about summary size, not total physical storage. |
+| Retained summary | At most $`B`$ input-dependent bits in the worst case; arbitrary nonlinear encoding is allowed. |
+| Original archive | Remains available externally and is not counted in $`B`$. The theorem is about summary size, not total physical storage. |
 | Query access | At most one raw-coordinate bit per query. Its address may depend on the summary, query, and seed; it need not be a query endpoint. |
 | Summary access and computation | The decoder may inspect the whole summary and compute without a time limit. |
 | Random seed and codebook | Independent randomness and a fixed input-independent codebook are uncharged. The selected codeword's index is charged. |
@@ -60,32 +60,37 @@ publicly chosen endpoint addresses suffice at the leading rate.
 
 ## A four-bit example: why errors have different weights
 
-Use the order $1<2<3<4$. For pair $i<j$, read $x_i$, estimate $x_j$ by a
-reconstruction coordinate $z_j$, and return $p(x)\oplus x_i\oplus z_j$.
-The reconstruction $z$ is selected from a fixed public codebook. Its index
-and exact parity are retained; selecting $z$ does not create free storage.
+Use the order $`1<2<3<4`$. For pair $`i<j`$, read $`x_i`$, estimate $`x_j`$ by a
+reconstruction coordinate $`z_j`$, and return $`p(x)\oplus x_i\oplus z_j`$.
+The reconstruction $`z`$ is selected from a fixed public codebook. Its index
+and exact parity are retained; selecting $`z`$ does not create free storage.
 
-Take $x=(1,0,1,1)$ and $z=(0,1,1,1)$. Then $p(x)=1$. Each row below is a
+Take $`x=(1,0,1,1)`$ and $`z=(0,1,1,1)`$. Then $`p(x)=1`$. Each row below is a
 separate query execution with its own one-read allowance.
 
 | Pair | Raw read | Correct exclusion parity | Returned answer |
 | --- | --- | ---: | ---: |
-| $\{1,2\}$ | $x_1=1$ | 0 | **1 (wrong)** |
-| $\{1,3\}$ | $x_1=1$ | 1 | 1 |
-| $\{1,4\}$ | $x_1=1$ | 1 | 1 |
-| $\{2,3\}$ | $x_2=0$ | 0 | 0 |
-| $\{2,4\}$ | $x_2=0$ | 0 | 0 |
-| $\{3,4\}$ | $x_3=1$ | 1 | 1 |
+| $`\{1,2\}`$ | $`x_1=1`$ | 0 | **1 (wrong)** |
+| $`\{1,3\}`$ | $`x_1=1`$ | 1 | 1 |
+| $`\{1,4\}`$ | $`x_1=1`$ | 1 | 1 |
+| $`\{2,3\}`$ | $`x_2=0`$ | 0 | 0 |
+| $`\{2,4\}`$ | $`x_2=0`$ | 0 | 0 |
+| $`\{3,4\}`$ | $`x_3=1`$ | 1 | 1 |
 
-Coordinate $j$ is estimated on exactly $j-1$ pairs. Therefore the exact
+Coordinate $`j`$ is estimated on exactly $`j-1`$ pairs. Therefore the exact
 wrong-pair count is
 
-$$6\Delta(x)=0\mathbf1\{x_1\ne z_1\}
-+1\mathbf1\{x_2\ne z_2\}
-+2\mathbf1\{x_3\ne z_3\}
-+3\mathbf1\{x_4\ne z_4\}=1.$$
+```math
+\begin{aligned}
+6\Delta(x)&=0\mathbf1\{x_1\ne z_1\}
++1\mathbf1\{x_2\ne z_2\}\\
+&\quad+2\mathbf1\{x_3\ne z_3\}
++3\mathbf1\{x_4\ne z_4\}\\
+&=1.
+\end{aligned}
+```
 
-Here $\Delta(x)=1/6$, even though two reconstruction coordinates are wrong.
+Here $`\Delta(x)=1/6`$, even though two reconstruction coordinates are wrong.
 The first coordinate is never estimated. An error in the second coordinate
 spoils one pair; an error in the fourth would spoil three. This is the
 weighted Hamming error underlying the theorem. The example illustrates one
@@ -94,24 +99,24 @@ optimality claim.
 
 ## Keep the error quantifiers separate
 
-Let $R$ denote independent random tapes and let $\Delta_R(x)$ be the fraction
-of wrong pairs in the resulting answer table. Uniform input means all $2^n$
-archives are equally likely; uniform pair means all $\binom n2$ pairs are
+Let $`R`$ denote independent random tapes and let $`\Delta_R(x)`$ be the fraction
+of wrong pairs in the resulting answer table. Uniform input means all $`2^n`$
+archives are equally likely; uniform pair means all $`\binom n2`$ pairs are
 equally likely.
 
 | Criterion | What is required | Role in the project |
 | --- | --- | --- |
-| Average query error | Error averaged over uniform input, uniform pair, and tapes is at most $\varepsilon$. | Sufficient hypothesis for the sharp memory converse. |
-| Each fixed pair | For every pair, error averaged over uniform input and tapes is at most $\varepsilon$. | The original stated memory optimum. |
-| Each fixed input and pair | For every fixed $x$ and pair, error over the public seed is at most $\varepsilon$. | Achieved by permutation and mask symmetrization. |
-| Worst-input table distortion | A deterministic scheme has $\Delta(x)\le\varepsilon$ for every input. | Achieved by the weighted-ball covering construction at the same leading rate. |
-| Table success probability | Maximize $\Pr_{X,R}\{\Delta_R(X)\le\varepsilon\}$ subject to the resource rules. | The success-exponent problem; it replaces the marginal-error promise rather than additionally imposing it. |
+| Average query error | Error averaged over uniform input, uniform pair, and tapes is at most $`\varepsilon`$. | Sufficient hypothesis for the sharp memory converse. |
+| Each fixed pair | For every pair, error averaged over uniform input and tapes is at most $`\varepsilon`$. | The original stated memory optimum. |
+| Each fixed input and pair | For every fixed $`x`$ and pair, error over the public seed is at most $`\varepsilon`$. | Achieved by permutation and mask symmetrization. |
+| Worst-input table distortion | A deterministic scheme has $`\Delta(x)\le\varepsilon`$ for every input. | Achieved by the weighted-ball covering construction at the same leading rate. |
+| Table success probability | Maximize $`\Pr_{X,R}\{\Delta_R(X)\le\varepsilon\}`$ subject to the resource rules. | The success-exponent problem; it replaces the marginal-error promise rather than additionally imposing it. |
 
 Every row retains exact original parity. A table-distortion bound permits an
-$\varepsilon$ fraction of wrong pairs. It does not say that all pairs are
+$`\varepsilon`$ fraction of wrong pairs. It does not say that all pairs are
 correct, or protect against selecting an erroneous pair after seeing the
 seed and summary. The asymptotic statements hold for fixed
-$0<\varepsilon<1/2$; they do not automatically cover error tending to zero.
+$`0<\varepsilon<1/2`$; they do not automatically cover error tending to zero.
 
 ## Proof dependency map
 
@@ -122,7 +127,7 @@ The full proof remains in [PAIR_QUERY_NOTE.md](PAIR_QUERY_NOTE.md).
 | Residual characters | A Boolean function of one observed bit is affine. | Each pair's correctness is a signed binary character, even for arbitrary summary cells. |
 | Coverage by rank | Choose a coordinate basis in a quotient space. | Every subset of pair residuals satisfies the necessary rank-versus-pair-count bound. Full-family rank alone is insufficient. |
 | Greedy biases and entropy | Sort character biases, retain an independent basis, and use entropy subadditivity. | Bounds the total correctness bias using the entire rank profile and entropy deficit. |
-| Scalar optimization | Apply binary entropy conjugacy to the uniform distribution on a strategy's good set. | Gives the finite upper bound on the largest one-strategy ball $m_n(\varepsilon)$. |
+| Scalar optimization | Apply binary entropy conjugacy to the uniform distribution on a strategy's good set. | Gives the finite upper bound on the largest one-strategy ball $`m_n(\varepsilon)`$. |
 | Endpoint attainment | The exact weighted-error identity and independent tilted bits with a strict distortion margin. | Gives a weighted ball with the same leading exponent as the unrestricted upper bound. |
 | Coding consequences | Cover by translated balls and charge their indices plus parity; average posterior entropy for expected error. | Gives the memory rate, worst-input covering rate, and success exponent as consequences of the central ball theorem. |
 

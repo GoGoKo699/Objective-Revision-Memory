@@ -8,7 +8,7 @@ Checked 22 September 2026. This is a focused, version-specific audit, not a cert
 
 Their systematic model includes an arbitrary input-dependent index, free access to that index, and charged raw-input probes. Their linear specialization uses a row space close in Hamming distance to the query vectors. Section 1.3 identifies the common-bits connection.
 
-**Implication for this project:** the architecture is not new. The condition $q\in W+\operatorname{span}\{e_k\}$ is the one-probe instance of established subspace geometry. The affine converse's potentially distinctive content is the all-pairs coverage count and its quantitative bounded-error consequence, not that condition by itself. Our decoder is unrestricted; the exact-or-balanced argument explains why nonlinear decoding cannot help on a uniform affine cell.
+**Implication for this project:** the architecture is not new. The condition $`q\in W+\mathrm{span}\{e_k\}`$ is the one-probe instance of established subspace geometry. The affine converse's potentially distinctive content is the all-pairs coverage count and its quantitative bounded-error consequence, not that condition by itself. Our decoder is unrestricted; the exact-or-balanced argument explains why nonlinear decoding cannot help on a uniform affine cell.
 
 **Still open:** whether the rank-coverage count or stronger equivalent bounds already occur in common-bits, rigidity, or help-bit work. No priority conclusion follows from this comparison.
 
@@ -18,15 +18,15 @@ Their systematic model includes an arbitrary input-dependent index, free access 
 
 The definitions permit sketches followed by adaptive raw probes and public random tapes. Lemma 2.5 uses conditional joint min-entropy of the output on specified high-probability good events to obtain a sketch lower bound. Its applications group multiple requested outputs together.
 
-**Our deduction, not a claim made by that paper:** applying the lemma literally to one Boolean pair answer cannot establish our extensive memory bound. At the empty partial assignment, the lemma's good-event assumptions give event mass at least $0.99-2^{-2r}$ for its integer parameter $r\geq2$. A binary output then has an atom of joint probability at least $(0.99-2^{-2r})/2$. Its joint min-entropy is at most
+**Our deduction, not a claim made by that paper:** applying the lemma literally to one Boolean pair answer cannot establish our extensive memory bound. At the empty partial assignment, the lemma's good-event assumptions give event mass at least $`0.99-2^{-2r}`$ for its integer parameter $`r\geq2`$. A binary output then has an atom of joint probability at least $`(0.99-2^{-2r})/2`$. Its joint min-entropy is at most
 
-$$
+```math
 \log_2\frac{2}{0.99-2^{-2r}}<1.11,
-$$
+```
 
-whereas the lemma requires more than $2r\geq4$. This rules out that direct scalar instantiation, not every possible reduction or other result in the paper.
+whereas the lemma requires more than $`2r\geq4`$. This rules out that direct scalar instantiation, not every possible reduction or other result in the paper.
 
-A batched reduction needs additional work. Our guarantee for each separate query does not imply 99% joint success for a long output vector. A union bound provides only $1-k\varepsilon$ for $k$ queries, and repetition changes both retained information and probe cost. Such costs must be charged, not suppressed.
+A batched reduction needs additional work. Our guarantee for each separate query does not imply 99% joint success for a long output vector. A union bound provides only $`1-k\varepsilon`$ for $`k`$ queries, and repetition changes both retained information and probe cost. Such costs must be charged, not suppressed.
 
 **Still open:** a careful vector-output, amplification, or information-theoretic reduction may reproduce or improve our bounds. The full paper and its antecedents remain relevant. The observation above narrows one comparison; it does not certify novelty.
 

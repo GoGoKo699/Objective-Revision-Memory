@@ -40,21 +40,21 @@ proof dependencies. The full proof requires additional study.
 
 ## The model
 
-For an archive $X\in\{0,1\}^n$, with $n\ge3$, retain at most $B$
-input-dependent bits before learning an unordered pair $\{i,j\}$.
-The revision answer is $p(X)\oplus X_i\oplus X_j$, where $p(X)$ is total
+For an archive $`X\in\{0,1\}^n`$, with $`n\ge3`$, retain at most $`B`$
+input-dependent bits before learning an unordered pair $`\{i,j\}`$.
+The revision answer is $`p(X)\oplus X_i\oplus X_j`$, where $`p(X)`$ is total
 parity and must be exactly recoverable from the summary and seed alone.
 
 | Resource | Accounting |
 | --- | --- |
-| Retained information | At most $B$ bits in the worst case, including exact original parity |
+| Retained information | At most $`B`$ bits in the worst case, including exact original parity |
 | Immutable original archive | Outside the summary budget; accessible through the raw-read interface |
 | Query access | At most one original coordinate bit; address may depend on summary, query, and independent coins |
 | Computation and summary access | Unrestricted |
 | Codebooks and input-independent randomness | Uncharged |
 | Input-dependent caches or earlier transcripts | Charged to memory |
 
-The original error promise is at most $\varepsilon$ for **each fixed pair**,
+The original error promise is at most $`\varepsilon`$ for **each fixed pair**,
 averaged over uniform input and independent coins. The converse needs only
 input-and-pair average error. Public symmetrization gives an attaining scheme
 with the stronger guarantee for **each fixed input and pair**, averaged over
@@ -64,23 +64,27 @@ access resource from a raw coordinate read.
 
 ## The sharp result
 
-Fix $0<\varepsilon<1/2$, and let $a>0$ solve
+Fix $`0<\varepsilon<1/2`$, and let $`a>0`$ solve
 
-$$1-2\varepsilon=2\int_0^1u\tanh(au)\,du.$$
+```math
+1-2\varepsilon=2\int_0^1u\tanh(au)\,du.
+```
 
 Then the optimal revision summary size satisfies
 
-$$\lim_{n\to\infty}\frac{B_{\rm all}(n,\varepsilon)}n
+```math
+\lim_{n\to\infty}\frac{B_{\rm all}(n,\varepsilon)}n
 =\mathcal R(\varepsilon)
-=\frac{a(1-2\varepsilon)-\ln\cosh a}{\ln2}.$$
+=\frac{a(1-2\varepsilon)-\ln\cosh a}{\ln2}.
+```
 
 Arbitrary-coordinate reads, endpoint-only reads, and endpoint addresses
 chosen using only the query and public seed all have this leading rate.
 
 The proof isolates a more precise object. Fix an entire decoder strategy and
-count the inputs on which it gets at most an $\varepsilon$ fraction of pairs
+count the inputs on which it gets at most an $`\varepsilon`$ fraction of pairs
 wrong. The largest such input set has fraction
-$2^{-n\mathcal R(\varepsilon)+o(n)}$. An ordered-endpoint strategy attains that
+$`2^{-n\mathcal R(\varepsilon)+o(n)}`$. An ordered-endpoint strategy attains that
 exponent through a weighted Hamming ball. This extremal evaluation is the
 proposed original contribution; general lossy coding converts it into the
 memory rate, worst-input covering rate, and below-rate success exponent.
@@ -98,11 +102,11 @@ with general distortion coding and decoder-controlled side information.
 | 25% | 0.14392 | 0.29289 |
 
 Rates are limiting summary bits per archive bit at fixed error. Affine refers
-to the encoding map over $\mathbb F_2$, with unrestricted decoding. These
+to the encoding map over $`\mathbb F_2`$, with unrestricted decoding. These
 rounded values illustrate the analytic result; they are not finite-size optima.
 
 At zero error, arbitrary reads need exactly
-$n-\lfloor\log_2(n+1)\rfloor$ bits, while endpoint-only reads need $n-1$.
+$`n-\lfloor\log_2(n+1)\rfloor`$ bits, while endpoint-only reads need $`n-1`$.
 Thus leading-rate equivalence does not imply finite equivalence. The
 [preserved baseline](BASELINE_NOTE.md) and
 [endpoint comparison](docs/THEOREM_BRIEF.md) contain these proofs.
@@ -126,10 +130,10 @@ See the [error-quantifier table](docs/READING_GUIDE.md) and
 [excess-distortion proof](docs/EXCESS_DISTORTION.md).
 
 No efficient implementation of the asymptotic covering codes is claimed.
-The finite 529-versus-565-bit comparison at $n=1024$ and error $1/10$ is a
+The finite 529-versus-565-bit comparison at $`n=1024`$ and error $`1/10`$ is a
 covering-existence certificate versus an affine lower bound; the large cover
 has not been constructed. Finite-length optima, second-order behavior, and
-error varying with $n$ remain separate questions.
+error varying with $`n`$ remain separate questions.
 
 ## Reproduce
 

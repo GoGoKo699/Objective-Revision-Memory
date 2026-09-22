@@ -82,3 +82,11 @@ and numerical limitations.
 Record what actually ran, its outcome, and the reviewed commit. Distinguish a
 rerun from inspection of committed results. End a substantive handoff with the
 findings, remaining uncertainty, and report commit or pull request identifier.
+
+## Keep mathematics readable on GitHub
+
+Use [GitHub's protected inline math syntax](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions): a dollar sign and backtick before the expression, then a backtick and dollar sign after it. Use fenced `math` blocks for display equations. These forms preserve TeX escapes such as set braces and spacing commands before math rendering.
+
+Source line breaks do not create equation rows. Use an `aligned` environment for long chains or multiple definitions, and keep equation tags outside that environment. Use upright `\mathrm{Var}` and `\mathrm{rank}` notation where needed; the inspected GitHub renderer rejects `\operatorname` even though ordinary MathJax supports it.
+
+Inspect the rendered preview for missing braces, error boxes, clipped rows, and broken tables. Balanced delimiters and passing numerical checks do not verify layout. Formatting historical notes must preserve their mathematical content and dated scope; the license, source manifest, original verifiers, and recorded reports stay unchanged.
