@@ -1,8 +1,8 @@
 # Sharp unrestricted rate: proof and novelty audit
 
 **Current checkpoint:** Section 14 completes the bounded novelty and significance
-assessment; Section 15 records the subsequent rendering and consistency pass
-against `558baab228c64491fc5910efcfd3b8bb74c65611`. The
+assessment; Section 15 records the rendering repairs; Section 16 records the
+pre-release sanity check against `a615988c5703d05fbbf96c44b0b08848720ba698`. The
 [contribution assessment](../CONTRIBUTION_ASSESSMENT.md) is the current decision.
 Manuscript preparation is on hold. Earlier sections retain their dated findings
 and research queues as history.
@@ -1003,3 +1003,69 @@ still absent. Manuscript preparation remains **on hold**; the existing
 invitation to contact Ruge Lin at `gogoko699@gmail.com` remains in place.
 The report commit, pull request, final checks, and merge state are recorded
 in the PR and issue #1 handoff.
+
+## 16. Pre-release sanity check
+
+Session: 22 September 2026. Reviewed `main` commit:
+`a615988c5703d05fbbf96c44b0b08848720ba698` (merged PR #11).
+Review branch: `review/pre-release-sanity`. No pull requests were open when
+the review began. This is a fresh check of the prospective research snapshot,
+including the previously repaired rendering, rather than a new novelty search.
+
+**Decision: no repository release blocker found within the checked scope.**
+The proof packet, documentation, and reproducible finite evidence are suitable
+for a research snapshot with their stated limits. No release or tag was
+created by this check. Manuscript preparation remains on hold, and the
+collaborator invitation retains `gogoko699@gmail.com`.
+
+### 16.1 Claims and repository consistency
+
+A separate internal read-only pass checked the README, current status,
+contribution assessment, central proof, theorem brief, reproduction guide,
+and roadmap. Summary memory, exact retained parity, free archive/codebook
+resources, and one raw-coordinate read agree throughout. Fixed interior-error
+asymptotics, marginal error, table distortion, and success probability remain
+distinct. The entropy converse, strict tilted-measure margin, parity-charged
+covering conversions, and symmetrization were checked without finding a new
+defect. The README's rates agree with the recorded numerical values; its
+529-versus-565 comparison correctly describes a covering-existence certificate.
+
+One stale public status sentence was found in issue #2: it still said issue
+#1 remained open. It now identifies that as the earlier proof checkpoint and
+records the subsequent completed bounded assessment. Both issues remain
+closed. No mathematical statement, proof, verification script, recorded
+result, source manifest, workflow, or license required a change.
+
+The current GitHub About area had no description or topics. Suggested metadata
+was supplied separately to the maintainer; empty metadata is a discoverability
+item, not a mathematical or reproducibility blocker. No public venue target
+or unfinished placeholder was found in the inspected release-facing text.
+
+### 16.2 Executed validation
+
+- `python3 checks/run_all.py --include-conjunction`: **PASS**, using Python
+  3.12.14. Seven imported hashes, ten interface checks, 195 local document
+  links, and all five recorded reports passed; every report was byte-identical.
+- All six documented optional audit scripts were rerun and passed. These are
+  separate runs, not newly added CI gates.
+- All 19 Markdown pages on current `main` were inspected in GitHub's rendered
+  view. All 1,675 mathematical expressions compiled, with no detected error
+  boxes, swallowed prose, raw math blocks, broken equation-label rows, formula
+  overflow at the inspected desktop width, or inconsistent table columns.
+  The README theorem and resource table were also visually inspected.
+- All ten local heading links resolved. Markdown fences and conflict-marker
+  checks passed. All six JSON files parsed and all eleven Python files passed
+  syntax parsing. The runner correctly rejected execution with `-O`.
+- A Git source archive contained exactly the 39 tracked regular files, each
+  byte-identical to the reviewed commit, with no symlinks. No tracked cache,
+  private-key file, environment file, or large generated payload was found.
+  The MIT attribution and source manifest remain intact.
+- `git diff --check` passed. This review edits only the audit and current
+  status, leaving all other 37 tracked files byte-identical to reviewed main.
+
+The actual checks concern this snapshot and GitHub desktop rendering; they
+do not establish all-browser/mobile compatibility, independently reverify
+every remote bibliography link, or constitute exhaustive historical priority
+or independent human expert validation. The existing narrow affirmative
+contribution assessment and its limits are unchanged. The report commit,
+pull request, CI result, and integration state are recorded in the handoff.
