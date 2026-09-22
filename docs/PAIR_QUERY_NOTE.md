@@ -49,8 +49,8 @@ inputs outside its low-error set. All coding bounds below charge this bit.
 
 ## 2. Central theorem
 
-Fix $`0<\varepsilon<1/2`$, and write $`\eta=1-2\varepsilon`$. There is a unique
-$`a>0`$ satisfying
+Fix $`0\lt \varepsilon\lt 1/2`$, and write $`\eta=1-2\varepsilon`$. There is a unique
+$`a\gt 0`$ satisfying
 
 ```math
 \eta=2\int_0^1u\tanh(au)\,du.
@@ -165,7 +165,7 @@ empty good sets are harmless. This argument imposes no affine structure on
 the good set.
 
 **Evaluation of the exponent.** The function
-$`2\int_0^1u\tanh(au)du`$ is continuous, strictly increasing for $`a>0`$,
+$`2\int_0^1u\tanh(au)du`$ is continuous, strictly increasing for $`a\gt 0`$,
 and has limits zero and one. This proves existence and uniqueness of $`a`$.
 Let $`I(a)=\int_0^1\ln\cosh(au)du`$. Integration by parts gives
 $`I(a)=\ln\cosh a-a\eta/2`$. At $`s=a/n`$, the monotone Riemann-sum bound
@@ -192,15 +192,15 @@ This is the established weighted fair-binary distortion allocation.
 
 ## 4. Attainment: a weighted ball and a strict tilted margin
 
-For $`i<j`$, the strategy answering direct pair parity with the raw bit $`x_i`$
+For $`i\lt j`$, the strategy answering direct pair parity with the raw bit $`x_i`$
 makes an error precisely when $`x_j=1`$. Its good set has mass $`v_n`$, proving
 $`m_n\ge v_n`$. It remains to determine the latter's exponent.
 
-Choose a fixed $`a'>a`$. Under a product measure $`Q_n`$, make coordinates
+Choose a fixed $`a'\gt a`$. Under a product measure $`Q_n`$, make coordinates
 $`E_{k+1}`$ independent with
 
 ```math
-p_k:=Q_n(E_{k+1}=1)=(1+e^{2a'k/n})^{-1},\qquad 0\le k<n.
+p_k:=Q_n(E_{k+1}=1)=(1+e^{2a'k/n})^{-1},\qquad 0\le k\lt n.
 ```
 
 For $`W_n=\sum_{k=0}^{n-1}kE_{k+1}`$,
@@ -208,7 +208,7 @@ For $`W_n=\sum_{k=0}^{n-1}kE_{k+1}`$,
 ```math
 \begin{aligned}
 \frac{\mathbb E_{Q_n}W_n}{N}&\longrightarrow
-2\int_0^1u\delta_{a'}(u)du<\varepsilon,\\
+2\int_0^1u\delta_{a'}(u)du\lt \varepsilon,\\
 \mathrm{Var}_{Q_n}(W_n)&\le\tfrac14\sum_{k=0}^{n-1}k^2=O(n^3).
 \end{aligned}
 ```
@@ -228,7 +228,7 @@ each bounded by $`\log_2(1+e^{2a'})`$. Thus
 \end{aligned}
 ```
 
-For any fixed $`\gamma>0`$, the intersection of the weighted ball with
+For any fixed $`\gamma\gt 0`$, the intersection of the weighted ball with
 $`\{L_n\ge H(Q_n)-n\gamma\}`$ has $`Q_n`$-probability tending to one.
 Each word in this intersection has probability at most
 $`2^{-H(Q_n)+n\gamma}`$, so the ball contains at least
@@ -245,7 +245,7 @@ lengths without a divisibility restriction. This completes the central proof.
 
 ## 5. One coding corollary, with the parity bit charged
 
-**Corollary.** At fixed $`0<\varepsilon<1/2`$, the revision model has leading
+**Corollary.** At fixed $`0\lt \varepsilon\lt 1/2`$, the revision model has leading
 memory rate $`\mathcal R(\varepsilon)`$ for deterministic worst-input table
 distortion, average input-and-pair error, and each-fixed-pair marginal error.
 Publicly chosen endpoint reads attain these rates. If $`P_n^*(B,\varepsilon)`$
@@ -267,7 +267,7 @@ For attainment, choose $`K=2^{B-1}`$ independent uniform reconstruction centers
 $`z`$. A fixed input lies in each translated weighted ball with probability
 $`v_n`$. Some deterministic codebook consequently covers a fraction at least
 $`1-(1-v_n)^K`$. Retain a covering center's index, or any index outside the
-union, together with exact parity. Answer $`i<j`$ by
+union, together with exact parity. Answer $`i\lt j`$ by
 $`p(x)\oplus x_i\oplus z_j`$. Its address is always $`i`$, and its wrong-pair
 count is exactly $`\sum_j(j-1)\mathbf1\{x_j\ne z_j\}`$. All $`B`$ bits are
 charged, including parity on failed inputs. Since
@@ -282,7 +282,7 @@ tends to one; an optimal failure exponent is not claimed.
 
 **Worst-input covers.** With
 $`K=\lceil(n\ln2+1)/v_n\rceil`$ centers, the expected number of uncovered
-inputs is at most $`2^ne^{-Kv_n}<1`$. Some fixed codebook covers every input.
+inputs is at most $`2^ne^{-Kv_n}\lt 1`$. Some fixed codebook covers every input.
 Its storage is $`1+\lceil\log_2K\rceil=n\mathcal R+o(n)`$ bits, including
 parity. Conversely, success probability one and (6) require
 $`B\ge n\mathcal R-C_\varepsilon/\ln2`$.
@@ -308,7 +308,7 @@ uniform coordinate permutation and XOR mask before using that cover, and
 translate the queried raw read back to the original archive. For each fixed
 input and pair, the transformed input and pair are uniform and independent.
 Explicitly, let $`Y_a=x_{\pi(a)}\oplus Z_a`$ for public permutation $`\pi`$ and
-mask $`Z`$. For transformed pair $`a<b`$ and the center $`z`$ selected for $`Y`$,
+mask $`Z`$. For transformed pair $`a\lt b`$ and the center $`z`$ selected for $`Y`$,
 read $`x_{\pi(a)}`$ and return
 $`p(x)\oplus x_{\pi(a)}\oplus z_b\oplus Z_b`$.
 An error occurs exactly when $`Y_b\ne z_b`$. Thus for each seed the error table

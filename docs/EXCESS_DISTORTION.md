@@ -35,7 +35,7 @@ would give to each of the $`N=\binom n2`$ possible pair queries, each run from
 the same summary with a fresh one-read budget. Define
 
 ```math
-\Delta_r(x)=\frac1N\sum_{i<j}
+\Delta_r(x)=\frac1N\sum_{i\lt j}
 \mathbf1\{\widehat p_{ij,r}(x)\ne p(x)\oplus x_i\oplus x_j\}.
 ```
 
@@ -52,7 +52,7 @@ $`\varepsilon`$ fraction of incorrect answers in that table.
 ## 2. Finite tail bound and a strong converse
 
 **Proposition.** Every scheme in the stated model, with arbitrary nonlinear
-preprocessing, satisfies, for $`0\le\varepsilon<1/2`$ and every $`s\ge0`$,
+preprocessing, satisfies, for $`0\le\varepsilon\lt 1/2`$ and every $`s\ge0`$,
 
 ```math
 \Pr_{X,R}\{\Delta_R(X)\le\varepsilon\}
@@ -106,7 +106,7 @@ help-label union-bound argument, applied to the existing moment inequality.
 There is a precise comparison of the fixed decoder families themselves.
 Let $`Z_n(s)`$ be the maximum of $`\mathbb E_Ue^{sS(U)}`$ over all permitted
 signed residual families, each extended to the whole cube as above.
-For the ordered endpoint family $`a_{ij}=e_j`$ when $`i<j`$, with all signs
+For the ordered endpoint family $`a_{ij}=e_j`$ when $`i\lt j`$, with all signs
 positive, $`S(U)=\sum_{j=1}^n(j-1)(-1)^{U_j}`$. Independence gives
 
 ```math
@@ -120,7 +120,7 @@ $`s=a/n`$. This is a finite comparison of a moment objective, not of optimal
 memory sizes. Section 4 separately proves sharpness of the resulting
 below-rate success exponent.
 
-For fixed $`0<\varepsilon<1/2`$, put $`\eta=1-2\varepsilon`$ and let $`a>0`$
+For fixed $`0\lt \varepsilon\lt 1/2`$, put $`\eta=1-2\varepsilon`$ and let $`a\gt 0`$
 satisfy $`\eta=2\int_0^1u\tanh(au)\,du`$. At $`s=a/n`$, monotonicity of
 $`u\mapsto\ln\cosh(au)`$ gives
 
@@ -139,7 +139,7 @@ C_\varepsilon&=\frac{a\eta}{2}+\ln\cosh a.
 \end{aligned}\qquad\text{(3)}
 ```
 
-Thus $`B\le n[\mathcal R(\varepsilon)-\gamma]`$, for a fixed $`\gamma>0`$,
+Thus $`B\le n[\mathcal R(\varepsilon)-\gamma]`$, for a fixed $`\gamma\gt 0`$,
 forces the probability of a table with distortion at most $`\varepsilon`$ to
 be at most $`e^{C_\varepsilon}2^{-n\gamma}`$. This excludes even a fixed
 positive fraction of good inputs below the rate. It is stronger than merely
@@ -152,7 +152,7 @@ be optimal.
 **Theorem.** Let $`B_{\rm cov}(n,\varepsilon)`$ be the least summary length
 among deterministic schemes satisfying
 $`\Delta(x)\le\varepsilon`$ for every input $`x`$. Allow arbitrary addresses
-in defining the optimum. For every fixed $`0<\varepsilon<1/2`$,
+in defining the optimum. For every fixed $`0\lt \varepsilon\lt 1/2`$,
 
 ```math
 \lim_{n\to\infty}\frac{B_{\rm cov}(n,\varepsilon)}n
@@ -167,7 +167,7 @@ $`\Pr\{\Delta(X)\le\varepsilon\}=1`$. Equation (3) gives
 $`B\ge n\mathcal R(\varepsilon)-C_\varepsilon/\ln2`$.
 
 **Construction and finite accounting.** Fix the coordinate order
-$`1,\ldots,n`$. Given a reconstruction $`z`$, answer pair $`i<j`$ by estimating
+$`1,\ldots,n`$. Given a reconstruction $`z`$, answer pair $`i\lt j`$ by estimating
 $`x_j`$ with $`z_j`$ and reading $`x_i`$. XOR these with the stored exact parity.
 For every input the number of wrong pair answers is exactly
 
@@ -178,7 +178,7 @@ N\Delta(x)=\sum_{j=1}^n(j-1)\mathbf1\{x_j\ne z_j\}.\qquad\text{(5)}
 Partition the order into $`L`$ consecutive blocks, with positive lengths
 $`m_\ell`$, cumulative endpoints $`s_\ell=\sum_{h\le\ell}m_h`$, and covering
 radii $`r_\ell=\lfloor\delta_\ell m_\ell\rfloor`$, where
-$`0<\delta_\ell<1/2`$. For each block use an ordinary Hamming cover of size
+$`0\lt \delta_\ell\lt 1/2`$. For each block use an ordinary Hamming cover of size
 at most
 
 ```math
@@ -204,11 +204,11 @@ The last bound follows directly from (5): at most $`r_\ell`$ coordinates are
 wrong in block $`\ell`$, each with weight at most $`s_\ell-1`$. It makes no
 probabilistic or independence assumption about reconstruction errors.
 
-**Passage to the optimum.** Choose $`a'>a`$ and
+**Passage to the optimum.** Choose $`a'\gt a`$ and
 $`\delta(u)=(1+e^{2a'u})^{-1}`$. Then
 
 ```math
-\int_0^1 2u\delta(u)\,du<\varepsilon.
+\int_0^1 2u\delta(u)\,du\lt \varepsilon.
 ```
 
 For a fixed $`L`$, take block lengths differing by at most one and put
@@ -239,7 +239,7 @@ sufficiently large $`n`$, not just a divisibility subsequence. This proves (4).
 
 ## 4. The optimal success exponent below the rate
 
-Fix $`0<\varepsilon<1/2`$. Write $`P_n^*(B,\varepsilon)`$ for the supremum
+Fix $`0\lt \varepsilon\lt 1/2`$. Write $`P_n^*(B,\varepsilon)`$ for the supremum
 of $`\Pr_{X,R}\{\Delta_R(X)\le\varepsilon\}`$ over all schemes obeying the
 stated resource rules with at most $`B`$ retained bits, without a separate
 per-query error constraint. The exact-parity requirement
@@ -276,7 +276,7 @@ $`\sum_{j=1}^n(j-1)(-1)^{U_j}`$, whose moment is the left side of (2).
 At $`s=a/n`$ this gives
 $`\ln v_n\le-n\mathcal R(\varepsilon)\ln2+O_\varepsilon(1)`$.
 
-For the lower bound, choose $`a'>a`$ and a sufficiently fine but fixed
+For the lower bound, choose $`a'\gt a`$ and a sufficiently fine but fixed
 partition exactly as in Section 3. Every error vector with precisely
 $`r_\ell=\lfloor\delta_\ell m_\ell\rfloor`$ ones in block $`\ell`$
 has weighted cost at most $`\sum_\ell(s_\ell-1)r_\ell\le\varepsilon N`$
@@ -325,7 +325,7 @@ This proves (8), including the matching deterministic endpoint version.
 
 At $`\rho=\mathcal R(\varepsilon)`$, (8) states only that the success
 probability is not exponentially small; it does not assert convergence to
-one. When $`\rho>\mathcal R(\varepsilon)`$, Section 3's worst-input cover
+one. When $`\rho\gt \mathcal R(\varepsilon)`$, Section 3's worst-input cover
 fits the budget for all sufficiently large $`n`$ and gives success exactly
 one. No conclusion about a finite optimal memory gap follows from the
 exponent equality.
@@ -334,8 +334,8 @@ exponent equality.
 
 Let $`B_{\rm exc}(n,\varepsilon,\zeta)`$ be the least worst-case summary
 length for any randomized scheme with
-$`\Pr_{X,R}\{\Delta_R(X)>\varepsilon\}\le\zeta`$, for a fixed
-$`0\le\zeta<1`$. Equation (3) and the deterministic construction imply
+$`\Pr_{X,R}\{\Delta_R(X)\gt \varepsilon\}\le\zeta`$, for a fixed
+$`0\le\zeta\lt 1`$. Equation (3) and the deterministic construction imply
 
 ```math
 \lim_{n\to\infty}\frac{B_{\rm exc}(n,\varepsilon,\zeta)}n
@@ -343,7 +343,7 @@ $`0\le\zeta<1`$. Equation (3) and the deterministic construction imply
 ```
 
 The same limit holds for its endpoint-only and public-address restrictions.
-It also remains necessary if the required success probabilities $`p_n>0`$
+It also remains necessary if the required success probabilities $`p_n\gt 0`$
 are allowed to decrease with $`\log(1/p_n)=o(n)`$, since (3) then still gives
 $`B\ge n\mathcal R(\varepsilon)-o(n)`$.
 

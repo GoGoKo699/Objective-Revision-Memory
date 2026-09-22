@@ -80,7 +80,7 @@ Let $`\rho`$ be the least integer with $`\Phi_n(\rho)\ge N`$, equivalently
 Its positive increments are
 
 ```math
-w_j=n-j+1\quad(1\le j<\rho),\qquad
+w_j=n-j+1\quad(1\le j\lt \rho),\qquad
 w_\rho=N-\Phi_n(\rho-1),
 ```
 
@@ -112,7 +112,7 @@ For a witness with image $`v=e_i+e_j`$ in this quotient basis, consider its pair
 
 Thus every recoverable pair inside $`I`$ is offset by a missing pair having an endpoint outside $`I`$. There are $`N-\binom d2`$ pairs of the latter kind in total, proving the upper bound.
 
-**Attainment.** Take $`W`$ to be the span of $`r`$ coordinate rows. Every pair touching those coordinates is recoverable by using its stored endpoint as the residual and rereading the other endpoint. There are exactly the number in (4). For $`r>0`$ these selected residuals can span all of $`W`$; $`r=0`$ is immediate.
+**Attainment.** Take $`W`$ to be the span of $`r`$ coordinate rows. Every pair touching those coordinates is recoverable by using its stored endpoint as the residual and rereading the other endpoint. There are exactly the number in (4). For $`r\gt 0`$ these selected residuals can span all of $`W`$; $`r=0`$ is immediate.
 
 This is an exact extremal statement about the residual-row geometry, not the optimal memory in the mandatory-parity model: the attaining subspace need not contain total parity. A global extension is false: at $`n=7,r=4`$, the kernel of the matrix with all seven nonzero three-bit columns covers all 21 pairs, whereas (4) would allow only 18. Combining improved low-rank values with other bounds can create nonconcave increments, so unconstrained scalar optimization need not give a stronger final bound. Retaining the bias ordering or choosing a concave majorant avoids that issue. No unrestricted full-rank formula follows from (4).
 
@@ -124,7 +124,7 @@ The optional [exact check](../checks/reviews/verify_low_rank_coverage.py) indepe
 |E|\le\max\left\{\binom{2r+1}{2},\ nr-\frac{r(r+1)}2\right\}.
 ```
 
-For $`r>0`$ and $`n\ge(5r+3)/2`$, its second term dominates, recovering the exact formula (4) by an elementary classical reduction. The proof above extends to the larger range $`n\ge2r+2`$. This difference does not certify its historical priority. The matching bound alone is too weak at other linear ranks to supply the full leading profile; see the [audit](reviews/SHARP_RATE_AUDIT.md).
+For $`r\gt 0`$ and $`n\ge(5r+3)/2`$, its second term dominates, recovering the exact formula (4) by an elementary classical reduction. The proof above extends to the larger range $`n\ge2r+2`$. This difference does not certify its historical priority. The matching bound alone is too weak at other linear ranks to supply the full leading profile; see the [audit](reviews/SHARP_RATE_AUDIT.md).
 
 ## 4. Matching converse and bipartite sharp rate
 
@@ -146,7 +146,7 @@ B\ge k[1-h_2(\varepsilon)]\qquad\text{(5)}
 
 whenever that matching's average error is at most $`\varepsilon`$. Error need not be uniform within its memory cells or across its edges. This supplies a complete elementary proof of the matching corollary attributed to Nisan–Rudich–Saks in the [audit](reviews/SHARP_RATE_AUDIT.md#52-a-genuine-nisanrudichsaks-lower-bound-corollary); no new direct-product principle is claimed.
 
-If **each fixed allowed edge** has input-and-seed-average error at most $`\varepsilon`$, apply (5) to a maximum matching. Conversely, cover all edges by a minimum vertex cover $`C`$. Encode its $`\tau(G)`$ raw bits with an ordinary covering-based random access code, and retain exact original parity. For each query, estimate a deterministically chosen endpoint in $`C`$ and reread the other endpoint. The masking/permutation construction in the [main note](../RESEARCH_NOTE.md#41-an-ordinary-covering-ingredient-credited-to-prior-coding-theory), now applied only within $`C`$, gives the stronger guarantee for every fixed input and fixed allowed edge over the independent seed. For fixed $`0<\varepsilon<1/2`$,
+If **each fixed allowed edge** has input-and-seed-average error at most $`\varepsilon`$, apply (5) to a maximum matching. Conversely, cover all edges by a minimum vertex cover $`C`$. Encode its $`\tau(G)`$ raw bits with an ordinary covering-based random access code, and retain exact original parity. For each query, estimate a deterministically chosen endpoint in $`C`$ and reread the other endpoint. The masking/permutation construction in the [main note](../RESEARCH_NOTE.md#41-an-ordinary-covering-ingredient-credited-to-prior-coding-theory), now applied only within $`C`$, gives the stronger guarantee for every fixed input and fixed allowed edge over the independent seed. For fixed $`0\lt \varepsilon\lt 1/2`$,
 
 ```math
 \nu(G)[1-h_2(\varepsilon)]\le B_G

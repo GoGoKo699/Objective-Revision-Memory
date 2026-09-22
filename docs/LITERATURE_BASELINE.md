@@ -21,7 +21,7 @@ The definitions permit sketches followed by adaptive raw probes and public rando
 **Our deduction, not a claim made by that paper:** applying the lemma literally to one Boolean pair answer cannot establish our extensive memory bound. At the empty partial assignment, the lemma's good-event assumptions give event mass at least $`0.99-2^{-2r}`$ for its integer parameter $`r\geq2`$. A binary output then has an atom of joint probability at least $`(0.99-2^{-2r})/2`$. Its joint min-entropy is at most
 
 ```math
-\log_2\frac{2}{0.99-2^{-2r}}<1.11,
+\log_2\frac{2}{0.99-2^{-2r}}\lt 1.11,
 ```
 
 whereas the lemma requires more than $`2r\geq4`$. This rules out that direct scalar instantiation, not every possible reduction or other result in the paper.

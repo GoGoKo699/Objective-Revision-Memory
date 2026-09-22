@@ -46,7 +46,7 @@ The summary must determine total parity $`p(X)`$ exactly; the query requests $`p
 
 Let $`B_{\rm arb}`$ denote this optimum, $`B_{\rm end}`$ the optimum when reads must be query endpoints, and $`B_{\rm public}`$ the optimum when, additionally, the read address depends only on the query and public seed. No-read answers remain allowed.
 
-**Operational equivalence.** For every fixed $`0<\varepsilon<1/2`$,
+**Operational equivalence.** For every fixed $`0\lt \varepsilon\lt 1/2`$,
 
 ```math
 \begin{aligned}
@@ -103,7 +103,7 @@ For endpoint reads, residual rows belong to $`\{e_i,e_j,e_i+e_j\}`$. A pair whol
 For completeness, let $`t_1\ge\cdots\ge t_n\ge0`$ be the biases of a greedy independent residual basis, padded with zeros, on a memory cell. Threshold integration and the increments $`f_n(j)-f_n(j-1)=n-j`$ give
 
 ```math
-\sum_{i<j}b_{ij}\le\sum_{j=1}^n(n-j)t_j.
+\sum_{i\lt j}b_{ij}\le\sum_{j=1}^n(n-j)t_j.
 ```
 
 Writing $`c(t)=1-h_2((1-t)/2)`$ and $`D=n-H(X\mid m,R)`$, entropy subadditivity in a completed linear basis gives $`\sum_jc(t_j)\le D`$. Apply $`zt-\ln2\,c(t)\le\ln\cosh z`$, then average cells and seeds using $`\mathbb ED\le B`$. The endpoint finite converse is
@@ -144,14 +144,14 @@ The completed bounded assessment retains the extremal decoder-ball evaluation an
 
 Fix an input and all random tapes, and let $`\Delta`$ be the fraction of the $`\binom n2`$ pair queries the decoder would answer incorrectly, each considered separately from the same summary with its own one-read budget. Define $`P_n^*(B,\varepsilon)`$ as the largest probability, over uniform input and independent tapes, that $`\Delta\le\varepsilon`$. This optimization preserves the resource and exact-parity rules; the table criterion replaces the per-query error promise, rather than imposing it as an additional feasibility condition.
 
-For fixed $`0<\varepsilon<1/2`$ and any integer sequence $`B_n\ge1`$ with $`B_n/n\to\rho\ge0`$, the [excess-distortion theorem](EXCESS_DISTORTION.md) proves
+For fixed $`0\lt \varepsilon\lt 1/2`$ and any integer sequence $`B_n\ge1`$ with $`B_n/n\to\rho\ge0`$, the [excess-distortion theorem](EXCESS_DISTORTION.md) proves
 
 ```math
 \lim_{n\to\infty}-\frac1n\log_2 P_n^*(B_n,\varepsilon)
 =\bigl(\mathcal R(\varepsilon)-\rho\bigr)_+.
 ```
 
-Deterministic ordered-endpoint schemes attain this exponent. Their reconstruction error has an exact weighted Hamming interpretation: estimate endpoint $`j`$ and read endpoint $`i`$ for $`i<j`$, so $`N\Delta(x)=\sum_j(j-1)\mathbf1\{x_j\ne z_j\}`$. Weighted balls have uniform-input probability $`2^{-n\mathcal R(\varepsilon)+o(n)}`$. Partial covers using $`2^{B-1}`$ centers charge $`B-1`$ index bits and one parity bit and attain the success exponent. The arbitrary-address converse follows from the existing exponential-moment inequality and a union bound over memory labels.
+Deterministic ordered-endpoint schemes attain this exponent. Their reconstruction error has an exact weighted Hamming interpretation: estimate endpoint $`j`$ and read endpoint $`i`$ for $`i\lt j`$, so $`N\Delta(x)=\sum_j(j-1)\mathbf1\{x_j\ne z_j\}`$. Weighted balls have uniform-input probability $`2^{-n\mathcal R(\varepsilon)+o(n)}`$. Partial covers using $`2^{B-1}`$ centers charge $`B-1`$ index bits and one parity bit and attain the success exponent. The arbitrary-address converse follows from the existing exponential-moment inequality and a union bound over memory labels.
 
 The rate $`\mathcal R(\varepsilon)`$ also suffices for a deterministic guarantee $`\Delta(x)\le\varepsilon`$ on **every** input. Block covers with a strict distortion margin prove this for all sufficiently large lengths. Public permutation and masking can then add the original fixed-input/fixed-pair marginal error guarantee while preserving the table-distortion bound for every input and seed.
 

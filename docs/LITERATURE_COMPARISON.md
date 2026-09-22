@@ -34,7 +34,7 @@ S. Garg, S. He, Y. Li, P. A. Papakonstantinou, and X. Yang, *Systematic Data Str
 
 The paper allows a sketch, adaptive raw probes, and public randomness. Its main lemma uses conditional joint min-entropy of a vector output on high-probability good events. It is a close converse-method neighbor.
 
-**Our limited deduction, retained from the baseline audit:** a literal application to one Boolean output cannot yield the desired extensive lower bound. At the empty partial assignment, the relevant good event has mass at least $`0.99-2^{-2r}`$ for the lemma's integer $`r\geq2`$. A binary output has an atom of joint mass at least half that. Its joint min-entropy is therefore below $`\log_2[2/(0.99-2^{-2r})]<1.11`$, whereas the lemma asks for more than $`2r\geq4`$.
+**Our limited deduction, retained from the baseline audit:** a literal application to one Boolean output cannot yield the desired extensive lower bound. At the empty partial assignment, the relevant good event has mass at least $`0.99-2^{-2r}`$ for the lemma's integer $`r\geq2`$. A binary output has an atom of joint mass at least half that. Its joint min-entropy is therefore below $`\log_2[2/(0.99-2^{-2r})]\lt 1.11`$, whereas the lemma asks for more than $`2r\geq4`$.
 
 The detailed audit also checks direct batching. For $`k`$ exclusion queries, exposing at most $`2k`$ endpoint bits leaves the entire output dependent only on total parity, so its support has size at most two. The lemma's expected-cost requirement, using the generic $`k`$-probe bound, requires an exposure budget at least $`10k`$; the same min-entropy obstruction then applies. Amplification costs additional memory and probes and does not remove this support obstruction. This rules out that direct application, not indirect reductions or a separately proved smaller actual probe cost.
 
@@ -86,7 +86,7 @@ The Gibbs/entropy reformulation is also established machinery: Carlen–Cordero-
 
 ## 9. Complete geometric reductions: elementary basis facts suffice
 
-**Additive formulation.** Chaim Even-Zohar, *On Sums of Generating Sets in $`(\mathbb Z_2)^n`$*, [arXiv:1108.4902v2](https://arxiv.org/pdf/1108.4902v2), Theorem 1, printed p.2, and Example 11 in Section 3.1, printed p.7. For an affine basis $`A=\{0,b_1,\ldots,b_d\}`$, the established independent-points example gives $`|A+A|=1+d+\binom d2`$. Theorem 1 also implies this by setting its $`t=d,k=1,w=0`$; its size hypothesis holds for $`d\ge2`$, and smaller dimensions are immediate. The source's substantial sumset machinery is unnecessary for this elementary specialization.
+**Additive formulation.** Chaim Even-Zohar, *On Sums of Generating Sets in* $`(\mathbb Z_2)^n`$, [arXiv:1108.4902v2](https://arxiv.org/pdf/1108.4902v2), Theorem 1, printed p.2, and Example 11 in Section 3.1, printed p.7. For an affine basis $`A=\{0,b_1,\ldots,b_d\}`$, the established independent-points example gives $`|A+A|=1+d+\binom d2`$. Theorem 1 also implies this by setting its $`t=d,k=1,w=0`$; its size hypothesis holds for $`d\ge2`$, and smaller dimensions are immediate. The source's substantial sumset machinery is unnecessary for this elementary specialization.
 
 **Our full reduction.** For any selected residual family spanning $`W`$ of rank $`r`$, let $`d=n-r`$, $`v_i=e_i+W`$, and $`S=\{0,v_1,\ldots,v_n\}`$. Choose basis-coordinate representatives $`b_1,\ldots,b_d`$, so $`A\subseteq S`$ and $`|S|\le n+1`$. A covered pair requires $`v_i+v_j\in S`$. Every element of $`(A+A)\setminus S`$ gives a distinct uncovered pair of basis-coordinate representatives. Hence
 
@@ -171,7 +171,7 @@ matrix $`A_t`$, affine offset $`\alpha_t`$, and rank $`r`$, the exact identity i
 
 Jukna–Schnitger's exact fiber count in Section 7 therefore does not by itself
 evaluate approximate volume. Two legal strategies demonstrate a leading-order
-loss: always answer zero, or answer $`x_i`$ for $`i<j`$. Both have rank $`n-1`$ and
+loss: always answer zero, or answer $`x_i`$ for $`i\lt j`$. Both have rank $`n-1`$ and
 exactly two zero-error inputs. The first has error count $`w(n-w)`$ for
 $`w=|x|`$, hence ball exponent
 $`1-h_2((1-\sqrt{1-2\varepsilon})/2)`$; the second has exponent
@@ -219,11 +219,11 @@ Case*, [arXiv:1109.5193v2](https://arxiv.org/pdf/1109.5193), 8 June 2012,
 Theorem 1.3, Eq. (1.7), printed p.4, bounds a polynomial's tail using its
 variance and smoothness parameters $`\mu_r`$ (defined on p.3).
 Let $`Y_i=(-1)^{X_i}`$. Read $`j`$ for pair $`\{1,j\}`$, and read coordinate 1
-for pairs $`\{i,j\}`$ with $`i,j>1`$, always returning the raw bit. The signed
+for pairs $`\{i,j\}`$ with $`i,j\gt 1`$, always returning the raw bit. The signed
 correctness sum is
 
 ```math
-S=(n-1)Y_1+Y_1\sum_{2\le i<j\le n}Y_iY_j.
+S=(n-1)Y_1+Y_1\sum_{2\le i\lt j\le n}Y_iY_j.
 ```
 
 It has $`\mathrm{Var}S=(n-1)^2+\binom{n-1}{2}`$ and
@@ -352,7 +352,7 @@ precisely an ingredient of our proof.
 
 **Source-proof caveat.** In the inspected PDF, Eq. (34) of the proof of
 Corollary 10 is false as printed: $`q=2,n=2,d=1`$ would give
-$`3\le2^{4/3}`$, whereas $`3^3=27>16=2^4`$. This does not invalidate the final
+$`3\le2^{4/3}`$, whereas $`3^3=27\gt 16=2^4`$. This does not invalidate the final
 ball bound in Eq. (33). It follows directly from entropy subadditivity: for
 uniform $`X`$ in the $`q`$-ary ball and $`d'=\mathbb E|X|`$, each coordinate has
 nonzero probability $`d'/n`$, hence $`H_q(X)\le n h_q(d'/n)`$, followed by the

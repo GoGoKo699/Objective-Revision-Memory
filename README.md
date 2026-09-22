@@ -64,7 +64,7 @@ access resource from a raw coordinate read.
 
 ## The sharp result
 
-Fix $`0<\varepsilon<1/2`$, and let $`a>0`$ solve
+Fix $`0\lt \varepsilon\lt 1/2`$, and let $`a\gt 0`$ solve
 
 ```math
 1-2\varepsilon=2\int_0^1u\tanh(au)\,du.

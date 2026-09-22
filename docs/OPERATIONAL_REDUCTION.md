@@ -76,7 +76,7 @@ m_n(\varepsilon)=\max_{t\in\mathcal T_n}
 2^{-n}|\{x:D_n(x,t)\le\varepsilon\}|.
 ```
 
-For every fixed $`0<\varepsilon<1/2`$, the existing proof implies
+For every fixed $`0\lt \varepsilon\lt 1/2`$, the existing proof implies
 
 ```math
 v_n(\varepsilon)\le m_n(\varepsilon)
@@ -96,7 +96,7 @@ with $`\eta=1-2\varepsilon`$ and
 $`\eta=2\int_0^1u\tanh(au)\,du`$,
 $`\mathcal R=(a\eta-\ln\cosh a)/\ln2`$.
 
-**Proof.** The strategy answering $`i<j`$ with the raw bit $`x_i`$ has distortion
+**Proof.** The strategy answering $`i\lt j`$ with the raw bit $`x_i`$ has distortion
 $`N^{-1}\sum_j(j-1)x_j`$, so its ball has mass $`v_n`$. For an arbitrary strategy,
 write $`g_q(b)=\alpha_q\oplus\beta_qb`$. Its correctness signs are nonzero
 residual characters with rows $`e_i+e_j+\beta_qe_{k_q}`$. Let $`S_t`$ be their
@@ -168,10 +168,10 @@ a finite optimal memory gap for endpoint-only access.
 ## 5. Covers with a fixed address pattern
 
 The symmetry also gives a finite worst-input comparison, without asymptotics.
-For $`0\le\varepsilon<1/2`$, put $`c_n=n\ln2+1`$ and
+For $`0\le\varepsilon\lt 1/2`$, put $`c_n=n\ln2+1`$ and
 $`K=\lceil c_n/m_n(\varepsilon)\rceil`$. The expected number of uncovered
 inputs after $`K`$ random translates is at most
-$`2^ne^{-Km_n}\le e^{-1}<1`$. Since that number is an integer, some fixed
+$`2^ne^{-Km_n}\le e^{-1}\lt 1`$. Since that number is an integer, some fixed
 codebook covers the whole cube. Its charged memory, including parity, is at most
 
 ```math
@@ -272,7 +272,7 @@ G_n(D)\ln2\ge sN(1-2D)-\sum_{k=1}^n\ln\cosh(sk),\qquad s\ge0.
 ```
 
 This argument permits arbitrary posterior laws and stochastic encoders.
-At fixed $`0<D<1/2`$, the deterministic endpoint covers bound $`G_n(D)`$ above
+At fixed $`0\lt D\lt 1/2`$, the deterministic endpoint covers bound $`G_n(D)`$ above
 by $`n\mathcal R(D)+o(n)`$; the displayed bound and (5) give
 
 ```math

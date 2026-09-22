@@ -41,7 +41,7 @@ The report adds three useful deductions: a finite-length equivalence between the
 
 For uniform $`X\in\{0,1\}^n`$, independent seed $`R`$, and fixed-length summary $`M=f_R(X)`$ with at most $`2^B`$ values, total parity must be recovered exactly from $`(M,R)`$. A later pair asks for $`p(X)\oplus X_i\oplus X_j`$. The decoder sees the entire summary, chooses an arbitrary address from $`(M,R,i,j)`$, and reads at most one **raw bit**. It may also use no read. Computation is unrestricted. The immutable archive is uncharged; retained input-dependent indices, caches, and transcripts are charged. Independent random tapes and code descriptions are uncharged.
 
-The converse uses input-and-pair average error; the definition of $`B_{\rm all}`$ requires input-average error for each fixed pair; the construction guarantees seed-average error for each fixed input and pair. None is simultaneous success on all pairs or robustness against queries chosen after the seed/summary is observed. Fix $`0<\varepsilon<1/2`$ before taking $`n\to\infty`$, and put $`\eta=1-2\varepsilon`$.
+The converse uses input-and-pair average error; the definition of $`B_{\rm all}`$ requires input-average error for each fixed pair; the construction guarantees seed-average error for each fixed input and pair. None is simultaneous success on all pairs or robustness against queries chosen after the seed/summary is observed. Fix $`0\lt \varepsilon\lt 1/2`$ before taking $`n\to\infty`$, and put $`\eta=1-2\varepsilon`$.
 
 ### A finite-length clarification
 
@@ -124,7 +124,7 @@ Set $`s=a/n`$. The limiting objective has derivative $`\eta/2-\int_0^1u\tanh(au)
 
 ### 3.4 Covering and the seed argument
 
-For $`K\ge(m+1)2^m/V`$, the expected number of uncovered words is at most $`\exp(m\ln2-m-1)<1`$. A covering multiset exists; removing duplicates cannot hurt. The trivial whole-cube cover handles the other branch of the minimum. Index lengths are worst-case fixed lengths. Existence says nothing about efficient encoding.
+For $`K\ge(m+1)2^m/V`$, the expected number of uncovered words is at most $`\exp(m\ln2-m-1)\lt 1`$. A covering multiset exists; removing duplicates cannot hurt. The trivial whole-cube cover handles the other branch of the minimum. Index lengths are worst-case fixed lengths. Existence says nothing about efficient encoding.
 
 For fixed original $`x,i,j`$, the mask makes $`Y=x\circ\Pi\oplus R`$ uniform and independent of $`\Pi`$. Let $`A(\Pi)`$ be the reconstructed endpoint's position. Conditional on its quality block $`\ell`$, $`A`$ is uniform within that block: internal permutations preserve block membership and the tie rule based on original labels. Independence from $`Y`$ gives
 
@@ -138,7 +138,7 @@ The block-selection weights are exactly the differences of binomial coefficients
 
 ### 3.5 Order of limits and consequences
 
-Given any rate tolerance $`\tau>0`$, first choose $`a'>a`$ close enough to keep the extra integral cost below $`\tau/3`$, while creating positive bias slack. Choose a sufficiently fine fixed $`L`$ preserving that slack and approximating cost within $`\tau/3`$. Finally choose $`n_0`$ such that every $`n\ge n_0`$ permits nearly equal blocks, preserves the slack, and has rounding/covering overhead below $`\tau/3`$. This proves the full limsup, rather than a divisibility subsequence.
+Given any rate tolerance $`\tau\gt 0`$, first choose $`a'\gt a`$ close enough to keep the extra integral cost below $`\tau/3`$, while creating positive bias slack. Choose a sufficiently fine fixed $`L`$ preserving that slack and approximating cost within $`\tau/3`$. Finally choose $`n_0`$ such that every $`n\ge n_0`$ permits nearly equal blocks, preserves the slack, and has rounding/covering overhead below $`\tau/3`$. This proves the full limsup, rather than a divisibility subsequence.
 
 Strict convexity makes $`\tanh(au)`$ the unique minimizing profile almost everywhere. Constant bias and the affine zero/one step profile meet the constraint but differ from it on positive measure, proving both strict comparisons. The expansion $`a=3\gamma+O(\gamma^3)`$ gives $`3\gamma^2/(2\ln2)+O(\gamma^4)`$ with the stated order of limits. No uniform vanishing-error or vanishing-advantage result has been proved.
 
@@ -221,7 +221,7 @@ Sum over at most $`2^B`$ memory values and use Jensen, then average seeds:
 t\mathbb E K_M\le B\ln2+k\ln[(1+e^t)/2].
 ```
 
-With $`\mathbb E K_M\ge k(1-\varepsilon)`$, optimizing $`t>0`$ gives
+With $`\mathbb E K_M\ge k(1-\varepsilon)`$, optimizing $`t\gt 0`$ gives
 
 ```math
 B\ge\lfloor n/2\rfloor[1-h_2(\varepsilon)].
@@ -239,7 +239,7 @@ Here is a stronger obstruction than checking only one Boolean output. For any fi
 
 ```math
 H_{\min}(F(X),G\cap G_\sigma\mid\sigma)
-\le\log_2\frac2{0.99-2^{-2r}}<1.11<2r,
+\le\log_2\frac2{0.99-2^{-2r}}\lt 1.11\lt 2r,
 ```
 
 contradicting the lemma's entropy hypothesis. Using only the generic $`k`$-probe budget, its cost condition calls for $`q\ge10k`$, which exposes the endpoint union. Thus direct unamplified batching at that budget cannot repair the scalar application. An independently proved much smaller actual average probe cost could allow smaller $`q`$; this argument does not rule that out.
@@ -266,7 +266,7 @@ The new optional [asymmetric-cover check](../../checks/reviews/verify_asymmetric
 python checks/reviews/verify_asymmetric_cover.py
 ```
 
-Independent arithmetic also confirms block lengths $`11,21,40,59,78,95,107,117`$, total 529 including parity, error $`6245/65472<1/10`$, and the affine necessary bound 565. Specifically $`\Phi_{1024}(564)=418770<2095104/5\le419230=\Phi_{1024}(565)`$. No large encoder was built.
+Independent arithmetic also confirms block lengths $`11,21,40,59,78,95,107,117`$, total 529 including parity, error $`6245/65472\lt 1/10`$, and the affine necessary bound 565. Specifically $`\Phi_{1024}(564)=418770\lt 2095104/5\le419230=\Phi_{1024}(565)`$. No large encoder was built.
 
 Access limitations: several versioned arXiv URLs failed in the web reader; author-hosted copies or directly downloaded versioned PDFs supplied the full text used above. The NRS journal and BEG journal full texts remained unavailable, so manuscript/arXiv numbering is explicit. No third-party paper is redistributed in this review. Search non-detection is not evidence of novelty.
 
@@ -315,20 +315,27 @@ Here is our explicit obstruction to the direct output-lifting reduction. If $`Y`
 
 The [rank-profile continuation](../RANK_PROFILE_EXTENSIONS.md) contains complete proofs:
 
-1. **Generic envelope lemma.** If every labelled residual subset obeys $`|J|\le g(\mathrm{rank}J)`$, with $`g(0)=0`$ nondecreasing and increments $`w_j`$, then for any input distribution $`P`$,
-   ```math
-   s\sum_q|\mathbb E_P(-1)^{a_q\cdot X}|
-   \le[n-H_P(X)]\ln2+\sum_j\ln\cosh(sw_j).
-   ```
-   Its equivalent exponential-moment formulation gives the same $`B`$-bit help-label converse. Concavity is not needed for validity; it is relevant to whether scalar optimization respects ordered biases. This isolates the generic machinery from the extremal geometry and makes no claim of a new entropy inequality.
-2. **Finite cap.** Substituting $`g(r)=\min\{N,\Phi_n(r)\}`$ drops unnecessary terms from the finite converse. The first-order rate stays unchanged, and finite optimality is not asserted.
-3. **Exact low-rank geometry.** For $`n\ge2r+2`$, the maximum covered-pair count of any rank-$`r`$ subspace is exactly $`nr-r(r+1)/2`$, attained by coordinate subspaces. A quotient-basis injection offsets each covered internal pair by a missing cross pair. At $`n=7,r=4`$ the Hamming kernel covers 21 pairs, disproving extension of this formula to all ranks. The attaining coordinate subspace need not contain total parity, so this is a geometric extremum, not a claim about optimal mandatory-parity memory.
-4. **Sharp bipartite benchmark.** For any query graph, matching and vertex-cover numbers give
-   ```math
-   \nu(G)[1-h_2(\varepsilon)]\le B_G
-   \le\tau(G)[1-h_2(\varepsilon)]+O_\varepsilon(\log(\tau(G)+1))+1.
-   ```
-   Here every fixed allowed edge must meet the input-and-seed average-error target. Matching residuals are independent even for arbitrary third-coordinate addresses; the upper bound codes a vertex cover and charges exact parity. For bipartite graphs, $`\nu=\tau`$, so the rate per matching edge converges to $`1-h_2(\varepsilon)`$ as $`\nu\to\infty`$. This is an explicit deduction from established ingredients. For arbitrary bipartite graphs, uniform edge-average error is weaker: a large star disjoint from small isolated edges supplies a counterexample to silently using the same lower bound. Complete bipartite graphs do permit the weaker error quantifier by averaging maximum matchings.
+**Generic envelope lemma.** If every labelled residual subset obeys $`|J|\le g(\mathrm{rank}J)`$, with $`g(0)=0`$ nondecreasing and increments $`w_j`$, then for any input distribution $`P`$,
+
+```math
+s\sum_q|\mathbb E_P(-1)^{a_q\cdot X}|
+\le[n-H_P(X)]\ln2+\sum_j\ln\cosh(sw_j).
+```
+
+Its equivalent exponential-moment formulation gives the same $`B`$-bit help-label converse. Concavity is not needed for validity; it is relevant to whether scalar optimization respects ordered biases. This isolates the generic machinery from the extremal geometry and makes no claim of a new entropy inequality.
+
+**Finite cap.** Substituting $`g(r)=\min\{N,\Phi_n(r)\}`$ drops unnecessary terms from the finite converse. The first-order rate stays unchanged, and finite optimality is not asserted.
+
+**Exact low-rank geometry.** For $`n\ge2r+2`$, the maximum covered-pair count of any rank-$`r`$ subspace is exactly $`nr-r(r+1)/2`$, attained by coordinate subspaces. A quotient-basis injection offsets each covered internal pair by a missing cross pair. At $`n=7,r=4`$ the Hamming kernel covers 21 pairs, disproving extension of this formula to all ranks. The attaining coordinate subspace need not contain total parity, so this is a geometric extremum, not a claim about optimal mandatory-parity memory.
+
+**Sharp bipartite benchmark.** For any query graph, matching and vertex-cover numbers give
+
+```math
+\nu(G)[1-h_2(\varepsilon)]\le B_G
+\le\tau(G)[1-h_2(\varepsilon)]+O_\varepsilon(\log(\tau(G)+1))+1.
+```
+
+Here every fixed allowed edge must meet the input-and-seed average-error target. Matching residuals are independent even for arbitrary third-coordinate addresses; the upper bound codes a vertex cover and charges exact parity. For bipartite graphs, $`\nu=\tau`$, so the rate per matching edge converges to $`1-h_2(\varepsilon)`$ as $`\nu\to\infty`$. This is an explicit deduction from established ingredients. For arbitrary bipartite graphs, uniform edge-average error is weaker: a large star disjoint from small isolated edges supplies a counterexample to silently using the same lower bound. Complete bipartite graphs do permit the weaker error quantifier by averaging maximum matchings.
 
 These deductions improve the mathematical formulation and provide comparison families; their priority is unresolved. They do not certify the all-pairs theorem as publishable. In particular, overlapping queries alone do not distinguish it: bipartite families can have substantial overlap and still reduce to ordinary coding.
 
@@ -366,7 +373,7 @@ Erdős–Gallai, *On Maximal Paths and Circuits of Graphs* (1959), [original pap
 |E|\le\max\left\{\binom{2r+1}{2},nr-\frac{r(r+1)}2\right\}.
 ```
 
-For $`r>0`$ and $`n\ge(5r+3)/2`$, the second term dominates and matches coordinate-subspace attainment. This portion of the range previously proved for $`n\ge2r+2`$ is therefore already an elementary consequence of classical extremal graph theory. The documents now give that attribution. At $`r/n\to0.45`$, this route allows $`0.405n^2+O(n)`$ edges rather than the required $`0.34875n^2+O(n)`$, so its loss is leading order. This establishes the limitation of this reduction, not of all possible uses of matching theory.
+For $`r\gt 0`$ and $`n\ge(5r+3)/2`$, the second term dominates and matches coordinate-subspace attainment. This portion of the range previously proved for $`n\ge2r+2`$ is therefore already an elementary consequence of classical extremal graph theory. The documents now give that attribution. At $`r/n\to0.45`$, this route allows $`0.405n^2+O(n)`$ edges rather than the required $`0.34875n^2+O(n)`$, so its loss is leading order. This establishes the limitation of this reduction, not of all possible uses of matching theory.
 
 ### 9.3 Low-weight codes: the relevant statistic and a counterexample
 
@@ -411,7 +418,7 @@ These comparisons retain arbitrary nonlinear preprocessing, the uncharged immuta
 
 ### 9.5 New deductions with complete proofs in the brief
 
-Let $`B_{\rm arb}`$ be the unrestricted optimum, $`B_{\rm end}`$ restrict the probe to a query endpoint, and $`B_{\rm public}`$ further make the address independent of memory. Under the same stated error criteria, all three have leading rate $`\mathcal R(\varepsilon)`$ for fixed $`0<\varepsilon<1/2`$. The unrestricted converse and existing publicly assigned graded construction squeeze these optima. This is an operational rate equality, not a simulation of arbitrary encoders.
+Let $`B_{\rm arb}`$ be the unrestricted optimum, $`B_{\rm end}`$ restrict the probe to a query endpoint, and $`B_{\rm public}`$ further make the address independent of memory. Under the same stated error criteria, all three have leading rate $`\mathcal R(\varepsilon)`$ for fixed $`0\lt \varepsilon\lt 1/2`$. The unrestricted converse and existing publicly assigned graded construction squeeze these optima. This is an operational rate equality, not a simulation of arbitrary encoders.
 
 For endpoint residuals the exact geometric coverage envelope is
 
@@ -455,7 +462,7 @@ The positive development is a stronger operational result: the existing converse
 
 The [literature ledger](../LITERATURE_COMPARISON.md), Section 9, records both routes with source-specific locations.
 
-**Affine-basis sumsets.** Even-Zohar, *On Sums of Generating Sets in $`(\mathbb Z_2)^n`$*, [arXiv:1108.4902v2](https://arxiv.org/pdf/1108.4902v2), Example 11, Section 3.1, printed p.7, explicitly records the independent-points construction. For an affine basis $`A=\{0,b_1,\ldots,b_d\}`$, $`|A+A|=1+d+\binom d2`$. Theorem 1, printed p.2, also gives this specialization with $`t=d,k=1,w=0`$ for $`d\ge2`$; dimensions zero and one are immediate. This uses only elementary independent-pair counting, not the paper's full compression argument.
+**Affine-basis sumsets.** Even-Zohar, *On Sums of Generating Sets in* $`(\mathbb Z_2)^n`$, [arXiv:1108.4902v2](https://arxiv.org/pdf/1108.4902v2), Example 11, Section 3.1, printed p.7, explicitly records the independent-points construction. For an affine basis $`A=\{0,b_1,\ldots,b_d\}`$, $`|A+A|=1+d+\binom d2`$. Theorem 1, printed p.2, also gives this specialization with $`t=d,k=1,w=0`$ for $`d\ge2`$; dimensions zero and one are immediate. This uses only elementary independent-pair counting, not the paper's full compression argument.
 
 For a selected residual space $`W`$ of rank $`r`$, set $`d=n-r`$ and $`S=\{0,e_1+W,\ldots,e_n+W\}`$. Choose basis-coordinate representatives, giving $`A\subseteq S`$ and $`|S|\le n+1`$. A covered pair requires its quotient sum to lie in $`S`$. Every element of $`(A+A)\setminus S`$ identifies a distinct missing basis pair. Therefore
 
@@ -492,7 +499,7 @@ At $`s=a/n`$, this is at most
 $`\min\{1,e^{C_\varepsilon}2^{B-n\mathcal R(\varepsilon)}\}`$,
 where $`C_\varepsilon=a(1-2\varepsilon)/2+\ln\cosh a`$. The proof extends each memory label's decoder characters to the whole cube, applies the uniform moment bound, then averages tapes. No affine-cell assumption or restriction on summary-dependent addresses is introduced.
 
-**Worst-input covering.** In a fixed order, estimate endpoint $`j`$ and reread $`i`$ for $`i<j`$. For reconstructed word $`z`$ the exact table-error count is
+**Worst-input covering.** In a fixed order, estimate endpoint $`j`$ and reread $`i`$ for $`i\lt j`$. For reconstructed word $`z`$ the exact table-error count is
 
 ```math
 N\Delta(x)=\sum_{j=1}^n(j-1)\mathbf1\{x_j\ne z_j\}.
@@ -500,7 +507,7 @@ N\Delta(x)=\sum_{j=1}^n(j-1)\mathbf1\{x_j\ne z_j\}.
 
 For consecutive blocks of lengths $`m_\ell`$, cumulative endpoints $`s_\ell`$, and covering radii $`r_\ell`$, every input has at most $`\sum_\ell(s_\ell-1)r_\ell`$ wrong pairs. Ordinary covers charge all their index bits and one exact parity bit. Choosing a strict distortion margin, then a fine fixed number of blocks, then sufficiently large $`n`$, attains rate $`\mathcal R(\varepsilon)`$ for every input. The resulting address is deterministic and depends only on the query. Public symmetrization can additionally supply the old marginal guarantee while preserving each table's distortion bound for every input and seed.
 
-**Sharp success exponent.** Let $`P_n^*(B,\varepsilon)`$ be the best success probability for this table criterion under the resource constraints. For fixed $`0<\varepsilon<1/2`$, integer $`B_n\ge1`$, and $`B_n/n\to\rho\ge0`$,
+**Sharp success exponent.** Let $`P_n^*(B,\varepsilon)`$ be the best success probability for this table criterion under the resource constraints. For fixed $`0\lt \varepsilon\lt 1/2`$, integer $`B_n\ge1`$, and $`B_n/n\to\rho\ge0`$,
 
 ```math
 \lim_{n\to\infty}-\frac1n\log_2 P_n^*(B_n,\varepsilon)
@@ -549,7 +556,7 @@ The existing moment bound proves $`m_n\le e^{C_\varepsilon}2^{-n\mathcal R(\vare
 v_n\le m_n=2^{o(n)}v_n=2^{-n\mathcal R(\varepsilon)+o(n)}.
 ```
 
-This evaluates the largest low-error input set handled by any one-read strategy. The bound is at fixed $`0<\varepsilon<1/2`$ and compares exponential volumes, not finite equality or a polynomial ratio. This is the smallest task-specific claim to assess for priority. Generic covering and success-exponent conversions are no longer separate candidate contributions.
+This evaluates the largest low-error input set handled by any one-read strategy. The bound is at fixed $`0\lt \varepsilon\lt 1/2`$ and compares exponential volumes, not finite equality or a polynomial ratio. This is the smallest task-specific claim to assess for priority. Generic covering and success-exponent conversions are no longer separate candidate contributions.
 
 ### 11.3 Finite deductions and a parity trap
 
@@ -624,7 +631,7 @@ For a fixed strategy, let $`A_t`$ have the pair-labelled residual rows, let $`\a
 Jukna–Schnitger's one-star exact fiber bound, already attributed in Section 4, gives the factor $`2^{-r}`$ but does not evaluate the intersection. This is a substantive loss, not just a difference in terminology. Two legal strategies have the same full residual rank $`n-1`$ and exactly two zero-error inputs:
 
 - Constant-zero answers give error count $`w(n-w)`$, where $`w=|x|`$.
-- Answering $`x_i`$ for $`i<j`$ gives error count $`\sum_j(j-1)x_j`$.
+- Answering $`x_i`$ for $`i\lt j`$ gives error count $`\sum_j(j-1)x_j`$.
 
 For the first strategy, the good weights satisfy $`w/n\le\alpha_n`$ or $`w/n\ge1-\alpha_n`$, where
 
@@ -638,7 +645,7 @@ The ordinary binomial-tail exponent is therefore
 J(\varepsilon)=1-h_2\!\left(\frac{1-\sqrt{1-2\varepsilon}}2\right).
 ```
 
-The second strategy has exponent $`\mathcal R(\varepsilon)`$. For fixed interior error, $`\alpha:=\lim\alpha_n<\varepsilon`$, so $`J>1-h_2(\varepsilon)>\mathcal R`$; the last inequality is the already proved strict improvement over uniform-quality coding. Thus full rank and exact fiber size leave a leading-order uncertainty. The crude union bound over all allowed error vectors is also vacuous: its logarithmic ball-size factor is $`\Theta(N)=\Theta(n^2)`$ while $`r\le n`$. These are our deductions from explicit examples, not claims made in the cited one-star paper.
+The second strategy has exponent $`\mathcal R(\varepsilon)`$. For fixed interior error, $`\alpha:=\lim\alpha_n\lt \varepsilon`$, so $`J\gt 1-h_2(\varepsilon)\gt \mathcal R`$; the last inequality is the already proved strict improvement over uniform-quality coding. Thus full rank and exact fiber size leave a leading-order uncertainty. The crude union bound over all allowed error vectors is also vacuous: its logarithmic ball-size factor is $`\Theta(N)=\Theta(n^2)`$ while $`r\le n`$. These are our deductions from explicit examples, not claims made in the cited one-star paper.
 
 ### 12.3 What threshold direct products actually supply
 
@@ -668,10 +675,10 @@ Two primary successor theorems were inspected: Drucker, *Improved Direct Product
 
 ### 12.4 Low degree and full rank do not replace pair incidence
 
-Schudy–Sviridenko, *Bernstein-like Concentration and Moment Inequalities for Polynomials of Independent Random Variables: Multilinear Case*, arXiv:1109.5193v2, 8 June 2012, Theorem 1.3, Eq. (1.7), printed p.4, gives a genuine tail bound. Its direct substitution nevertheless loses the required scale on a permitted strategy. Read $`j`$ for pair $`\{1,j\}`$, and read 1 for $`\{i,j\}`$ with $`i,j>1`$, always returning the observed bit. With $`Y_i=(-1)^{X_i}`$, the correctness score is
+Schudy–Sviridenko, *Bernstein-like Concentration and Moment Inequalities for Polynomials of Independent Random Variables: Multilinear Case*, arXiv:1109.5193v2, 8 June 2012, Theorem 1.3, Eq. (1.7), printed p.4, gives a genuine tail bound. Its direct substitution nevertheless loses the required scale on a permitted strategy. Read $`j`$ for pair $`\{1,j\}`$, and read 1 for $`\{i,j\}`$ with $`i,j\gt 1`$, always returning the observed bit. With $`Y_i=(-1)^{X_i}`$, the correctness score is
 
 ```math
-S=(n-1)Y_1+Y_1\sum_{2\le i<j\le n}Y_iY_j.
+S=(n-1)Y_1+Y_1\sum_{2\le i\lt j\le n}Y_iY_j.
 ```
 
 The independent characters give $`\mathbb ES=0`$ and $`\mathrm{Var}S=(n-1)^2+\binom{n-1}{2}`$. The source's smoothness parameters are $`\mu_1=N`$, $`\mu_2=n-2`$, $`\mu_3=1`$, and Rademachers have central moment parameter $`L=1`$. At $`\lambda=(1-2\varepsilon)N`$, its maximum includes the term $`\exp[-(1-2\varepsilon)/C^3]`$, where $`C`$ is its universal constant. This term is independent of $`n`$, so this application does not give a positive $`n`$-scale exponent. It does not rule out concentration arguments retaining more structure.
@@ -682,7 +689,7 @@ There is also an explicit obstruction to any theorem using only degree, distinct
 \binom t3+(n-t)\le N.
 ```
 
-For sufficiently large $`n`$, $`t<n`$ and $`t=\Theta(n^{2/3})`$. Take all weight-three rows on the first $`t`$ coordinates, one singleton on each outside coordinate, then enough distinct core pairs to obtain exactly $`N`$ rows. The deficit is nonnegative and, by maximality, smaller than $`\binom t2-1`$, so this is possible. All rows are distinct, have weight at most three, and have coefficient $`+1`$.
+For sufficiently large $`n`$, $`t\lt n`$ and $`t=\Theta(n^{2/3})`$. Take all weight-three rows on the first $`t`$ coordinates, one singleton on each outside coordinate, then enough distinct core pairs to obtain exactly $`N`$ rows. The deficit is nonnegative and, by maximality, smaller than $`\binom t2-1`$, so this is possible. All rows are distinct, have weight at most three, and have coefficient $`+1`$.
 
 Their rank is $`n`$. For $`t\ge4`$, XORing triples $`\{i,k,\ell\}`$ and $`\{j,k,\ell\}`$ gives every core pair $`e_i+e_j`$. These span the even-weight core subspace, and one odd-weight triple completes its rank to $`t`$. Outside singletons complete rank $`n`$.
 
@@ -692,13 +699,13 @@ On the event that every core Rademacher is positive, the score satisfies
 S\ge N-2(n-t).
 ```
 
-For every fixed $`\varepsilon>0`$, this is at least $`(1-2\varepsilon)N`$ for all sufficiently large $`n`$. The event has probability $`2^{-t}=2^{-\Theta(n^{2/3})}`$. Thus these relaxed systems cannot have a uniform positive exponent on the $`n`$ scale. They are **not legal pair-query strategies**: every core triple would require its own pair label inside that triple, but $`\binom t3>\binom t2`$ for $`t\ge6`$. The pair-incidence hypothesis is essential.
+For every fixed $`\varepsilon\gt 0`$, this is at least $`(1-2\varepsilon)N`$ for all sufficiently large $`n`$. The event has probability $`2^{-t}=2^{-\Theta(n^{2/3})}`$. Thus these relaxed systems cannot have a uniform positive exponent on the $`n`$ scale. They are **not legal pair-query strategies**: every core triple would require its own pair label inside that triple, but $`\binom t3\gt \binom t2`$ for $`t\ge6`$. The pair-incidence hypothesis is essential.
 
 A parallel search also identified Greene's 1976 *Weight Enumeration and the Geometry of Linear Codes*, DOI `10.1002/sapm1976552119`, but obtained only abstract/bibliographic access. No theorem from it is relied on or classified as fully audited. This access limit is not evidence of non-subsumption.
 
 ### 12.5 The complete shorter proof and the development decision
 
-The central note now proves the same theorem directly. Apply the greedy independent-bias entropy bound to the uniform law on a strategy's good-input set. Its entropy deficit is exactly minus the logarithm of that set's relative size; this gives the finite ball bound without an intermediate Gibbs/moment lemma. For attainment, choose independent Bernoulli errors with probabilities $`(1+e^{2a'k/n})^{-1}`$, holding $`a'>a`$ fixed. Weighted error has variance $`O(n^3)`$ against an $`\Theta(n^2)`$ strict margin; information density has variance $`O_{a'}(n)`$. Chebyshev and counting give the weighted-ball exponent. Only after the large-length limit is $`a'\downarrow a`$ taken. Random translates of this single ball then give all-input covers and partial covers without the block-cover construction.
+The central note now proves the same theorem directly. Apply the greedy independent-bias entropy bound to the uniform law on a strategy's good-input set. Its entropy deficit is exactly minus the logarithm of that set's relative size; this gives the finite ball bound without an intermediate Gibbs/moment lemma. For attainment, choose independent Bernoulli errors with probabilities $`(1+e^{2a'k/n})^{-1}`$, holding $`a'\gt a`$ fixed. Weighted error has variance $`O(n^3)`$ against an $`\Theta(n^2)`$ strict margin; information density has variance $`O_{a'}(n)`$. Chebyshev and counting give the weighted-ball exponent. Only after the large-length limit is $`a'\downarrow a`$ taken. Random translates of this single ball then give all-input covers and partial covers without the block-cover construction.
 
 The note separately proves the expected-error converse by averaging arbitrary posterior entropy deficits, preserving the old marginal guarantee. It charges every index bit and an exact parity bit on failed as well as successful inputs. The seed construction explicitly unmasks the output and keeps one raw read. No efficient encoder, finite endpoint equivalence, variable-error uniformity, or post-seed adversarial-query protection is added.
 
@@ -882,7 +889,7 @@ were byte-identical to the reviewed main.
 One-off exact checks enumerated all 504 inputs for $`3\le n\le8`$, verifying
 that the pair-output support has $`2^{n-1}`$ distinct cuts and that conditioning
 on weight $`w`$ gives weight $`w(n-w)`$ and the stated support count. The printed
-source inequality's counterexample uses only $`27>16`$. These checks support
+source inequality's counterexample uses only $`27\gt 16`$. These checks support
 the concrete comparison examples, not the limiting theorem or priority. No
 verification script, result, source manifest, baseline, license, or principal
 proof was edited. A separate internal read-only review of the contribution

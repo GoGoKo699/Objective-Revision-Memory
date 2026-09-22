@@ -71,7 +71,7 @@ Set $`d=\lfloor\log_2(n+1)\rfloor`$ and $`a=2^d-1`$. Number coordinates from 1. 
 ```math
 z_i=\begin{cases}
 X_i\oplus\langle i,u\rangle,&1\leq i\leq a,\\
-X_i,&i>a.
+X_i,&i\gt a.
 \end{cases}
 ```
 
@@ -111,7 +111,7 @@ The argument holds for every subset of selected rows. The bound may exceed $`N`$
 
 ## 4. Arbitrary preprocessing with bounded error
 
-**Theorem A.** If the average revised-query error is at most $`\varepsilon<1/2`$, then
+**Theorem A.** If the average revised-query error is at most $`\varepsilon\lt 1/2`$, then
 
 ```math
 N[1-h_2(\varepsilon)]\leq\Phi_n(B).
@@ -169,7 +169,7 @@ N[1-h_2(\varepsilon)]\leq
 
 This proves Theorem A with memory-dependent addresses, arbitrary preprocessing, and errors concentrated in particular cells.
 
-For fixed $`\varepsilon<1/2`$, the asymptotic lower rate is $`1-\sqrt{h_2(\varepsilon)}>0`$. Two probes still succeed exactly with one bit. The extensive one-probe memory requirement is therefore not solely a zero-error effect.
+For fixed $`\varepsilon\lt 1/2`$, the asymptotic lower rate is $`1-\sqrt{h_2(\varepsilon)}\gt 0`$. Two probes still succeed exactly with one bit. The extensive one-probe memory requirement is therefore not solely a zero-error effect.
 
 ## 5. Affine preprocessing
 
@@ -181,7 +181,7 @@ An affine encoder has $`M=A_RX+b_R`$ over $`\mathbb F_2`$; the matrix and offset
 N(1-2\varepsilon)\leq\Phi_n(B),
 ```
 
-and, for every fixed $`0<\varepsilon<1/2`$,
+and, for every fixed $`0\lt \varepsilon\lt 1/2`$,
 
 ```math
 B_{\mathrm{aff}}(n,\varepsilon)=[1-\sqrt{2\varepsilon}]n+O(1).
@@ -212,7 +212,7 @@ For a worst-case fixed-input guarantee over public randomness, form majorities o
 At $`k=7`$, error is $`11/32`$. At $`n=49`$, eight bits suffice. But
 
 ```math
-\Phi_{49}(8)=364<\binom{49}{2}\frac5{16}=\frac{735}{2},
+\Phi_{49}(8)=364\lt \binom{49}{2}\frac5{16}=\frac{735}{2},
 ```
 
 so every affine scheme needs at least nine bits. At $`n=1001`$, 144 nonlinear bits suffice while the affine converse requires at least 171. These are comparisons, not proofs of nonlinear optimality.
@@ -229,7 +229,7 @@ A direct covering argument also fits our model. Let $`V=\sum_{j=0}^{\lfloor\vare
 K=\left\lceil\frac{2^n}{V}(n\ln2+1)\right\rceil
 ```
 
-uniform centers leaves expected uncovered points at most $`2^n\exp(-KV/2^n)<1`$, so a covering exists. Encode by a nearest center. A public uniform mask and coordinate permutation distribute its at most $`\lfloor\varepsilon n\rfloor`$ reconstruction errors equally among fixed coordinates, for every fixed input. The center index plus parity has the claimed cost. This proves existence, not efficient encoding; no large cover has been implemented.
+uniform centers leaves expected uncovered points at most $`2^n\exp(-KV/2^n)\lt 1`$, so a covering exists. Encode by a nearest center. A public uniform mask and coordinate permutation distribute its at most $`\lfloor\varepsilon n\rfloor`$ reconstruction errors equally among fixed coordinates, for every fixed input. The center index plus parity has the claimed cost. This proves existence, not efficient encoding; no large cover has been implemented.
 
 Consequently,
 
@@ -242,7 +242,7 @@ Consequently,
 
 Existence of a limiting optimal rate is not asserted. The ratio of the entropy-rate upper coefficient to the converse coefficient is $`1+\sqrt{h_2(\varepsilon)}\leq2`$.
 
-For success $`1/2+\gamma`$, first take large $`n`$ at fixed $`\gamma>0`$, then small $`\gamma`$. The unrestricted memory rate is $`\Theta(\gamma^2)`$, up to the unresolved constant, whereas the optimal affine rate is $`\gamma+O(\gamma^2)`$. This is not a uniform finite-$`n`$ statement for arbitrarily vanishing advantage.
+For success $`1/2+\gamma`$, first take large $`n`$ at fixed $`\gamma\gt 0`$, then small $`\gamma`$. The unrestricted memory rate is $`\Theta(\gamma^2)`$, up to the unresolved constant, whereas the optimal affine rate is $`\gamma+O(\gamma^2)`$. This is not a uniform finite-$`n`$ statement for arbitrarily vanishing advantage.
 
 ## 8. Evidence and remaining obligations
 

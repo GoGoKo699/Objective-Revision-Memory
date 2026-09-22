@@ -28,7 +28,7 @@ not start manuscript drafting or external correspondence.
 
 ## The precise contribution
 
-For each fixed $`0<\varepsilon<1/2`$, let $`m_n(\varepsilon)`$ be the largest
+For each fixed $`0\lt \varepsilon\lt 1/2`$, let $`m_n(\varepsilon)`$ be the largest
 fraction of $`n`$-bit inputs on which one complete decoder strategy answers at
 least a $`1-\varepsilon`$ fraction of pair-parity queries correctly. Each query
 has its own one-raw-coordinate-read budget. The address and the Boolean

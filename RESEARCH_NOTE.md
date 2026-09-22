@@ -38,7 +38,7 @@ c(b)=1-h_2((1-b)/2),\quad
 
 ## 2. Main theorem
 
-**Theorem S (sharp first-order rate).** Fix $`0<\varepsilon<1/2`$. Let $`a>0`$ be the unique solution of
+**Theorem S (sharp first-order rate).** Fix $`0\lt \varepsilon\lt 1/2`$. Let $`a\gt 0`$ be the unique solution of
 
 ```math
 \eta=2\int_0^1u\tanh(au)\,du.
@@ -60,7 +60,7 @@ Equivalently,
 \left\{\frac{a\eta}{2}-\int_0^1\ln\cosh(au)\,du\right\}.
 ```
 
-A finite converse, valid for every $`s>0`$, is
+A finite converse, valid for every $`s\gt 0`$, is
 
 ```math
 \boxed{B\ln2\ \geq\ sN\eta-\sum_{k=1}^n\ln\cosh(sk).}
@@ -108,7 +108,7 @@ Sort these pair-labelled rows by nonincreasing bias and greedily keep a row when
 
 ```math
 \begin{aligned}
-\sum_{i<j}b_{ij}
+\sum_{i\lt j}b_{ij}
 &=\int_0^1q(z)\,dz\leq\int_0^1\Phi_n(r(z))\,dz\\
 &=\sum_{\ell=1}^n(n-\ell+1)t_\ell.
 \end{aligned}
@@ -137,7 +137,7 @@ zb-\ln2\,c(b)\leq\ln\cosh z\qquad(0\leq b\leq1,\ z\geq0)
 has equality at $`b=\tanh z`$: differentiating the left side in $`b`$ gives $`z-\mathrm{atanh}b`$. Apply it with $`z=s(n-\ell+1)`$, and sum:
 
 ```math
-s\sum_{i<j}b_{ij}
+s\sum_{i\lt j}b_{ij}
 \leq D\ln2+\sum_{k=1}^n\ln\cosh(sk).
 ```
 
@@ -158,7 +158,7 @@ Put $`s=a/n`$ and divide by $`n`$. Riemann sums show
 \left[\frac{a\eta}{2}-\int_0^1\ln\cosh(au)\,du\right]
 ```
 
-for each fixed $`a\geq0`$. The derivative in $`a`$ is $`\eta/2-\int_0^1u\tanh(au)du`$, strictly decreasing from $`\eta/2`$ to $`(\eta-1)/2`$. This proves existence and uniqueness of the finite maximizing parameter for $`0<\eta<1`$.
+for each fixed $`a\geq0`$. The derivative in $`a`$ is $`\eta/2-\int_0^1u\tanh(au)du`$, strictly decreasing from $`\eta/2`$ to $`(\eta-1)/2`$. This proves existence and uniqueness of the finite maximizing parameter for $`0\lt \eta\lt 1`$.
 
 At that parameter, pointwise conjugate equality and integration by parts give
 
@@ -178,7 +178,7 @@ For a block of $`m`$ bits and Hamming radius $`r`$, put $`V=\sum_{j=0}^r\binom m
 K_{m,r}=\min\left\{2^m,\left\lceil\frac{(m+1)2^m}{V}\right\rceil\right\}
 ```
 
-centers. If the second expression is used, independently sampled centers leave expected uncovered points at most $`2^m\exp(-K_{m,r}V/2^m)<1`$; otherwise use the entire cube. Storing a covering-center index costs $`\lceil\log_2K_{m,r}\rceil`$ bits and ensures at most $`r`$ reconstruction errors for every block input. For fixed $`0<\delta<1/2`$, $`r=\lfloor\delta m\rfloor`$ gives rate $`1-h_2(\delta)+O(\log m/m)`$.
+centers. If the second expression is used, independently sampled centers leave expected uncovered points at most $`2^m\exp(-K_{m,r}V/2^m)\lt 1`$; otherwise use the entire cube. Storing a covering-center index costs $`\lceil\log_2K_{m,r}\rceil`$ bits and ensures at most $`r`$ reconstruction errors for every block input. For fixed $`0\lt \delta\lt 1/2`$, $`r=\lfloor\delta m\rfloor`$ gives rate $`1-h_2(\delta)+O(\log m/m)`$.
 
 Covering existence, entropy-rate coding, and random-access-code symmetrization are established ingredients; see the [literature comparison](docs/LITERATURE_COMPARISON.md). No new cover family or efficient covering algorithm is claimed.
 
@@ -209,7 +209,7 @@ For a fixed number $`L`$ of asymptotically equal-size blocks, let $`u_\ell=(\ell
 \text{bias}\geq\sum_\ell\frac{2\ell-1}{L^2}b_\ell+o(1).
 ```
 
-For target $`\eta`$, first choose $`a'>a`$ so the continuous bias is strictly larger than $`\eta`$. Then choose a sufficiently fine but fixed $`L`$ and take $`n\to\infty`$. The positive margin absorbs block rounding and finite-size pair weights; covering overhead $`O(L\log n)`$ is $`o(n)`$ in this order of limits. Finally let $`a'\downarrow a`$ and refine $`L`$. Continuity gives $`\limsup B/n\leq\mathcal R(\varepsilon)`$.
+For target $`\eta`$, first choose $`a'\gt a`$ so the continuous bias is strictly larger than $`\eta`$. Then choose a sufficiently fine but fixed $`L`$ and take $`n\to\infty`$. The positive margin absorbs block rounding and finite-size pair weights; covering overhead $`O(L\log n)`$ is $`o(n)`$ in this order of limits. Finally let $`a'\downarrow a`$ and refine $`L`$. Continuity gives $`\limsup B/n\leq\mathcal R(\varepsilon)`$.
 
 This works for all sufficiently large $`n`$ by using block sizes differing by at most one, not only a divisibility subsequence. One must not set $`L=n`$ while discarding the covering overhead. The construction completes the matching theorem and establishes the existence of the limiting rate.
 
@@ -228,15 +228,15 @@ What the pair-query theorem adds, subject to unresolved priority, is equality of
 
 ## 5. Consequences and finite certificate
 
-The baseline affine rate is $`\mathcal R_{\rm aff}(\varepsilon)=1-\sqrt{2\varepsilon}`$. For every fixed $`0<\varepsilon<1/2`$,
+The baseline affine rate is $`\mathcal R_{\rm aff}(\varepsilon)=1-\sqrt{2\varepsilon}`$. For every fixed $`0\lt \varepsilon\lt 1/2`$,
 
 ```math
-\mathcal R(\varepsilon)<\min\{1-h_2(\varepsilon),\mathcal R_{\rm aff}(\varepsilon)\}.
+\mathcal R(\varepsilon)\lt \min\{1-h_2(\varepsilon),\mathcal R_{\rm aff}(\varepsilon)\}.
 ```
 
 To see strictness, the variational problem is to minimize $`\int_0^1c(b(u))du`$ subject to $`2\int_0^1ub(u)du\geq\eta`$. Strict convexity and conjugate equality give the unique minimizer $`b(u)=\tanh(au)`$ almost everywhere. Uniform-quality storage has constant bias $`\eta`$. An affine random-subset scheme has bias zero below $`u=\sqrt{2\varepsilon}`$ and one above it. Both satisfy the same constraint but differ from the unique minimizer on a positive-measure set. This comparison is about affine encoding maps over $`\mathbb F_2`$, not linearity of reconstruction codebooks or real-valued layers.
 
-For success $`1/2+\gamma`$, first take the large-$`n`$ limit at fixed $`\gamma>0`$, then $`\gamma\downarrow0`$. Expanding the parameter equation and entropy gives
+For success $`1/2+\gamma`$, first take the large-$`n`$ limit at fixed $`\gamma\gt 0`$, then $`\gamma\downarrow0`$. Expanding the parameter equation and entropy gives
 
 ```math
 \mathcal R(1/2-\gamma)=\frac{3}{2\ln2}\gamma^2+O(\gamma^4),
@@ -258,7 +258,7 @@ A finite covering-existence certificate uses $`n=1024`$, eight blocks of length 
 56,42,29,20,13,8,5,3.
 ```
 
-The covering bound gives block index lengths $`11,21,40,59,78,95,107,117`$. Including exact parity, **529 bits suffice**, with error at most $`6245/65472<1/10`$. At the same 10% target, the baseline affine converse requires **at least 565 bits**. These are exact integer/rational implications of a covering-existence proof; the large covers were not constructed, and 529 is not asserted to be finite-length optimal.
+The covering bound gives block index lengths $`11,21,40,59,78,95,107,117`$. Including exact parity, **529 bits suffice**, with error at most $`6245/65472\lt 1/10`$. At the same 10% target, the baseline affine converse requires **at least 565 bits**. These are exact integer/rational implications of a covering-existence proof; the large covers were not constructed, and 529 is not asserted to be finite-length optimal.
 
 ## 6. Evidence, attribution, and remaining work
 

@@ -60,7 +60,7 @@ publicly chosen endpoint addresses suffice at the leading rate.
 
 ## A four-bit example: why errors have different weights
 
-Use the order $`1<2<3<4`$. For pair $`i<j`$, read $`x_i`$, estimate $`x_j`$ by a
+Use the order $`1\lt 2\lt 3\lt 4`$. For pair $`i\lt j`$, read $`x_i`$, estimate $`x_j`$ by a
 reconstruction coordinate $`z_j`$, and return $`p(x)\oplus x_i\oplus z_j`$.
 The reconstruction $`z`$ is selected from a fixed public codebook. Its index
 and exact parity are retained; selecting $`z`$ does not create free storage.
@@ -116,7 +116,7 @@ Every row retains exact original parity. A table-distortion bound permits an
 $`\varepsilon`$ fraction of wrong pairs. It does not say that all pairs are
 correct, or protect against selecting an erroneous pair after seeing the
 seed and summary. The asymptotic statements hold for fixed
-$`0<\varepsilon<1/2`$; they do not automatically cover error tending to zero.
+$`0\lt \varepsilon\lt 1/2`$; they do not automatically cover error tending to zero.
 
 ## Proof dependency map
 
