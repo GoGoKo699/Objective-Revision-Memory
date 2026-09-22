@@ -6,6 +6,8 @@ Repository: `GoGoKo699/Objective-Revision-Memory`.
 Scientific checkpoint at preparation: `cbdcd0fc109c39ee5b5d53c58668695c0f785cbb`.
 This brief coordinates work; it does not report a completed review or change any theorem.
 
+**22 September 2026 continuation:** the user subsequently authorized continued research and merging. The initial review was completed in PR #3 and merged at `4e2c579795e2e780e132e3feb8072d2260ab3a7f`. This authorization supersedes the no-self-merge convention below. Continue to use dedicated branches and reviewable pull requests, recheck current heads, preserve intervening work and verification artifacts, and state unresolved novelty. The initial assignment text is retained as historical context.
+
 ## Assignment and research goal
 
 You are the fresh-context proof and novelty reviewer working alongside the originating research workspace. The originating workspace handles theory development, responses to findings, and integration. Your immediate job is to determine whether the sharp-rate claim survives detailed scrutiny, and what genuinely remains after comparison with prior work. Do not start by polishing the exposition or extending a theorem whose argument has not been audited.

@@ -6,6 +6,8 @@ Its mathematical content is the checkpoint
 `cbdcd0fc109c39ee5b5d53c58668695c0f785cbb`; the intervening commit adds the review brief.
 Review branch: `review/sharp-rate-audit`.
 
+**Continuation recorded below in Section 8:** reviewed merged audit commit `4e2c579795e2e780e132e3feb8072d2260ab3a7f`, on branch `research/rank-profile-foundations`. The user subsequently authorized merging; PR #3 was merged after its successful verification workflow. Sections 1-7 retain the initial audit's historical scope and handoff. Section 8 supersedes their next-action and no-merge instructions for this session.
+
 ## 1. Assessment and scope
 
 **The stated fixed-error first-order theorem survives this audit. No central mathematical defect or counterexample was found. Historical novelty is not established.** The most consequential novelty finding is that the scalar optimization, including the hyperbolic-tangent quality profile, is an explicit specialization of established weighted binary rate-distortion coding. The potentially distinctive result is equality of the full adaptive-address pair-query problem's optimal first-order rate with that coding rate, proved through the all-pairs residual-rank profile. Neither a new coding law nor the broad observation that nonlinear lossy encoders can outperform affine encoders is a defensible contribution by itself.
@@ -228,3 +230,57 @@ The narrow defensible paper candidate is: **equality of optimal first-order memo
 Unresolved: whether older approximate common-bits, partial-matrix, or help-bit results already imply the full weighted pair profile; whether a resource-preserving indirect reduction subsumes the theorem; and journal-version differences in the retrieved NRS material. Finite-length optimality, efficient constructions, and adversarial post-seed queries are separate problems, not defects in the stated theorem.
 
 **Single next research action:** complete a targeted priority comparison for the all-overlapping-pairs, memory-dependent residual-rank profile, using the Jukna–Schnitger partial-matrix formulation and NRS product theorem as explicit starting points. Ask whether they yield the full weighted profile with no changed probe/error accounting. The coding optimization itself should now be treated as known. Keep issue #1 open; the originating workspace should review and integrate this report through its pull request, without the audit workspace merging it.
+
+## 8. Research continuation after audit integration
+
+### 8.1 Exact base, integration, and scope
+
+Continuation date: 22 September 2026. PR [#3](https://github.com/GoGoKo699/Objective-Revision-Memory/pull/3), report commit `08fc60ea5396b78ec091f63ea182ea25327ef88c`, was merged with the user's subsequent authorization. The exact continuation base is `4e2c579795e2e780e132e3feb8072d2260ab3a7f`. Before merging, its head and base were rechecked, its verification workflow had completed successfully, and no review comments or other open pull requests were present. Work continued on the separate `research/rank-profile-foundations` branch.
+
+No defect in Theorem S was found in this continuation. It narrows attribution further and supplies new written deductions. It integrates the earlier report's weighted-coding attribution, finite error-model equivalence, and corrected RAC attribution into the scientific documents. The original license, baseline notes, verification programs, and recorded reports are preserved.
+
+### 8.2 What the targeted comparison resolved
+
+The independent-character entropy budget has a precise antecedent: Impagliazzo–Moore–Russell, *An Entropic Proof of Chang's Inequality*, [arXiv:1205.0263v2](https://arxiv.org/pdf/1205.0263v2), Eq. (1) and Section 2. The [updated comparison](../LITERATURE_COMPARISON.md) gives the substitution. Together with the weighted coding reduction already established above, this leaves the pair geometry as the main unresolved priority target.
+
+The one-star connection can be made without assuming affine preprocessing. Fix seed and memory value $m$. After absorbing known total parity, the error vector has rows
+
+$$Z_q=(e_i+e_j+\beta_{m,q}e_{k(m,q)})\cdot X\oplus c_{m,q}.$$
+
+Each address is fixed only on this memory cell. Replace that address in row $e_i+e_j$ by a star; the residual is an allowed completion. For independent residual rows $J$ of size $r$, every error pattern has at most $2^{n-r}$ preimages on the cube. Therefore
+
+$$H(X\mid m)\le n-r+H(Z_J\mid m)
+\le n-r+\sum_{q\in J}h_2(\delta_{m,q}).$$
+
+This independently recovers the entropy budget from affine fiber counting. Jukna–Schnitger's Remark 1.4 and Lemma 2.3 are the exact antecedents; this conditional approximate-entropy formulation is our deduction. It does not establish the required bound on the number of high-bias **pair labels** from the rank of every selected subset. Full-matrix rank alone cannot do so: compare $L-1$ copies of $e_1$ and one $e_2$ with $L/2$ copies of each. Both systems have rank two; under $X_1=0$ and unbiased $X_2$ their total biases are $L-1$ and $L/2$. The pair-incidence restriction provides additional information.
+
+The continuation also inspected the primary approximate-coordinate prediction results of Meir–Wigderson and Smal–Talebanfard. Use the latter's [ECCC revision 2](https://eccc.weizmann.ac.il/report/2017/191/revision/2/download/), not its unversioned original download: the revision history acknowledges a flaw in the stronger original claim. The corrected decision-tree statement and exact theorem locations are recorded in the comparison.
+
+Here is our explicit obstruction to the direct output-lifting reduction. If $Y$ lists all pair parities, then $Y$ has $N=\binom n2$ coordinates but entropy at most $n-1$. Applying a coordinate-prediction bound to $Y$ starts with deficit at least $N-n+1$, making it vacuous even before charging memory. Also, complementing all raw bits leaves $Y$ unchanged, so a raw bit cannot be recovered from $Y$ alone. Adding an anchor requires, in general, two lifted-coordinate reads to reconstruct a raw bit, and the coordinate theorem forbids reading its target. A basis change removes redundancy but changes the queries and raw-read locality. This excludes those direct routes, not every possible reduction.
+
+### 8.3 Mathematical deductions completed this session
+
+The [rank-profile continuation](../RANK_PROFILE_EXTENSIONS.md) contains complete proofs:
+
+1. **Generic envelope lemma.** If every labelled residual subset obeys $|J|\le g(\operatorname{rank}J)$, with $g(0)=0$ nondecreasing and increments $w_j$, then for any input distribution $P$,
+   $$s\sum_q|\mathbb E_P(-1)^{a_q\cdot X}|
+   \le[n-H_P(X)]\ln2+\sum_j\ln\cosh(sw_j).$$
+   Its equivalent exponential-moment formulation gives the same $B$-bit help-label converse. Concavity is not needed for validity; it is relevant to whether scalar optimization respects ordered biases. This isolates the generic machinery from the extremal geometry and makes no claim of a new entropy inequality.
+2. **Finite cap.** Substituting $g(r)=\min\{N,\Phi_n(r)\}$ drops unnecessary terms from the finite converse. The first-order rate stays unchanged, and finite optimality is not asserted.
+3. **Exact low-rank geometry.** For $n\ge2r+2$, the maximum covered-pair count of any rank-$r$ subspace is exactly $nr-r(r+1)/2$, attained by coordinate subspaces. A quotient-basis injection offsets each covered internal pair by a missing cross pair. At $n=7,r=4$ the Hamming kernel covers 21 pairs, disproving extension of this formula to all ranks. The attaining coordinate subspace need not contain total parity, so this is a geometric extremum, not a claim about optimal mandatory-parity memory.
+4. **Sharp bipartite benchmark.** For any query graph, matching and vertex-cover numbers give
+   $$\nu(G)[1-h_2(\varepsilon)]\le B_G
+   \le\tau(G)[1-h_2(\varepsilon)]+O_\varepsilon(\log(\tau(G)+1))+1.$$
+   Here every fixed allowed edge must meet the input-and-seed average-error target. Matching residuals are independent even for arbitrary third-coordinate addresses; the upper bound codes a vertex cover and charges exact parity. For bipartite graphs, $\nu=\tau$, so the rate per matching edge converges to $1-h_2(\varepsilon)$ as $\nu\to\infty$. This is an explicit deduction from established ingredients. For arbitrary bipartite graphs, uniform edge-average error is weaker: a large star disjoint from small isolated edges supplies a counterexample to silently using the same lower bound. Complete bipartite graphs do permit the weaker error quantifier by averaging maximum matchings.
+
+These deductions improve the mathematical formulation and provide comparison families; their priority is unresolved. They do not certify the all-pairs theorem as publishable. In particular, overlapping queries alone do not distinguish it: bipartite families can have substantial overlap and still reduce to ordinary coding.
+
+### 8.4 Verification and next action
+
+Reran `python checks/run_all.py --include-conjunction` on the continuation working tree with Python 3.12.14: **PASS**, seven imported-file hashes, ten interface checks, and 55 local documentation links. Every original exact, bounded-error, sharp-rate, and conjunction output remained byte-identical to its committed report. No tolerance or expected result was changed. The previously executed asymmetric-cover script was inspected but did not need another rerun in this session because it and its dependent model logic were unchanged.
+
+A separate mathematical pass checked the new envelope/Gibbs argument, cap, low-rank injection, and graph quantifiers without finding a gap. It identified one exposition ambiguity, now corrected: the weighted coding comparison explicitly makes the quality label public to encoder and decoder. Agreement between model passes remains distinct from independent human review.
+
+The new optional `python checks/reviews/verify_low_rank_coverage.py` was executed with exact integer arithmetic. It enumerates 3,559 eligible subspaces for $n=3,\ldots,7$, verifies the new bound and coordinate-subspace attainment, checks enumeration counts against Gaussian binomials, and verifies the 21-versus-18 Hamming-kernel counterexample. It imports no baseline enumerator. It tests the specified finite range, not the general theorem or novelty.
+
+**Remaining uncertainty and next research action:** resolve whether the pair-specific all-subsets rank envelope, or a theorem implying its approximate one-star consequence, already occurs in prior work. The general lemma now identifies exactly which geometric statement must be compared. The full finite envelope is a concrete secondary problem, with a proved low-rank regime and an explicit high-rank obstruction. Keep issue #1 open. The continuation is prepared for integration through its dedicated pull request under the user's merge authorization; no manuscript release or external researcher contact is included.
