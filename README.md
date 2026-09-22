@@ -14,12 +14,15 @@ nonlinear summaries and summary-dependent read addresses. A fixed endpoint
 rule achieves the same rate. Retaining the original total parity adds at most
 one bit to the direct pair-parity problem.
 
-**Research stage:** complete written proof and bounded internal audit;
-historical novelty and publication significance remain open.
-**Target journal:** Information Processing Letters (IPL).
-**Manuscript preparation is the final step**, after the research assessment in
-the [roadmap](docs/RESEARCH_ROADMAP.md). This repository is an AI-assisted
-research record.
+**Manuscript preparation is on hold.** Potential collaborators interested in
+this project are welcome to contact **Ruge Lin** at
+[gogoko699@gmail.com](mailto:gogoko699@gmail.com).
+
+**Research stage:** complete written proof and a completed bounded assessment
+of novelty and significance. The [contribution assessment](docs/CONTRIBUTION_ASSESSMENT.md)
+supports a focused theoretical contribution: the sharp extremal bound over all
+legal one-read strategies. Its precise claim and limits are recorded there.
+This repository is an AI-assisted research record.
 
 ## Start here
 
@@ -27,8 +30,8 @@ research record.
 | --- | --- |
 | Understand the question, resources, and a four-bit example | [Reading guide](docs/READING_GUIDE.md) |
 | Check the central theorem and its complete proof | [Pair-query proof note](docs/PAIR_QUERY_NOTE.md) |
-| Identify what is established and what may be new | [Literature comparison](docs/LITERATURE_COMPARISON.md) and [audit](docs/reviews/SHARP_RATE_AUDIT.md) |
-| See current findings and remaining research decisions | [Status](docs/STATUS.md) and [IPL research roadmap](docs/RESEARCH_ROADMAP.md) |
+| Assess novelty and conceptual significance | [Contribution assessment](docs/CONTRIBUTION_ASSESSMENT.md), [literature comparison](docs/LITERATURE_COMPARISON.md), and [audit](docs/reviews/SHARP_RATE_AUDIT.md) |
+| See current findings and remaining research decisions | [Status](docs/STATUS.md) and [research roadmap](docs/RESEARCH_ROADMAP.md) |
 | Reproduce the small checks | [Reproducibility guide](docs/REPRODUCIBILITY.md) |
 | Contribute a proof correction, comparison, or extension | [Contributing](CONTRIBUTING.md) |
 
@@ -79,7 +82,7 @@ count the inputs on which it gets at most an $\varepsilon$ fraction of pairs
 wrong. The largest such input set has fraction
 $2^{-n\mathcal R(\varepsilon)+o(n)}$. An ordered-endpoint strategy attains that
 exponent through a weighted Hamming ball. This extremal evaluation is the
-remaining candidate contribution; general lossy coding converts it into the
+proposed original contribution; general lossy coding converts it into the
 memory rate, worst-input covering rate, and below-rate success exponent.
 
 The complete argument is in the [pair-query note](docs/PAIR_QUERY_NOTE.md).
@@ -109,9 +112,11 @@ Thus leading-rate equivalence does not imply finite equivalence. The
 The written proof has survived the recorded internal checks without a central
 defect being found. The systematic access model, elementary geometric count,
 entropy inequality, weighted coding curve, and general coding conversions
-have explicit antecedents. The audit identifies concrete limitations of close
-prior reductions; it does not certify historical priority. Independent human
-review and publication significance remain unresolved.
+have explicit antecedents. The completed assessment identifies concrete
+limitations of close prior reductions and gives a positive case for a focused
+theoretical paper. This
+is a bounded research judgment, not a guarantee of historical priority or
+publication. Independent human review has not been obtained.
 
 The deterministic covering result controls the **fraction of wrong pairs on
 every input**, each hypothetical query with its own one-read budget. Its

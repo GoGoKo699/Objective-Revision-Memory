@@ -3,8 +3,8 @@
 Start with the [self-contained pair-query note](PAIR_QUERY_NOTE.md). It contains
 the complete central proof and is the main technical entry point. This guide
 explains the model, provides a small example, and locates supporting material.
-It is research onboarding; manuscript preparation comes later under the
-[research roadmap](RESEARCH_ROADMAP.md).
+Manuscript preparation is on hold; the [research roadmap](RESEARCH_ROADMAP.md)
+and [contribution assessment](CONTRIBUTION_ASSESSMENT.md) record current decisions.
 
 ## What to bring
 
@@ -128,14 +128,16 @@ The full proof remains in [PAIR_QUERY_NOTE.md](PAIR_QUERY_NOTE.md).
 
 The elementary basis count, entropy ingredients, and general coding conversion
 are credited to prior work. The task-specific extremal evaluation is the
-remaining contribution under assessment. A proof using established tools may
-still establish a new result; these documents do not certify historical priority.
+proposed original contribution in the completed bounded assessment. A proof
+using established tools may still establish a new result; these documents do
+not certify historical priority.
 
 ## Source index and preserved history
 
 | Purpose | Canonical location |
 | --- | --- |
 | Complete central argument | [PAIR_QUERY_NOTE.md](PAIR_QUERY_NOTE.md) |
+| Novelty and significance decision | [CONTRIBUTION_ASSESSMENT.md](CONTRIBUTION_ASSESSMENT.md) |
 | Current research decisions and remaining work | [STATUS.md](STATUS.md), [RESEARCH_ROADMAP.md](RESEARCH_ROADMAP.md) |
 | Established ingredients and precise prior-theorem comparisons | [LITERATURE_COMPARISON.md](LITERATURE_COMPARISON.md) |
 | Exact strategy/coding reductions and resource comparisons | [OPERATIONAL_REDUCTION.md](OPERATIONAL_REDUCTION.md) |

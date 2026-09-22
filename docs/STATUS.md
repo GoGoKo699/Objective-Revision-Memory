@@ -1,8 +1,13 @@
 # Research status
 
-Updated 22 September 2026, following repository organization and journal selection. Reviewed main: `fe445bf94149b0b9ca3389816ddcc36e883aaf51` (merged PR #8). The [reading guide](READING_GUIDE.md) introduces the model and maps the proof; the [self-contained pair-query note](PAIR_QUERY_NOTE.md) remains the central proof packet. The [compact brief](THEOREM_BRIEF.md) gives the review question and the [operational reduction](OPERATIONAL_REDUCTION.md) records the general coding comparisons.
+Updated 22 September 2026, following the completed bounded contribution assessment. Reviewed main: `2b240fa20b9c8d585106edb512a5f18200aafd33` (merged PR #9). The [reading guide](READING_GUIDE.md) introduces the model and maps the proof; the [self-contained pair-query note](PAIR_QUERY_NOTE.md) remains the central proof packet. The [compact brief](THEOREM_BRIEF.md) gives the review question and the [operational reduction](OPERATIONAL_REDUCTION.md) records the general coding comparisons.
 
-**Selected target: Information Processing Letters. Manuscript preparation is the final step.** The current work furnishes a research repository and supports the remaining contribution assessment. The [research roadmap](RESEARCH_ROADMAP.md) records the sequence and completion evidence. Journal selection does not establish novelty, significance, or submission readiness.
+**Manuscript preparation is on hold.** Potential collaborators are welcome to
+contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
+The [contribution assessment](CONTRIBUTION_ASSESSMENT.md) supports the sharp
+one-read extremal theorem as the proposed original contribution of a focused
+theoretical paper. The [research roadmap](RESEARCH_ROADMAP.md) separates that
+completed decision from manuscript status.
 
 ## Mathematical progress
 
@@ -51,52 +56,61 @@ integers. At the PR #8 checkpoint, full reproduction passed with 112
 documentation links and all five reports byte-identical; no original verifier
 or tolerance was changed.
 
-After the repository organization, full reproduction again passed with 170
+At the PR #9 repository-organization checkpoint, full reproduction passed with 170
 documentation links and all five reports byte-identical. The new reading
 guide's six four-bit answers and weighted error count were checked exactly.
 The update preserves 23 existing license, proof, source-manifest, verification,
 result, exploration, and workflow files byte-for-byte against the reviewed
 main. This is documentation validation; it adds no theorem or novelty finding.
 
+For the present contribution assessment, full reproduction passed again with
+all five reports byte-identical. The final documentation check passed with 190
+local links, and all 23 protected files remained byte-identical to reviewed
+main. Exact enumeration of 504 inputs checked the cut-support examples in
+the new local-compression comparison. These findings inform source reductions;
+passing checks do not establish novelty.
+
 There is no independent expert review, proof-assistant certificate, or efficient implementation of the large covering codes. Numerical integrations illustrate an analytic theorem rather than establish it. The 1024-bit example's 529-bit upper bound is an existence certificate, not a constructed large encoder.
 
-## Publication assessment
+## Contribution assessment
 
-Assess the existing internal theorem-led candidate centered on the **extremal one-read decoder-ball exponent and ordered-endpoint attainment**. Group the memory-rate, covering, and success-exponent statements as consequences. The geometry, scalar curve, entropy-bias budget, duality, and general lossy-coding conversions are established ingredients. The specific extremal evaluation is the remaining candidate contribution; publication readiness and historical priority are not established. Journal-formatted drafting remains deferred under the [IPL roadmap](RESEARCH_ROADMAP.md).
+**Decision: retain the task-specific extremal theorem as the proposed original
+contribution.** Arbitrary nonlinear summaries and memory-dependent raw-read
+addresses attain no better leading rate than the fixed ordered-endpoint rule.
+The [assessment](CONTRIBUTION_ASSESSMENT.md) gives the affirmative significance
+case, its strongest objections, and the precise claims those objections limit.
+This is a bounded research judgment, not exhaustive historical certification,
+independent expert validation, or a prediction of publication acceptance.
 
-The novelty audit, issue #1, remains open for the operational theorem. The original Nisan-Rudich-Saks manuscript gives a weaker extensive converse. One-star partial matrices recover the affine-fiber/entropy ingredient. The corrected Smal-Talebanfard approximate-prediction theorem does not apply directly to the pair-output lift because it loses entropy/locality accounting. Direct query-with-sketch batching has a conditional-support obstruction. Those specific limitations remain valid, but the earlier unresolved attribution of the geometric count is superseded by the complete reductions now recorded.
+The [literature ledger](LITERATURE_COMPARISON.md) credits the established
+geometry, entropy, weighted coding, and general distortion conversions.
+Its comparisons preserve the original input entropy, the charged summary,
+raw-coordinate reads, the growing-archive limit, and error guarantees.
+The exact action-model embedding and general coding formulations leave the
+pair-specific extremal evaluation to be proved. Matching products, rank alone,
+and the inspected generic polynomial bound lose the sharp exponent.
 
-The latest primary-source comparisons add extremal low-weight vectors, sequential caching, locally decodable source coding, and functional index coding. A computed one-bit cache update solves the task with one cached parity bit, demonstrating why a raw-coordinate restriction cannot be dropped. The direct local-source-code translation charges $n+B$ storage and complete-summary access. The [literature ledger](LITERATURE_COMPARISON.md) records these precise reductions and their limits; none is a global non-subsumption claim.
+The latest comparisons add Pananjady–Courtade's freely read header model,
+Rioul–Solé's entropy proof of ordinary ball bounds, and recent bounded-error
+linear-operator and random-access-code results. Header-dependent local reads
+and uniform-on-a-ball entropy counting are established ideas. Explicit
+substitutions into the inspected theorems do not supply the unrestricted
+pair-query optimum. In particular, the dependent pair-output lift is not a
+uniform constant-weight source; block-error recovery is not positive table
+distortion; and a random dense operator is not the explicit weight-two query
+matrix. The ledger records these deductions and their limits.
 
-Kostina–Verdú's general finite-block distortion theorems now give an exact coding comparison: a retained label selects a complete one-read strategy. The strategy-ball exponent must still be evaluated for this task. Permuter–Weissman's indirect-source Theorem 4 also contains the repeated-archive expected-distortion problem under an explicit map; its rate differs from ordinary strategy rate-distortion by at most one bit per archive. This supersedes the earlier comparison based only on model differences. Their repeated-archive limit and the repository's single growing archive have different guarantees. Mandatory parity remains exact even on failed inputs and costs at most one separately retained bit; an infinite distortion penalty does not enforce this in a partial cover.
+## Current completion and remaining uncertainty
 
-The bounded follow-up identifies precise losses in three other routes. Legal
-strategies with equal residual rank and equal zero-error fiber size can have
-different approximate-volume exponents. Matching/direct-product bounds give a
-strictly weaker explicit exponent; pooling all pair reads into a global budget
-would trivialize the task. A generic polynomial concentration bound also loses
-the required scale on an explicit legal strategy. Moreover, dropping pair
-labels admits full-rank, degree-three systems whose good fraction is
-$2^{-O(n^{2/3})}$. These deductions identify pair incidence as essential;
-they do not exclude every prior theorem or certify originality.
+The proof packet, bounded comparisons, and present significance decision are
+complete. Historical coverage remains incomplete, and a concrete prior
+implication or mathematical objection can change the decision. The narrow
+positive assessment does not claim an efficient construction, finite-length
+optimality, or broad technological significance. Specialist feedback is
+welcome, without representing it as an unfinished prerequisite for making
+the current research judgment.
 
-## Next decisive work
-
-The self-contained internal proof note and bounded comparison are complete.
-The repository now supplies a reading route, resource and error ledgers, proof
-map, and contribution guide. The next research decision is a bounded assessment
-of the precise decoder-ball theorem's priority and significance for IPL; the
-[roadmap](RESEARCH_ROADMAP.md) gives four concrete questions and separates this
-decision from final manuscript preparation. A focused specialist assessment can
-inform that judgment. Issue #1 remains open. Do not turn inability to certify
-all historical priority into an indefinite cycle of broad searches, or add
-generic corollaries to inflate the contribution. If a prior implication is
-identified, record the result as an attributed worked example and reassess its
-publication value. No external contact, submission, or manuscript release has
-been made.
-
-The full finite pair-coverage envelope and efficient constructions are secondary research options if they add conceptual substance. Large simulations and neural training do not resolve the present priority question. Keep issue #1 open.
-
-The finite-length optimum, second-order terms, algorithmic efficiency, adaptive post-seed query guarantees, and error parameters varying with n are separate open questions. Do not silently expand the current theorem to cover them.
-
-The conjunction/refinement exploration remains separate and unchanged. This repository does not claim a theorem about consciousness, natural-language interpretation, or deployed AI systems. The existing MIT license and source attribution are preserved.
+The manuscript remains on hold. Further work should address concrete new
+evidence or a worthwhile extension, following the
+[roadmap](RESEARCH_ROADMAP.md). Large simulations and repeated generic searches
+are not needed to maintain this completed research packet.
