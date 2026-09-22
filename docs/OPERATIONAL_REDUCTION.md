@@ -81,7 +81,7 @@ For every fixed $`0<\varepsilon<1/2`$, the existing proof implies
 ```math
 v_n(\varepsilon)\le m_n(\varepsilon)
 =2^{o(n)}v_n(\varepsilon)
-=2^{-n\mathcal R(\varepsilon)+o(n)},\tag{1}
+=2^{-n\mathcal R(\varepsilon)+o(n)},\qquad\text{(1)}
 ```
 
 where
@@ -105,7 +105,7 @@ and Chernoff give, for every $`s\ge0`$,
 
 ```math
 m_n(\varepsilon)\le
-\exp\left[-sN\eta+\sum_{k=1}^n\ln\cosh(sk)\right].\tag{2}
+\exp\left[-sN\eta+\sum_{k=1}^n\ln\cosh(sk)\right].\qquad\text{(2)}
 ```
 
 At $`s=a/n`$, the integral estimate in
@@ -152,7 +152,7 @@ strategy balls gives the fully finite sandwich
 ```math
 1-(1-m_n)^{2^{B-1}}
 \le P_n^*(B,\varepsilon)
-\le\min\{1,2^Bm_n\}.\tag{3}
+\le\min\{1,2^Bm_n\}.\qquad\text{(3)}
 ```
 
 The lower construction charges $`B-1`$ index bits and one parity bit.
@@ -186,7 +186,7 @@ $`\ell=\lceil\log_2c_n\rceil`$, we have $`K\le2^{B+\ell}`$, so
 
 ```math
 B_{\rm cov}^{\rm arb}\le B_{\rm cov}^{\rm fixed}
-\le B_{\rm cov}^{\rm arb}+1+\lceil\log_2(n\ln2+1)\rceil.\tag{4}
+\le B_{\rm cov}^{\rm arb}+1+\lceil\log_2(n\ln2+1)\rceil.\qquad\text{(4)}
 ```
 
 All translations preserve the maximizing strategy's addresses. This proves
@@ -256,7 +256,7 @@ $`I(X;T)`$. Conversely, any stochastic strategy label is an admissible
 auxiliary. Therefore
 
 ```math
-G_n(D)-1\le F_n(D)\le G_n(D).\tag{5}
+G_n(D)-1\le F_n(D)\le G_n(D).\qquad\text{(5)}
 ```
 
 This is a reduction to their theorem, with a one-bit bound on the possible

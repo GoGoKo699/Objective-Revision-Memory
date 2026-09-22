@@ -71,14 +71,14 @@ v_n(\varepsilon)&=2^{-n}\left|\left\{e:
 ```math
 v_n(\varepsilon)\le m_n(\varepsilon)
 =2^{o(n)}v_n(\varepsilon)
-=2^{-n\mathcal R(\varepsilon)+o(n)}.\tag{1}
+=2^{-n\mathcal R(\varepsilon)+o(n)}.\qquad\text{(1)}
 ```
 
 For every $`s\ge0`$ there is also the finite bound
 
 ```math
 m_n(\varepsilon)\le
-\exp\left[-sN\eta+\sum_{k=1}^n\ln\cosh(sk)\right].\tag{2}
+\exp\left[-sN\eta+\sum_{k=1}^n\ln\cosh(sk)\right].\qquad\text{(2)}
 ```
 
 Equation (1) compares exponential volumes. It does not assert finite equality,
@@ -115,7 +115,7 @@ pair. All other pairs touch $`C`$. Consequently
 
 ```math
 |J|\le\binom n2-\binom{n-r}{2}+r
-=nr-\frac{r(r-1)}2=:\Phi_n(r).\tag{3}
+=nr-\frac{r(r-1)}2=:\Phi_n(r).\qquad\text{(3)}
 ```
 
 This holds for every subset, with repeated residual rows allowed. It is the
@@ -131,7 +131,7 @@ If their rank is $`r(z)`$, (3) and threshold integration give
 
 ```math
 \sum_q b_q\le\int_0^1\Phi_n(r(z))\,dz
-=\sum_{j=1}^n(n-j+1)t_j.\tag{4}
+=\sum_{j=1}^n(n-j+1)t_j.\qquad\text{(4)}
 ```
 
 Complete the retained rows to a binary basis. This invertible change of
@@ -154,7 +154,7 @@ Combining it with (4) proves
 
 ```math
 s\sum_q b_q\le[n-H_P(X)]\ln2
-+\sum_{k=1}^n\ln\cosh(sk).\tag{5}
++\sum_{k=1}^n\ln\cosh(sk).\qquad\text{(5)}
 ```
 
 Now take $`P`$ uniform on the nonempty good set
@@ -178,7 +178,7 @@ therefore turns (2) into
 
 ```math
 m_n(\varepsilon)\le e^{C_\varepsilon}2^{-n\mathcal R(\varepsilon)},
-\qquad C_\varepsilon=a\eta/2+\ln\cosh a.\tag{6}
+\qquad C_\varepsilon=a\eta/2+\ln\cosh a.\qquad\text{(6)}
 ```
 
 For $`\delta_a(u)=(1+e^{2au})^{-1}`$, the same calculation gives
@@ -255,7 +255,7 @@ $`B_n/n\to\rho\ge0`$,
 
 ```math
 \lim_n-\frac1n\log_2P_n^*(B_n,\varepsilon)
-=(\mathcal R(\varepsilon)-\rho)_+.\tag{7}
+=(\mathcal R(\varepsilon)-\rho)_+.\qquad\text{(7)}
 ```
 
 **Partial covers and the success exponent.** After fixing independent tapes,

@@ -17,7 +17,7 @@ Put $`w_j=g(j)-g(j-1)\ge0`$ and $`c(b)=1-h_2((1-b)/2)`$. For **every** distribut
 
 ```math
 s\sum_{q\in Q}|\mathbb E_P(-1)^{a_q\cdot X}|
-\le D_P\ln2+\sum_{j=1}^n\ln\cosh(sw_j),\qquad s\ge0.\tag{1}
+\le D_P\ln2+\sum_{j=1}^n\ln\cosh(sw_j),\qquad s\ge0.\qquad\text{(1)}
 ```
 
 **Proof.** Sort rows by decreasing absolute bias and retain an independent row whenever possible. Let their biases be $`t_1\ge\cdots\ge t_d`$, padded with zeros. At any positive threshold $`z`$, the greedy rows above threshold span all rows above threshold. If their rank is $`r(z)`$, threshold integration gives
@@ -45,7 +45,7 @@ The entropy budget is established: see Impagliazzo–Moore–Russell, [*An Entro
 For arbitrary signs $`\sigma_q\in\{-1,1\}`$, define $`S(x)=\sum_q\sigma_q(-1)^{a_q\cdot x}`$. Under uniform $`U`$ on the cube, (1) implies
 
 ```math
-\ln\mathbb E_Ue^{sS(X)}\le\sum_j\ln\cosh(sw_j).\tag{2}
+\ln\mathbb E_Ue^{sS(X)}\le\sum_j\ln\cosh(sw_j).\qquad\text{(2)}
 ```
 
 Indeed, substitute the tilted distribution $`P_s(x)=U(x)e^{sS(x)}/Z`$ into (1). Its relative entropy is $`D(P_s\Vert U)=s\mathbb E_{P_s}S-\ln Z=D_{P_s}\ln2`$, and the signed expectation is at most the sum of absolute biases. Conversely, the usual entropy variational inequality applied to (2), with each sign chosen to match its bias under $`P`$, recovers (1).
@@ -87,7 +87,7 @@ w_\rho=N-\Phi_n(\rho-1),
 and all later increments vanish. Therefore any scheme in the original model with average pair bias at least $`\eta=1-2\varepsilon`$ satisfies
 
 ```math
-B\ln2\ge sN\eta-\sum_{j=1}^{\rho}\ln\cosh(sw_j),\qquad s\ge0.\tag{3}
+B\ln2\ge sN\eta-\sum_{j=1}^{\rho}\ln\cosh(sw_j),\qquad s\ge0.\qquad\text{(3)}
 ```
 
 This strengthens the displayed finite inequality in the main note: it only reduces or deletes its nonnegative $`\ln\cosh`$ terms. It changes neither resource accounting nor error quantifiers. In particular, the converse still needs only average error over uniform inputs and uniform pairs; exact total parity remains part of the charged summary. It is not asserted to be finite-length optimal. At zero error, taking $`s\to\infty`$ gives $`B\ge\rho`$, still weaker in general than the separate exact theorem. At fixed interior error it leaves the existing sharp first-order rate unchanged.
@@ -103,7 +103,7 @@ e_i+e_j+\beta e_k\in W,\qquad\beta\in\{0,1\},
 is exactly
 
 ```math
-nr-\frac{r(r+1)}2=N-\binom{n-r}{2}.\tag{4}
+nr-\frac{r(r+1)}2=N-\binom{n-r}{2}.\qquad\text{(4)}
 ```
 
 **Upper bound.** Set $`d=n-r`$ and choose coordinate images indexed by $`I`$ that form a basis of $`\mathbb F_2^n/W`$. There are $`r`$ remaining coordinate positions. Each recoverable pair wholly in $`I`$ has a distinct sum of two basis vectors, which must equal the image of an outside coordinate. Choose one such witness coordinate for each pair; the witnesses are distinct.
@@ -141,7 +141,7 @@ B\ln2\ge sk\eta-k\ln\cosh s.
 Optimizing $`s\ge0`$ yields
 
 ```math
-B\ge k[1-h_2(\varepsilon)]\tag{5}
+B\ge k[1-h_2(\varepsilon)]\qquad\text{(5)}
 ```
 
 whenever that matching's average error is at most $`\varepsilon`$. Error need not be uniform within its memory cells or across its edges. This supplies a complete elementary proof of the matching corollary attributed to Nisan–Rudich–Saks in the [audit](reviews/SHARP_RATE_AUDIT.md#52-a-genuine-nisanrudichsaks-lower-bound-corollary); no new direct-product principle is claimed.
@@ -150,13 +150,13 @@ If **each fixed allowed edge** has input-and-seed-average error at most $`\varep
 
 ```math
 \nu(G)[1-h_2(\varepsilon)]\le B_G
-\le\tau(G)[1-h_2(\varepsilon)]+O_\varepsilon(\log(\tau(G)+1))+1.\tag{6}
+\le\tau(G)[1-h_2(\varepsilon)]+O_\varepsilon(\log(\tau(G)+1))+1.\qquad\text{(6)}
 ```
 
 All index bits and the parity bit are charged; time and public randomness are uncharged. The upper bound is existence-based. For bipartite graphs, the established matching–cover equality gives $`\nu=\tau`$. Hence along any bipartite graph sequence with $`\nu(G)\to\infty`$,
 
 ```math
-\frac{B_G}{\nu(G)}\longrightarrow1-h_2(\varepsilon).\tag{7}
+\frac{B_G}{\nu(G)}\longrightarrow1-h_2(\varepsilon).\qquad\text{(7)}
 ```
 
 ### Edge-average error requires a separate condition

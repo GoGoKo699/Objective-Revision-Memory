@@ -58,7 +58,7 @@ preprocessing, satisfies, for $`0\le\varepsilon<1/2`$ and every $`s\ge0`$,
 \Pr_{X,R}\{\Delta_R(X)\le\varepsilon\}
 \le\min\left\{1,
 \exp\left[B\ln2-sN(1-2\varepsilon)
-+\sum_{k=1}^n\ln\cosh(sk)\right]\right\}.\tag{1}
++\sum_{k=1}^n\ln\cosh(sk)\right]\right\}.\qquad\text{(1)}
 ```
 
 The capped envelope in [rank-profile extensions](RANK_PROFILE_EXTENSIONS.md)
@@ -111,7 +111,7 @@ positive, $`S(U)=\sum_{j=1}^n(j-1)(-1)^{U_j}`$. Independence gives
 
 ```math
 \prod_{k=1}^{n-1}\cosh(sk)\le Z_n(s)
-\le\prod_{k=1}^{n}\cosh(sk).\tag{2}
+\le\prod_{k=1}^{n}\cosh(sk).\qquad\text{(2)}
 ```
 
 Thus unrestricted and ordered-endpoint moment optima differ by a factor
@@ -136,7 +136,7 @@ Consequently (1) implies the explicit asymptotic form
 \Pr\{\Delta_R(X)\le\varepsilon\}
 &\le\min\{1,\exp[(B-n\mathcal R(\varepsilon))\ln2+C_\varepsilon]\},\\
 C_\varepsilon&=\frac{a\eta}{2}+\ln\cosh a.
-\end{aligned}\tag{3}
+\end{aligned}\qquad\text{(3)}
 ```
 
 Thus $`B\le n[\mathcal R(\varepsilon)-\gamma]`$, for a fixed $`\gamma>0`$,
@@ -156,7 +156,7 @@ in defining the optimum. For every fixed $`0<\varepsilon<1/2`$,
 
 ```math
 \lim_{n\to\infty}\frac{B_{\rm cov}(n,\varepsilon)}n
-=\mathcal R(\varepsilon).\tag{4}
+=\mathcal R(\varepsilon).\qquad\text{(4)}
 ```
 
 The upper bound uses only endpoint addresses fixed by the query, with no
@@ -172,7 +172,7 @@ $`x_j`$ with $`z_j`$ and reading $`x_i`$. XOR these with the stored exact parity
 For every input the number of wrong pair answers is exactly
 
 ```math
-N\Delta(x)=\sum_{j=1}^n(j-1)\mathbf1\{x_j\ne z_j\}.\tag{5}
+N\Delta(x)=\sum_{j=1}^n(j-1)\mathbf1\{x_j\ne z_j\}.\qquad\text{(5)}
 ```
 
 Partition the order into $`L`$ consecutive blocks, with positive lengths
@@ -197,7 +197,7 @@ charged:
 B&\le1+\sum_{\ell=1}^L\left\lceil\log_2K_{m_\ell,r_\ell}\right\rceil,\\
 \Delta(x)&\le\frac1N\sum_{\ell=1}^L(s_\ell-1)r_\ell
 \quad\text{for every }x.
-\end{aligned}\tag{6}
+\end{aligned}\qquad\text{(6)}
 ```
 
 The last bound follows directly from (5): at most $`r_\ell`$ coordinates are
@@ -220,7 +220,7 @@ $`\delta_\ell=\delta((\ell-1/2)/L)`$. As $`n\to\infty`$, (6) gives
 &\le\frac{2}{L^2}\sum_{\ell=1}^L\ell\delta_\ell,\\
 \limsup_n\frac Bn
 &\le\frac1L\sum_{\ell=1}^L[1-h_2(\delta_\ell)].
-\end{aligned}\tag{7}
+\end{aligned}\qquad\text{(7)}
 ```
 
 The distortion sum differs from its midpoint version
@@ -249,7 +249,7 @@ $`B_n/n\to\rho\ge0`$,
 ```math
 \boxed{\lim_{n\to\infty}-\frac1n\log_2
 P_n^*(B_n,\varepsilon)
-=\bigl(\mathcal R(\varepsilon)-\rho\bigr)_+.}\tag{8}
+=\bigl(\mathcal R(\varepsilon)-\rho\bigr)_+.}\qquad\text{(8)}
 ```
 
 The same exponent holds if the allowed schemes are restricted to
@@ -268,7 +268,7 @@ V_n(\varepsilon)=\left|\left\{e\in\{0,1\}^n:
 We first prove
 
 ```math
--\frac1n\log_2v_n\longrightarrow\mathcal R(\varepsilon).\tag{9}
+-\frac1n\log_2v_n\longrightarrow\mathcal R(\varepsilon).\qquad\text{(9)}
 ```
 
 For the upper bound on $`v_n`$, apply Chernoff to
@@ -314,7 +314,7 @@ $`\varepsilon`$ on every covered input by (5). Consequently
 ```math
 P_n^*(B,\varepsilon)\ge1-(1-v_n)^K
 \ge1-e^{-Kv_n}
-\ge(1-e^{-1})\min\{1,Kv_n\}.\tag{10}
+\ge(1-e^{-1})\min\{1,Kv_n\}.\qquad\text{(10)}
 ```
 
 Since $`v_n=2^{-n\mathcal R(\varepsilon)+o(n)}`$, (10) bounds the
@@ -339,7 +339,7 @@ $`0\le\zeta<1`$. Equation (3) and the deterministic construction imply
 
 ```math
 \lim_{n\to\infty}\frac{B_{\rm exc}(n,\varepsilon,\zeta)}n
-=\mathcal R(\varepsilon).\tag{11}
+=\mathcal R(\varepsilon).\qquad\text{(11)}
 ```
 
 The same limit holds for its endpoint-only and public-address restrictions.
