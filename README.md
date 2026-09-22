@@ -1,68 +1,159 @@
 # Objective Revision Memory
 
-**How much must a system remember to implement a later rule change when it can reread only one original fact?**
+**Sharp memory limits for delayed pair-parity queries with one raw-bit read.**
 
-This is a classical, theorem-led project on delayed pair-parity revision. An input has $n$ bits. A stored summary must reproduce their total parity exactly. A later query excludes two specified coordinates; the decoder sees the entire summary and may reread one raw bit from an external archive. It understands and accepts the new rule. The problem is the information needed to execute it.
+An encoder summarizes an immutable binary archive before knowing which pair of
+coordinates will be queried. The decoder can inspect the entire summary and
+reread one original bit. How much summary memory is necessary to answer the
+pair's parity approximately? In the revision version, the summary must also
+recover the archive's total parity exactly, and the query asks for that parity
+with the two coordinates excluded.
 
-**Current status:** a matching converse and construction now determine the unrestricted asymptotic memory rate in this model. Written proofs and reproducible small checks are available. Novelty, independent mathematical review, and publication significance remain unresolved. This is AI-assisted exploratory research, not a manuscript release or an AI-safety theorem.
+The written result determines the leading memory rate, allowing arbitrary
+nonlinear summaries and summary-dependent read addresses. A fixed endpoint
+rule achieves the same rate. Retaining the original total parity adds at most
+one bit to the direct pair-parity problem.
 
-## Main result: a sharp rate, not just bounds
+**Research stage:** complete written proof and bounded internal audit;
+historical novelty and publication significance remain open.
+**Target journal:** Information Processing Letters (IPL).
+**Manuscript preparation is the final step**, after the research assessment in
+the [roadmap](docs/RESEARCH_ROADMAP.md). This repository is an AI-assisted
+research record.
 
-Fix revised-query error $0<\varepsilon<1/2$. Let $a>0$ solve
+## Start here
+
+| Your purpose | Entry point |
+| --- | --- |
+| Understand the question, resources, and a four-bit example | [Reading guide](docs/READING_GUIDE.md) |
+| Check the central theorem and its complete proof | [Pair-query proof note](docs/PAIR_QUERY_NOTE.md) |
+| Identify what is established and what may be new | [Literature comparison](docs/LITERATURE_COMPARISON.md) and [audit](docs/reviews/SHARP_RATE_AUDIT.md) |
+| See current findings and remaining research decisions | [Status](docs/STATUS.md) and [IPL research roadmap](docs/RESEARCH_ROADMAP.md) |
+| Reproduce the small checks | [Reproducibility guide](docs/REPRODUCIBILITY.md) |
+| Contribute a proof correction, comparison, or extension | [Contributing](CONTRIBUTING.md) |
+
+The reading guide gives a suggested 30-minute orientation and a map of the
+proof dependencies. The full proof requires additional study.
+
+## The model
+
+For an archive $X\in\{0,1\}^n$, with $n\ge3$, retain at most $B$
+input-dependent bits before learning an unordered pair $\{i,j\}$.
+The revision answer is $p(X)\oplus X_i\oplus X_j$, where $p(X)$ is total
+parity and must be exactly recoverable from the summary and seed alone.
+
+| Resource | Accounting |
+| --- | --- |
+| Retained information | At most $B$ bits in the worst case, including exact original parity |
+| Immutable original archive | Outside the summary budget; accessible through the raw-read interface |
+| Query access | At most one original coordinate bit; address may depend on summary, query, and independent coins |
+| Computation and summary access | Unrestricted |
+| Codebooks and input-independent randomness | Uncharged |
+| Input-dependent caches or earlier transcripts | Charged to memory |
+
+The original error promise is at most $\varepsilon$ for **each fixed pair**,
+averaged over uniform input and independent coins. The converse needs only
+input-and-pair average error. Public symmetrization gives an attaining scheme
+with the stronger guarantee for **each fixed input and pair**, averaged over
+the seed. Neither guarantee permits an adversarial pair selected after seeing
+the seed and summary. A computed one-bit answer from the archive is a different
+access resource from a raw coordinate read.
+
+## The sharp result
+
+Fix $0<\varepsilon<1/2$, and let $a>0$ solve
 
 $$1-2\varepsilon=2\int_0^1u\tanh(au)\,du.$$
 
-Then
+Then the optimal revision summary size satisfies
 
 $$\lim_{n\to\infty}\frac{B_{\rm all}(n,\varepsilon)}n
 =\mathcal R(\varepsilon)
 =\frac{a(1-2\varepsilon)-\ln\cosh a}{\ln2}.$$
 
-The achieving principle is **graded storage**: reconstruct some facts more accurately than others, then reread the less accurately represented endpoint of a query. A rank-profile and entropy converse proves that no arbitrary encoding or memory-dependent one-bit address can improve the leading rate.
+Arbitrary-coordinate reads, endpoint-only reads, and endpoint addresses
+chosen using only the query and public seed all have this leading rate.
 
-The scalar curve is an established weighted binary coding law, the entropy ingredient comes from an entropic proof of Chang's inequality, and the geometric count follows from elementary basis facts. The candidate contribution is the pair-query problem's equality with that coding optimum despite allowing arbitrary summary-dependent probe addresses. The [proof and novelty audit](docs/reviews/SHARP_RATE_AUDIT.md) found no central proof defect; historical priority of this operational characterization remains unresolved.
+The proof isolates a more precise object. Fix an entire decoder strategy and
+count the inputs on which it gets at most an $\varepsilon$ fraction of pairs
+wrong. The largest such input set has fraction
+$2^{-n\mathcal R(\varepsilon)+o(n)}$. An ordered-endpoint strategy attains that
+exponent through a weighted Hamming ball. This extremal evaluation is the
+remaining candidate contribution; general lossy coding converts it into the
+memory rate, worst-input covering rate, and below-rate success exponent.
 
-The [operational reduction](docs/OPERATIONAL_REDUCTION.md) isolates the precise claim: the largest low-error input set handled by any fixed one-read decoder has the same exponential size as an ordered-endpoint weighted Hamming ball. General lossy-coding theorems then supply the covering and success-exponent consequences. The note also gives an explicit reduction to action-dependent side-information coding; the resulting strategy optimization still needs the pair-specific bound.
+The complete argument is in the [pair-query note](docs/PAIR_QUERY_NOTE.md).
+The [original sharp-rate proof](RESEARCH_NOTE.md) gives the graded block-cover
+construction and the same expected-error theorem. The
+[operational reduction](docs/OPERATIONAL_REDUCTION.md) records exact comparisons
+with general distortion coding and decoder-controlled side information.
 
-Start with the [self-contained pair-query note](docs/PAIR_QUERY_NOTE.md): one central theorem, its complete entropy converse and endpoint attainment proof, and the coding consequences. The [contribution brief](docs/THEOREM_BRIEF.md) gives the priority question and finite endpoint comparison. Arbitrary-coordinate reads retain a logarithmic advantage at zero error; preserving original total parity adds at most one bit to the direct pair-query problem.
-
-The [excess-distortion theorem](docs/EXCESS_DISTORTION.md) strengthens the result: the rate can guarantee at most an $\varepsilon$ fraction of wrong pairs on every input, using a deterministic endpoint decoder. Below that rate, the best probability of meeting this target decreases exponentially, with a matching exponent. This concerns the fraction of wrong pairs, not correctness of every pair.
-
-| Revised error | Unrestricted rate | Optimal affine rate |
+| Revised error | Unrestricted leading rate | Optimal affine leading rate |
 | --- | ---: | ---: |
 | 1% | 0.81497 | 0.85858 |
 | 10% | 0.42208 | 0.55279 |
 | 25% | 0.14392 | 0.29289 |
 
-Rates are limiting summary bits per input bit, not finite-size optima. Affine means an encoding map over $\mathbb F_2$, with unrestricted decoding. The unrestricted rate is strictly smaller for every fixed error in the open interval.
+Rates are limiting summary bits per archive bit at fixed error. Affine refers
+to the encoding map over $\mathbb F_2$, with unrestricted decoding. These
+rounded values illustrate the analytic result; they are not finite-size optima.
 
-The [current research note](RESEARCH_NOTE.md) contains the complete converse, construction, quantifiers, and limits. The [baseline note](BASELINE_NOTE.md) is preserved unchanged for the exact optimum $n-\lfloor\log_2(n+1)\rfloor$, affine rate $1-\sqrt{2\varepsilon}$, and original finite examples. Its earlier open-rate statements are superseded by the current note. With two raw rereads, one retained parity bit still suffices exactly.
+At zero error, arbitrary reads need exactly
+$n-\lfloor\log_2(n+1)\rfloor$ bits, while endpoint-only reads need $n-1$.
+Thus leading-rate equivalence does not imply finite equivalence. The
+[preserved baseline](BASELINE_NOTE.md) and
+[endpoint comparison](docs/THEOREM_BRIEF.md) contain these proofs.
 
-## Evidence and navigation
+## What the evidence establishes
 
-The [status](docs/STATUS.md) separates mathematical progress from novelty. The [literature comparison](docs/LITERATURE_COMPARISON.md) credits established ingredients and records unfinished comparisons. The [reproduction guide](docs/REPRODUCIBILITY.md) documents exact checks versus numerical checks; the [source manifest](docs/SOURCE_MANIFEST.json) traces the unchanged imported baseline files.
+The written proof has survived the recorded internal checks without a central
+defect being found. The systematic access model, elementary geometric count,
+entropy inequality, weighted coding curve, and general coding conversions
+have explicit antecedents. The audit identifies concrete limitations of close
+prior reductions; it does not certify historical priority. Independent human
+review and publication significance remain unresolved.
 
-The [rank-profile continuation](docs/RANK_PROFILE_EXTENSIONS.md) isolates the general entropy argument, sharpens low-rank pair coverage, and proves the corresponding matching/cover rate for bipartite query graphs. It distinguishes mathematical deductions from unresolved priority claims.
+The deterministic covering result controls the **fraction of wrong pairs on
+every input**, each hypothetical query with its own one-read budget. Its
+below-rate success criterion replaces the original marginal-error promise.
+It does not require a single execution to answer all pairs with one total read.
+See the [error-quantifier table](docs/READING_GUIDE.md) and
+[excess-distortion proof](docs/EXCESS_DISTORTION.md).
 
-The new finite certificate says that 529 bits suffice at $n=1024$ and revised error below 10%, whereas every affine summary needs at least 565 bits at the same target. The 529-bit upper bound uses a proved existence bound for Hamming covers; those large covers have not been built.
-
-The [conjunction/refinement exploration](explorations/conjunction/research_note.md) is a separate model, not an earlier version of the parity theorem. It remains unchanged.
+No efficient implementation of the asymptotic covering codes is claimed.
+The finite 529-versus-565-bit comparison at $n=1024$ and error $1/10$ is a
+covering-existence certificate versus an affine lower bound; the large cover
+has not been constructed. Finite-length optima, second-order behavior, and
+error varying with $n$ remain separate questions.
 
 ## Reproduce
 
-Python 3.10+, standard library only. No installation, network, training, GPU, or large simulation is needed.
+From the repository root, use Python 3.10+ with its standard library:
 
 ```sh
-python checks/run_all.py
-python checks/run_all.py --include-conjunction
+python3 checks/run_all.py
+python3 checks/run_all.py --include-conjunction
 ```
 
-The runner reproduces the original exact and bounded-error reports plus the sharp-rate report, checks source hashes and documentation links, and guards raw-read interfaces. Temporary outputs do not overwrite committed evidence. Integer ranks, truth tables, and finite probabilities are exact; entropy and integral evaluations have documented floating-point tolerances. Passing checks is neither proof by finite extrapolation nor a novelty certificate.
+No installation, network access, training, GPU, or large simulation is needed.
+Run without `-O`. The runner checks imported source hashes, documentation links,
+raw-read interfaces, and temporary reproductions of the recorded reports.
+The [reproduction guide](docs/REPRODUCIBILITY.md) separates exact checks from
+floating-point illustrations and lists the optional audit checks. Passing
+finite checks supports specific calculations, not general proof or novelty.
 
-## Boundaries and license
+## Research record and scope
 
-The raw archive is not included in the summary size. Public input-independent randomness and unlimited local computation are uncharged. Each read returns one original bit. There is no free cache of earlier queries. The construction guarantees accuracy for each fixed input and fixed pair over the public seed, not simultaneous correctness or an adversarial pair chosen after seeing the seed and summary. The full model is in the research note.
+The [reading guide](docs/READING_GUIDE.md) indexes the current proof, extensions,
+audit history, and preserved baseline. Historical open-gap language in
+[BASELINE_NOTE.md](BASELINE_NOTE.md) is superseded by the sharp-rate proof.
+The [source manifest](docs/SOURCE_MANIFEST.json) records unchanged imported
+artifacts. The [conjunction exploration](explorations/conjunction/research_note.md)
+uses a separate model.
 
-The motivating fiction and private conversation are not republished. The finite parity model does not establish claims about consciousness, human values, or the behavior of deployed language models. Ordinary coding constructions and the systematic access model are credited to prior work.
+The project studies a classical information constraint for a specified query
+family. It makes no theorem-level claim about consciousness, human values, or
+deployed AI systems. Private conversations and the motivating fiction are not
+republished.
 
-[MIT](LICENSE), Copyright (c) 2026 Ruge Lin. The original license is unchanged.
+[MIT license](LICENSE), Copyright (c) 2026 Ruge Lin.
