@@ -1,6 +1,6 @@
 # Research status
 
-Updated 22 September 2026, following the rendering and consistency sanity check. Reviewed main: `558baab228c64491fc5910efcfd3b8bb74c65611` (merged PR #10). The [reading guide](READING_GUIDE.md) introduces the model and maps the proof; the [self-contained pair-query note](PAIR_QUERY_NOTE.md) remains the central proof packet. The [compact brief](THEOREM_BRIEF.md) gives the review question and the [operational reduction](OPERATIONAL_REDUCTION.md) records the general coding comparisons.
+Updated 22 September 2026, following the pre-release sanity check. Reviewed main: `a615988c5703d05fbbf96c44b0b08848720ba698` (merged PR #11). The [reading guide](READING_GUIDE.md) introduces the model and maps the proof; the [self-contained pair-query note](PAIR_QUERY_NOTE.md) remains the central proof packet. The [compact brief](THEOREM_BRIEF.md) gives the review question and the [operational reduction](OPERATIONAL_REDUCTION.md) records the general coding comparisons.
 
 **Manuscript preparation is on hold.** Potential collaborators are welcome to
 contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
@@ -81,6 +81,15 @@ retain their mathematics and content, with normalized Markdown formatting.
 Audit Section 15 records the precise scope and checks. Two wording corrections
 clarify natural logarithms and the excess-distortion scope of an infinite
 parity penalty; no theorem or novelty conclusion changed.
+
+The pre-release rerun found no repository release blocker within its checked
+scope. Full reproduction and all six optional checks passed again; all 19
+GitHub-rendered Markdown pages and 1,675 expressions passed the desktop
+inspection. Internal links, source-archive contents, file syntax, and the
+disabled-assertion guard also passed. A stale issue #2 reference to issue #1
+being open was corrected. Audit Section 16 records the precise findings and
+limits. This check creates no release or tag and does not resume manuscript
+preparation.
 
 There is no independent expert review, proof-assistant certificate, or efficient implementation of the large covering codes. Numerical integrations illustrate an analytic theorem rather than establish it. The 1024-bit example's 529-bit upper bound is an existence certificate, not a constructed large encoder.
 
