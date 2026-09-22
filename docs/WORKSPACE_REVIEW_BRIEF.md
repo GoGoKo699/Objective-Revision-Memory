@@ -38,16 +38,22 @@ The stated optimum uses error at most epsilon for each fixed pair, averaged over
 
 For fixed `0 < epsilon < 1/2`, put `eta = 1 - 2 epsilon` and choose positive `a` satisfying
 
-$$\eta=2\int_0^1 u\tanh(au)\,du.$$
+```math
+\eta=2\int_0^1 u\tanh(au)\,du.
+```
 
 The current note claims
 
-$$\lim_{n\to\infty}\frac{B_{\rm all}(n,\varepsilon)}n
-=\frac{a\eta-\ln\cosh a}{\ln2},$$
+```math
+\lim_{n\to\infty}\frac{B_{\rm all}(n,\varepsilon)}n
+=\frac{a\eta-\ln\cosh a}{\ln2},
+```
 
 with finite converse, for every positive `s`,
 
-$$B\ln2\geq s\binom n2\eta-\sum_{k=1}^n\ln\cosh(sk).$$
+```math
+B\ln2\geq s\binom n2\eta-\sum_{k=1}^n\ln\cosh(sk).
+```
 
 The achieving idea is graded reconstruction accuracy, followed by rereading the weaker endpoint. Treat these as assertions to rederive, not trusted premises. Existing exact and affine results can be audited as dependencies, not assumed merely because earlier tests passed.
 

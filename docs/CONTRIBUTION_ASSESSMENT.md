@@ -28,18 +28,20 @@ not start manuscript drafting or external correspondence.
 
 ## The precise contribution
 
-For each fixed $0<\varepsilon<1/2$, let $m_n(\varepsilon)$ be the largest
-fraction of $n$-bit inputs on which one complete decoder strategy answers at
-least a $1-\varepsilon$ fraction of pair-parity queries correctly. Each query
+For each fixed $`0\lt \varepsilon\lt 1/2`$, let $`m_n(\varepsilon)`$ be the largest
+fraction of $`n`$-bit inputs on which one complete decoder strategy answers at
+least a $`1-\varepsilon`$ fraction of pair-parity queries correctly. Each query
 has its own one-raw-coordinate-read budget. The address and the Boolean
 answer function may be different for every pair.
 
 The theorem evaluates
 
-$$m_n(\varepsilon)=2^{-n\mathcal R(\varepsilon)+o(n)},$$
+```math
+m_n(\varepsilon)=2^{-n\mathcal R(\varepsilon)+o(n)},
+```
 
 where an ordered-endpoint weighted Hamming ball attains the same exponent.
-The rate $\mathcal R$ is defined in the central note. A retained memory label
+The rate $`\mathcal R`$ is defined in the central note. A retained memory label
 selects a strategy, which accounts for arbitrary nonlinear encoders and
 summary-dependent addresses. The original revision task additionally requires
 exact total parity from memory and seed alone; every construction charges
@@ -54,7 +56,7 @@ established coding conversions. They are not three independent discoveries.
 The original marginal-error promise and the table-success criterion are
 different optimizations. The former requires the stated error for each fixed
 pair, averaged over uniform input and independent coins. The latter measures
-the chance that an input's whole answer table has at most an $\varepsilon$
+the chance that an input's whole answer table has at most an $`\varepsilon`$
 fraction of errors, with separate read budgets for its entries. Their common
 rate does not make their finite guarantees interchangeable. All limiting
 claims here keep error fixed in the open interval.
@@ -104,7 +106,7 @@ content beyond naming a familiar rate function.
 **Its sharpness has an operational interpretation.** At fixed positive error,
 memory-dependent nonendpoint access has no leading advantage. At zero error,
 the known finite endpoint and unrestricted optima differ by
-$\lfloor\log_2(n+1)\rfloor-1$ bits. This distinguishes asymptotic equivalence
+$`\lfloor\log_2(n+1)\rfloor-1`$ bits. This distinguishes asymptotic equivalence
 from exact simulation. The result can serve as a solved benchmark when
 studying approximate systematic queries; that is a mathematical use, not a
 demonstrated deployment benefit.
