@@ -48,10 +48,13 @@ These targeted checks supplement the unchanged runner and recorded reports:
 ```sh
 python checks/reviews/verify_asymmetric_cover.py
 python checks/reviews/verify_low_rank_coverage.py
+python checks/reviews/verify_endpoint_scope.py
 ```
 
 The first executes 1,228,800 input/pair/permutation/mask cases with uneven blocks and reconstruction errors concentrated on one coordinate. Every fixed input/pair has exact error $1/20$ and one counted raw read; all five summary bits, including parity, are charged. This tests symmetrization, not a memory separation.
 
 The second independently enumerates binary subspaces by reduced row echelon bases, without importing baseline routines. For $n=3,\ldots,7$ and $0\le r\le\lfloor(n-2)/2\rfloor$, it checks all 3,559 subspaces, direct residual-row membership, enumeration counts against Gaussian binomials, and attainment of $nr-r(r+1)/2$ by coordinate subspaces. It also enumerates the 16-vector rank-four Hamming kernel at $n=7$, which covers all 21 pairs and disproves a global extension of that formula. All arithmetic is exact. The [continuation note](RANK_PROFILE_EXTENSIONS.md) supplies the proof and range restriction.
+
+The third uses an endpoint-only raw-read oracle and the complete charged $n-1$-bit summary for every input/pair at $n=3,\ldots,7$ (4,088 executions). It checks all 1,240 same-parity three-point cells through five bits against both endpoint addresses and all Boolean truth tables, finding an impossible pair in every cell. It also verifies the one-bit unrestricted versus two-bit endpoint construction at $n=3$, and two dimension-three subspaces of seven bits with the same full weight enumerator but pair coverage six versus seven. It imports no baseline verifier and uses exact integer arithmetic. The [theorem brief](THEOREM_BRIEF.md) and [audit](reviews/SHARP_RATE_AUDIT.md) give the general proofs and scope limitations.
 
 These scripts print their results; no original report or tolerance is changed. The optional checks are not silently treated as CI gates in the existing workflow.

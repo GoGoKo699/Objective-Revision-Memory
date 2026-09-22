@@ -6,6 +6,8 @@ Research checkpoint, 22 September 2026.
 
 The previous consolidated note is preserved byte-for-byte as [BASELINE_NOTE.md](BASELINE_NOTE.md). Its exact theorem, affine theorem, and finite examples remain valid. Its statements that the unrestricted rate and existence of a limiting rate are open are superseded by this note. The separate conjunction exploration has not been changed.
 
+The [theorem and contribution brief](docs/THEOREM_BRIEF.md) isolates the operational result: unrestricted summary-dependent addresses and publicly chosen endpoint reads have the same first-order optimum. It also proves an exact finite separation between them and distinguishes this result from its established coding ingredients.
+
 ## 1. Unchanged model and error quantifiers
 
 The input is $X\in\{0,1\}^n$, $n\geq3$. Before learning a query, an encoder retains at most $B$ input-dependent bits $M=f_R(X)$. Public randomness $R$ is independent of $X$. The original total parity
@@ -52,6 +54,8 @@ $$\boxed{B\ln2\ \geq\ sN\eta-\sum_{k=1}^n\ln\cosh(sk).}$$
 
 This finite inequality is not asserted to be the finite-length optimum. The older finite converses and the exact theorem remain available independently. At $\varepsilon=0$, the baseline exact formula gives limiting rate one; at $\varepsilon=1/2$, one parity bit and a random guess give limiting rate zero. The displayed parameterization concerns the open interval.
 
+**Operational corollary.** The same limit holds if the decoder may read only a query endpoint, even if its address must depend only on the query and public seed. The achieving construction already has this restriction; the unrestricted converse applies to all three classes. At zero error the endpoint-only optimum is instead exactly $n-1$, versus $n-\lfloor\log_2(n+1)\rfloor$ with arbitrary addresses. Thus equality of first-order rates does not assert a finite transformation between arbitrary implementations. The [brief](docs/THEOREM_BRIEF.md) gives the endpoint proof and its stronger finite converse.
+
 The [rank-profile extensions](docs/RANK_PROFILE_EXTENSIONS.md) give a capped finite converse, an exact low-rank coverage formula, and the corresponding sharp result for bipartite query graphs. They do not alter this first-order theorem.
 
 ## 3. Converse: preserve the entire independence profile
@@ -67,6 +71,8 @@ All rows are nonzero, including when $k_{ij}$ is an endpoint. If these rows span
 $$|E|\leq\Phi_n(r).$$
 
 For completeness: in $\mathbb F_2^n/W$, choose $n-r$ coordinate images forming a basis, indexed by $I$. At most $N-\binom{n-r}{2}$ pairs have an endpoint outside $I$. For a selected pair wholly inside $I$, its two independent images must sum to a coordinate image outside $I$. Distinct pairs of basis vectors have distinct sums. Only $r$ coordinates are outside $I$, so at most $r$ such pairs occur. Adding the two counts gives $\Phi_n(r)$. This applies to every subset of the selected pair-labelled rows; it permits repeated residual rows for different pairs. The bound can exceed $N$ and need not be attained at every rank.
+
+The proof also gives $r$ coordinates meeting all selected pairs except at most $r$ exceptions. For endpoint-only residuals there are no exceptions, giving the exact geometric envelope $N-\binom{n-r}{2}$. This explains the leading comparison. For priority, even a prior uniform bound $|E|\le nr-r^2/2+o(n^2)$ would suffice for the sharp asymptotic converse; matching the precise lower-order terms is unnecessary.
 
 ### 3.2 Conditional biases and their greedy basis
 
@@ -211,3 +217,5 @@ The covering bound gives block index lengths $11,21,40,59,78,95,107,117$. Includ
 The access model, ordinary Hamming covers, classical random access coding, the entropic Chang ingredient, weighted binary coding profile, and convex optimization are established. The [proof and novelty audit](docs/reviews/SHARP_RATE_AUDIT.md) found no central proof defect. It narrowed the candidate contribution to the pair-specific all-subsets rank envelope and its matching application to arbitrary summary-dependent one-bit probes, including the resulting exact affine comparison. Neither the scalar curve nor the generic advantage of nonlinear lossy encoders supplies a novelty claim. The [literature comparison](docs/LITERATURE_COMPARISON.md) records explicit reductions and their limits; historical priority remains unresolved.
 
 Remaining mathematical questions include finite-length optimality, efficient explicit constructions approaching the curve, stronger adversarial query quantifiers, and variable-error finite-size regimes. These are distinct from the first-order rate settled by the written argument. No theorem about consciousness, natural-language interpretation, or present-day AI systems is claimed.
+
+The requirement to preserve original parity is also not an extensive extra resource in this example. If $B_{\rm pair}$ denotes the same model asking directly for $X_i\oplus X_j$ without mandatory parity, then $B_{\rm pair}\le B_{\rm all}\le B_{\rm pair}+1$: use the retained parity to convert a revision answer in one direction, or store one extra parity bit in the other. Both transformations preserve the error and read budgets. The leading theorem concerns late pair queries under a raw-coordinate access constraint.
