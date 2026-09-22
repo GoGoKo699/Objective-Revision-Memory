@@ -1,7 +1,7 @@
 # What the sharp pair-query theorem contributes
 
 Internal research and contribution brief, 22 September 2026. Repository base:
-`b9394cd2ea64c45943e66ba7c61ae665f3df77c3`.
+`0e91f088cd06376458f63a20f76e2d5b507a690a`.
 This is a theorem-led working formulation, not a manuscript release or a historical-priority certificate. The [research note](../RESEARCH_NOTE.md) supplies the full sharp-rate proof; the [literature comparison](LITERATURE_COMPARISON.md) identifies established ingredients and the remaining reduction questions.
 
 ## 1. Operational question and resource ledger
@@ -40,13 +40,13 @@ Take any subset $E$ of pair labels whose selected rows span a rank-$r$ space $W$
 $$|E|\le f_n(r)+r,\qquad
 f_n(r)=\binom n2-\binom{n-r}{2}=nr-\frac{r(r+1)}2.$$
 
-This holds for every subset and every permitted address choice, including memory-dependent choices after conditioning. A bound on the rank of the complete query family alone would not suffice.
+This holds for every subset and every permitted address choice, including memory-dependent choices after conditioning. A bound on the rank of the complete query family alone would not suffice. The mechanism is established: fundamental-circuit uniqueness gives at most one completed basis pair per nonbasis coordinate. Equivalently, affine-basis pair sums are distinct. The [literature comparison](LITERATURE_COMPARISON.md) now supplies complete classical reductions, including the exact finite envelope. This is a task-specific elementary lemma, not a standalone geometric novelty claim.
 
-The sharp first-order converse actually needs only the weaker statement
+For comparison, the sharp first-order converse would need only the weaker statement
 
 $$|E|\le nr-r^2/2+o(n^2),$$
 
-uniformly over ranks and residual families. Indeed, greedy threshold integration turns this into a bias-sum bound with an $o(n^2)$ additive remainder. The entropy-dual multiplier is $s=a/n$; after dividing memory by $n$, that remainder vanishes. Consequently, any prior theorem implying this leading all-subsets profile would already supply the substantive geometric input. Priority comparisons must not require the precise lower-order term to match.
+uniformly over ranks and residual families. Indeed, greedy threshold integration turns this into a bias-sum bound with an $o(n^2)$ additive remainder. The entropy-dual multiplier is $s=a/n$; after dividing memory by $n$, that remainder vanishes. The classical reductions now meet even the exact finite criterion. Priority assessment should therefore concern the operational characterization, rather than continue searching for novelty of this basis count.
 
 The [general envelope lemma](RANK_PROFILE_EXTENSIONS.md) organizes the next steps: greedy integration, the independent-character entropy budget from the entropic Chang argument, and scalar conjugacy. It is a reusable deduction, not a separate claim of a new entropy inequality or automatic achievability for every query family.
 
@@ -84,4 +84,19 @@ $$B_{\rm pair}\le B_{\rm arb}\le B_{\rm pair}+1.$$
 
 The first inequality uses the retained exact parity to convert a revision answer to a pair-parity answer. The second stores one additional exact parity bit and converts in reverse. Error and read budgets are unchanged; the argument also applies to endpoint restrictions. Preserving the old objective therefore has no additional leading memory cost in this example.
 
-Proceed with a lean research candidate centered on unrestricted versus publicly chosen endpoint access, its geometric explanation, and the finite zero-error counterpoint. Retain explicit attribution for the coding law and entropy machinery. The affine separation and bipartite benchmark are consequences and context, not independent evidence of originality. Historical priority remains unresolved; submission, a new-coding-law claim, and a general claim about objective preservation are not justified by the present audit.
+Proceed with a lean research candidate centered on unrestricted versus publicly chosen endpoint access, now including the success exponent below. Retain explicit attribution for the elementary geometry, coding law, and entropy machinery. The affine separation and bipartite benchmark are consequences and context, not independent evidence of originality. Historical priority of this operational synthesis remains unresolved; neither a new geometric principle nor a new coding law is claimed. The audit does not establish submission readiness or a general theorem about objective preservation.
+
+## 6. Stronger operational form: covers and the success exponent
+
+Fix an input and all random tapes, and let $\Delta$ be the fraction of the $\binom n2$ pair queries the decoder would answer incorrectly, each considered separately from the same summary with its own one-read budget. Define $P_n^*(B,\varepsilon)$ as the largest probability, over uniform input and independent tapes, that $\Delta\le\varepsilon$. This optimization preserves the resource and exact-parity rules; the table criterion replaces the per-query error promise, rather than imposing it as an additional feasibility condition.
+
+For fixed $0<\varepsilon<1/2$ and any integer sequence $B_n\ge1$ with $B_n/n\to\rho\ge0$, the [excess-distortion theorem](EXCESS_DISTORTION.md) proves
+
+$$\lim_{n\to\infty}-\frac1n\log_2 P_n^*(B_n,\varepsilon)
+=\bigl(\mathcal R(\varepsilon)-\rho\bigr)_+.$$
+
+Deterministic ordered-endpoint schemes attain this exponent. Their reconstruction error has an exact weighted Hamming interpretation: estimate endpoint $j$ and read endpoint $i$ for $i<j$, so $N\Delta(x)=\sum_j(j-1)\mathbf1\{x_j\ne z_j\}$. Weighted balls have uniform-input probability $2^{-n\mathcal R(\varepsilon)+o(n)}$. Partial covers using $2^{B-1}$ centers charge $B-1$ index bits and one parity bit and attain the success exponent. The arbitrary-address converse follows from the existing exponential-moment inequality and a union bound over memory labels.
+
+The rate $\mathcal R(\varepsilon)$ also suffices for a deterministic guarantee $\Delta(x)\le\varepsilon$ on **every** input. Block covers with a strict distortion margin prove this for all sufficiently large lengths. Public permutation and masking can then add the original fixed-input/fixed-pair marginal error guarantee while preserving the table-distortion bound for every input and seed.
+
+These statements concern the fraction of incorrect pairs. They do not answer every pair with one total read, ensure every answer is correct, or protect against selecting an erroneous pair after seeing the seed. At the critical rate the success exponent is zero, which need not mean success probability tends to one. The optimal failure exponent above the rate is not claimed.

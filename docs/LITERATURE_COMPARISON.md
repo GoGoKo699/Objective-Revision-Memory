@@ -1,6 +1,6 @@
 # Literature comparison: sharp-rate audit and continuation
 
-Checked 22 September 2026, including the continuation from `4e2c579795e2e780e132e3feb8072d2260ab3a7f`. This is a version-specific primary-source comparison, not an originality certificate. The [baseline audit](LITERATURE_BASELINE.md) is preserved unchanged. The [detailed sharp-rate audit](reviews/SHARP_RATE_AUDIT.md) supplies the full resource ledger and proofs of the reductions summarized here. Source statements and repository deductions are distinguished below.
+Checked 22 September 2026, most recently against `0e91f088cd06376458f63a20f76e2d5b507a690a`. This is a version-specific primary-source comparison, not an originality certificate. The [baseline audit](LITERATURE_BASELINE.md) is preserved unchanged. The [detailed sharp-rate audit](reviews/SHARP_RATE_AUDIT.md) supplies the full resource ledger and proofs of the reductions summarized here. Source statements and repository deductions are distinguished below. Section 9 now supplies complete classical derivations of the geometric envelope, superseding its earlier status as the main unresolved ingredient.
 
 ## 1. Systematic structures: the access model and affine geometry are established
 
@@ -8,7 +8,7 @@ S. Natarajan Ramamoorthy and C. Rashtchian, *Equivalence of Systematic Linear Da
 
 Sections 1.1-1.3 and Theorem 1 treat retained linear information, input probes, and matrix-rigidity geometry. Section 1.3 explicitly discusses general systematic structures with arbitrary preprocessing and a freely accessible index, as well as the common-bits connection. Thus neither our access model nor the affine condition $q\in W+\operatorname{span}\{e_k\}$ is new. Their exact linearization questions must not be identified with our approximate affine/nonlinear separation.
 
-**Our candidate addition:** a pair-specific rank-profile inequality followed by a matching bounded-error rate for arbitrary preprocessing. We have not established whether an equivalent all-pairs extremal count or stronger result already occurs in that paper's antecedents. Model comparison is not proof of novelty.
+**Our candidate addition:** the matching bounded-error rate for arbitrary preprocessing and memory-dependent addresses. The geometric count is an elementary deduction from established basis facts, as Section 9 now makes explicit. Priority of the operational characterization remains unresolved; model comparison is not proof of novelty.
 
 ## 2. Classical random access codes supply the covering-rate ingredient
 
@@ -84,14 +84,31 @@ This pass reviewed `b9394cd2ea64c45943e66ba7c61ae665f3df77c3`. A prior bound nee
 
 The Gibbs/entropy reformulation is also established machinery: Carlen–Cordero-Erausquin's [October 2007 manuscript](https://webusers.imj-prg.fr/~dario.cordero/Docs/articles/subaddOCT1.pdf), Eq. (2.4) and Theorem 2.1's proof, states the general entropy variational relation. This supplies an explicit primary antecedent for the duality step; it supplies no pair-specific count.
 
-## 9. Claim boundary and development decision
+## 9. Complete geometric reductions: elementary basis facts suffice
 
-**Written result:** arbitrary preprocessing, arbitrary memory-dependent one-bit addresses, exact original parity, and a fixed positive error allowance admit the matching rate derived in the [current note](../RESEARCH_NOTE.md). The construction uses only endpoint probes, showing that third-coordinate probes have no first-order rate advantage under the stated randomized fixed-query guarantees.
+**Additive formulation.** Chaim Even-Zohar, *On Sums of Generating Sets in $(\mathbb Z_2)^n$*, [arXiv:1108.4902v2](https://arxiv.org/pdf/1108.4902v2), Theorem 1, printed p.2, and Example 11 in Section 3.1, printed p.7. For an affine basis $A=\{0,b_1,\ldots,b_d\}$, the established independent-points example gives $|A+A|=1+d+\binom d2$. Theorem 1 also implies this by setting its $t=d,k=1,w=0$; its size hypothesis holds for $d\ge2$, and smaller dimensions are immediate. The source's substantial sumset machinery is unnecessary for this elementary specialization.
 
-**Established machinery:** the systematic model, one-star Boolean affinity and fiber counting, the entropic Chang inequality, convex conjugacy, weighted binary rate-distortion coding, Hamming covers, RAC block construction, and symmetrization.
+**Our full reduction.** For any selected residual family spanning $W$ of rank $r$, let $d=n-r$, $v_i=e_i+W$, and $S=\{0,v_1,\ldots,v_n\}$. Choose basis-coordinate representatives $b_1,\ldots,b_d$, so $A\subseteq S$ and $|S|\le n+1$. A covered pair requires $v_i+v_j\in S$. Every element of $(A+A)\setminus S$ gives a distinct uncovered pair of basis-coordinate representatives. Hence
 
-**Candidate contribution requiring priority resolution:** the pair-specific all-subsets rank envelope and its matching application to arbitrary summary-dependent one-bit probes, equating the optimal first-order rate to an established weighted coding problem. The exact affine comparison is a consequence; generic nonlinear superiority is not itself novel. The continuation's general rank-envelope lemma, low-rank refinement, and bipartite theorem are explicit deductions, not certified new results.
+$$\#\{\text{uncovered pairs}\}\ge |A+A|-|S|
+\ge\binom d2-r,$$
+
+and therefore $|E|\le\binom n2-\binom{n-r}{2}+r=nr-r(r-1)/2$. This is the entire finite envelope, uniformly over ranks and selected pair subsets. Zero images and repeated coordinate images are retained: the argument only identifies distinct missing pairs among a chosen coordinate basis. It does not equate labelled coverage with a support-size statistic.
+
+**Matroid formulation.** Tutte, *Lectures on Matroids*, J. Res. NBS 69B (1965), [primary paper](https://doi.org/10.6028/jres.069B.001), Section 2.2, printed p.3, paragraph between (2.21) and (2.22), proves the uniqueness of a circuit intersecting a minimal circuit-hitting set in a specified singleton. In modern language this is fundamental-circuit uniqueness relative to the complementary basis. Tutte's rank convention must not be substituted for modern rank without translation.
+
+Apply this to the labelled coordinate-image matroid. A covered pair of basis coordinates together with its completing nonbasis coordinate forms a three-element circuit. One nonbasis coordinate can complete at most one such pair, so the $r$ nonbasis coordinates complete at most $r$ basis pairs. This gives both the numerical envelope and the almost-vertex-cover statement. Loops and parallel elements are not discarded. This is a routine application of fundamental-circuit uniqueness, not a new extremal matroid principle.
+
+**Revised attribution.** These complete reductions replace the earlier unresolved-geometric-priority target. The envelope should be presented as a task-specific elementary lemma with explicit antecedents. Neither source is asserted to have stated the raw-read model or its sharp memory theorem. The remaining historical question concerns the operational synthesis, including its [excess-distortion formulation](EXCESS_DISTORTION.md), not whether independent basis pairs have distinct sums. No further general search for a standalone geometric theorem is required for this attribution decision.
+
+## 10. Claim boundary and development decision
+
+**Written result:** arbitrary preprocessing, arbitrary memory-dependent one-bit addresses, exact original parity, and a fixed positive error allowance admit the matching rate derived in the [current note](../RESEARCH_NOTE.md). The construction uses only endpoint probes. The [excess-distortion deduction](EXCESS_DISTORTION.md) strengthens the operational statement to deterministic worst-input table distortion and the optimal exponential rate of the probability of a low-distortion table below the memory threshold.
+
+**Established machinery:** the systematic model, one-star Boolean affinity and fiber counting, elementary affine-basis sumsets and fundamental circuits, the entropic Chang inequality, convex conjugacy, weighted binary rate-distortion coding, Hamming covers, Chernoff and union bounds, RAC block construction, and symmetrization.
+
+**Candidate contribution requiring priority resolution:** the sharp operational characterization for arbitrary summary-dependent raw probes, matching publicly chosen endpoint recovery at the level of rate and success exponent. The elementary geometric lemma supports this application; it is no longer a separate novelty candidate. The exact affine comparison is a consequence. The general rank-envelope lemma, low-rank refinement, bipartite benchmark, and excess-distortion deductions are not independently certified new results.
 
 **Not established:** historical novelty, uniqueness of optimal implementations, efficient explicit near-optimal codes, finite-length optimality, uniform vanishing-error or vanishing-advantage asymptotics, a computational speedup, or a theorem about AI alignment. The work is now a sharper mathematical object to compare, not a certified new paper.
 
-**Decision:** proceed with a compact theorem-led research candidate, centered on unrestricted versus publicly chosen endpoint access. The [brief](THEOREM_BRIEF.md) is ready for the originating workspace's assessment. The sources above provide specific partial reductions and counterexamples to direct translations; none of the inspected statements, through the worked reductions, yields the complete leading envelope. That bounded conclusion supports further development, not a historical-priority declaration. Keep issue #1 open. Additional low-order refinements should not substitute for a specialist comparison of the leading geometric statement.
+**Decision:** keep a compact candidate centered on the operational coding theorem and its precise converse/covering guarantees. The previous statement that no worked reduction supplied the complete envelope is superseded by Section 9. Established ingredients can support a useful new application, but their synthesis and significance must be assessed directly. Keep issue #1 open for operational priority; do not continue promoting the basis count as the missing novelty. The [brief](THEOREM_BRIEF.md) gives the exact claim for that assessment.

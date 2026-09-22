@@ -10,6 +10,8 @@ Review branch: `review/sharp-rate-audit`.
 
 **Latest priority decision in Section 9:** reviewed `b9394cd2ea64c45943e66ba7c61ae665f3df77c3` (merged PR #4), on `review/priority-decision`. It records a classical partial subsumption, new endpoint-access comparisons, and a compact theorem brief. Its next action supersedes the earlier research queues; historical novelty remains unresolved.
 
+**Current continuation in Section 10:** reviewed `0e91f088cd06376458f63a20f76e2d5b507a690a` (merged PR #5), on `research/excess-distortion`. Complete classical geometric reductions supersede the earlier unresolved-geometric-priority target. A new operational deduction gives the sharp success exponent and deterministic worst-input table covers. Priority of that operational synthesis remains unresolved.
+
 ## 1. Assessment and scope
 
 **The stated fixed-error first-order theorem survives this audit. No central mathematical defect or counterexample was found. Historical novelty is not established.** The most consequential novelty finding is that the scalar optimization, including the hyperbolic-tangent quality profile, is an explicit specialization of established weighted binary rate-distortion coding. The potentially distinctive result is equality of the full adaptive-address pair-query problem's optimal first-order rate with that coding rate, proved through the all-pairs residual-rank profile. Neither a new coding law nor the broad observation that nonlinear lossy encoders can outperform affine encoders is a defensible contribution by itself.
@@ -371,3 +373,77 @@ Executed `python checks/reviews/verify_endpoint_scope.py`: **PASS**, exact integ
 A separate read-only mathematical pass checked the new endpoint cell proof, envelope, public-address rate equality, parity sandwich, uniform-remainder scaling, and classical matching reduction. It found no mathematical flaw and identified one wording issue, corrected before integration: the structural almost-cover statement is an additional consequence of the proof, not logically equivalent to the numerical edge-count bound alone. Agreement between model passes is not independent human validation.
 
 **Single next research action:** have the originating research workspace assess the compact theorem brief against the explicit leading-profile priority target, and settle whether the almost-vertex-cover property (or an equivalent approximate one-star theorem) has a prior antecedent. The classical partial reduction above is a required starting point. A specialist assessment would be more informative now than another undirected search or additional lower-order refinements. No external contact has been made or is included in this session. Keep issue #1 open; the full finite envelope and efficient constructions remain secondary problems. Proceed with the narrow research candidate, not a claim of a new coding law or submission readiness.
+
+## 10. Classical geometry and a sharp success exponent
+
+### 10.1 Exact checkpoint and changed assessment
+
+Session date: 22 September 2026. Reviewed main: `0e91f088cd06376458f63a20f76e2d5b507a690a`, merging PR [#5](https://github.com/GoGoKo699/Objective-Revision-Memory/pull/5), report/theory commit `973039d864d62a8931e3e846ed5f170a8031ca97`. Main, branches, open pull requests, and issue #1 comments were checked before creating `research/excess-distortion`. No intervening scientific changes or open pull requests were present. Work remains on a dedicated branch under the user's continuing research and merge authorization.
+
+**The previous novelty target was too generous to the geometry.** The full all-subsets envelope and its almost-vertex-cover mechanism are elementary consequences of established basis facts. It is unnecessary to find an older theorem written in the repository's exact notation. The geometric lemma should remain in the proof, with attribution, but should not be presented as a separate novelty candidate. This revises the assessment; it does not invalidate the bound or identify an earlier statement of the operational memory theorem.
+
+The positive development is a stronger operational result: the existing converse and weighted coding construction determine the best exponential rate of success below the memory threshold, and the same threshold supports deterministic worst-input table distortion. These are written deductions with complete proofs in [EXCESS_DISTORTION.md](../EXCESS_DISTORTION.md), not independently certified new theorems.
+
+### 10.2 Complete classical geometric reductions
+
+The [literature ledger](../LITERATURE_COMPARISON.md), Section 9, records both routes with source-specific locations.
+
+**Affine-basis sumsets.** Even-Zohar, *On Sums of Generating Sets in $(\mathbb Z_2)^n$*, [arXiv:1108.4902v2](https://arxiv.org/pdf/1108.4902v2), Example 11, Section 3.1, printed p.7, explicitly records the independent-points construction. For an affine basis $A=\{0,b_1,\ldots,b_d\}$, $|A+A|=1+d+\binom d2$. Theorem 1, printed p.2, also gives this specialization with $t=d,k=1,w=0$ for $d\ge2$; dimensions zero and one are immediate. This uses only elementary independent-pair counting, not the paper's full compression argument.
+
+For a selected residual space $W$ of rank $r$, set $d=n-r$ and $S=\{0,e_1+W,\ldots,e_n+W\}$. Choose basis-coordinate representatives, giving $A\subseteq S$ and $|S|\le n+1$. A covered pair requires its quotient sum to lie in $S$. Every element of $(A+A)\setminus S$ identifies a distinct missing basis pair. Therefore
+
+$$\#\{\text{uncovered pairs}\}\ge|A+A|-|S|
+\ge\binom d2-r,$$
+
+which yields exactly $|E|\le\binom n2-\binom{n-r}{2}+r$. This works for every selected subset and preserves all coordinate labels, zero images, and multiplicities. Negative lower bounds on the missing-pair count simply give a vacuous inequality at high ranks; there is no exceptional-rank omission.
+
+**Fundamental circuits.** Tutte, *Lectures on Matroids*, J. Res. NBS 69B (1965), [primary paper](https://doi.org/10.6028/jres.069B.001), Section 2.2, printed p.3, between (2.21) and (2.22), gives uniqueness of the circuit meeting a minimal circuit-hitting set in a specified singleton. Its modern interpretation is fundamental-circuit uniqueness relative to the complementary basis; Tutte's rank convention must be translated.
+
+In the labelled coordinate-image matroid, any covered pair of basis elements is completed by a nonbasis coordinate into a three-element circuit. That circuit is the completing element's unique fundamental circuit, so each of the $r$ nonbasis coordinates completes at most one basis pair. All other covered pairs touch those $r$ coordinates. This recovers both the envelope and the almost-cover statement. Loops and parallel elements remain in the matroid and do not invalidate the argument.
+
+**Attribution boundary.** These are complete reductions to classical ingredients, not an assertion that Even-Zohar or Tutte studied delayed pair queries, nonlinear summaries, or the sharp error-rate curve. Conversely, failure to locate the repository's exact wording no longer supports a standalone geometric-novelty candidate. The earlier Erdős–Gallai partial reduction remains correct and relevant to the stronger low-rank refinement, but is not needed to attribute the main envelope.
+
+Source access: the primary additive paper was inspected in parallel and by the main pass, including Theorem 1, Example 11, and the arXiv version history. Its PDF footer identifies v2, 30 July 2012; the current PDF's internal title date is 10 October 2018, so citations use the explicit arXiv version. Tutte's primary full-text OCR was inspected in the matroid pass and its relevant passage checked during synthesis. The main pass's direct PDF request exceeded the reader's size limit; alternate archive/OCLC requests failed. The report does not claim a second complete retrieval of that paper. No third-party full text is redistributed.
+
+### 10.3 The stronger operational theorem
+
+Fix all input-independent tapes. For each input, define $\Delta_R(x)$ as the fraction of the $N=\binom n2$ pair queries the decoder would answer incorrectly, considering each separately from the same summary with its own one-read budget. This is a counterfactual error table, not a free multiquery execution. It permits erroneous pairs and supplies no guarantee against choosing one adversarially after the seed is visible.
+
+Keep all resource and exact-parity constraints. For the new optimization, the table-distortion criterion **replaces** the original per-fixed-query error promise. It must not be imposed together with that promise when studying subthreshold success: the partial-cover constructions intentionally fail on most inputs there.
+
+**Finite tail converse.** The existing exponential-moment lemma and positivity over at most $2^B$ memory labels give
+
+$$\Pr\{\Delta_R(X)\le\varepsilon\}
+\le\min\left\{1,\exp\left[B\ln2-sN(1-2\varepsilon)
++\sum_{k=1}^n\ln\cosh(sk)\right]\right\}.$$
+
+At $s=a/n$, this is at most
+$\min\{1,e^{C_\varepsilon}2^{B-n\mathcal R(\varepsilon)}\}$,
+where $C_\varepsilon=a(1-2\varepsilon)/2+\ln\cosh a$. The proof extends each memory label's decoder characters to the whole cube, applies the uniform moment bound, then averages tapes. No affine-cell assumption or restriction on summary-dependent addresses is introduced.
+
+**Worst-input covering.** In a fixed order, estimate endpoint $j$ and reread $i$ for $i<j$. For reconstructed word $z$ the exact table-error count is
+
+$$N\Delta(x)=\sum_{j=1}^n(j-1)\mathbf1\{x_j\ne z_j\}.$$
+
+For consecutive blocks of lengths $m_\ell$, cumulative endpoints $s_\ell$, and covering radii $r_\ell$, every input has at most $\sum_\ell(s_\ell-1)r_\ell$ wrong pairs. Ordinary covers charge all their index bits and one exact parity bit. Choosing a strict distortion margin, then a fine fixed number of blocks, then sufficiently large $n$, attains rate $\mathcal R(\varepsilon)$ for every input. The resulting address is deterministic and depends only on the query. Public symmetrization can additionally supply the old marginal guarantee while preserving each table's distortion bound for every input and seed.
+
+**Sharp success exponent.** Let $P_n^*(B,\varepsilon)$ be the best success probability for this table criterion under the resource constraints. For fixed $0<\varepsilon<1/2$, integer $B_n\ge1$, and $B_n/n\to\rho\ge0$,
+
+$$\lim_{n\to\infty}-\frac1n\log_2 P_n^*(B_n,\varepsilon)
+=\bigl(\mathcal R(\varepsilon)-\rho\bigr)_+.$$
+
+The converse is the preceding tail bound. For attainment, an ordered-endpoint weighted ball has relative volume $v_n=2^{-n\mathcal R(\varepsilon)+o(n)}$, proved by Chernoff above and finite-block type counts below. With $K=2^{B-1}$ reconstruction centers, a fixed codebook exists covering fraction at least $1-(1-v_n)^K\ge(1-e^{-1})\min\{1,Kv_n\}$. Store the selected center's $B-1$-bit index and exact parity. Thus deterministic endpoint schemes attain the unrestricted success exponent. The codebook is fixed independently of input; no input-dependent storage is omitted.
+
+The result does not identify the optimal failure exponent above the threshold. At the critical rate, zero success exponent alone does not imply success tends to one. Fixed tolerated excess-distortion probability below one has the same rate threshold, and success probability as small as $e^{-o(n)}$ still requires that leading rate. These claims keep the error parameter fixed in the interior.
+
+### 10.4 Verification and assessment
+
+Executed `python checks/run_all.py --include-conjunction` with Python 3.12.14 on this working tree: **PASS**, seven imported-file hashes, ten interface checks, and 86 local documentation links. All five recorded outputs were reproduced byte-for-byte. `git diff --check` passed, and a comparison against the reviewed base confirmed that the license, baseline notes, source manifest, original verifiers, recorded reports, and separate conjunction exploration were unchanged.
+
+Executed `python checks/reviews/verify_excess_distortion.py`: **PASS**, with exact integer and rational arithmetic. The explicit unequal-block cover used four charged summary bits and one counted endpoint read in all 2,688 input/pair executions; its maximum wrong-pair count was seven, below the coarse bound eight. Three explicit decoders through eight bits, including a nonlinear retained AND bit and summary-dependent nonendpoint addresses, supplied 33,768 input/pair executions, 22,512 counted reads, and 534 exact rational tail inequalities. Of those upper bounds, 44 were below one. The script verifies oracle guards and actual address dependence. These checks do not extrapolate a limiting exponent. Earlier optional review scripts were unchanged and were not rerun in this session. No baseline verifier or recorded output was modified.
+
+A separate read-only proof pass checked the tail prefactor, extension outside memory cells, arbitrary tape couplings, weighted-ball volume limit, finite index/parity accounting, partial-cover probability, critical-rate interpretation, and symmetrization. It found no mathematical defect. It identified the ambiguity about admissible schemes noted above; the new note and brief now explicitly remove the old per-query error promise from the success optimization. Agreement between model passes is not independent human validation or a proof-assistant certificate.
+
+**Revised development decision:** retain a narrow operational coding candidate, now with a sharp success exponent and a deterministic covering interpretation. Its elementary geometry and standard information-theoretic ingredients should be credited plainly. This is more precise than defending an unlocated standalone geometric theorem, but does not itself establish historical novelty or enough significance for publication.
+
+**Single next action:** assess the rate/success-exponent characterization as an application in approximate systematic data structures and source coding. Issue #1 remains open for that operational priority and significance assessment; the geometric attribution subquestion is resolved at the level needed for honest presentation. No external researcher contact, submission, or manuscript release occurred. Preserve the main proof, license, and original verification artifacts when integrating this continuation.
