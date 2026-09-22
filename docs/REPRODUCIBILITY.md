@@ -51,6 +51,7 @@ python checks/reviews/verify_low_rank_coverage.py
 python checks/reviews/verify_endpoint_scope.py
 python checks/reviews/verify_excess_distortion.py
 python checks/reviews/verify_strategy_translation.py
+python checks/reviews/verify_priority_obstructions.py
 ```
 
 The first executes 1,228,800 input/pair/permutation/mask cases with uneven blocks and reconstruction errors concentrated on one coordinate. Every fixed input/pair has exact error $1/20$ and one counted raw read; all five summary bits, including parity, are charged. This tests symmetrization, not a memory separation.
@@ -71,5 +72,18 @@ counterexample: a zero-bit code succeeds on exactly four even-parity inputs,
 while both possible constant parity decoders fail on four inputs each. These
 integer checks target translation signs and mandatory parity on failed inputs;
 they do not establish the asymptotic ball exponent or historical priority.
+
+The sixth checks the decoder-ball comparison's two explicit obstructions. For
+$n=3,\ldots,8$, it evaluates constant-zero and ordered-endpoint tables on all
+504 inputs: 22,512 direct pair-error checks, 1,008 distortion comparisons,
+and 12 exact histograms, ranks, and zero-error fiber counts. Equal full rank
+and equal zero-error fiber size do not imply equal approximate ball sizes.
+Five sparse parity systems at lengths 8, 12, 16, 24, and 32 contain 986 rows
+in total. Binary elimination, distinct-row counts, and outside-coordinate
+incidence checks verify full rank, degree at most three, and the stated
+quarter-error tail event, while the core triples outnumber available pair
+labels. No large input space is enumerated. These are checks of the explicit
+examples; the [self-contained note](PAIR_QUERY_NOTE.md) and audit supply the
+asymptotic arguments.
 
 These scripts print their results; no original report or tolerance is changed. The optional checks are not silently treated as CI gates in the existing workflow.

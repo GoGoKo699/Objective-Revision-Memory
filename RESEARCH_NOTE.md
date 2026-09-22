@@ -214,6 +214,12 @@ The covering bound gives block index lengths $11,21,40,59,78,95,107,117$. Includ
 
 ## 6. Evidence, attribution, and remaining work
 
+The [self-contained pair-query note](docs/PAIR_QUERY_NOTE.md) now gives a shorter
+route through the same theorem: apply the entropy bound directly to a
+strategy's good-input set, and prove weighted-ball attainment with independent
+tilted bits. It groups the coding consequences and preserves all resource and
+error quantifiers. This is a proof reorganization, not another claimed result.
+
 [verify_sharp_rate.py](checks/verify_sharp_rate.py) and its [recorded report](results/sharp_rate.json) check all 131,610 nonempty fixed-parity memory cells through five input bits, using integer correlations and ranks for the profile tests. They also check the entropy and dual inequalities numerically, execute a four-bit graded decoder on all 36,864 input-query-mask-permutation cases, verify the finite covering certificate with exact arithmetic, and compare numerical quadratures for the limiting curve. The [reproduction guide](docs/REPRODUCIBILITY.md) states counts and tolerances. Original parity and conjunction checks remain unchanged.
 
 The access model, ordinary Hamming covers, classical random access coding, elementary basis geometry, the entropic Chang ingredient, weighted binary coding profile, and convex optimization are established. The [proof and novelty audit](docs/reviews/SHARP_RATE_AUDIT.md) found no central proof defect. The candidate contribution is their matching operational application to arbitrary summary-dependent one-bit probes, including the resulting exact affine comparison. Neither the geometric count by itself, the scalar curve, nor generic nonlinear superiority supplies a novelty claim. The [literature comparison](docs/LITERATURE_COMPARISON.md) records complete geometric reductions and other comparisons; priority of the operational synthesis remains unresolved.

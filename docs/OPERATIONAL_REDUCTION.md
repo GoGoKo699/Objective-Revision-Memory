@@ -7,6 +7,11 @@ The reductions below identify which parts of the
 and isolate its task-specific extremal statement. They introduce no separate
 historical-novelty claim.
 
+The subsequent [self-contained pair-query note](PAIR_QUERY_NOTE.md) supplies
+the complete central proof without following links among earlier deductions.
+This document retains the detailed source-coding reductions and finite
+accounting comparisons.
+
 ## 1. Resources and the criterion
 
 An encoder sees a uniform archive $X\in\{0,1\}^n$, $n\ge3$, before a pair
