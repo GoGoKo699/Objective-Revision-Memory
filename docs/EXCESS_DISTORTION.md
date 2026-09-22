@@ -8,6 +8,13 @@ using the existing exponential-moment bound and ordinary covering codes. The Che
 bound, union bound over memory labels, entropy duality, and coding ingredients
 are established; this is not a separate historical-novelty claim.
 
+The subsequent [operational reduction](OPERATIONAL_REDUCTION.md) gives an exact
+general-distortion coding formulation and attributes the generic conversion to
+Kostina–Verdú's finite-block theorems. It isolates the largest one-read strategy
+ball as the task-specific quantity, and keeps mandatory parity valid even on
+unsuccessful inputs. The theorem below is a coding consequence of that ball
+exponent, rather than an additional independent novelty candidate.
+
 ## 1. A counterfactual answer table and its distortion
 
 Keep the original resource ledger: an $n$-bit uniform archive, a fixed

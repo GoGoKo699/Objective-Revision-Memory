@@ -1,6 +1,6 @@
 # Research status
 
-Updated 22 September 2026, following the geometric attribution and excess-distortion continuation. Reviewed main: `0e91f088cd06376458f63a20f76e2d5b507a690a` (merged PR #5). The [compact theorem brief](THEOREM_BRIEF.md) and [excess-distortion theorem](EXCESS_DISTORTION.md) give the current operational claim.
+Updated 22 September 2026, following the exact source-coding reductions. Reviewed main: `f1ecb10769f2b6ce0abe215d16f30767a02957d0` (merged PR #6). The [compact theorem brief](THEOREM_BRIEF.md) gives the review question; the [operational reduction](OPERATIONAL_REDUCTION.md) separates the task-specific theorem from generic coding consequences.
 
 ## Mathematical progress
 
@@ -16,6 +16,8 @@ New endpoint comparisons sharpen the operational interpretation. Arbitrary addre
 
 The strongest current operational formulation also determines the **success exponent**. Let success mean that at most an $\varepsilon$ fraction of pair queries would be answered incorrectly on an input, with each query considered separately under its own one-read budget. At memory rate $\rho$, the optimum success probability has exponent $(\mathcal R(\varepsilon)-\rho)_+$. Deterministic ordered-endpoint schemes attain it. This optimization keeps the resource and exact-parity rules but replaces the old marginal-error promise; it does not impose that promise below the rate. The same rate also supports a deterministic worst-input guarantee on the fraction of wrong pairs. Full proofs use the existing moment converse and weighted Hamming covers; no optimal failure exponent above the rate is claimed.
 
+The latest reduction isolates the mathematical content of these consequences. The maximum fraction $m_n(\varepsilon)$ of inputs handled with low table distortion by one fixed arbitrary-address strategy is $2^{-n\mathcal R(\varepsilon)+o(n)}$. Ordered-endpoint weighted Hamming balls attain that exponent. XOR translations of a maximizing strategy yield a finite success sandwich within a universal constant factor and a worst-input cover using one fixed address pattern with at most $1+\lceil\log_2(n\ln2+1)\rceil$ extra bits compared with an optimal arbitrary-address cover. That fixed pattern may use nonendpoints. These are standard symmetry/coding deductions, not independent novelty claims or efficient constructions.
+
 The old exact optimum, affine leading optimum, bounded-error inequalities, and explicit majority examples remain valid. They are preserved in [BASELINE_NOTE.md](../BASELINE_NOTE.md). Its open-rate statements and factor-two gap describe the earlier checkpoint, not current status.
 
 ## Evidence and limitations
@@ -28,19 +30,27 @@ A new optional check tests the endpoint construction and three-point-cell obstru
 
 The excess-distortion check adds 2,688 executions of a four-bit-summary block construction and 534 exact rational tail inequalities for explicit nonlinear and summary-dependent decoders. It verifies finite consequences of the proof, not the asymptotic exponent by extrapolation. All original verification artifacts remain unchanged.
 
+The strategy-translation check exhausts all 512 canonical three-bit strategies,
+verifying the mask identity, unchanged addresses, uniform translated-ball hit
+counts, and the mandatory-parity counterexample with integer arithmetic. The
+current full reproduction passes with all five recorded reports byte-identical.
+These checks support the finite reductions; they do not settle priority.
+
 There is no independent expert review, proof-assistant certificate, or efficient implementation of the large covering codes. Numerical integrations illustrate an analytic theorem rather than establish it. The 1024-bit example's 529-bit upper bound is an existence certificate, not a constructed large encoder.
 
 ## Publication assessment
 
-Proceed with a compact theorem-led candidate: arbitrary summary-dependent one-probe all-pairs data structures match fixed endpoint recovery in rate and success exponent. The elementary basis count explains the converse, and the exact weighted-error identity explains the construction. The geometry, scalar curve, entropy-bias budget, duality, and ordinary covering methods are established ingredients. The operational synthesis is the remaining candidate contribution; publication readiness and its historical priority are not established.
+Proceed with a compact internal theorem-led candidate centered on the **extremal one-read decoder-ball exponent and ordered-endpoint attainment**. Group the memory-rate, covering, and success-exponent statements as consequences. The geometry, scalar curve, entropy-bias budget, duality, and general lossy-coding conversions are established ingredients. The specific extremal evaluation is the remaining candidate contribution; publication readiness and historical priority are not established.
 
 The novelty audit, issue #1, remains open for the operational theorem. The original Nisan-Rudich-Saks manuscript gives a weaker extensive converse. One-star partial matrices recover the affine-fiber/entropy ingredient. The corrected Smal-Talebanfard approximate-prediction theorem does not apply directly to the pair-output lift because it loses entropy/locality accounting. Direct query-with-sketch batching has a conditional-support obstruction. Those specific limitations remain valid, but the earlier unresolved attribution of the geometric count is superseded by the complete reductions now recorded.
 
 The latest primary-source comparisons add extremal low-weight vectors, sequential caching, locally decodable source coding, and functional index coding. A computed one-bit cache update solves the task with one cached parity bit, demonstrating why a raw-coordinate restriction cannot be dropped. The direct local-source-code translation charges $n+B$ storage and complete-summary access. The [literature ledger](LITERATURE_COMPARISON.md) records these precise reductions and their limits; none is a global non-subsumption claim.
 
+Kostina–Verdú's general finite-block distortion theorems now give an exact coding comparison: a retained label selects a complete one-read strategy. The strategy-ball exponent must still be evaluated for this task. Permuter–Weissman's indirect-source Theorem 4 also contains the repeated-archive expected-distortion problem under an explicit map; its rate differs from ordinary strategy rate-distortion by at most one bit per archive. This supersedes the earlier comparison based only on model differences. Their repeated-archive limit and the repository's single growing archive have different guarantees. Mandatory parity remains exact even on failed inputs and costs at most one separately retained bit; an infinite distortion penalty does not enforce this in a partial cover.
+
 ## Next decisive work
 
-The originating workspace should assess priority and significance of the **operational rate and success-exponent theorem** in the brief. The elementary geometric mechanism has an adequate classical attribution; another search for independent novelty of that count is not the next task. A specialist comparison with approximate systematic data structures and source coding would now be more informative than further lower-order refinements. No external contact or submission has been made.
+The originating workspace should review the compact packet around one question: does a known theorem already evaluate the maximum one-read decoder-ball exponent, or imply it through a verified resource-preserving reduction? The exact claim and proof dependencies are ready in the brief and operational note. A focused comparison with approximate systematic data structures is more informative than further searches for novelty in basis geometry, entropy duality, or generic covering. Separately assess whether this canonical operational equality is significant enough for a short paper. No external contact, submission, or manuscript release has been made.
 
 The full finite pair-coverage envelope and efficient constructions are secondary research options if they add conceptual substance. Large simulations and neural training do not resolve the present priority question. Keep issue #1 open.
 
