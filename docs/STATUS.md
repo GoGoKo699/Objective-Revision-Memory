@@ -1,6 +1,8 @@
 # Research status
 
-Updated 22 September 2026, following the bounded decoder-ball comparison and standalone proof. Reviewed main: `a258ffc130dad5926551aa6c07e6413505d4aeef` (merged PR #7). The [self-contained pair-query note](PAIR_QUERY_NOTE.md) is the central proof packet; the [compact brief](THEOREM_BRIEF.md) gives the review question and the [operational reduction](OPERATIONAL_REDUCTION.md) records the general coding comparisons.
+Updated 22 September 2026, following repository organization and journal selection. Reviewed main: `fe445bf94149b0b9ca3389816ddcc36e883aaf51` (merged PR #8). The [reading guide](READING_GUIDE.md) introduces the model and maps the proof; the [self-contained pair-query note](PAIR_QUERY_NOTE.md) remains the central proof packet. The [compact brief](THEOREM_BRIEF.md) gives the review question and the [operational reduction](OPERATIONAL_REDUCTION.md) records the general coding comparisons.
+
+**Selected target: Information Processing Letters. Manuscript preparation is the final step.** The current work furnishes a research repository and supports the remaining contribution assessment. The [research roadmap](RESEARCH_ROADMAP.md) records the sequence and completion evidence. Journal selection does not establish novelty, significance, or submission readiness.
 
 ## Mathematical progress
 
@@ -45,14 +47,22 @@ These checks support the finite reductions; they do not settle priority.
 
 The latest optional check verifies the equal-rank/different-ball example on
 504 inputs and five sparse parity systems with 986 rows. All checks use exact
-integers. Full reproduction passes with 112 documentation links and all five
-reports byte-identical; no original verifier or tolerance was changed.
+integers. At the PR #8 checkpoint, full reproduction passed with 112
+documentation links and all five reports byte-identical; no original verifier
+or tolerance was changed.
+
+After the repository organization, full reproduction again passed with 170
+documentation links and all five reports byte-identical. The new reading
+guide's six four-bit answers and weighted error count were checked exactly.
+The update preserves 23 existing license, proof, source-manifest, verification,
+result, exploration, and workflow files byte-for-byte against the reviewed
+main. This is documentation validation; it adds no theorem or novelty finding.
 
 There is no independent expert review, proof-assistant certificate, or efficient implementation of the large covering codes. Numerical integrations illustrate an analytic theorem rather than establish it. The 1024-bit example's 529-bit upper bound is an existence certificate, not a constructed large encoder.
 
 ## Publication assessment
 
-Proceed with a compact internal theorem-led candidate centered on the **extremal one-read decoder-ball exponent and ordered-endpoint attainment**. Group the memory-rate, covering, and success-exponent statements as consequences. The geometry, scalar curve, entropy-bias budget, duality, and general lossy-coding conversions are established ingredients. The specific extremal evaluation is the remaining candidate contribution; publication readiness and historical priority are not established.
+Assess the existing internal theorem-led candidate centered on the **extremal one-read decoder-ball exponent and ordered-endpoint attainment**. Group the memory-rate, covering, and success-exponent statements as consequences. The geometry, scalar curve, entropy-bias budget, duality, and general lossy-coding conversions are established ingredients. The specific extremal evaluation is the remaining candidate contribution; publication readiness and historical priority are not established. Journal-formatted drafting remains deferred under the [IPL roadmap](RESEARCH_ROADMAP.md).
 
 The novelty audit, issue #1, remains open for the operational theorem. The original Nisan-Rudich-Saks manuscript gives a weaker extensive converse. One-star partial matrices recover the affine-fiber/entropy ingredient. The corrected Smal-Talebanfard approximate-prediction theorem does not apply directly to the pair-output lift because it loses entropy/locality accounting. Direct query-with-sketch batching has a conditional-support obstruction. Those specific limitations remain valid, but the earlier unresolved attribution of the geometric count is superseded by the complete reductions now recorded.
 
@@ -72,14 +82,18 @@ they do not exclude every prior theorem or certify originality.
 
 ## Next decisive work
 
-The self-contained internal short note and bounded comparison are complete.
-Use them for a focused specialist assessment of the precise decoder-ball
-theorem and whether its canonical access equivalence is significant enough for
-a short paper. Issue #1 remains open for that judgment. Do not turn inability
-to certify all historical priority into an indefinite cycle of broad searches,
-or add generic corollaries to inflate the contribution. If a prior implication
-is identified, present the result as an attributed worked example. No external
-contact, submission, or manuscript release has been made.
+The self-contained internal proof note and bounded comparison are complete.
+The repository now supplies a reading route, resource and error ledgers, proof
+map, and contribution guide. The next research decision is a bounded assessment
+of the precise decoder-ball theorem's priority and significance for IPL; the
+[roadmap](RESEARCH_ROADMAP.md) gives four concrete questions and separates this
+decision from final manuscript preparation. A focused specialist assessment can
+inform that judgment. Issue #1 remains open. Do not turn inability to certify
+all historical priority into an indefinite cycle of broad searches, or add
+generic corollaries to inflate the contribution. If a prior implication is
+identified, record the result as an attributed worked example and reassess its
+publication value. No external contact, submission, or manuscript release has
+been made.
 
 The full finite pair-coverage envelope and efficient constructions are secondary research options if they add conceptual substance. Large simulations and neural training do not resolve the present priority question. Keep issue #1 open.
 

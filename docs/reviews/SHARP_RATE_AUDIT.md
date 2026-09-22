@@ -623,3 +623,70 @@ finite examples, not the asymptotic theorem or priority. Earlier optional
 checks were preserved and not rerun in this session.
 
 **Decision and next action:** the bounded internal comparison and self-contained short-note packet are complete. The candidate is a sharp canonical access equivalence, whose converse needs the incidence of overlapping pair labels. It is neither a new entropy/coding framework nor a leading-cost theorem about retaining the old objective. Use this concrete packet for focused specialist assessment of priority and significance; keep issue #1 open. Do not treat unsuccessful searches as proof of novelty or prolong a generic literature queue indefinitely. If a prior implication is identified, retain an attributed worked example rather than manufacture extensions. No external contact, manuscript release, or submission occurred.
+
+## 13. Research repository and selected journal
+
+### 13.1 Reviewed state and scope
+
+Reviewed main `fe445bf94149b0b9ca3389816ddcc36e883aaf51`, the merge of PR #8.
+Current main, open pull requests, issue #1 and its latest handoff, and issue #2
+were checked before creating branch `review/research-package`. No open pull
+request was returned. The user selected **Information Processing Letters**,
+specified that **the manuscript is the final step**, and requested that the
+repository be furnished. This session organizes the research record; it makes
+no new theorem or historical-priority finding.
+
+### 13.2 Repository findings and changes
+
+The repository already contained a self-contained central proof, detailed
+primary-source reductions, preserved baselines, and reproducible finite
+evidence. Its entry points did not yet provide a staged reading route or
+record the chosen journal and manuscript sequencing. The review brief also
+still prioritized retrieval of the Nisan–Rudich–Saks original manuscript,
+although the completed comparison was already in the ledger. That instruction
+is now superseded explicitly, without changing the historical audit sections.
+
+The revised README explains the model and candidate contribution, records IPL
+and the research stage, and directs readers by purpose. The new
+[reading guide](../READING_GUIDE.md) adds prerequisites, a 30-minute orientation,
+a four-bit ordered-endpoint example, resource and error-quantifier tables, a
+proof dependency map, and a current/historical source index. The new
+[roadmap](../RESEARCH_ROADMAP.md) records the journal rationale and research
+completion evidence, with manuscript preparation last. The
+[contribution guide](../../CONTRIBUTING.md) makes the existing branch,
+quantifier, primary-source comparison, and artifact-preservation rules easier
+to use. Status and the workspace brief now point to this common route.
+
+The journal fit judgment uses IPL's publisher scope and its general
+nine-printed-page limit, checked on 22 September 2026. The roadmap links the
+official source and two publication precedents. These are venue-selection
+evidence; they neither settle novelty nor predict acceptance. In particular,
+the Rioul–Solé paper is included as a format precedent, not added to the list
+of completed theorem-level priority comparisons.
+
+### 13.3 Validation and remaining work
+
+Executed `python3 checks/run_all.py --include-conjunction`: **PASS**, seven
+imported-file hashes, ten interface checks, and 170 local documentation links.
+All five recorded reports reproduced byte-for-byte. `git diff --check` passed.
+A direct comparison with the reviewed main confirmed that all 23 existing
+license, baseline, principal proof, source-manifest, verification, result,
+exploration, and workflow files selected for preservation were byte-identical.
+The six answers in the reading guide's four-bit example and its weighted
+error count of one out of six were independently checked with exact integers.
+Earlier optional audit scripts were preserved and not rerun for this
+documentation-only update. A separate read-only consistency pass checked all
+seven changed documents against the central proof and found no mathematical
+error. It identified a stale validation count in status; that count is now
+labelled as the PR #8 checkpoint and followed by the current run's evidence.
+This internal pass is not independent human validation. No manuscript,
+submission, or external correspondence is part of this change.
+
+**Next action:** use the existing theorem packet to assess the precise
+arbitrary-address versus ordered-endpoint exponent and its significance for
+IPL, answering the four research questions in the roadmap. The unresolved
+scientific status is unchanged: written proofs and bounded internal comparisons
+exist; historical priority, independent human validation, and publication
+significance are not established. Keep issue #1 open. A specific remaining
+comparison or proof objection warrants focused work; broad repeated searches
+and unrelated extensions are not required by repository preparation.
