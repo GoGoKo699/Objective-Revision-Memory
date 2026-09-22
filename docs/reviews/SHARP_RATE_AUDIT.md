@@ -12,6 +12,8 @@ Review branch: `review/sharp-rate-audit`.
 
 **Current continuation in Section 10:** reviewed `0e91f088cd06376458f63a20f76e2d5b507a690a` (merged PR #5), on `research/excess-distortion`. Complete classical geometric reductions supersede the earlier unresolved-geometric-priority target. A new operational deduction gives the sharp success exponent and deterministic worst-input table covers. Priority of that operational synthesis remains unresolved.
 
+**Latest continuation in Section 11:** reviewed `f1ecb10769f2b6ce0abe215d16f30767a02957d0` (merged PR #6), on `review/operational-reduction`. Exact general-distortion and indirect-source reductions further narrow the candidate to an extremal decoder-ball evaluation. The covering and success-exponent conversions have explicit prior attribution; priority and significance of the task-specific evaluation remain unresolved.
+
 ## 1. Assessment and scope
 
 **The stated fixed-error first-order theorem survives this audit. No central mathematical defect or counterexample was found. Historical novelty is not established.** The most consequential novelty finding is that the scalar optimization, including the hyperbolic-tangent quality profile, is an explicit specialization of established weighted binary rate-distortion coding. The potentially distinctive result is equality of the full adaptive-address pair-query problem's optimal first-order rate with that coding rate, proved through the all-pairs residual-rank profile. Neither a new coding law nor the broad observation that nonlinear lossy encoders can outperform affine encoders is a defensible contribution by itself.
@@ -447,3 +449,73 @@ A separate read-only proof pass checked the tail prefactor, extension outside me
 **Revised development decision:** retain a narrow operational coding candidate, now with a sharp success exponent and a deterministic covering interpretation. Its elementary geometry and standard information-theoretic ingredients should be credited plainly. This is more precise than defending an unlocated standalone geometric theorem, but does not itself establish historical novelty or enough significance for publication.
 
 **Single next action:** assess the rate/success-exponent characterization as an application in approximate systematic data structures and source coding. Issue #1 remains open for that operational priority and significance assessment; the geometric attribution subquestion is resolved at the level needed for honest presentation. No external researcher contact, submission, or manuscript release occurred. Preserve the main proof, license, and original verification artifacts when integrating this continuation.
+
+## 11. Exact coding reductions and the smallest remaining claim
+
+### 11.1 Reviewed checkpoint and scope
+
+This continuation reviewed main `f1ecb10769f2b6ce0abe215d16f30767a02957d0`, the merge of PR #6, and began on the dedicated branch `review/operational-reduction`. Main, open pull requests, and the issue handoff were rechecked before choosing the branch. The prior proof assessment is retained; this session tests whether ordinary source-coding theorems already contain the newly stated operational consequences. It does not treat the prior audit or test success as evidence of originality.
+
+The new [operational note](../OPERATIONAL_REDUCTION.md) records complete reductions. It preserves the worst-case summary budget, one raw-coordinate read per independently considered query, free fixed codebooks and independent tapes, and exact old parity even on inputs whose answer table fails the distortion threshold. The table-success optimization replaces the marginal-error promise; it does not additionally impose that promise below the threshold rate.
+
+### 11.2 General lossy coding supplies the conversion
+
+For direct pair parity without mandatory old parity, a reproduction symbol is an entire strategy: for each pair, one address and a Boolean function of the returned bit. Distortion is the fraction of incorrect pair answers on the archive. A fixed summary selects one of at most $2^B$ such symbols. This includes arbitrary preprocessing and memory-dependent addresses exactly; the codebook itself is input-independent. Random tapes can be fixed when optimizing scalar average success or expected distortion.
+
+Kostina–Verdú, *Fixed-length lossy compression in the finite blocklength regime*, arXiv:1102.3944v3, 4 February 2014, Definition 1 and Section IV, Theorems 8–10, Eqs. (60), (65), (70), printed p.6, apply to this general distortion measure. Their sphere bound and random-coding formula already provide the coding conversion once the strategy-ball masses are known. Their later memoryless/separable Gaussian approximation is not automatically applicable. Primary PDFs were inspected; the [literature ledger](../LITERATURE_COMPARISON.md#10-general-lossy-coding-and-an-exact-decoder-action-embedding) records source links and the exact substitution.
+
+The remaining extremal quantity is
+
+$$m_n(\varepsilon)=\max_t2^{-n}|\{x:D_n(x,t)\le\varepsilon\}|.$$
+
+The existing moment bound proves $m_n\le e^{C_\varepsilon}2^{-n\mathcal R(\varepsilon)}$. An ordered-endpoint strategy gives the weighted Hamming ball of volume $v_n=2^{-n\mathcal R(\varepsilon)+o(n)}$. Thus
+
+$$v_n\le m_n=2^{o(n)}v_n=2^{-n\mathcal R(\varepsilon)+o(n)}.$$
+
+This evaluates the largest low-error input set handled by any one-read strategy. The bound is at fixed $0<\varepsilon<1/2$ and compares exponential volumes, not finite equality or a polynomial ratio. This is the smallest task-specific claim to assess for priority. Generic covering and success-exponent conversions are no longer separate candidate contributions.
+
+### 11.3 Finite deductions and a parity trap
+
+For XOR mask $z$, keep each address $k_q$ and replace the answer function by
+$g_q^z(b)=g_q(b\oplus z_{k_q})\oplus z_i\oplus z_j$.
+Then $D_n(x,t^z)=D_n(x\oplus z,t)$. Uniform translates of a maximizing strategy each cover every fixed input with probability $m_n$. The translated codebook preserves one common address pattern, which can use nonendpoints.
+
+For the original revision task and integer $B\ge1$, the resulting fully finite bounds are
+
+$$1-(1-m_n)^{2^{B-1}}\le P_n^*(B,\varepsilon)
+\le\min\{1,2^Bm_n\}.$$
+
+The lower code charges $B-1$ index bits and one exact-parity bit on every input. Its value is at least $(1-e^{-1/2})\min\{1,2^Bm_n\}$. This constant-factor comparison already uses summary-independent addresses, though it does not make them endpoints.
+
+For deterministic worst-input table covers, $\lceil(n\ln2+1)/m_n\rceil$ random translates have expected uncovered count below one. Comparing with $m_n\ge2^{-B}$ for any unrestricted $B$-bit cover yields
+
+$$B_{\rm cov}^{\rm arb}\le B_{\rm cov}^{\rm fixed}
+\le B_{\rm cov}^{\rm arb}+1+\lceil\log_2(n\ln2+1)\rceil.$$
+
+This applies even at zero distortion, with exact parity charged. It removes summary dependence of the address pattern at logarithmic overhead, but does not remove nonendpoint reads. It is an elementary symmetry/covering corollary, not an efficient conversion or an independent novelty claim.
+
+An infinite distortion penalty for an incorrect parity flag is insufficient for partial covers. With three bits, a single fixed zero flag and a decoder reading the complementary coordinate answers direct pair parity correctly on all even-parity inputs. Such a zero-bit code succeeds on half the inputs under the penalty, yet cannot retain total parity exactly. Appending an actual parity bit avoids the mismatch on unsuccessful inputs.
+
+### 11.4 Decoder actions: a reduction, not merely model differences
+
+Permuter–Weissman, *Source Coding with a Side Information “Vending Machine”*, arXiv:0904.2311v2, 30 April 2009, Section II-F, Theorem 4, Eqs. (49)–(51), printed pp.15–16, admits the following precise instance. At fixed archive width $n$, the hidden source is $(X,Q)$, the encoder observes only $X$, an action is a full pair-to-address map, and the channel returns $(Q,X_{A(Q)})$. The query is uniform and independent, each action costs one raw read, and reconstruction is a pair-parity bit. The action is chosen from the paid message.
+
+Let $F_n(D)$ be this repeated-archive rate, and $G_n(D)=\min I(X;T)$ for stochastic strategy labels at expected table distortion at most $D$. Absorbing the action into the auxiliary turns their objective into $I(X;U)-I(U;Y\mid A)$. Query independence and the one-bit observation give $0\le I(U;Y\mid A)\le1$. Collapsing the auxiliary to its induced strategy yields
+
+$$G_n(D)-1\le F_n(D)\le G_n(D).$$
+
+The existing Gibbs/moment converse applies to arbitrary conditional distributions and bounds $G_n$ below; endpoint covers bound it above. Consequently both normalized quantities tend to $\mathcal R(D)$ at fixed interior $D$. Evaluating this strategy optimization uses the pair-specific argument, not a numerical formula supplied by the prior theorem. Its limit repeats fixed archives before letting their width grow and controls expected distortion. It does not itself give the original single-archive worst-input table or success-probability guarantees. Exact original parity can again be appended for one bit per archive.
+
+This is a materially stronger comparison than Section 4.4's earlier discussion of direct-source Theorem 1. The earlier model differences remain factual but are insufficient as the final novelty analysis; the explicit indirect-source embedding supersedes that comparison.
+
+### 11.5 Verification, decision, and handoff
+
+A separate read-only mathematical pass checked the strategy equivalence, translation identity, probability constant, cover ceilings, parity counterexample, and the indirect-source substitution. It verified the Markov factorization, independence of the query from the auxiliary, the one-bit information subtraction, and the order of the repeated-archive and growing-width limits. No mathematical defect was found. This is another model pass, not independent expert validation.
+
+Executed `python checks/run_all.py --include-conjunction` with Python 3.12.14: **PASS**, seven imported-file hashes, ten interface checks, and 99 local documentation links. All five recorded reports were reproduced byte-for-byte. `git diff --check` passed. A direct comparison against the reviewed commit also confirmed all 19 tracked license/baseline/check/result/exploration files were byte-identical; the new check is an additional optional file.
+
+Executed `python checks/reviews/verify_strategy_translation.py`: **PASS**, with exact integer arithmetic. It exhausts all 512 canonical three-bit strategies, checking 98,304 pair-error identities, 32,768 total-distortion identities, 12,288 address/class checks, and 16,384 uniform-mask hit counts. The parity counterexample succeeds on exactly four of eight inputs; both zero-bit parity decoders fail. These finite checks neither prove the limiting exponent nor establish priority. Earlier optional scripts were preserved and were not rerun in this session.
+
+**Decision:** prepare a focused internal short-note candidate with one central theorem: the extremal one-read decoder-ball exponent, attained by ordered endpoint recovery. Attribute generic coding conversions and group their consequences. Neither old parity preservation, elementary basis geometry, nor the weighted scalar curve should be promoted as the new conceptual contribution.
+
+**Single next action:** use the now-concrete theorem packet to determine whether approximate systematic-data-structure results already evaluate this extremal quantity or imply it through a fully specified reduction. Separately judge the significance of the canonical equality. Issue #1 remains open. No further undirected search for novelty in generic covering or fundamental circuits is needed, and no external researcher contact, submission, or manuscript release has occurred.

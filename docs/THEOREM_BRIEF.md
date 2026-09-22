@@ -1,8 +1,31 @@
 # What the sharp pair-query theorem contributes
 
 Internal research and contribution brief, 22 September 2026. Repository base:
-`0e91f088cd06376458f63a20f76e2d5b507a690a`.
+`f1ecb10769f2b6ce0abe215d16f30767a02957d0`.
 This is a theorem-led working formulation, not a manuscript release or a historical-priority certificate. The [research note](../RESEARCH_NOTE.md) supplies the full sharp-rate proof; the [literature comparison](LITERATURE_COMPARISON.md) identifies established ingredients and the remaining reduction questions.
+
+**Precise priority question.** For a fixed one-read decoder strategy $t$,
+let $D_n(x,t)$ be its fraction of wrong direct pair-parity answers. Addresses
+may be arbitrary coordinates, but are fixed once the strategy and query are
+specified. Set
+
+$$m_n(\varepsilon)=\max_t2^{-n}|\{x:D_n(x,t)\le\varepsilon\}|.$$
+
+The task-specific theorem is $m_n(\varepsilon)=2^{-n\mathcal R(\varepsilon)+o(n)}$
+for fixed interior error; an ordered-endpoint strategy attains this exponent.
+The [operational reduction](OPERATIONAL_REDUCTION.md) proves the statement from
+the existing moment bound and weighted-ball volume. A memory label selects a
+strategy, so arbitrary preprocessing and summary-dependent addresses are
+included. Kostina–Verdú's general distortion theorems then supply the covering
+and success-exponent conversion. Those consequences should be grouped under
+one result, not counted as independent novelty claims.
+
+The review question is whether a prior theorem evaluates this extremal ball,
+or implies it through an explicit reduction preserving raw-coordinate probes,
+charged summary bits, and error quantifiers. A separate significance question
+is whether this canonical equality merits a focused short note. No efficient
+encoder, new scalar coding law, or general objective-preservation principle is
+being proposed.
 
 ## 1. Operational question and resource ledger
 
@@ -84,7 +107,7 @@ $$B_{\rm pair}\le B_{\rm arb}\le B_{\rm pair}+1.$$
 
 The first inequality uses the retained exact parity to convert a revision answer to a pair-parity answer. The second stores one additional exact parity bit and converts in reverse. Error and read budgets are unchanged; the argument also applies to endpoint restrictions. Preserving the old objective therefore has no additional leading memory cost in this example.
 
-Proceed with a lean research candidate centered on unrestricted versus publicly chosen endpoint access, now including the success exponent below. Retain explicit attribution for the elementary geometry, coding law, and entropy machinery. The affine separation and bipartite benchmark are consequences and context, not independent evidence of originality. Historical priority of this operational synthesis remains unresolved; neither a new geometric principle nor a new coding law is claimed. The audit does not establish submission readiness or a general theorem about objective preservation.
+Proceed with a lean internal candidate centered on the extremal decoder-ball evaluation and ordered-endpoint attainment. Present unrestricted versus publicly chosen endpoint access, covering, and the success exponent below as its operational consequences, with explicit attribution for general lossy coding as well as geometry and entropy. The affine separation and bipartite benchmark are context, not independent evidence of originality. The action-dependent coding comparison now has a worked indirect-source reduction, rather than just a list of model differences. Historical priority and significance remain unresolved; the audit does not establish submission readiness.
 
 ## 6. Stronger operational form: covers and the success exponent
 

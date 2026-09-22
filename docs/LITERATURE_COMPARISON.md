@@ -1,6 +1,6 @@
 # Literature comparison: sharp-rate audit and continuation
 
-Checked 22 September 2026, most recently against `0e91f088cd06376458f63a20f76e2d5b507a690a`. This is a version-specific primary-source comparison, not an originality certificate. The [baseline audit](LITERATURE_BASELINE.md) is preserved unchanged. The [detailed sharp-rate audit](reviews/SHARP_RATE_AUDIT.md) supplies the full resource ledger and proofs of the reductions summarized here. Source statements and repository deductions are distinguished below. Section 9 now supplies complete classical derivations of the geometric envelope, superseding its earlier status as the main unresolved ingredient.
+Checked 22 September 2026, most recently against `f1ecb10769f2b6ce0abe215d16f30767a02957d0`. This is a version-specific primary-source comparison, not an originality certificate. The [baseline audit](LITERATURE_BASELINE.md) is preserved unchanged. The [detailed sharp-rate audit](reviews/SHARP_RATE_AUDIT.md) supplies the full resource ledger and proofs of the reductions summarized here. Source statements and repository deductions are distinguished below. Section 9 supplies complete classical derivations of the geometric envelope. Section 10 gives exact general-distortion and indirect-source reductions, narrowing the unresolved claim to an extremal decoder-ball evaluation.
 
 ## 1. Systematic structures: the access model and affine geometry are established
 
@@ -101,14 +101,65 @@ Apply this to the labelled coordinate-image matroid. A covered pair of basis coo
 
 **Revised attribution.** These complete reductions replace the earlier unresolved-geometric-priority target. The envelope should be presented as a task-specific elementary lemma with explicit antecedents. Neither source is asserted to have stated the raw-read model or its sharp memory theorem. The remaining historical question concerns the operational synthesis, including its [excess-distortion formulation](EXCESS_DISTORTION.md), not whether independent basis pairs have distinct sums. No further general search for a standalone geometric theorem is required for this attribution decision.
 
-## 10. Claim boundary and development decision
+## 10. General lossy coding and an exact decoder-action embedding
+
+**General distortion already includes complete strategies.** Kostina and Verdú,
+*Fixed-length lossy compression in the finite blocklength regime*,
+[arXiv:1102.3944v3](https://arxiv.org/pdf/1102.3944), 4 February 2014,
+Definition 1 and Section IV, Theorems 8–10, Eqs. (60), (65), (70), printed p.6.
+Take a whole archive as one source symbol and a complete one-read decoder
+strategy as one reproduction symbol. Distortion is the fraction of wrong pair
+answers. A $B$-bit summary chooses at most $2^B$ strategies, including all
+summary-dependent addresses, so their general framework applies exactly to
+the direct pair-parity task. The sphere bound and random-code formula supply
+the success-probability conversion; they do not evaluate the largest strategy
+ball. Theorem 12's stationary-memoryless, separable-distortion hypotheses do
+not automatically hold for this growing alphabet.
+
+**An explicit indirect-source embedding.** Permuter and Weissman,
+*Source Coding with a Side Information “Vending Machine”*,
+[arXiv:0904.2311v2](https://arxiv.org/pdf/0904.2311), 30 April 2009,
+Section II-F, Theorem 4, Eqs. (49)–(51), printed pp.15–16. For each fixed
+archive width, let the hidden source be $(X,Q)$ and the encoder observe only
+$X$. An action is a whole query-to-address map; the channel returns the late
+uniform pair $Q$ and the selected raw bit. Reconstruction is the pair-parity
+answer and every action costs one. This preserves hidden query timing and
+the one-raw-bit channel while allowing message-dependent actions.
+
+**Our deductions.** Write $G_n(D)=\min I(X;T)$ over stochastic strategy labels
+with expected table distortion at most $D$, and $F_n(D)$ for the repeated-archive
+rate characterized by their Theorem 4. Absorb the action into the auxiliary
+$U$. Their objective is $I(X;U)-I(U;Y\mid A)$, and the subtracted quantity lies
+in $[0,1]$: the query is independent and the remaining observation is one bit.
+Collapsing $U$ to its induced strategy therefore gives
+
+$$G_n(D)-1\le F_n(D)\le G_n(D).$$
+
+The existing pair-specific moment bound applies to arbitrary posteriors and
+proves $G_n(D)/n\to\mathcal R(D)$, hence the same for $F_n(D)/n$. The source
+does not evaluate this strategy optimization. Its coding limit repeats fixed
+archives and controls expected distortion; it does not itself establish our
+single-archive success exponent or deterministic worst-input table guarantee.
+Exact old parity can be added for one bit per archive, including failed inputs.
+An infinite parity penalty in the distortion only enforces parity on successful
+inputs and is insufficient for that requirement.
+
+The [operational note](OPERATIONAL_REDUCTION.md) proves these reductions and
+the finite XOR-translation bounds. This supersedes a comparison that merely
+lists differences from the direct-source Theorem 1. The general coding
+conversions are established machinery; the remaining evaluation is
+$m_n(\varepsilon)=2^{-n\mathcal R(\varepsilon)+o(n)}$, with an ordered-endpoint
+strategy attaining the exponent. No independent novelty is assigned to the
+covering or success-exponent conversion.
+
+## 11. Claim boundary and development decision
 
 **Written result:** arbitrary preprocessing, arbitrary memory-dependent one-bit addresses, exact original parity, and a fixed positive error allowance admit the matching rate derived in the [current note](../RESEARCH_NOTE.md). The construction uses only endpoint probes. The [excess-distortion deduction](EXCESS_DISTORTION.md) strengthens the operational statement to deterministic worst-input table distortion and the optimal exponential rate of the probability of a low-distortion table below the memory threshold.
 
 **Established machinery:** the systematic model, one-star Boolean affinity and fiber counting, elementary affine-basis sumsets and fundamental circuits, the entropic Chang inequality, convex conjugacy, weighted binary rate-distortion coding, Hamming covers, Chernoff and union bounds, RAC block construction, and symmetrization.
 
-**Candidate contribution requiring priority resolution:** the sharp operational characterization for arbitrary summary-dependent raw probes, matching publicly chosen endpoint recovery at the level of rate and success exponent. The elementary geometric lemma supports this application; it is no longer a separate novelty candidate. The exact affine comparison is a consequence. The general rank-envelope lemma, low-rank refinement, bipartite benchmark, and excess-distortion deductions are not independently certified new results.
+**Candidate contribution requiring priority resolution:** evaluation of the largest low-error input set handled by one arbitrary raw-read strategy, matching an ordered-endpoint weighted Hamming ball in exponential size. General coding converts that evaluation into the operational rate and success exponent. The elementary geometric lemma supports the evaluation and has adequate classical attribution. The exact affine comparison is a consequence. The general rank-envelope lemma, low-rank refinement, bipartite benchmark, finite translation bounds, and excess-distortion deductions are not independently certified new results.
 
 **Not established:** historical novelty, uniqueness of optimal implementations, efficient explicit near-optimal codes, finite-length optimality, uniform vanishing-error or vanishing-advantage asymptotics, a computational speedup, or a theorem about AI alignment. The work is now a sharper mathematical object to compare, not a certified new paper.
 
-**Decision:** keep a compact candidate centered on the operational coding theorem and its precise converse/covering guarantees. The previous statement that no worked reduction supplied the complete envelope is superseded by Section 9. Established ingredients can support a useful new application, but their synthesis and significance must be assessed directly. Keep issue #1 open for operational priority; do not continue promoting the basis count as the missing novelty. The [brief](THEOREM_BRIEF.md) gives the exact claim for that assessment.
+**Decision:** keep a compact internal short-note candidate centered on the extremal decoder-ball theorem. Sections 9–10 resolve attribution of the basis count and coding conversion; another undirected search for novelty in those steps is not useful. The next review should ask whether prior work evaluates the same extremal quantity or supplies a theorem that implies it with all hypotheses checked. Even a new canonical equality needs a separate significance assessment. Keep issue #1 open. The [brief](THEOREM_BRIEF.md) gives the exact claim and reviewer question; no external contact or manuscript release is authorized by this decision.
