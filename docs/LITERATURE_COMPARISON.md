@@ -1,6 +1,6 @@
 # Literature comparison: sharp-rate audit and continuation
 
-Checked 22 September 2026, most recently against `a258ffc130dad5926551aa6c07e6413505d4aeef`. This is a version-specific primary-source comparison, not an originality certificate. The [baseline audit](LITERATURE_BASELINE.md) is preserved unchanged. The [detailed sharp-rate audit](reviews/SHARP_RATE_AUDIT.md) supplies the full resource ledger and proofs of the reductions summarized here. Source statements and repository deductions are distinguished below. Sections 9–10 attribute the geometry and general coding conversions. Section 11 gives a bounded comparison of the remaining decoder-ball theorem; the [self-contained note](PAIR_QUERY_NOTE.md) supplies its complete central proof.
+Checked 22 September 2026, most recently against `2b240fa20b9c8d585106edb512a5f18200aafd33`. This is a version-specific primary-source comparison, not an originality certificate. The [baseline audit](LITERATURE_BASELINE.md) is preserved unchanged. The [detailed sharp-rate audit](reviews/SHARP_RATE_AUDIT.md) supplies the full resource ledger and proofs of the reductions summarized here. Source statements and repository deductions are distinguished below. Sections 9–10 attribute the geometry and general coding conversions. Section 11 gives a bounded comparison of the remaining decoder-ball theorem; the [self-contained note](PAIR_QUERY_NOTE.md) supplies its complete central proof.
 
 ## 1. Systematic structures: the access model and affine geometry are established
 
@@ -8,7 +8,7 @@ S. Natarajan Ramamoorthy and C. Rashtchian, *Equivalence of Systematic Linear Da
 
 Sections 1.1-1.3 and Theorem 1 treat retained linear information, input probes, and matrix-rigidity geometry. Section 1.3 explicitly discusses general systematic structures with arbitrary preprocessing and a freely accessible index, as well as the common-bits connection. Thus neither our access model nor the affine condition $q\in W+\operatorname{span}\{e_k\}$ is new. Their exact linearization questions must not be identified with our approximate affine/nonlinear separation.
 
-**Our candidate addition:** the matching bounded-error rate for arbitrary preprocessing and memory-dependent addresses. The geometric count is an elementary deduction from established basis facts, as Section 9 now makes explicit. Priority of the operational characterization remains unresolved; model comparison is not proof of novelty.
+**Our candidate addition:** the matching bounded-error rate for arbitrary preprocessing and memory-dependent addresses. The geometric count is an elementary deduction from established basis facts, as Section 9 now makes explicit. The bounded assessment in Section 12 retains this proposed originality claim; model comparison alone is not proof of novelty.
 
 ## 2. Classical random access codes supply the covering-rate ingredient
 
@@ -244,8 +244,156 @@ for novelty in its elementary ingredients.
 
 **Established machinery:** the systematic model, one-star Boolean affinity and fiber counting, elementary affine-basis sumsets and fundamental circuits, the entropic Chang inequality, convex conjugacy, weighted binary rate-distortion coding, Hamming covers, Chernoff and union bounds, RAC block construction, and symmetrization.
 
-**Candidate contribution requiring priority resolution:** evaluation of the largest low-error input set handled by one arbitrary raw-read strategy, matching an ordered-endpoint weighted Hamming ball in exponential size. General coding converts that evaluation into the operational rate and success exponent. The elementary geometric lemma supports the evaluation and has adequate classical attribution. The exact affine comparison is a consequence. The general rank-envelope lemma, low-rank refinement, bipartite benchmark, finite translation bounds, and excess-distortion deductions are not independently certified new results.
+**Proposed original contribution after bounded assessment:** evaluation of the largest low-error input set handled by one arbitrary raw-read strategy, matching an ordered-endpoint weighted Hamming ball in exponential size. General coding converts that evaluation into the operational rate and success exponent. The elementary geometric lemma supports the evaluation and has adequate classical attribution. The exact affine comparison is a consequence. The general rank-envelope lemma, low-rank refinement, bipartite benchmark, finite translation bounds, and excess-distortion deductions are not independently certified new results.
 
-**Not established:** historical novelty, uniqueness of optimal implementations, efficient explicit near-optimal codes, finite-length optimality, uniform vanishing-error or vanishing-advantage asymptotics, a computational speedup, or a theorem about AI alignment. The work is now a sharper mathematical object to compare, not a certified new paper.
+**Not established:** historical novelty, uniqueness of optimal implementations, efficient explicit near-optimal codes, finite-length optimality, uniform vanishing-error or vanishing-advantage asymptotics, a computational speedup, or a theorem about AI alignment. The completed assessment is affirmative at this narrow scope, not an exhaustive priority certificate.
 
-**Decision:** proceed with the [self-contained internal short note](PAIR_QUERY_NOTE.md), now completed. It has one central extremal theorem and one group of coding consequences. The bounded comparisons above identify concrete losses, rather than treating different terminology or unsuccessful searches as evidence of novelty. The conceptual claim is that arbitrary raw-coordinate access gives no leading-rate advantage over a fixed endpoint rule for this canonical overlapping query family. That supports a focused candidate; it does not establish broad technological significance or submission readiness. Keep issue #1 open for focused specialist assessment of this precise claim. No external contact or manuscript release is included.
+**Decision:** retain this extremal theorem as the proposed original contribution
+of a focused theoretical paper. The [completed assessment](CONTRIBUTION_ASSESSMENT.md)
+explains the positive significance case and its strongest limitations. The
+comparison identifies concrete losses in inspected reductions; unsuccessful
+searches are not novelty evidence. The mathematical content is the sharp
+absence of a leading-rate advantage from arbitrary raw-coordinate access over
+a fixed endpoint rule for a canonical overlapping query family. Established
+methods, specialized scope, and nonconstructive codebooks limit the claims but
+do not defeat this focused contribution. Reopen for concrete new evidence;
+independent specialist feedback is welcome. **Manuscript preparation is on
+hold.** No external contact or manuscript release is included.
+
+## 13. Header-based local compression: a closer architectural precedent
+
+**Source statement.** Pananjady and Courtade, *The Effect of Local Decodability
+Constraints on Variable-Length Compression*, IEEE Transactions on Information
+Theory 64(4), 2593–2608 (2018),
+[published author PDF](https://people.eecs.berkeley.edu/~courtade/pdfs/PananjadyCourtade_LocalDecodableTIT2018.pdf),
+Definition 1/Theorem 1, p.2595; Definition 6/Theorem 6, p.2599; Section VI-A,
+p.2606. Their source is uniform over all weight-$r$ binary strings of length
+$m$. Theorem 1 lower-bounds expected codeword length under exact coordinate
+recovery using $d$ adaptive encoded-bit probes, with length known to the
+decoder. Theorem 6 permits a freely read $h$-bit header followed by $d$ probes
+of a designed fixed-length payload and proves an achievability result.
+Section VI-A extends the converse to block error by retaining entirely
+correctly decoded source words.
+
+**Our resource comparison.** The freely accessible header is an explicit
+precedent for metadata-dependent probing. That architecture is not a novelty
+claim. Their header theorem does not lower-bound header length when the
+payload must be the unchanged archive. Indeed, coordinate queries on that
+payload need no header and one raw read. Our queries are pair parities. In a
+literal locally decodable representation $(M,X)$, storage is $n+B$ bits and
+reading the entire summary followed by one archive bit can use $B+1$ probes.
+Putting $d=1$ in Theorem 1 while granting free summary access would change its
+resource model.
+
+**Our source-lift check.** Set $Y_{ij}=X_i\oplus X_j$ and $N=\binom n2$.
+The $2^{n-1}$ possible vectors $Y$ are cut patterns, not a uniform $N$-bit
+cube. Conditional on $|X|=w$, their weight is $r=w(n-w)$ but their support
+has size $\binom nw$, divided by two when $2w=n$. It is not the full shell
+of size $\binom Nr$. Replacing one by the other can change the entropy scale
+from $n$ to $n^2$. For $n=4,w=1$ the two counts are 4 and 20; for $w=2$
+they are 3 and 15. The archive still is $X$, so querying a coordinate of
+an encoded $Y$ is a further change unless its implementation is charged.
+
+**Our error check.** Theorem 1's proof, Section IV, Eqs. (7)–(8), unions
+transcripts for the source's one-coordinates and obtains an antichain:
+containment would force a decoding error. A positive-distortion table already
+permits errors, so that contradiction does not transfer. Section VI-A's block
+error extension retains words with zero coordinate errors; our good inputs
+may each have $\varepsilon N$ wrong pairs. Counting all ambient error
+patterns gives the loose factor
+$\sum_{j\le\varepsilon N}\binom Nj=2^{\Theta(n^2)}$ at fixed interior
+error. A fixed strategy actually realizes at most $2^n$ patterns, but an
+uncontrolled partition can still consume the whole $n$-scale entropy budget.
+Thus a sharp error-pattern argument would require additional structure; it
+is not supplied by the exact antichain or block-error statements. These
+explicit substitutions do not yield our bound; more elaborate reductions
+are not ruled out.
+
+## 14. Entropy proofs of ball bounds are established
+
+**Source statement.** Rioul and Solé, *An Information Theoretic Proof of the
+Chernoff–Hoeffding Inequality* (2025),
+[author PDF](https://perso.telecom-paristech.fr/rioul/publis/202502rioulsole.pdf),
+DOI [10.1016/j.ipl.2025.106582](https://doi.org/10.1016/j.ipl.2025.106582),
+Sections 4–5, Theorem 6 and Corollary 10. The source uses entropy methods for
+concentration and ordinary Hamming-ball volume. Taking a uniform distribution
+on a constrained set and bounding its entropy by marginal entropies is
+established methodology, not a new feature of our proof.
+
+**Our substitution.** A strategy's residual image is an affine binary code
+$C\subseteq\{0,1\}^N$ of dimension $d\le n$. Applying the ordinary ball bound
+only yields
+
+$$\Pr[D_n(X,t)\le\varepsilon]
+=2^{-d}|C\cap B_N(0,\lfloor\varepsilon N\rfloor)|
+\le 2^{N h_2(\varepsilon)-d}.$$
+
+For fixed positive error and $N=\Theta(n^2)$ this upper bound is vacuous.
+Selecting $d$ independent residuals alone does not bound their error fraction
+by that of all $N$ dependent residuals. The pair-incidence envelope over all
+subsets and the full greedy bias profile supply the missing task-specific
+constraint. This is an explicit limitation of the direct substitution, not
+an assertion that ordinary entropy cannot prove our theorem: entropy is
+precisely an ingredient of our proof.
+
+**Source-proof caveat.** In the inspected PDF, Eq. (34) of the proof of
+Corollary 10 is false as printed: $q=2,n=2,d=1$ would give
+$3\le2^{4/3}$, whereas $3^3=27>16=2^4$. This does not invalidate the final
+ball bound in Eq. (33). It follows directly from entropy subadditivity: for
+uniform $X$ in the $q$-ary ball and $d'=\mathbb E|X|$, each coordinate has
+nonzero probability $d'/n$, hence $H_q(X)\le n h_q(d'/n)$, followed by the
+usual monotonicity step in the stated radius range. Our central proof uses
+valid unconditional entropy subadditivity and does not rely on the printed
+intermediate inequality. The source caveat supplies no novelty evidence.
+
+## 15. Recent bounded-error operator and RAC comparisons
+
+**Bounded error is already present in the operator literature.** Young Kun Ko,
+*Lower Bounds for Linear Operators*, ECCC TR25-155 (22 October 2025),
+[primary PDF](https://eccc.weizmann.ac.il/report/2025/155/download/),
+Lemma 4.4, printed p.21, treats random linear operators with $m=10^9n$
+rows and space $s=1.01n$. Its displayed per-output success requirement is at
+least $2/3$ and the probe lower bound is $\Omega(\log n)$. Thus it would be
+incorrect to dismiss the whole comparison as exact-only. We do not strengthen
+the lemma's probability quantifier to a worst-input guarantee.
+
+**Our substitution check.** The complete pair matrix is explicit and has
+weight-two rows; it is not the random dense operator in that lemma. Two raw
+reads answer each pair exactly, independently of $n$, so a logarithmic probe
+lower bound cannot specialize to this matrix. Also, probes to all stored
+one-bit cells are charged in that model; there is no arbitrary summary whose
+entire contents are free to read. Paying for our summary or treating it as
+free changes the compared parameter. The source does not evaluate the
+one-raw-read/summary-rate tradeoff for this explicit matrix.
+
+**A dynamic successor screened separately.** Ko,
+*An $\Omega((\log n/\log\log n)^2)$ Cell-Probe Lower Bound for Dynamic Boolean
+Data Structures*, ECCC TR26-047 (26 March 2026),
+[current 33-page PDF](https://eccc.weizmann.ac.il/report/2026/047/download/),
+Theorem 1.1, printed p.2, concerns the multiphase inner-product problem with
+$m=n^{1+\Omega(1)}$ and bounds $\max\{t_u,t_{tot}\}$. Words have
+$\Theta(\log n)$ bits and updates are charged. It is not a static
+positive-distortion pair theorem. Applying its more general lifting route
+would require verifying the communication-hardness hypothesis for the
+restricted weight-two query distribution; the paper's general inner-product
+statement does not do that. This is a screened neighbor, not an attribution
+of our result or a claim about every possible dynamic reduction.
+
+**Recent geometric RAC optimization.** Kondo, Sato, Yano, Maeda, Ito, and
+Yamamoto, *Random Access Codes: Explicit Constructions, Optimality, and
+Classical–Quantum Gaps*,
+[arXiv:2604.21274v3](https://arxiv.org/pdf/2604.21274v3), 16 July 2026,
+Definitions 2–3, Theorem 5/Eq. (23), p.6, and Theorem 14/Eq. (121), p.12.
+The former reduces average classical RAC success to nearest representatives
+on the uniform input cube; the latter gives a convex-hull distance
+optimization for worst-case coordinate success. The model decodes from the
+message without a raw-archive probe and does not grant shared randomness.
+
+**Our substitution check.** Setting their input length to $N=\binom n2$
+would replace the dependent cut-pattern source of Section 13 with a uniform
+cube and omit our legal raw read. Granting that read also changes the class
+of reproduction objects from message-only coordinate reconstructions to
+query-dependent strategies. Neither inspected geometric optimization
+evaluates the volume of those strategy balls. General strategy-as-reproduction
+coding is already credited in Section 10. The comparison supports the narrow
+claim boundary, not a global non-subsumption assertion.

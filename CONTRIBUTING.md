@@ -6,9 +6,12 @@ possible failure. Small exact checks support the arguments; passing checks do
 not establish a general theorem or historical novelty.
 
 Start with the [reading guide](docs/READING_GUIDE.md) and follow the current
-[research roadmap](docs/RESEARCH_ROADMAP.md). Manuscript writing is the final
-project step; repository maintenance does not itself start drafting, submission,
-or external correspondence.
+[research roadmap](docs/RESEARCH_ROADMAP.md). Manuscript preparation is on hold.
+Potential collaborators can contact Ruge Lin using the email in the
+[README](README.md). The completed [contribution assessment](docs/CONTRIBUTION_ASSESSMENT.md)
+sets the present scope; specific new proof objections or prior-result
+implications should update that assessment. Repository maintenance does not
+itself start drafting, submission, or external correspondence.
 
 ## Coordinate the work
 

@@ -624,16 +624,15 @@ checks were preserved and not rerun in this session.
 
 **Decision and next action:** the bounded internal comparison and self-contained short-note packet are complete. The candidate is a sharp canonical access equivalence, whose converse needs the incidence of overlapping pair labels. It is neither a new entropy/coding framework nor a leading-cost theorem about retaining the old objective. Use this concrete packet for focused specialist assessment of priority and significance; keep issue #1 open. Do not treat unsuccessful searches as proof of novelty or prolong a generic literature queue indefinitely. If a prior implication is identified, retain an attributed worked example rather than manufacture extensions. No external contact, manuscript release, or submission occurred.
 
-## 13. Research repository and selected journal
+## 13. Research repository organization
 
 ### 13.1 Reviewed state and scope
 
 Reviewed main `fe445bf94149b0b9ca3389816ddcc36e883aaf51`, the merge of PR #8.
 Current main, open pull requests, issue #1 and its latest handoff, and issue #2
 were checked before creating branch `review/research-package`. No open pull
-request was returned. The user selected **Information Processing Letters**,
-specified that **the manuscript is the final step**, and requested that the
-repository be furnished. This session organizes the research record; it makes
+request was returned. The user specified that **the manuscript is the final
+step** and requested that the repository be furnished. This session organizes the research record; it makes
 no new theorem or historical-priority finding.
 
 ### 13.2 Repository findings and changes
@@ -641,28 +640,21 @@ no new theorem or historical-priority finding.
 The repository already contained a self-contained central proof, detailed
 primary-source reductions, preserved baselines, and reproducible finite
 evidence. Its entry points did not yet provide a staged reading route or
-record the chosen journal and manuscript sequencing. The review brief also
+record manuscript sequencing. The review brief also
 still prioritized retrieval of the Nisan–Rudich–Saks original manuscript,
 although the completed comparison was already in the ledger. That instruction
 is now superseded explicitly, without changing the historical audit sections.
 
-The revised README explains the model and candidate contribution, records IPL
-and the research stage, and directs readers by purpose. The new
+The revised README explains the model and candidate contribution, records the
+research stage, and directs readers by purpose. The new
 [reading guide](../READING_GUIDE.md) adds prerequisites, a 30-minute orientation,
 a four-bit ordered-endpoint example, resource and error-quantifier tables, a
 proof dependency map, and a current/historical source index. The new
-[roadmap](../RESEARCH_ROADMAP.md) records the journal rationale and research
-completion evidence, with manuscript preparation last. The
+[roadmap](../RESEARCH_ROADMAP.md) records research completion evidence, with
+manuscript preparation last. The
 [contribution guide](../../CONTRIBUTING.md) makes the existing branch,
 quantifier, primary-source comparison, and artifact-preservation rules easier
 to use. Status and the workspace brief now point to this common route.
-
-The journal fit judgment uses IPL's publisher scope and its general
-nine-printed-page limit, checked on 22 September 2026. The roadmap links the
-official source and two publication precedents. These are venue-selection
-evidence; they neither settle novelty nor predict acceptance. In particular,
-the Rioul–Solé paper is included as a format precedent, not added to the list
-of completed theorem-level priority comparisons.
 
 ### 13.3 Validation and remaining work
 
@@ -683,10 +675,126 @@ This internal pass is not independent human validation. No manuscript,
 submission, or external correspondence is part of this change.
 
 **Next action:** use the existing theorem packet to assess the precise
-arbitrary-address versus ordered-endpoint exponent and its significance for
-IPL, answering the four research questions in the roadmap. The unresolved
+arbitrary-address versus ordered-endpoint exponent and its significance for a
+focused theoretical paper, answering the four research questions in the roadmap. The unresolved
 scientific status is unchanged: written proofs and bounded internal comparisons
 exist; historical priority, independent human validation, and publication
 significance are not established. Keep issue #1 open. A specific remaining
 comparison or proof objection warrants focused work; broad repeated searches
 and unrelated extensions are not required by repository preparation.
+
+## 14. Completed bounded novelty and significance assessment
+
+### 14.1 Reviewed state and question
+
+Reviewed main `2b240fa20b9c8d585106edb512a5f18200aafd33`, the merge of PR #9,
+on dedicated branch `review/contribution-assessment`. Current main, issues
+#1–#2, the workspace brief, proof packet, baseline, reproduction instructions,
+and comparison ledger were inspected; no open pull request was returned at
+branch selection. The question is the originality and significance of the
+sharp unrestricted decoder-ball theorem, not another derivation of its
+established scalar curve. The user requested integration of the assessment,
+public manuscript-on-hold status, and an email invitation to collaborators.
+
+### 14.2 New source comparisons and actual deductions
+
+The [literature ledger](../LITERATURE_COMPARISON.md), Sections 13–15, records
+primary versions, theorem locations, resource translations, and source caveats.
+
+- Pananjady–Courtade's published Theorem 6 explicitly permits a freely read
+  header followed by local payload access. Header-dependent probing is an
+  established architectural idea. Its achievability statement does not
+  supply the required converse for an immutable raw payload. The pair-output
+  lift is supported on cut patterns, not the full constant-weight shell.
+  Their exact transcript antichain and block-error extension do not directly
+  cover inputs with a positive fraction of erroneous pair answers. Counting
+  all ambient error patterns gives a loose $n^2$-scale factor; only at most
+  $2^n$ patterns occur for a fixed strategy, but that uncontrolled partition
+  still need not preserve the required exponent.
+- Rioul–Solé supplies an explicit antecedent for entropy-based ball counting.
+  Substituting the full $N=\binom n2$ residual code into the ordinary ball
+  bound gives $2^{Nh_2(\varepsilon)-d}$ with $d\le n$, which is vacuous at
+  fixed positive error. The all-subsets pair incidence and bias profile still
+  need to be used. The ledger also records a false printed intermediate
+  inequality in that source and a direct valid entropy proof of its final
+  ball bound. That caveat is not evidence of originality here.
+- Ko's Lemma 4.4 does include bounded error; the field must not be dismissed
+  as exact-only. Its random dense operator is not the explicit pair matrix,
+  for which two raw reads solve every query. The charged storage probes also
+  differ from a freely accessed retained summary. The dynamic successor has
+  additional update and hardness hypotheses. Kondo et al.'s recent geometric
+  RAC optimizations are for message-only decoding, with a different source
+  after a pair-output lift. The explicit substitutions do not evaluate the
+  unrestricted strategy-ball exponent.
+
+These findings strengthen attribution and delimit checked implications. They
+are not global impossibility results for all conceivable reductions. Earlier
+comparisons to general distortion coding and decoder actions remain valid;
+those formulas leave the pair-specific optimization unevaluated.
+
+### 14.3 Research decision and significance
+
+**Decision: retain the sharp one-read pair-query extremum as the proposed
+original contribution of a focused theoretical paper.** This completes the
+present bounded proceed/reframe/stop assessment. The detailed
+[contribution assessment](../CONTRIBUTION_ASSESSMENT.md) gives the positive
+case and the strongest objections.
+
+The substantive conclusion is that arbitrary nonlinear preprocessing and
+memory-dependent nonendpoint addresses cannot improve the leading rate over
+one fixed ordered-endpoint rule. A graded endpoint construction alone would
+be a weighted-coding application; the unrestricted converse supplies the
+additional content. Equal residual rank and exact fiber size need not give
+equal approximate exponents, and discarding overlapping pair labels loses
+the sharp constraint. The theorem is therefore a useful solved extremal
+benchmark, even though its query family is specialized and its proof uses
+established methods.
+
+The scalar curve, geometric count, entropy budget, and general coding
+conversions are credited ingredients. The memory, covering, and success-rate
+statements form one group of consequences. No new coding framework, efficient
+implementation, broad objective-preservation theorem, or technological
+advantage is claimed. Retaining the old parity costs at most one bit.
+
+No identified inspected theorem implies the full result through the checked
+resource-preserving reductions. Historical coverage remains incomplete, and
+independent human review has not been obtained. Those limits qualify the
+positive judgment; they do not leave this same bounded assessment perpetually
+unfinished. Reopen it for a concrete citation, reduction, counterexample, or
+substantive significance objection.
+
+### 14.4 Public repository state and validation
+
+README, status, roadmap, reading guide, and workspace instructions now point
+to the completed assessment. **Manuscript preparation is on hold.** The
+README and assessment welcome collaborators to contact Ruge Lin at the
+confirmed public research email. Public venue-target wording was removed
+from current documents and the editable prior PR/handoff descriptions;
+scientific bibliography and Git history were preserved. No manuscript,
+submission, release, or external researcher correspondence was produced.
+
+Executed `python3 checks/run_all.py --include-conjunction`: **PASS**; seven
+imported-file hashes, ten interface checks, and all five recorded reports
+reproduced byte-for-byte. The final documentation check passed with 190 local links.
+`git diff --check` passed, and all 23 protected license, baseline, principal
+proof, source-manifest, verification, result, exploration, and workflow files
+were byte-identical to the reviewed main.
+
+One-off exact checks enumerated all 504 inputs for $3\le n\le8$, verifying
+that the pair-output support has $2^{n-1}$ distinct cuts and that conditioning
+on weight $w$ gives weight $w(n-w)$ and the stated support count. The printed
+source inequality's counterexample uses only $27>16$. These checks support
+the concrete comparison examples, not the limiting theorem or priority. No
+verification script, result, source manifest, baseline, license, or principal
+proof was edited. A separate internal read-only review of the contribution
+assessment found no mathematical or quantifier discrepancy. Its ledger review
+identified an overbroad error-pattern count: the ambient count was valid as a
+loose upper bound, but a fixed strategy realizes at most $2^n$ patterns. The
+comparison now states both facts and leaves the sharper partition argument
+unproved. This internal review is not independent expert validation.
+
+**Next action:** maintain this completed research packet and welcome
+collaboration. Follow specific new evidence or a scientifically useful
+extension. Manuscript preparation stays on hold; another general novelty
+search is not the default next task. The report commit, pull request, final
+checks, and integration state are recorded in the PR and issue #1 handoff.
