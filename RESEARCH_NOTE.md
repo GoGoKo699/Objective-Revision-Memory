@@ -18,7 +18,9 @@ $$p_{ij}(X)=p(X)\oplus X_i\oplus X_j.$$
 
 The decoder sees the whole summary, seed, and query, and may reread at most one raw coordinate $X_k$. The address can depend on all those available quantities. Local computation and preprocessing time are unrestricted. The immutable external archive still contains $X$ and is not charged to $B$; a read returns one bit, not a word or arbitrary function. Prior transcripts and input-dependent caches are not free. This is an established systematic-data-structure access model, not a proposed new framework.
 
-Write $B_{\rm all}(n,\varepsilon)$ for the least summary size with exact original parity and, for each fixed pair, revised error at most $\varepsilon$ averaged over uniform $X$ and randomness. The converse below needs only average error over uniform pairs as well. The construction attains the stronger guarantee for **every fixed input and fixed pair**, with probability over the public seed. It does not give simultaneous correctness of all pairs, or protect against selecting a pair after observing the seed and summary. These distinct error models have the same first-order rate because the lower and upper bounds enclose them.
+Write $B_{\rm all}(n,\varepsilon)$ for the least summary size with exact original parity and, for each fixed pair, revised error at most $\varepsilon$ averaged over uniform $X$ and randomness. The converse below needs only average error over uniform pairs as well. The construction attains the stronger guarantee for **every fixed input and fixed pair**, with probability over the public seed. It does not give simultaneous correctness of all pairs, or protect against selecting a pair after observing the seed and summary.
+
+**Finite symmetrization observation.** These three optimal memory sizes are equal even at finite $n$. Given a scheme for input-and-pair average error, publicly choose an independent uniform permutation $\Pi$ and mask $Z$ and encode $Y_a=X_{\Pi(a)}\oplus Z_a$ with the old scheme. Map query $\{i,j\}$ to $\{a,b\}=\{\Pi^{-1}(i),\Pi^{-1}(j)\}$. Simulate a read of $Y_k$ with one read of $X_{\Pi(k)}$ and the known mask bit. Correct the revised output by $p(Z)\oplus Z_a\oplus Z_b$ and the original-parity output by $p(Z)$. For each fixed $X,i,j$, the transformed input is uniform independently of the uniform mapped pair. Error is therefore the old average, with the same worst-case memory size and read budget. The reverse inclusions are immediate. This standard symmetrization deduction also preserves affine encoders for each seed.
 
 Random coins can be fixed when conditioning; revealing private coins for a converse only strengthens the decoder. Fixed-length worst-case summary size, not expected message length, is charged. All entropy is measured in bits; $\ln$ denotes the natural logarithm. Set
 
@@ -49,6 +51,8 @@ A finite converse, valid for every $s>0$, is
 $$\boxed{B\ln2\ \geq\ sN\eta-\sum_{k=1}^n\ln\cosh(sk).}$$
 
 This finite inequality is not asserted to be the finite-length optimum. The older finite converses and the exact theorem remain available independently. At $\varepsilon=0$, the baseline exact formula gives limiting rate one; at $\varepsilon=1/2$, one parity bit and a random guess give limiting rate zero. The displayed parameterization concerns the open interval.
+
+The [rank-profile extensions](docs/RANK_PROFILE_EXTENSIONS.md) give a capped finite converse, an exact low-rank coverage formula, and the corresponding sharp result for bipartite query graphs. They do not alter this first-order theorem.
 
 ## 3. Converse: preserve the entire independence profile
 
@@ -89,6 +93,8 @@ This is the refinement missing from the earlier argument: retain the full list o
 Let $D=n-H(X\mid m,R)$. Extend the independent residual rows to a basis of $\mathbb F_2^n$. The resulting invertible linear change of variables preserves entropy. Each selected coordinate has entropy $h_2((1-t_\ell)/2)$ and each remaining coordinate at most one. Subadditivity yields
 
 $$\sum_{\ell=1}^n c(t_\ell)\leq D.$$
+
+This entropy ingredient is established: for a uniform memory cell it is precisely the pre-quadratic entropy inequality in Impagliazzo, Moore, and Russell, *An Entropic Proof of Chang's Inequality*, Eq. (1), together with their Section 2 basis transfer. The argument above also works for arbitrary conditional distributions. See the version-specific [literature comparison](docs/LITERATURE_COMPARISON.md). The pair-subset coverage bound supplies the separate geometric input.
 
 The elementary convex identity
 
@@ -159,6 +165,17 @@ For target $\eta$, first choose $a'>a$ so the continuous bias is strictly larger
 
 This works for all sufficiently large $n$ by using block sizes differing by at most one, not only a divisibility subsequence. One must not set $L=n$ while discarding the covering overhead. The construction completes the matching theorem and establishes the existence of the limiting rate.
 
+### 4.5 Identification with an established weighted coding problem
+
+The scalar profile is a specialization of weighted binary rate-distortion coding, not a new coding law. Let a fair binary source have an independent uniform quality label $u\in[0,1]$, public to both encoder and decoder, and distortion $2u\,\mathbf1\{x\ne\widehat x\}$. Its variational rate at distortion $\varepsilon$, optimizing measurable $0\le\delta(u)\le1/2$, is
+
+$$\inf_{\delta}\left\{\int_0^1[1-h_2(\delta(u))]du:
+\int_0^1 2u\delta(u)du\le\varepsilon\right\}.$$
+
+Martinian, Wornell, and Zamir, *Source Coding With Distortion Side Information*, Section IV-E, Eqs. (40)-(41), give the finite-label weighted binary formula. Set their distortion offset to zero and their weight to $2u$; the continuum expression follows by finite partitions. Their logistic allocation gives $\delta(u)=(1+e^{2au})^{-1}$, hence $b(u)=\tanh(au)$. The substitutions $b=1-2\delta$ and $\eta=1-2\varepsilon$ identify its objective and constraint exactly with ours. Source/version details are in the [comparison](docs/LITERATURE_COMPARISON.md).
+
+What the pair-query theorem adds, subject to unresolved priority, is equality of its optimal first-order rate with this established coding rate: the weights emerge from pair geometry, and the converse allows arbitrary summary-dependent raw addresses. This is an equality of limiting optima, not a finite-length simulation between all implementations of the two models.
+
 ## 5. Consequences and finite certificate
 
 The baseline affine rate is $\mathcal R_{\rm aff}(\varepsilon)=1-\sqrt{2\varepsilon}$. For every fixed $0<\varepsilon<1/2$,
@@ -191,6 +208,6 @@ The covering bound gives block index lengths $11,21,40,59,78,95,107,117$. Includ
 
 [verify_sharp_rate.py](checks/verify_sharp_rate.py) and its [recorded report](results/sharp_rate.json) check all 131,610 nonempty fixed-parity memory cells through five input bits, using integer correlations and ranks for the profile tests. They also check the entropy and dual inequalities numerically, execute a four-bit graded decoder on all 36,864 input-query-mask-permutation cases, verify the finite covering certificate with exact arithmetic, and compare numerical quadratures for the limiting curve. The [reproduction guide](docs/REPRODUCIBILITY.md) states counts and tolerances. Original parity and conjunction checks remain unchanged.
 
-The access model, ordinary Hamming covers, classical random access coding, binary entropy identities, and convex optimization are established. Candidate research content is the pair-specific rank-profile converse, its match with graded endpoint recovery in the fully adaptive-address model, and the resulting sharp rate and strict affine comparison. The [literature audit](docs/LITERATURE_COMPARISON.md) is not complete enough to certify that these are new. In particular, common-bits/help-bit antecedents and more indirect reductions remain relevant.
+The access model, ordinary Hamming covers, classical random access coding, the entropic Chang ingredient, weighted binary coding profile, and convex optimization are established. The [proof and novelty audit](docs/reviews/SHARP_RATE_AUDIT.md) found no central proof defect. It narrowed the candidate contribution to the pair-specific all-subsets rank envelope and its matching application to arbitrary summary-dependent one-bit probes, including the resulting exact affine comparison. Neither the scalar curve nor the generic advantage of nonlinear lossy encoders supplies a novelty claim. The [literature comparison](docs/LITERATURE_COMPARISON.md) records explicit reductions and their limits; historical priority remains unresolved.
 
 Remaining mathematical questions include finite-length optimality, efficient explicit constructions approaching the curve, stronger adversarial query quantifiers, and variable-error finite-size regimes. These are distinct from the first-order rate settled by the written argument. No theorem about consciousness, natural-language interpretation, or present-day AI systems is claimed.

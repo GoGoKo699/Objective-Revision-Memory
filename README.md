@@ -20,6 +20,8 @@ $$\lim_{n\to\infty}\frac{B_{\rm all}(n,\varepsilon)}n
 
 The achieving principle is **graded storage**: reconstruct some facts more accurately than others, then reread the less accurately represented endpoint of a query. A rank-profile and entropy converse proves that no arbitrary encoding or memory-dependent one-bit address can improve the leading rate.
 
+The scalar curve is an established weighted binary coding law, and the entropy ingredient comes from an entropic proof of Chang's inequality. The candidate contribution is the pair-query problem's equality with that coding optimum despite allowing arbitrary summary-dependent probe addresses. The [proof and novelty audit](docs/reviews/SHARP_RATE_AUDIT.md) found no central proof defect; historical priority remains unresolved.
+
 | Revised error | Unrestricted rate | Optimal affine rate |
 | --- | ---: | ---: |
 | 1% | 0.81497 | 0.85858 |
@@ -33,6 +35,8 @@ The [current research note](RESEARCH_NOTE.md) contains the complete converse, co
 ## Evidence and navigation
 
 The [status](docs/STATUS.md) separates mathematical progress from novelty. The [literature comparison](docs/LITERATURE_COMPARISON.md) credits established ingredients and records unfinished comparisons. The [reproduction guide](docs/REPRODUCIBILITY.md) documents exact checks versus numerical checks; the [source manifest](docs/SOURCE_MANIFEST.json) traces the unchanged imported baseline files.
+
+The [rank-profile continuation](docs/RANK_PROFILE_EXTENSIONS.md) isolates the general entropy argument, sharpens low-rank pair coverage, and proves the corresponding matching/cover rate for bipartite query graphs. It distinguishes mathematical deductions from unresolved priority claims.
 
 The new finite certificate says that 529 bits suffice at $n=1024$ and revised error below 10%, whereas every affine summary needs at least 565 bits at the same target. The 529-bit upper bound uses a proved existence bound for Hamming covers; those large covers have not been built.
 

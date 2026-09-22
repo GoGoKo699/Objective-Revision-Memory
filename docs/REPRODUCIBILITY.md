@@ -40,3 +40,18 @@ The original exact and bounded-error scripts and reports, along with the separat
 [BASELINE_NOTE.md](../BASELINE_NOTE.md) preserves the prior repository note. Its old open-rate language is historical; [RESEARCH_NOTE.md](../RESEARCH_NOTE.md) supplies the new matching proof. Existing imported-file hashes do not purport to authenticate new files; Git records those revisions normally.
 
 No network access, GPU, simulation cluster, third-party optimizer, or training dataset is used by these checks. Passing them supports implementation and finite-counterexample testing, not historical novelty, independent human validation, or a formal proof certificate. CI conclusions must be read from the completed workflow run, not inferred from the presence of a workflow file.
+
+## Optional audit and continuation checks
+
+These targeted checks supplement the unchanged runner and recorded reports:
+
+```sh
+python checks/reviews/verify_asymmetric_cover.py
+python checks/reviews/verify_low_rank_coverage.py
+```
+
+The first executes 1,228,800 input/pair/permutation/mask cases with uneven blocks and reconstruction errors concentrated on one coordinate. Every fixed input/pair has exact error $1/20$ and one counted raw read; all five summary bits, including parity, are charged. This tests symmetrization, not a memory separation.
+
+The second independently enumerates binary subspaces by reduced row echelon bases, without importing baseline routines. For $n=3,\ldots,7$ and $0\le r\le\lfloor(n-2)/2\rfloor$, it checks all 3,559 subspaces, direct residual-row membership, enumeration counts against Gaussian binomials, and attainment of $nr-r(r+1)/2$ by coordinate subspaces. It also enumerates the 16-vector rank-four Hamming kernel at $n=7$, which covers all 21 pairs and disproves a global extension of that formula. All arithmetic is exact. The [continuation note](RANK_PROFILE_EXTENSIONS.md) supplies the proof and range restriction.
+
+These scripts print their results; no original report or tolerance is changed. The optional checks are not silently treated as CI gates in the existing workflow.
