@@ -1,8 +1,16 @@
 # What the sharp pair-query theorem contributes
 
 Internal research and contribution brief, 22 September 2026. Repository base:
-`f1ecb10769f2b6ce0abe215d16f30767a02957d0`.
+`a258ffc130dad5926551aa6c07e6413505d4aeef`.
 This is a theorem-led working formulation, not a manuscript release or a historical-priority certificate. The [research note](../RESEARCH_NOTE.md) supplies the full sharp-rate proof; the [literature comparison](LITERATURE_COMPARISON.md) identifies established ingredients and the remaining reduction questions.
+
+For a complete central proof in one place, read the
+[self-contained pair-query note](PAIR_QUERY_NOTE.md). It avoids the intermediate
+moment lemma in the converse and uses a direct tilted-product measure for
+endpoint attainment. The bounded priority comparison now includes explicit
+losses for full-rank fiber counts, threshold direct products, and generic
+polynomial concentration. Those losses justify a focused review of the
+pair-incidence argument, not a claim of historical originality.
 
 **Precise priority question.** For a fixed one-read decoder strategy $t$,
 let $D_n(x,t)$ be its fraction of wrong direct pair-parity answers. Addresses

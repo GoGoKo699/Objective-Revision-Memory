@@ -1,6 +1,6 @@
 # Literature comparison: sharp-rate audit and continuation
 
-Checked 22 September 2026, most recently against `f1ecb10769f2b6ce0abe215d16f30767a02957d0`. This is a version-specific primary-source comparison, not an originality certificate. The [baseline audit](LITERATURE_BASELINE.md) is preserved unchanged. The [detailed sharp-rate audit](reviews/SHARP_RATE_AUDIT.md) supplies the full resource ledger and proofs of the reductions summarized here. Source statements and repository deductions are distinguished below. Section 9 supplies complete classical derivations of the geometric envelope. Section 10 gives exact general-distortion and indirect-source reductions, narrowing the unresolved claim to an extremal decoder-ball evaluation.
+Checked 22 September 2026, most recently against `a258ffc130dad5926551aa6c07e6413505d4aeef`. This is a version-specific primary-source comparison, not an originality certificate. The [baseline audit](LITERATURE_BASELINE.md) is preserved unchanged. The [detailed sharp-rate audit](reviews/SHARP_RATE_AUDIT.md) supplies the full resource ledger and proofs of the reductions summarized here. Source statements and repository deductions are distinguished below. Sections 9–10 attribute the geometry and general coding conversions. Section 11 gives a bounded comparison of the remaining decoder-ball theorem; the [self-contained note](PAIR_QUERY_NOTE.md) supplies its complete central proof.
 
 ## 1. Systematic structures: the access model and affine geometry are established
 
@@ -152,7 +152,93 @@ $m_n(\varepsilon)=2^{-n\mathcal R(\varepsilon)+o(n)}$, with an ordered-endpoint
 strategy attaining the exponent. No independent novelty is assigned to the
 covering or success-exponent conversion.
 
-## 11. Claim boundary and development decision
+## 11. Bounded comparison of the decoder-ball theorem
+
+**Exact one-star rank bounds leave a weight-distribution problem.** With residual
+matrix $A_t$, affine offset $\alpha_t$, and rank $r$, the exact identity is
+
+$$\Pr[D_n(X,t)\le\varepsilon]
+=2^{-r}|(\alpha_t+\operatorname{im}A_t)
+\cap B_N(0,\lfloor\varepsilon N\rfloor)|.$$
+
+Jukna–Schnitger's exact fiber count in Section 7 therefore does not by itself
+evaluate approximate volume. Two legal strategies demonstrate a leading-order
+loss: always answer zero, or answer $x_i$ for $i<j$. Both have rank $n-1$ and
+exactly two zero-error inputs. The first has error count $w(n-w)$ for
+$w=|x|$, hence ball exponent
+$1-h_2((1-\sqrt{1-2\varepsilon})/2)$; the second has exponent
+$\mathcal R(\varepsilon)$. These are different functions. A union bound over
+all allowed error vectors also loses the scale: its logarithmic Hamming-ball
+factor is $\Theta(n^2)$, while $r\le n$. These examples are our deductions,
+not results attributed to that source.
+
+**Disjoint products give a genuine weaker ball bound.** The Nisan–Rudich–Saks
+matching comparison in Section 5 extends directly to
+
+$$m_n(\varepsilon)\le
+2^{-\lfloor n/2\rfloor[1-h_2(\varepsilon)]}.$$
+
+Choose a uniform maximum matching and apply Jensen to the exponential of its
+correct-answer count. Matching residuals are independent even for arbitrary
+third-coordinate reads, so the moment is the fair-binomial moment. Optimizing
+Chernoff gives the displayed inequality. At error $0.1$, its limiting
+coefficient is approximately $0.265502$, below the sharp $0.422085$.
+The audit supplies the full derivation; these numbers illustrate an analytic
+gap, not a numerical novelty test.
+
+**Threshold direct-product successors preserve independent instances and a
+shared query budget.** Drucker, *Improved Direct Product Theorems for Randomized
+Query Complexity*, [arXiv:1005.0644v2](https://arxiv.org/pdf/1005.0644),
+9 May 2014, Theorem 6.6, printed p.20, bounds threshold success on independent
+instances using a global query budget. Ben-David and Blais, *Direct Product
+Theorems for Randomized Query Complexity*,
+[arXiv:2512.08268v1](https://arxiv.org/pdf/2512.08268), 9 December 2025,
+Theorem 2, printed p.5, and Corollary 3, p.6, give list-decoding and threshold
+query-complexity bounds. They concern copies of one function on separate input
+blocks, not all overlapping pairs of one archive. Replacing our separate
+one-read outputs by one algorithm with $N$ total reads removes the restriction:
+it reads all $n\le N$ bits and answers every pair exactly. Conversely, taking
+independent pair blocks preserves only a matching-sized part of the objective.
+These direct substitutions do not yield the sharp theorem; this is not a
+claim that every possible reduction from those works fails.
+
+**A polynomial concentration theorem loses the required scale on a legal
+strategy.** Schudy and Sviridenko, *Bernstein-like Concentration and Moment
+Inequalities for Polynomials of Independent Random Variables: Multilinear
+Case*, [arXiv:1109.5193v2](https://arxiv.org/pdf/1109.5193), 8 June 2012,
+Theorem 1.3, Eq. (1.7), printed p.4, bounds a polynomial's tail using its
+variance and smoothness parameters $\mu_r$ (defined on p.3).
+Let $Y_i=(-1)^{X_i}$. Read $j$ for pair $\{1,j\}$, and read coordinate 1
+for pairs $\{i,j\}$ with $i,j>1$, always returning the raw bit. The signed
+correctness sum is
+
+$$S=(n-1)Y_1+Y_1\sum_{2\le i<j\le n}Y_iY_j.$$
+
+It has $\operatorname{Var}S=(n-1)^2+\binom{n-1}{2}$ and
+$(\mu_1,\mu_2,\mu_3)=(N,n-2,1)$. At threshold $\eta N$, the theorem's
+$r=1$ term is $\exp(-\eta/C^3)$ for its universal constant $C$, independent
+of $n$. Thus this direct substitution gives no positive exponent on the $n$
+scale. More structured concentration arguments are not ruled out.
+
+There is a stronger obstruction to forgetting pair labels altogether. A system
+of exactly $N$ distinct weight-at-most-three rows can have full rank $n$ and
+still have a good fraction at least $2^{-O(n^{2/3})}$ at every fixed positive
+error. Put all triples on a core of $\Theta(n^{2/3})$ variables, add singleton
+rows outside it, and fill the remaining slots with core pairs. All-positive
+core inputs suffice. Such a system cannot be assigned distinct query-pair
+labels: there are more core triples than available core pairs. The audit gives
+the exact construction and proof. Generic degree, equation count, and full rank
+therefore cannot replace the pair-incidence hypothesis.
+
+**Bounded conclusion.** None of these inspected theorems yields the sharp
+exponent by the explicit substitutions above. This is a finite set of
+resource-preserving comparisons, not an originality certificate. The direct
+coordinate-prediction obstruction from Section 7 remains, and the generic
+coding reductions from Section 10 remain established. The next useful object
+is the completed self-contained theorem packet, not another open-ended search
+for novelty in its elementary ingredients.
+
+## 12. Claim boundary and development decision
 
 **Written result:** arbitrary preprocessing, arbitrary memory-dependent one-bit addresses, exact original parity, and a fixed positive error allowance admit the matching rate derived in the [current note](../RESEARCH_NOTE.md). The construction uses only endpoint probes. The [excess-distortion deduction](EXCESS_DISTORTION.md) strengthens the operational statement to deterministic worst-input table distortion and the optimal exponential rate of the probability of a low-distortion table below the memory threshold.
 
@@ -162,4 +248,4 @@ covering or success-exponent conversion.
 
 **Not established:** historical novelty, uniqueness of optimal implementations, efficient explicit near-optimal codes, finite-length optimality, uniform vanishing-error or vanishing-advantage asymptotics, a computational speedup, or a theorem about AI alignment. The work is now a sharper mathematical object to compare, not a certified new paper.
 
-**Decision:** keep a compact internal short-note candidate centered on the extremal decoder-ball theorem. Sections 9–10 resolve attribution of the basis count and coding conversion; another undirected search for novelty in those steps is not useful. The next review should ask whether prior work evaluates the same extremal quantity or supplies a theorem that implies it with all hypotheses checked. Even a new canonical equality needs a separate significance assessment. Keep issue #1 open. The [brief](THEOREM_BRIEF.md) gives the exact claim and reviewer question; no external contact or manuscript release is authorized by this decision.
+**Decision:** proceed with the [self-contained internal short note](PAIR_QUERY_NOTE.md), now completed. It has one central extremal theorem and one group of coding consequences. The bounded comparisons above identify concrete losses, rather than treating different terminology or unsuccessful searches as evidence of novelty. The conceptual claim is that arbitrary raw-coordinate access gives no leading-rate advantage over a fixed endpoint rule for this canonical overlapping query family. That supports a focused candidate; it does not establish broad technological significance or submission readiness. Keep issue #1 open for focused specialist assessment of this precise claim. No external contact or manuscript release is included.

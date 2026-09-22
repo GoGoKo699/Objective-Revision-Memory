@@ -14,6 +14,8 @@ Review branch: `review/sharp-rate-audit`.
 
 **Latest continuation in Section 11:** reviewed `f1ecb10769f2b6ce0abe215d16f30767a02957d0` (merged PR #6), on `review/operational-reduction`. Exact general-distortion and indirect-source reductions further narrow the candidate to an extremal decoder-ball evaluation. The covering and success-exponent conversions have explicit prior attribution; priority and significance of the task-specific evaluation remain unresolved.
 
+**Current decision in Section 12:** reviewed `a258ffc130dad5926551aa6c07e6413505d4aeef` (merged PR #7), on `review/decoder-ball-priority`. A bounded theorem-level comparison gives explicit losses for exact-rank, direct-product, and generic concentration routes. The central theorem now has a self-contained direct entropy/tilting proof. The internal short-note packet is complete; historical priority and publication significance still require focused assessment.
+
 ## 1. Assessment and scope
 
 **The stated fixed-error first-order theorem survives this audit. No central mathematical defect or counterexample was found. Historical novelty is not established.** The most consequential novelty finding is that the scalar optimization, including the hyperbolic-tangent quality profile, is an explicit specialization of established weighted binary rate-distortion coding. The potentially distinctive result is equality of the full adaptive-address pair-query problem's optimal first-order rate with that coding rate, proved through the all-pairs residual-rank profile. Neither a new coding law nor the broad observation that nonlinear lossy encoders can outperform affine encoders is a defensible contribution by itself.
@@ -519,3 +521,105 @@ Executed `python checks/reviews/verify_strategy_translation.py`: **PASS**, with 
 **Decision:** prepare a focused internal short-note candidate with one central theorem: the extremal one-read decoder-ball exponent, attained by ordered endpoint recovery. Attribute generic coding conversions and group their consequences. Neither old parity preservation, elementary basis geometry, nor the weighted scalar curve should be promoted as the new conceptual contribution.
 
 **Single next action:** use the now-concrete theorem packet to determine whether approximate systematic-data-structure results already evaluate this extremal quantity or imply it through a fully specified reduction. Separately judge the significance of the canonical equality. Issue #1 remains open. No further undirected search for novelty in generic covering or fundamental circuits is needed, and no external researcher contact, submission, or manuscript release has occurred.
+
+## 12. Bounded priority comparison and a self-contained theorem packet
+
+### 12.1 Exact checkpoint and purpose
+
+Reviewed main `a258ffc130dad5926551aa6c07e6413505d4aeef`, the merge of PR #7. Main, open pull requests, and issue #1's handoff were rechecked; issue #2's written-proof resolution remains distinct from a correctness or novelty certificate. This session uses dedicated branch `review/decoder-ball-priority`. The bounded question is whether close exact-rank, threshold direct-product, or low-degree tail theorems imply the extremal decoder-ball exponent with the same resources. General coding conversion, basis counting, and entropy duality are already attributed; they were not reopened as novelty candidates.
+
+The new [self-contained pair-query note](../PAIR_QUERY_NOTE.md) is the completed central proof packet. It contains one extremal theorem and one grouped coding corollary, with the original resource ledger and all error quantifiers. It is an internal research note, not a manuscript release or an originality certificate.
+
+### 12.2 Exact rank loses leading-order approximate volume
+
+For a fixed strategy, let $A_t$ have the pair-labelled residual rows, let $\alpha_t$ be the affine error offset, and put $r=\operatorname{rank}A_t$. Uniform input induces the uniform law on the affine image, so exactly
+
+$$\Pr[D_n(X,t)\le\varepsilon]
+=2^{-r}|(\alpha_t+\operatorname{im}A_t)
+\cap B_N(0,\lfloor\varepsilon N\rfloor)|.$$
+
+Jukna–Schnitger's one-star exact fiber bound, already attributed in Section 4, gives the factor $2^{-r}$ but does not evaluate the intersection. This is a substantive loss, not just a difference in terminology. Two legal strategies have the same full residual rank $n-1$ and exactly two zero-error inputs:
+
+- Constant-zero answers give error count $w(n-w)$, where $w=|x|$.
+- Answering $x_i$ for $i<j$ gives error count $\sum_j(j-1)x_j$.
+
+For the first strategy, the good weights satisfy $w/n\le\alpha_n$ or $w/n\ge1-\alpha_n$, where
+
+$$\alpha_n=\frac{1-\sqrt{1-2\varepsilon+2\varepsilon/n}}2.$$
+
+The ordinary binomial-tail exponent is therefore
+
+$$J(\varepsilon)=1-h_2\!\left(\frac{1-\sqrt{1-2\varepsilon}}2\right).$$
+
+The second strategy has exponent $\mathcal R(\varepsilon)$. For fixed interior error, $\alpha:=\lim\alpha_n<\varepsilon$, so $J>1-h_2(\varepsilon)>\mathcal R$; the last inequality is the already proved strict improvement over uniform-quality coding. Thus full rank and exact fiber size leave a leading-order uncertainty. The crude union bound over all allowed error vectors is also vacuous: its logarithmic ball-size factor is $\Theta(N)=\Theta(n^2)$ while $r\le n$. These are our deductions from explicit examples, not claims made in the cited one-star paper.
+
+### 12.3 What threshold direct products actually supply
+
+The Nisan–Rudich–Saks matching reduction extends to a genuine decoder-ball bound. Let $k=\lfloor n/2\rfloor$, let $C_t(x)$ be the number of correct answers, and choose a uniform size-$k$ matching $M$. Every pair has inclusion probability $k/N$, hence
+
+$$\mathbb E_M C_{t,M}(x)=kC_t(x)/N.$$
+
+Residual rows on any matching are independent: a sum over $j$ disjoint pairs starts with weight $2j$, which at most $j$ probe-coordinate terms cannot cancel. Their signed correctness bits under uniform input are therefore independent fair bits. For $\lambda\ge0$, Jensen gives
+
+$$\mathbb E_X e^{\lambda kC_t(X)/N}
+\le\mathbb E_M\mathbb E_X e^{\lambda C_{t,M}(X)}
+=\left(\frac{1+e^\lambda}{2}\right)^k.$$
+
+Chernoff at $\lambda=\ln((1-\varepsilon)/\varepsilon)$ yields
+
+$$m_n(\varepsilon)\le2^{-k[1-h_2(\varepsilon)]}.$$
+
+At $\varepsilon=0.1$, this particular route has leading coefficient approximately $0.265502$, whereas the sharp coefficient is approximately $0.422085$. This is a quantified limitation of an actual reduction, not a claim that all direct-product methods fail.
+
+Two primary successor theorems were inspected: Drucker, *Improved Direct Product Theorems for Randomized Query Complexity*, arXiv:1005.0644v2, 9 May 2014, Theorem 6.6, printed p.20; and Ben-David–Blais, *Direct Product Theorems for Randomized Query Complexity*, arXiv:2512.08268v1, 9 December 2025, Theorem 2, printed p.5, Corollary 3, p.6. They control threshold/list success for independent input blocks with a global query budget. Our all-pairs targets overlap. Replacing separate one-read answer functions by one algorithm with $N$ total reads trivializes the task: it reads all $n\le N$ archive bits and answers everything exactly. Restricting to independent pair blocks instead retains only matching-sized coverage. The [literature ledger](../LITERATURE_COMPARISON.md#11-bounded-comparison-of-the-decoder-ball-theorem) records primary links and preserves this limitation's local scope.
+
+### 12.4 Low degree and full rank do not replace pair incidence
+
+Schudy–Sviridenko, *Bernstein-like Concentration and Moment Inequalities for Polynomials of Independent Random Variables: Multilinear Case*, arXiv:1109.5193v2, 8 June 2012, Theorem 1.3, Eq. (1.7), printed p.4, gives a genuine tail bound. Its direct substitution nevertheless loses the required scale on a permitted strategy. Read $j$ for pair $\{1,j\}$, and read 1 for $\{i,j\}$ with $i,j>1$, always returning the observed bit. With $Y_i=(-1)^{X_i}$, the correctness score is
+
+$$S=(n-1)Y_1+Y_1\sum_{2\le i<j\le n}Y_iY_j.$$
+
+The independent characters give $\mathbb ES=0$ and $\operatorname{Var}S=(n-1)^2+\binom{n-1}{2}$. The source's smoothness parameters are $\mu_1=N$, $\mu_2=n-2$, $\mu_3=1$, and Rademachers have central moment parameter $L=1$. At $\lambda=(1-2\varepsilon)N$, its maximum includes the term $\exp[-(1-2\varepsilon)/C^3]$, where $C$ is its universal constant. This term is independent of $n$, so this application does not give a positive $n$-scale exponent. It does not rule out concentration arguments retaining more structure.
+
+There is also an explicit obstruction to any theorem using only degree, distinct equation count, and full rank. Let $t\le n$ be maximal with
+
+$$\binom t3+(n-t)\le N.$$
+
+For sufficiently large $n$, $t<n$ and $t=\Theta(n^{2/3})$. Take all weight-three rows on the first $t$ coordinates, one singleton on each outside coordinate, then enough distinct core pairs to obtain exactly $N$ rows. The deficit is nonnegative and, by maximality, smaller than $\binom t2-1$, so this is possible. All rows are distinct, have weight at most three, and have coefficient $+1$.
+
+Their rank is $n$. For $t\ge4$, XORing triples $\{i,k,\ell\}$ and $\{j,k,\ell\}$ gives every core pair $e_i+e_j$. These span the even-weight core subspace, and one odd-weight triple completes its rank to $t$. Outside singletons complete rank $n$.
+
+On the event that every core Rademacher is positive, the score satisfies
+
+$$S\ge N-2(n-t).$$
+
+For every fixed $\varepsilon>0$, this is at least $(1-2\varepsilon)N$ for all sufficiently large $n$. The event has probability $2^{-t}=2^{-\Theta(n^{2/3})}$. Thus these relaxed systems cannot have a uniform positive exponent on the $n$ scale. They are **not legal pair-query strategies**: every core triple would require its own pair label inside that triple, but $\binom t3>\binom t2$ for $t\ge6$. The pair-incidence hypothesis is essential.
+
+A parallel search also identified Greene's 1976 *Weight Enumeration and the Geometry of Linear Codes*, DOI `10.1002/sapm1976552119`, but obtained only abstract/bibliographic access. No theorem from it is relied on or classified as fully audited. This access limit is not evidence of non-subsumption.
+
+### 12.5 The complete shorter proof and the development decision
+
+The central note now proves the same theorem directly. Apply the greedy independent-bias entropy bound to the uniform law on a strategy's good-input set. Its entropy deficit is exactly minus the logarithm of that set's relative size; this gives the finite ball bound without an intermediate Gibbs/moment lemma. For attainment, choose independent Bernoulli errors with probabilities $(1+e^{2a'k/n})^{-1}$, holding $a'>a$ fixed. Weighted error has variance $O(n^3)$ against an $\Theta(n^2)$ strict margin; information density has variance $O_{a'}(n)$. Chebyshev and counting give the weighted-ball exponent. Only after the large-length limit is $a'\downarrow a$ taken. Random translates of this single ball then give all-input covers and partial covers without the block-cover construction.
+
+The note separately proves the expected-error converse by averaging arbitrary posterior entropy deficits, preserving the old marginal guarantee. It charges every index bit and an exact parity bit on failed as well as successful inputs. The seed construction explicitly unmasks the output and keeps one raw read. No efficient encoder, finite endpoint equivalence, variable-error uniformity, or post-seed adversarial-query protection is added.
+
+A separate read-only mathematical pass checked both obstruction proofs and the entire shorter argument. It found no mathematical defect and identified one implementation-description ambiguity: output unmasking under public symmetrization had been implicit. The note now gives the exact output formula. Agreement between model passes remains distinct from independent human review.
+
+Executed `python checks/run_all.py --include-conjunction` with Python 3.12.14:
+**PASS**, seven imported-file hashes, ten interface checks, and 112 local
+documentation links. All five recorded reports reproduced byte-for-byte.
+`git diff --check` passed. A direct comparison with the reviewed main confirmed
+that all 20 existing tracked license/baseline/check/result/exploration files
+were byte-identical.
+
+Executed `python checks/reviews/verify_priority_obstructions.py`: **PASS**, using
+exact integers. The two legal strategies were checked on all 504 inputs at
+$n=3,\ldots,8$, giving 22,512 pair-error checks, 1,008 distortion comparisons,
+and 12 complete histograms, ranks, and zero-error fiber counts. The five
+sparse-system constructions contain 986 rows in total; all full-rank,
+distinct-row, pair-label obstruction, and quarter-error event checks passed.
+The larger input spaces were not enumerated. These checks support the explicit
+finite examples, not the asymptotic theorem or priority. Earlier optional
+checks were preserved and not rerun in this session.
+
+**Decision and next action:** the bounded internal comparison and self-contained short-note packet are complete. The candidate is a sharp canonical access equivalence, whose converse needs the incidence of overlapping pair labels. It is neither a new entropy/coding framework nor a leading-cost theorem about retaining the old objective. Use this concrete packet for focused specialist assessment of priority and significance; keep issue #1 open. Do not treat unsuccessful searches as proof of novelty or prolong a generic literature queue indefinitely. If a prior implication is identified, retain an attributed worked example rather than manufacture extensions. No external contact, manuscript release, or submission occurred.

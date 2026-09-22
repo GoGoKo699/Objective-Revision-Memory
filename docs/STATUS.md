@@ -1,6 +1,6 @@
 # Research status
 
-Updated 22 September 2026, following the exact source-coding reductions. Reviewed main: `f1ecb10769f2b6ce0abe215d16f30767a02957d0` (merged PR #6). The [compact theorem brief](THEOREM_BRIEF.md) gives the review question; the [operational reduction](OPERATIONAL_REDUCTION.md) separates the task-specific theorem from generic coding consequences.
+Updated 22 September 2026, following the bounded decoder-ball comparison and standalone proof. Reviewed main: `a258ffc130dad5926551aa6c07e6413505d4aeef` (merged PR #7). The [self-contained pair-query note](PAIR_QUERY_NOTE.md) is the central proof packet; the [compact brief](THEOREM_BRIEF.md) gives the review question and the [operational reduction](OPERATIONAL_REDUCTION.md) records the general coding comparisons.
 
 ## Mathematical progress
 
@@ -20,6 +20,13 @@ The latest reduction isolates the mathematical content of these consequences. Th
 
 The old exact optimum, affine leading optimum, bounded-error inequalities, and explicit majority examples remain valid. They are preserved in [BASELINE_NOTE.md](../BASELINE_NOTE.md). Its open-rate statements and factor-two gap describe the earlier checkpoint, not current status.
 
+The central proof is now self-contained. A direct entropy argument on each
+strategy's good-input set proves the finite bound, and independent tilted bits
+give the weighted-ball exponent with a strict distortion margin. Random
+translations give the covering and success consequences. The expected-error
+converse is separately derived by averaging conditional entropy deficits;
+it is not inferred from the tail bound alone.
+
 ## Evidence and limitations
 
 The new standard-library verifier tests every nonempty fixed-parity cell through five bits, exact rank-profile inequalities, numerical entropy/conjugate inequalities, a fully seeded counted-read decoder, finite covering-existence arithmetic, and numerical evaluations of the curve. The old imported scripts and reports remain byte-for-byte unchanged. See [REPRODUCIBILITY.md](REPRODUCIBILITY.md).
@@ -36,6 +43,11 @@ counts, and the mandatory-parity counterexample with integer arithmetic. The
 current full reproduction passes with all five recorded reports byte-identical.
 These checks support the finite reductions; they do not settle priority.
 
+The latest optional check verifies the equal-rank/different-ball example on
+504 inputs and five sparse parity systems with 986 rows. All checks use exact
+integers. Full reproduction passes with 112 documentation links and all five
+reports byte-identical; no original verifier or tolerance was changed.
+
 There is no independent expert review, proof-assistant certificate, or efficient implementation of the large covering codes. Numerical integrations illustrate an analytic theorem rather than establish it. The 1024-bit example's 529-bit upper bound is an existence certificate, not a constructed large encoder.
 
 ## Publication assessment
@@ -48,9 +60,26 @@ The latest primary-source comparisons add extremal low-weight vectors, sequentia
 
 Kostina–Verdú's general finite-block distortion theorems now give an exact coding comparison: a retained label selects a complete one-read strategy. The strategy-ball exponent must still be evaluated for this task. Permuter–Weissman's indirect-source Theorem 4 also contains the repeated-archive expected-distortion problem under an explicit map; its rate differs from ordinary strategy rate-distortion by at most one bit per archive. This supersedes the earlier comparison based only on model differences. Their repeated-archive limit and the repository's single growing archive have different guarantees. Mandatory parity remains exact even on failed inputs and costs at most one separately retained bit; an infinite distortion penalty does not enforce this in a partial cover.
 
+The bounded follow-up identifies precise losses in three other routes. Legal
+strategies with equal residual rank and equal zero-error fiber size can have
+different approximate-volume exponents. Matching/direct-product bounds give a
+strictly weaker explicit exponent; pooling all pair reads into a global budget
+would trivialize the task. A generic polynomial concentration bound also loses
+the required scale on an explicit legal strategy. Moreover, dropping pair
+labels admits full-rank, degree-three systems whose good fraction is
+$2^{-O(n^{2/3})}$. These deductions identify pair incidence as essential;
+they do not exclude every prior theorem or certify originality.
+
 ## Next decisive work
 
-The originating workspace should review the compact packet around one question: does a known theorem already evaluate the maximum one-read decoder-ball exponent, or imply it through a verified resource-preserving reduction? The exact claim and proof dependencies are ready in the brief and operational note. A focused comparison with approximate systematic data structures is more informative than further searches for novelty in basis geometry, entropy duality, or generic covering. Separately assess whether this canonical operational equality is significant enough for a short paper. No external contact, submission, or manuscript release has been made.
+The self-contained internal short note and bounded comparison are complete.
+Use them for a focused specialist assessment of the precise decoder-ball
+theorem and whether its canonical access equivalence is significant enough for
+a short paper. Issue #1 remains open for that judgment. Do not turn inability
+to certify all historical priority into an indefinite cycle of broad searches,
+or add generic corollaries to inflate the contribution. If a prior implication
+is identified, present the result as an attributed worked example. No external
+contact, submission, or manuscript release has been made.
 
 The full finite pair-coverage envelope and efficient constructions are secondary research options if they add conceptual substance. Large simulations and neural training do not resolve the present priority question. Keep issue #1 open.
 
