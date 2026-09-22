@@ -8,6 +8,8 @@ Review branch: `review/sharp-rate-audit`.
 
 **Continuation recorded below in Section 8:** reviewed merged audit commit `4e2c579795e2e780e132e3feb8072d2260ab3a7f`, on branch `research/rank-profile-foundations`. The user subsequently authorized merging; PR #3 was merged after its successful verification workflow. Sections 1-7 retain the initial audit's historical scope and handoff. Section 8 supersedes their next-action and no-merge instructions for this session.
 
+**Latest priority decision in Section 9:** reviewed `b9394cd2ea64c45943e66ba7c61ae665f3df77c3` (merged PR #4), on `review/priority-decision`. It records a classical partial subsumption, new endpoint-access comparisons, and a compact theorem brief. Its next action supersedes the earlier research queues; historical novelty remains unresolved.
+
 ## 1. Assessment and scope
 
 **The stated fixed-error first-order theorem survives this audit. No central mathematical defect or counterexample was found. Historical novelty is not established.** The most consequential novelty finding is that the scalar optimization, including the hyperbolic-tangent quality profile, is an explicit specialization of established weighted binary rate-distortion coding. The potentially distinctive result is equality of the full adaptive-address pair-query problem's optimal first-order rate with that coding rate, proved through the all-pairs residual-rank profile. Neither a new coding law nor the broad observation that nonlinear lossy encoders can outperform affine encoders is a defensible contribution by itself.
@@ -284,3 +286,88 @@ A separate mathematical pass checked the new envelope/Gibbs argument, cap, low-r
 The new optional `python checks/reviews/verify_low_rank_coverage.py` was executed with exact integer arithmetic. It enumerates 3,559 eligible subspaces for $n=3,\ldots,7$, verifies the new bound and coordinate-subspace attainment, checks enumeration counts against Gaussian binomials, and verifies the 21-versus-18 Hamming-kernel counterexample. It imports no baseline enumerator. It tests the specified finite range, not the general theorem or novelty.
 
 **Remaining uncertainty and next research action:** resolve whether the pair-specific all-subsets rank envelope, or a theorem implying its approximate one-star consequence, already occurs in prior work. The general lemma now identifies exactly which geometric statement must be compared. The full finite envelope is a concrete secondary problem, with a proved low-rank regime and an explicit high-rank obstruction. Keep issue #1 open. The continuation is prepared for integration through its dedicated pull request under the user's merge authorization; no manuscript release or external researcher contact is included.
+
+## 9. Priority decision and operational contribution
+
+### 9.1 Reviewed version and decision
+
+Session date: 22 September 2026. Exact reviewed main: `b9394cd2ea64c45943e66ba7c61ae665f3df77c3`, merging PR [#4](https://github.com/GoGoKo699/Objective-Revision-Memory/pull/4) and report/theory commit `e2e4735064bc6d69f50b4a302997ce635cc9c7b1`. Work is isolated on `review/priority-decision`. Main, branches, open pull requests, and the issue handoff were checked before choosing this branch. The user's merge authorization remains in effect.
+
+**Decision: proceed with a compact theorem-led research candidate, without certifying priority or submission readiness.** The [theorem brief](../THEOREM_BRIEF.md) states its resource ledger, operational equality, geometric explanation, and a finite separation. No central proof defect was found. The main new attribution is substantive: a classical matching theorem already gives a substantial subrange of the low-rank refinement. The main new deductions compare endpoint-only and unrestricted probes and delimit what preserving the old parity contributes.
+
+### 9.2 The right priority target and a genuine classical reduction
+
+The first-order converse needs less than the exact finite formula. A bound
+
+$$|E|\le nr-r^2/2+o(n^2)$$
+
+uniform in ranks and selected labelled residual families already suffices. Threshold integration adds at most that uniform remainder to the bias sum. With dual multiplier $s=a/n$, its contribution after dividing the memory bound by $n$ is $o(1)$. Thus an earlier result with different lower-order terms could subsume the geometric input. Comparing only the precise finite polynomial would set an unjustifiably narrow priority test.
+
+Erdős–Gallai, *On Maximal Paths and Circuits of Graphs* (1959), [original paper](https://www.renyi.hu/~p_erdos/1959-10.pdf), Theorem (4.1), printed p.354, and the extremal function on p.346, gives a concrete reduction. Any matching of selected pair labels has independent residual rows: summing $j$ disjoint pair rows has weight $2j$, which at most $j$ one-coordinate corrections cannot cancel. Hence its matching number is at most residual rank $r$. The classical extremal matching bound yields, for $n\ge2r+1$,
+
+$$|E|\le\max\left\{\binom{2r+1}{2},nr-\frac{r(r+1)}2\right\}.$$
+
+For $r>0$ and $n\ge(5r+3)/2$, the second term dominates and matches coordinate-subspace attainment. This portion of the range previously proved for $n\ge2r+2$ is therefore already an elementary consequence of classical extremal graph theory. The documents now give that attribution. At $r/n\to0.45$, this route allows $0.405n^2+O(n)$ edges rather than the required $0.34875n^2+O(n)$, so its loss is leading order. This establishes the limitation of this reduction, not of all possible uses of matching theory.
+
+### 9.3 Low-weight codes: the relevant statistic and a counterexample
+
+Briggs–Pegden, *Extremal Collections of k-Uniform Vectors*, [arXiv:1801.09609v3](https://arxiv.org/pdf/1801.09609v3), Theorem 1.2 and Lemma 2.1, count distinct vectors of specified weights at a given rank. Our statistic is instead
+
+$$C(W)=\left|(W+B_1(0))\cap\{v:|v|=2\}\right|,$$
+
+where $B_1(0)=\{0,e_1,\ldots,e_n\}$. Distinct pair labels can use the same residual. The direct union bound $(n-1)A_1+A_2+3A_3$, with $A_k$ the weight-$k$ count in $W$, loses the necessary information at linear rank when those separate extremal estimates are substituted.
+
+Even the complete weight enumerator does not determine coverage. In seven coordinates, let the binary spans have integer-encoded bases $(117,13,3)$ and $(104,28,3)$, with bit position $i-1$ representing coordinate $i$. Both have dimension three and enumerator
+
+$$1+z^2+2z^3+z^4+2z^5+z^6.$$
+
+Their covered pairs are respectively $\{12,13,14,23,24,34\}$ and $\{12,34,35,45,46,47,67\}$: six versus seven. The optional exact check verifies the entire spans and all pair residuals. This refutes identifying coverage with the enumerator; it does not rule out sharper inequalities informed by coding theory.
+
+There is an exact quotient formulation. Let $z$ coordinate images in $\mathbb F_2^n/W$ be zero, and let distinct nonzero images $v$ have multiplicities $m_v$. Then
+
+$$C(W)=z(n-z)+\binom z2+\sum_v\binom{m_v}{2}
++\sum_{\{u,v,w\}:u+v+w=0}(m_um_v+m_um_w+m_vm_w).$$
+
+Each unordered triple here consists of distinct nonzero images. The set of all nonzero coordinate images spans dimension $n-r$. The terms enumerate zero-image pairs, equal-image pairs, and pairs whose sum is another available image. A simple binary-matroid triangle count is only the special case $z=0,m_v=1$; coordinate-subspace extremizers have $z=r$. A priority reduction must preserve these zero images and multiplicities or justify eliminating them.
+
+### 9.4 Resource-preserving comparisons
+
+The [literature ledger](../LITERATURE_COMPARISON.md), Section 8, gives primary versions and theorem locations. This pass inspected the following statements and worked through their direct translations:
+
+| Primary statement | Translation and outcome |
+| --- | --- |
+| Wang–Lim–Gastpar, arXiv:1504.00553v2, Section II and Theorem 1, Eqs. (1)-(2) | Sequential cache/update coding permits a computed update from the full source and request. Setting the cache to exact parity and the update to the requested pair parity gives one bit each and zero error. Its repeated-instance rate theorem cannot be imported as a lower bound for a one-raw-bit probe merely by equating message lengths. |
+| Makhdoumi–Huang–Médard–Polyanskiy, arXiv:1308.5239v2, Definition 2, Theorem 5, Proposition 2 | Local lossy decoding uses fixed encoded-coordinate neighborhoods and average bit distortion. The literal systematic representation stores $n+B$ bits and accesses the complete $B$-bit summary plus one potentially summary-dependent raw coordinate. These are different charged resources; lifting all pair outputs also loses the iid source model. |
+| Gupta–Rajan, arXiv:1510.04820v2, Sections III-IV, Propositions 1-2 | Functional index coding fixes receiver Has/Want functions. Here $H_{ij}(x)=x_{k(f(x),i,j)}$ itself depends on the encoder being optimized. The fixed-instance confusion graph does not evaluate that joint optimization; broadcast corruption is also different from task error. |
+| Gál–Miltersen, BRICS RS-03-44, Theorem 2 and Section 3 | The systematic exact prefix-parity tradeoff is an explicit historical NRS application, with a different query family and error requirement. It does not give this all-pairs approximate profile by direct substitution. |
+| Carlen–Cordero-Erausquin, October 2007 manuscript, Eq. (2.4) and Theorem 2.1 proof | General entropy variational duality already supplies the Gibbs step. The pair-specific geometric count remains separate. |
+
+These comparisons retain arbitrary nonlinear preprocessing, the uncharged immutable archive, free full-summary access and public randomness, and the late fixed query. No direct translation here supplies the full leading envelope. This is a bounded statement about inspected theorems and worked reductions, not proof of historical originality. Root inspection used full primary PDFs; when a versioned web URL failed, the unversioned PDF's displayed version was checked. The repository links identify the inspected versions. No third-party full text is redistributed.
+
+### 9.5 New deductions with complete proofs in the brief
+
+Let $B_{\rm arb}$ be the unrestricted optimum, $B_{\rm end}$ restrict the probe to a query endpoint, and $B_{\rm public}$ further make the address independent of memory. Under the same stated error criteria, all three have leading rate $\mathcal R(\varepsilon)$ for fixed $0<\varepsilon<1/2$. The unrestricted converse and existing publicly assigned graded construction squeeze these optima. This is an operational rate equality, not a simulation of arbitrary encoders.
+
+For endpoint residuals the exact geometric coverage envelope is
+
+$$f_n(r)=\binom n2-\binom{n-r}{2},\qquad 0\le r\le n.$$
+
+Two quotient-basis coordinate images cannot be covered by $e_i,e_j$, or $e_i+e_j$; coordinate subspaces attain the bound. Its increments $n-j$ give the endpoint finite converse
+
+$$B\ln2\ge s\binom n2\eta-\sum_{k=1}^{n-1}\ln\cosh(sk).$$
+
+The $O(1)$ difference from the displayed unrestricted lower bound at $s=a/n$ is a comparison of lower bounds, not a bound on the finite optimal-memory gap.
+
+At zero error the distinction is real: $B_{\rm end}(n,0)=n-1$. On any memory cell, two nonconstant coordinates whose XOR is decodable from either endpoint must be equal or complementary. All nonconstant coordinates are therefore functions of one common bit, and a cell has size at most two. For the upper bound store $X_3,\ldots,X_n$ and $X_1\oplus X_2$, including exact parity implicitly. This also uses only publicly determined endpoint addresses. Compared with the baseline unrestricted optimum, the exact extra cost is $\lfloor\log_2(n+1)\rfloor-1$ bits. Finite zero error is separate from a fixed-interior-error limit.
+
+Finally, removing the requirement to retain old parity changes memory by at most one bit: $B_{\rm pair}\le B_{\rm arb}\le B_{\rm pair}+1$. Convert answers using the retained parity in one direction and store one additional parity bit in the other. Reads and error quantifiers are unchanged. The example thus does not establish a new leading cost for objective preservation.
+
+### 9.6 Verification, limits, and next action
+
+Executed `python checks/run_all.py --include-conjunction` on this working tree with Python 3.12.14: **PASS**, seven imported-file hashes, ten interface checks, and 71 local documentation links. All five recorded outputs (exact, bounded-error, sharp-rate, and the two separate conjunction reports) were reproduced byte-for-byte. No baseline program, report, tolerance, source manifest, or license was changed.
+
+Executed `python checks/reviews/verify_endpoint_scope.py`: **PASS**, exact integer arithmetic throughout. It checked 4,088 charged-memory endpoint-decoder executions through seven bits; all 1,240 same-parity three-point cells through five bits, comprising 11,896 cell/pair tests; the complete equal-enumerator six-versus-seven coverage example; and the three-bit separation with 24 unrestricted executions and six impossible endpoint cell/pair cases. The new check is optional and imports no baseline verifier. Unchanged optional asymmetric-cover and low-rank scripts were not rerun this session. No general theorem or novelty claim rests on finite enumeration.
+
+A separate read-only mathematical pass checked the new endpoint cell proof, envelope, public-address rate equality, parity sandwich, uniform-remainder scaling, and classical matching reduction. It found no mathematical flaw and identified one wording issue, corrected before integration: the structural almost-cover statement is an additional consequence of the proof, not logically equivalent to the numerical edge-count bound alone. Agreement between model passes is not independent human validation.
+
+**Single next research action:** have the originating research workspace assess the compact theorem brief against the explicit leading-profile priority target, and settle whether the almost-vertex-cover property (or an equivalent approximate one-star theorem) has a prior antecedent. The classical partial reduction above is a required starting point. A specialist assessment would be more informative now than another undirected search or additional lower-order refinements. No external contact has been made or is included in this session. Keep issue #1 open; the full finite envelope and efficient constructions remain secondary problems. Proceed with the narrow research candidate, not a claim of a new coding law or submission readiness.

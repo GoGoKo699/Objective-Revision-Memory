@@ -40,6 +40,8 @@ $$\ln\mathbb E_Ue^{sS(X)}\le\sum_j\ln\cosh(sw_j).\tag{2}$$
 
 Indeed, substitute the tilted distribution $P_s(x)=U(x)e^{sS(x)}/Z$ into (1). Its relative entropy is $D(P_s\Vert U)=s\mathbb E_{P_s}S-\ln Z=D_{P_s}\ln2$, and the signed expectation is at most the sum of absolute biases. Conversely, the usual entropy variational inequality applied to (2), with each sign chosen to match its bias under $P$, recovers (1).
 
+This duality is standard; for a primary general-measure-space formulation see Carlen–Cordero-Erausquin, [*Subadditivity of the Entropy and its Relation to Brascamp–Lieb Type Inequalities*](https://webusers.imj-prg.fr/~dario.cordero/Docs/articles/subaddOCT1.pdf), October 2007 manuscript, Eq. (2.4) and the proof of Theorem 2.1. No separate novelty claim is made for the Gibbs conversion.
+
 For a fixed public seed and memory label $m$, each one-read Boolean decoder, after removing the exactly known original parity, has a signed residual character. If every such decoder family has the same envelope, let $S_m$ be its signed correctness score. There are at most $2^B$ memory labels, so
 
 $$\mathbb E_U e^{sS_{M(X)}(X)}
@@ -91,6 +93,12 @@ Thus every recoverable pair inside $I$ is offset by a missing pair having an end
 This is an exact extremal statement about the residual-row geometry, not the optimal memory in the mandatory-parity model: the attaining subspace need not contain total parity. A global extension is false: at $n=7,r=4$, the kernel of the matrix with all seven nonzero three-bit columns covers all 21 pairs, whereas (4) would allow only 18. Combining improved low-rank values with other bounds can create nonconcave increments, so unconstrained scalar optimization need not give a stronger final bound. Retaining the bias ordering or choosing a concave majorant avoids that issue. No unrestricted full-rank formula follows from (4).
 
 The optional [exact check](../checks/reviews/verify_low_rank_coverage.py) independently enumerates all 3,559 subspaces in the stated rank range for $n=3,\ldots,7$, checks attainment, and verifies that counterexample. It supports the proof without establishing the general statement by enumeration.
+
+**Prior-theorem reduction, added in the priority audit.** Matching residuals are independent, so any such covered-pair graph has matching number at most $r$. Erdős–Gallai's [1959 Theorem (4.1)](https://www.renyi.hu/~p_erdos/1959-10.pdf), printed p.354, therefore gives, when $n\ge2r+1$,
+
+$$|E|\le\max\left\{\binom{2r+1}{2},\ nr-\frac{r(r+1)}2\right\}.$$
+
+For $r>0$ and $n\ge(5r+3)/2$, its second term dominates, recovering the exact formula (4) by an elementary classical reduction. The proof above extends to the larger range $n\ge2r+2$. This difference does not certify its historical priority. The matching bound alone is too weak at other linear ranks to supply the full leading profile; see the [audit](reviews/SHARP_RATE_AUDIT.md).
 
 ## 4. Matching converse and bipartite sharp rate
 

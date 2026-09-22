@@ -22,6 +22,8 @@ The achieving principle is **graded storage**: reconstruct some facts more accur
 
 The scalar curve is an established weighted binary coding law, and the entropy ingredient comes from an entropic proof of Chang's inequality. The candidate contribution is the pair-query problem's equality with that coding optimum despite allowing arbitrary summary-dependent probe addresses. The [proof and novelty audit](docs/reviews/SHARP_RATE_AUDIT.md) found no central proof defect; historical priority remains unresolved.
 
+Start with the compact [theorem and contribution brief](docs/THEOREM_BRIEF.md) for the mathematical claim, proof structure, and limits. It explains why endpoint reads attain the same leading rate, while arbitrary-coordinate reads retain a logarithmic advantage at zero error. Preserving the original total parity adds at most one bit to the corresponding pair-query problem.
+
 | Revised error | Unrestricted rate | Optimal affine rate |
 | --- | ---: | ---: |
 | 1% | 0.81497 | 0.85858 |
