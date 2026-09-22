@@ -1,58 +1,58 @@
 # Objective Revision Memory
 
-**How much information must a system retain to implement a later rule change when it can reread only one original fact?**
+**How much must a system remember to implement a later rule change when it can reread only one original fact?**
 
-This is a classical, theorem-led research project about delayed rule revision under limited factual access. The active model starts with an $n$-bit input and its total parity. After a summary has been stored, a query asks for the same parity with two specified coordinates excluded. The decoder accepts the revision, has free access to the entire summary, and may reread one individual bit from an external archive.
+This is a classical, theorem-led project on delayed pair-parity revision. An input has $n$ bits. A stored summary must reproduce their total parity exactly. A later query excludes two specified coordinates; the decoder sees the entire summary and may reread one raw bit from an external archive. It understands and accepts the new rule. The problem is the information needed to execute it.
 
-The distinction is between **accepting a correction** and **having the information needed to execute it**. Parity is a finite test case, not a model of human values or natural-language understanding.
+**Current status:** a matching converse and construction now determine the unrestricted asymptotic memory rate in this model. Written proofs and reproducible small checks are available. Novelty, independent mathematical review, and publication significance remain unresolved. This is AI-assisted exploratory research, not a manuscript release or an AI-safety theorem.
 
-**Research status:** written proofs and reproducible finite checks; novelty and publication significance remain under investigation. No manuscript, release, independent expert validation, or proof-assistant certification is claimed. This repository contains AI-assisted exploratory research.
+## Main result: a sharp rate, not just bounds
 
-## Main results
+Fix revised-query error $0<\varepsilon<1/2$. Let $a>0$ solve
 
-Let $B$ be retained input-dependent bits, $N=\binom n2$, $h_2$ binary entropy, and $\Phi_n(B)=nB-B(B-1)/2$. Revised-query error is at most $\varepsilon<1/2$ under the quantifiers in the [model](RESEARCH_NOTE.md#1-model-and-accounting).
+$$1-2\varepsilon=2\int_0^1u\tanh(au)\,du.$$
 
-| Result | Statement | Evidence |
-| --- | --- | --- |
-| Exact one-reread optimum | $B=n-\lfloor\log_2(n+1)\rfloor$ | Arbitrary-encoder lower bound and matching affine construction |
-| Arbitrary summaries, bounded error | $N[1-h_2(\varepsilon)]\leq\Phi_n(B)$ | Rank-coverage lemma and weighted entropy argument |
-| Affine summaries, bounded error | $N(1-2\varepsilon)\leq\Phi_n(B)$ | Uniform-affine-cell converse |
-| Sharp affine leading rate | $B_{\mathrm{aff}}=[1-\sqrt{2\varepsilon}]n+O(1)$ | Matching public-random-subset construction |
-| Nonlinear advantage | At $n=49$ and error $11/32$, eight nonlinear bits suffice; every affine scheme needs at least nine | Block majority plus exact rational converse arithmetic |
-| Two rereads | One retained parity bit suffices with zero error | Read the two excluded input bits |
+Then
 
-The unrestricted leading rate is not determined. Known random access coding gives an upper bound within a factor of two of the current converse coefficient. The access model, majority coding, and entropy-rate coding ingredients are established; the [literature comparison](docs/LITERATURE_COMPARISON.md) identifies what remains to be checked for originality.
+$$\lim_{n\to\infty}\frac{B_{\rm all}(n,\varepsilon)}n
+=\mathcal R(\varepsilon)
+=\frac{a(1-2\varepsilon)-\ln\cosh a}{\ln2}.$$
 
-## Read and check
+The achieving principle is **graded storage**: reconstruct some facts more accurately than others, then reread the less accurately represented endpoint of a query. A rank-profile and entropy converse proves that no arbitrary encoding or memory-dependent one-bit address can improve the leading rate.
 
-Start with the [research note](RESEARCH_NOTE.md) for definitions and complete arguments. The [research status and next steps](docs/STATUS.md) separates proof status, computational evidence, and novelty. The [reproduction guide](docs/REPRODUCIBILITY.md) explains every test and its limits. Original verification code and outputs are traced by the [source manifest](docs/SOURCE_MANIFEST.json).
+| Revised error | Unrestricted rate | Optimal affine rate |
+| --- | ---: | ---: |
+| 1% | 0.81497 | 0.85858 |
+| 10% | 0.42208 | 0.55279 |
+| 25% | 0.14392 | 0.29289 |
 
-The earlier **conjunction/refinement model is a separate exploration**, not an earlier version of the parity theorem. Its [own note and certificates](explorations/conjunction/research_note.md) are retained separately. The two models must not share memory bounds or error claims without a new argument.
+Rates are limiting summary bits per input bit, not finite-size optima. Affine means an encoding map over $\mathbb F_2$, with unrestricted decoding. The unrestricted rate is strictly smaller for every fixed error in the open interval.
 
-## Reproduce locally
+The [current research note](RESEARCH_NOTE.md) contains the complete converse, construction, quantifiers, and limits. The [baseline note](BASELINE_NOTE.md) is preserved unchanged for the exact optimum $n-\lfloor\log_2(n+1)\rfloor$, affine rate $1-\sqrt{2\varepsilon}$, and original finite examples. Its earlier open-rate statements are superseded by the current note. With two raw rereads, one retained parity bit still suffices exactly.
 
-Python 3.10 or newer; standard library only. No installation, network access, training data, GPU, or cloud simulation is needed for the checks.
+## Evidence and navigation
+
+The [status](docs/STATUS.md) separates mathematical progress from novelty. The [literature comparison](docs/LITERATURE_COMPARISON.md) credits established ingredients and records unfinished comparisons. The [reproduction guide](docs/REPRODUCIBILITY.md) documents exact checks versus numerical checks; the [source manifest](docs/SOURCE_MANIFEST.json) traces the unchanged imported baseline files.
+
+The new finite certificate says that 529 bits suffice at $n=1024$ and revised error below 10%, whereas every affine summary needs at least 565 bits at the same target. The 529-bit upper bound uses a proved existence bound for Hamming covers; those large covers have not been built.
+
+The [conjunction/refinement exploration](explorations/conjunction/research_note.md) is a separate model, not an earlier version of the parity theorem. It remains unchanged.
+
+## Reproduce
+
+Python 3.10+, standard library only. No installation, network, training, GPU, or large simulation is needed.
 
 ```sh
 python checks/run_all.py
-```
-
-This runs the exact parity and bounded-error suites, compares regenerated reports with the committed reports, checks documentation links and source hashes, and tests the raw-read interfaces. Include the separate exploration with:
-
-```sh
 python checks/run_all.py --include-conjunction
 ```
 
-All temporary reports are written outside the checkout. Binary algebra, truth tables, finite probabilities, and the numerical separation examples use exact arithmetic. Entropy evaluations use floating-point logarithms with a stated tolerance. Passing tests is not a proof by finite extrapolation or a novelty certificate.
+The runner reproduces the original exact and bounded-error reports plus the sharp-rate report, checks source hashes and documentation links, and guards raw-read interfaces. Temporary outputs do not overwrite committed evidence. Integer ranks, truth tables, and finite probabilities are exact; entropy and integral evaluations have documented floating-point tolerances. Passing checks is neither proof by finite extrapolation nor a novelty certificate.
 
-## Boundaries
+## Boundaries and license
 
-The original $n$-bit archive is **not** included in $B$. A reread returns one raw bit, not a word or an arbitrary function. Public randomness is input-independent and is available to both encoder classes; its physical storage is not charged. There is no free cache of earlier query results. Preprocessing and local computation are unrestricted. Guarantees for each fixed input and query over a public seed do not imply simultaneous success, or security against choosing a query after seeing that seed and the memory.
+The raw archive is not included in the summary size. Public input-independent randomness and unlimited local computation are uncharged. Each read returns one original bit. There is no free cache of earlier queries. The construction guarantees accuracy for each fixed input and fixed pair over the public seed, not simultaneous correctness or an adversarial pair chosen after seeing the seed and summary. The full model is in the research note.
 
-In this project, affine means that the **encoding map is affine over $\mathbb F_2$**. The decoder is unrestricted. This is different from asking whether a reconstruction codebook is linear.
+The motivating fiction and private conversation are not republished. The finite parity model does not establish claims about consciousness, human values, or the behavior of deployed language models. Ordinary coding constructions and the systematic access model are credited to prior work.
 
-The motivating fiction is not republished here. It motivates the question but does not establish the added compression model or any theorem. Neither consciousness, resistance to shutdown, nor the behavior of contemporary AI systems is proved by this work.
-
-## License
-
-[MIT](LICENSE), Copyright (c) 2026 Ruge Lin. The owner's original license is preserved unchanged. Literature is cited, not relicensed or included as third-party source code.
+[MIT](LICENSE), Copyright (c) 2026 Ruge Lin. The original license is unchanged.

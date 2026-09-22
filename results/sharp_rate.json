@@ -1,0 +1,213 @@
+{
+  "covering": {
+    "affine_bits_necessary_at_target": 565,
+    "block_memory_bits": [
+      11,
+      21,
+      40,
+      59,
+      78,
+      95,
+      107,
+      117
+    ],
+    "block_size": 128,
+    "error_upper_bound": "6245/65472",
+    "evidence": "integer arithmetic plus probabilistic covering-existence proof",
+    "large_cover_constructed": false,
+    "n": 1024,
+    "radii": [
+      56,
+      42,
+      29,
+      20,
+      13,
+      8,
+      5,
+      3
+    ],
+    "summary_bits_including_parity": 529,
+    "target_error": "1/10"
+  },
+  "curve": {
+    "graded_profiles_at_error_0_1": [
+      {
+        "levels": 1,
+        "rate": 0.531004406
+      },
+      {
+        "levels": 4,
+        "rate": 0.428951917
+      },
+      {
+        "levels": 16,
+        "rate": 0.422509232
+      },
+      {
+        "levels": 64,
+        "rate": 0.422111396
+      },
+      {
+        "levels": 256,
+        "rate": 0.42208655
+      }
+    ],
+    "integration_steps_compared": [
+      2048,
+      4096
+    ],
+    "numerical_only": true,
+    "table": [
+      {
+        "affine_rate": 0.858578644,
+        "error": 0.01,
+        "finite_dual_per_bit_n64_n256_n1024": [
+          0.679483635,
+          0.781131806,
+          0.806510763
+        ],
+        "parameter": 6.412604055,
+        "previous_lower": 0.715758666,
+        "previous_upper": 0.858578644,
+        "sharp_rate": 0.814967475
+      },
+      {
+        "affine_rate": 0.683772234,
+        "error": 0.05,
+        "finite_dual_per_bit_n64_n256_n1024": [
+          0.534255055,
+          0.573907647,
+          0.58380631
+        ],
+        "parameter": 2.826999419,
+        "previous_lower": 0.464839317,
+        "previous_upper": 0.683772234,
+        "sharp_rate": 0.587104578
+      },
+      {
+        "affine_rate": 0.552786405,
+        "error": 0.1,
+        "finite_dual_per_bit_n64_n256_n1024": [
+          0.391244126,
+          0.41438464,
+          0.420160452
+        ],
+        "parameter": 1.890090596,
+        "previous_lower": 0.31516747,
+        "previous_upper": 0.531004406,
+        "sharp_rate": 0.422084894
+      },
+      {
+        "affine_rate": 0.367544468,
+        "error": 0.2,
+        "finite_dual_per_bit_n64_n256_n1024": [
+          0.200786224,
+          0.210701201,
+          0.21317541
+        ],
+        "parameter": 1.09865444,
+        "previous_lower": 0.150336481,
+        "previous_upper": 0.278071905,
+        "sharp_rate": 0.213999743
+      },
+      {
+        "affine_rate": 0.292893219,
+        "error": 0.25,
+        "finite_dual_per_bit_n64_n256_n1024": [
+          0.135413097,
+          0.141797891,
+          0.14339104
+        ],
+        "parameter": 0.853138018,
+        "previous_lower": 0.099290211,
+        "previous_upper": 0.188721876,
+        "sharp_rate": 0.143921819
+      },
+      {
+        "affine_rate": 0.170843802,
+        "error": 0.34375,
+        "finite_dual_per_bit_n64_n256_n1024": [
+          0.051008444,
+          0.053291431,
+          0.053861026
+        ],
+        "parameter": 0.490894409,
+        "previous_lower": 0.036484524,
+        "previous_upper": 0.071637928,
+        "sharp_rate": 0.054050788
+      },
+      {
+        "affine_rate": 0.105572809,
+        "error": 0.4,
+        "finite_dual_per_bit_n64_n256_n1024": [
+          0.020629328,
+          0.021537046,
+          0.021763508
+        ],
+        "parameter": 0.305557853,
+        "previous_lower": 0.014631747,
+        "previous_upper": 0.029049406,
+        "sharp_rate": 0.021838954
+      },
+      {
+        "affine_rate": 0.051316702,
+        "error": 0.45,
+        "finite_dual_per_bit_n64_n256_n1024": [
+          0.005124373,
+          0.00534797,
+          0.005403753
+        ],
+        "parameter": 0.150679812,
+        "previous_lower": 0.003619323,
+        "previous_upper": 0.007225546,
+        "sharp_rate": 0.005422337
+      },
+      {
+        "affine_rate": 0.010050506,
+        "error": 0.49,
+        "finite_dual_per_bit_n64_n256_n1024": [
+          0.00020456,
+          0.000213463,
+          0.000215684
+        ],
+        "parameter": 0.030005402,
+        "previous_lower": 0.00014429,
+        "previous_upper": 0.000288558,
+        "sharp_rate": 0.000216424
+      }
+    ]
+  },
+  "rank_profile": {
+    "counts": [
+      {
+        "cells": 30,
+        "exact_structural_checks": 60,
+        "n": 3,
+        "numerical_dual_checks": 120
+      },
+      {
+        "cells": 510,
+        "exact_structural_checks": 1128,
+        "n": 4,
+        "numerical_dual_checks": 2040
+      },
+      {
+        "cells": 131070,
+        "exact_structural_checks": 383640,
+        "n": 5,
+        "numerical_dual_checks": 524280
+      }
+    ],
+    "entropy_and_dual_tolerance": 2e-10,
+    "scope": "all nonempty fixed-total-parity cells, n=3,4,5"
+  },
+  "seeded_decoder": {
+    "all_mask_permutation_decoder_cases": 36864,
+    "error_every_fixed_pair": "1/8",
+    "fixed_input_query_pairs": 96,
+    "input_bits": 4,
+    "max_raw_reads": 1,
+    "summary_bits": 3
+  },
+  "status": "PASS"
+}

@@ -145,7 +145,8 @@ def main() -> None:
     with tempfile.TemporaryDirectory(prefix="a1-reproduce-") as directory:
         tmp = Path(directory)
         suites = (("exact_parity", "verify_exact.py"),
-                  ("bounded_error", "verify_bounded_error.py"))
+                  ("bounded_error", "verify_bounded_error.py"),
+                  ("sharp_rate", "verify_sharp_rate.py"))
         for name, filename in suites:
             print(f"Checking {name} ...", flush=True)
             output = tmp / f"{name}.json"

@@ -1,51 +1,55 @@
-# Literature comparison and novelty obligations
+# Literature comparison: sharp-rate checkpoint
 
-Checked 22 September 2026. This is a focused, version-specific audit, not a certification of priority. Source statements and our deductions are distinguished below. Search non-detection is not evidence of originality.
+Checked 22 September 2026. This is a version-specific primary-source comparison, not an originality certificate. The [previous audit](LITERATURE_BASELINE.md) is preserved unchanged. This update distinguishes what the sources state from deductions made in this repository.
 
-## 1. Systematic data structures and affine geometry
+## 1. Systematic structures: the access model and affine geometry are established
 
-**Source:** S. Natarajan Ramamoorthy and C. Rashtchian, *Equivalence of Systematic Linear Data Structures and Matrix Rigidity*, ITCS 2020, [arXiv:1910.11921v1](https://arxiv.org/abs/1910.11921v1), especially Sections 1.1-1.3.
+S. Natarajan Ramamoorthy and C. Rashtchian, *Equivalence of Systematic Linear Data Structures and Matrix Rigidity*, ITCS 2020, [arXiv:1910.11921v1](https://arxiv.org/abs/1910.11921v1), Sections 1.1-1.3. The primary [PDF](https://arxiv.org/pdf/1910.11921) was inspected.
 
-Their systematic model includes an arbitrary input-dependent index, free access to that index, and charged raw-input probes. Their linear specialization uses a row space close in Hamming distance to the query vectors. Section 1.3 identifies the common-bits connection.
+Definition 2 and the surrounding discussion treat retained linear information, input probes, and matrix-rigidity geometry. Section 1.3 explicitly discusses general systematic structures with arbitrary preprocessing and a freely accessible index, as well as the common-bits connection. Thus neither our access model nor the affine condition $q\in W+\operatorname{span}\{e_k\}$ is new. Their exact linearization questions must not be identified with our approximate affine/nonlinear separation.
 
-**Implication for this project:** the architecture is not new. The condition $q\in W+\operatorname{span}\{e_k\}$ is the one-probe instance of established subspace geometry. The affine converse's potentially distinctive content is the all-pairs coverage count and its quantitative bounded-error consequence, not that condition by itself. Our decoder is unrestricted; the exact-or-balanced argument explains why nonlinear decoding cannot help on a uniform affine cell.
+**Our candidate addition:** a pair-specific rank-profile inequality followed by a matching bounded-error rate for arbitrary preprocessing. We have not established whether an equivalent all-pairs extremal count or stronger result already occurs in that paper's antecedents. Model comparison is not proof of novelty.
 
-**Still open:** whether the rank-coverage count or stronger equivalent bounds already occur in common-bits, rigidity, or help-bit work. No priority conclusion follows from this comparison.
+## 2. Classical random access codes supply the covering-rate ingredient
 
-## 2. Query-with-sketch: a direct application is insufficient
+J. F. Doriguello and A. Montanaro, *Quantum Random Access Codes for Boolean Functions*, Quantum 5, 402 (2021), [official article](https://quantum-journal.org/papers/q-2021-03-07-402/), [official PDF](https://quantum-journal.org/papers/q-2021-03-07-402/pdf/), [arXiv:2011.06535](https://arxiv.org/abs/2011.06535).
 
-**Source:** S. Garg, S. He, Y. Li, P. A. Papakonstantinou, and X. Yang, *Systematic Data Structure Lower Bounds via the Query-with-Sketch Model*, CCC 2026, [arXiv:2609.18024v1](https://arxiv.org/abs/2609.18024v1), Definitions 2.1-2.4 and Lemma 2.5. The [proceedings version](https://doi.org/10.4230/LIPIcs.CCC.2026.41) is also available.
+Theorem 2 records a classical shared-randomness random access code with $m\leq[1-h_2(p)]n+7\log_2n$ bits, crediting earlier work. Definitions 6-7 formalize decoding a selected Boolean function from a code and shared randomness. Those definitions do not grant the decoder a subsequent raw-coordinate read. The paper also uses block coding for function-RAC constructions.
 
-The definitions permit sketches followed by adaptive raw probes and public random tapes. Lemma 2.5 uses conditional joint min-entropy of the output on specified high-probability good events to obtain a sketch lower bound. Its applications group multiple requested outputs together.
+**Established ingredients used here:** ordinary entropy-rate reconstruction, block concatenation, majority coding, public symmetrization, and standard covering existence. None is presented as a new code family. The historical reference for the classical shared-randomness background is Ambainis, Leung, Mancinska, and Ozols, [arXiv:0810.2937](https://arxiv.org/abs/0810.2937).
 
-**Our deduction, not a claim made by that paper:** applying the lemma literally to one Boolean pair answer cannot establish our extensive memory bound. At the empty partial assignment, the lemma's good-event assumptions give event mass at least $0.99-2^{-2r}$ for its integer parameter $r\geq2$. A binary output then has an atom of joint probability at least $(0.99-2^{-2r})/2$. Its joint min-entropy is at most
+**Our deduction:** the raw read can be spent on the less accurately represented endpoint, so a hierarchy of reconstruction qualities improves on applying one uniform-quality RAC to all coordinates. The full-model converse, rather than the hierarchy alone, is the potentially distinctive contribution. No-probe RAC lower bounds cannot simply be applied to our stronger decoder.
 
-$$
-\log_2\frac{2}{0.99-2^{-2r}}<1.11,
-$$
+## 3. Biased RACs are a relevant neighbor, not the same query model
 
-whereas the lemma requires more than $2r\geq4$. This rules out that direct scalar instantiation, not every possible reduction or other result in the paper.
+G. Pereira Alves, N. Gigena, and J. Kaniewski, *Biased Random Access Codes*, Physical Review A 108, 042608 (2023), [arXiv:2302.08494](https://arxiv.org/abs/2302.08494), with the [v3 HTML](https://arxiv.org/html/2302.08494v3) inspected for the model definition.
 
-A batched reduction needs additional work. Our guarantee for each separate query does not imply 99% joint success for a long output vector. A union bound provides only $1-k\varepsilon$ for $k$ queries, and repetition changes both retained information and probe cost. Such costs must be charged, not suppressed.
+This work varies prior probabilities over encoded strings and/or requested characters. It establishes that nonuniformity is already a meaningful RAC design variable. The standard RAC setup described there has no post-encoding raw-archive probe.
 
-**Still open:** a careful vector-output, amplification, or information-theoretic reduction may reproduce or improve our bounds. The full paper and its antecedents remain relevant. The observation above narrows one comparison; it does not certify novelty.
+**Difference in this checkpoint:** external pair queries are uniform in the converse, and each fixed query is covered by the randomized construction. Quality grades are internal choices, symmetrized by a public permutation; they do not declare some external questions less important. Distinguishing these definitions does not rule out a reduction through biased RAC or weighted source coding results.
 
-## 3. Random access codes
+## 4. Query-with-sketch: reassess against the sharp statement
 
-**Source:** J. F. Doriguello and A. Montanaro, *Quantum Random Access Codes for Boolean Functions*, Quantum 5, 402 (2021), [arXiv:2011.06535v4](https://arxiv.org/abs/2011.06535v4), Theorems 1-2 and the function-RAC definitions.
+S. Garg, S. He, Y. Li, P. A. Papakonstantinou, and X. Yang, *Systematic Data Structure Lower Bounds via the Query-with-Sketch Model*, CCC 2026, [arXiv:2609.18024v1](https://arxiv.org/html/2609.18024v1), Definitions 2.1-2.4 and Lemma 2.5; [proceedings](https://doi.org/10.4230/LIPIcs.CCC.2026.41).
 
-The paper records the classical majority success expression and an entropy-rate classical RAC upper bound, and studies decoding Boolean functions of later-selected coordinates. The cited definitions do not grant a subsequent raw-coordinate read.
+The paper allows a sketch, adaptive raw probes, and public randomness. Its main lemma uses conditional joint min-entropy of a vector output on high-probability good events. It is a close converse-method neighbor.
 
-**Implication:** majority, block coding, symmetrization, and the entropy-rate achievable memory are established ingredients. Our upper bound is a reduction to that work plus one exact parity bit. Any candidate contribution must concern the additional-probe converse and its comparison of encoding maps. A comparison solely against a no-probe RAC lower bound would be invalid because our decoder has a stronger resource.
+**Our limited deduction, retained from the baseline audit:** a literal application to one Boolean output cannot yield the desired extensive lower bound. At the empty partial assignment, the relevant good event has mass at least $0.99-2^{-2r}$ for the lemma's integer $r\geq2$. A binary output has an atom of joint mass at least half that. Its joint min-entropy is therefore below $\log_2[2/(0.99-2^{-2r})]<1.11$, whereas the lemma asks for more than $2r\geq4$.
 
-For the earlier classical shared-randomness background see A. Ambainis, D. Leung, L. Mancinska, and M. Ozols, *Quantum Random Access Codes with Shared Randomness*, [arXiv:0810.2937](https://arxiv.org/abs/0810.2937).
+This does not rule out batching, amplification, antecedents, or other theorems. A long batch does not inherit 99% simultaneous success from a constant per-query error without additional work; a union bound supplies only $1-k\varepsilon$, and extra memory/probes for amplification must be charged. The new comparison target is the entire sharp profile curve, not merely an extensive lower bound.
 
-## 4. Additional comparison queue
+## 5. Help bits and unfinished comparisons
 
-These remain comparison targets, not sources of an endorsement of our results:
+S. Beigi, O. Etesami, and A. Gohari, *The Value of Help Bits in Randomized and Average-Case Complexity*, [arXiv:1408.0499v1](https://arxiv.org/html/1408.0499v1), especially the helper-bit rate-distortion discussion and Theorems 6-7. This is another primary-source precedent for entropy-rate help and nontrivial error dependence. Our problem has one common raw vector, pair requests after encoding, and a strict one-bit raw-read budget; a theorem-level reduction remains to be tested.
 
-- Y. K. Ko, *Efficient Linearization Implies the Multiphase Conjecture*, [ECCC TR22-122](https://eccc.weizmann.ac.il/report/2022/122/), and *Lower Bounds for Linear Operators*, [arXiv:2509.02730](https://arxiv.org/abs/2509.02730). Exact linearization statements must not be conflated with our bounded-error comparison.
-- R. Kondo and coauthors, *Random Access Codes: Explicit Constructions, Optimality, and Classical-Quantum Gaps*, [arXiv:2604.21274v3](https://arxiv.org/abs/2604.21274v3). Compare restrictions on reconstruction representatives with restrictions on encoding maps. A linear repetition codebook can have a nonlinear majority encoder.
-- Nisan, Rudich, and Saks, *Products and help bits in decision trees*, as cited by the query-with-sketch paper. Complete the comparison of per-output decision trees with a shared preprocessing message.
+Nisan, Rudich, and Saks, *Products and Help Bits in Decision Trees*, is a specific outstanding primary-source comparison. The original full text was not retrieved in this round; citations to it in other papers are not a substitute for checking its theorems. The baseline Ko/linearization and Kondo/RAC comparison queue also remains open. No unsuccessful search is treated as evidence of priority.
 
-The current audit does not prove that no known theorem subsumes this project. Precise error dependence, a clean proof, and the usefulness of the finite separation must each be assessed independently of terminology.
+## 6. Claim boundary after this checkpoint
+
+**Written result:** arbitrary preprocessing, arbitrary memory-dependent one-bit addresses, exact original parity, and a fixed positive error allowance admit the matching rate derived in the [current note](../RESEARCH_NOTE.md). The construction uses only endpoint probes, showing that third-coordinate probes have no first-order rate advantage under the stated randomized fixed-query guarantees.
+
+**Established machinery:** the systematic model, finite-field linear algebra, independent-coordinate entropy bounds, convex conjugacy, Hamming covers, RAC block construction, and symmetrization.
+
+**Candidate contribution requiring audit:** the pair-coverage profile, its entropy-conjugate converse, and its match with graded endpoint recovery for the full model, including strict affine separation at every nontrivial fixed error.
+
+**Not established:** historical novelty, uniqueness of optimal implementations, efficient explicit near-optimal codes, finite-length optimality, uniform vanishing-error or vanishing-advantage asymptotics, a computational speedup, or a theorem about AI alignment. The work is now a sharper mathematical object to compare, not a certified new paper.

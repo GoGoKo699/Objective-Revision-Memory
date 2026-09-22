@@ -1,251 +1,196 @@
-# Delayed parity revision with limited factual access
+# Sharp asymptotic memory for delayed pair-parity revision
 
-Research working note, 22 September 2026. Editorial consolidation of the exact parity checkpoint and bounded-error checkpoint v2. Mathematical statements are retained; documentation is reorganized for this repository. The conjunction checkpoint is a different model and is documented separately.
+Research checkpoint, 22 September 2026.
 
-**Status:** complete written arguments and finite regression tests, not a priority claim, peer-reviewed publication, or formal proof certificate. The [literature comparison](docs/LITERATURE_COMPARISON.md) distinguishes known ingredients from candidate contributions.
+**Status:** a matching converse and construction have been derived for the model below. The unrestricted first-order rate, previously bounded within a constant factor, is now determined by the written argument. Historical novelty, independent mathematical review, and publication significance remain unresolved. Small checks are not a proof certificate. No efficient implementation of the asymptotic covering codes is claimed.
 
-## 1. Model and accounting
+The previous consolidated note is preserved byte-for-byte as [BASELINE_NOTE.md](BASELINE_NOTE.md). Its exact theorem, affine theorem, and finite examples remain valid. Its statements that the unrestricted rate and existence of a limiting rate are open are superseded by this note. The separate conjunction exploration has not been changed.
 
-An $n$-bit input $X$ is observed, with $n\geq3$. The original task is total parity:
+## 1. Unchanged model and error quantifiers
 
-$$
-p(X)=\bigoplus_{a=1}^n X_a.
-$$
+The input is $X\in\{0,1\}^n$, $n\geq3$. Before learning a query, an encoder retains at most $B$ input-dependent bits $M=f_R(X)$. Public randomness $R$ is independent of $X$. The original total parity
 
-Before a query is known, an encoder forms $M=f_R(X)$ using at most $B$ bits. The public random seed $R$ is independent of $X$. A query is an unordered pair $\{i,j\}$ of distinct coordinates and asks for
+$$p(X)=\bigoplus_{i=1}^nX_i$$
 
-$$
-p_{ij}(X)=p(X)\oplus X_i\oplus X_j.
-$$
+must be recoverable exactly from $(M,R)$ without a raw read. A later unordered pair $\{i,j\}$ requests
 
-The original parity must be recoverable exactly from $(M,R)$ without a raw probe. To answer a revision, the decoder receives $(M,R,i,j)$, may read at most one original coordinate $X_k$, and performs arbitrary computation. The address may depend on the entire memory, seed, and query. All input-dependent retained information is charged to $B$. An external immutable archive still contains $X$; its storage is not charged to $B$. Probe cost is per raw bit, not per word or arbitrary function. Prior query transcripts and auxiliary input-dependent caches are not free. Time, public algorithms, and input-independent randomness are not charged.
+$$p_{ij}(X)=p(X)\oplus X_i\oplus X_j.$$
 
-For exact results, correctness is required for every input and query. For bounded-error results, $X$ is uniform and each fixed query has error at most $\varepsilon$, averaged over $X$ and randomness. The converses actually need only average error over uniform inputs and uniform pairs. Randomized constructions below can attain the stronger guarantee for every fixed input and query over the public seed. This is not simultaneous success on all queries or a guarantee for an adversarial query chosen after seeing the seed and memory.
+The decoder sees the whole summary, seed, and query, and may reread at most one raw coordinate $X_k$. The address can depend on all those available quantities. Local computation and preprocessing time are unrestricted. The immutable external archive still contains $X$ and is not charged to $B$; a read returns one bit, not a word or arbitrary function. Prior transcripts and input-dependent caches are not free. This is an established systematic-data-structure access model, not a proposed new framework.
 
-Private randomness can be made public for lower bounds; doing so only strengthens the model. For each deterministic random-tape component, exact original parity is still recoverable. All logarithms are base two unless $\ln$ is written. Write
+Write $B_{\rm all}(n,\varepsilon)$ for the least summary size with exact original parity and, for each fixed pair, revised error at most $\varepsilon$ averaged over uniform $X$ and randomness. The converse below needs only average error over uniform pairs as well. The construction attains the stronger guarantee for **every fixed input and fixed pair**, with probability over the public seed. It does not give simultaneous correctness of all pairs, or protect against selecting a pair after observing the seed and summary. These distinct error models have the same first-order rate because the lower and upper bounds enclose them.
 
-$$
-N=\binom n2,\qquad
-h_2(u)=-u\log_2u-(1-u)\log_2(1-u),\qquad
-\Phi_n(z)=nz-\frac{z(z-1)}2.
-$$
+Random coins can be fixed when conditioning; revealing private coins for a converse only strengthens the decoder. Fixed-length worst-case summary size, not expected message length, is charged. All entropy is measured in bits; $\ln$ denotes the natural logarithm. Set
 
-Use $h_2(0)=h_2(1)=0$. The function $\Phi_n$ is increasing and concave on $[0,n]$. We may restrict to $B\leq n$, since retaining all of $X$ otherwise suffices.
+$$N=\binom n2,\quad \eta=1-2\varepsilon,\quad
+c(b)=1-h_2((1-b)/2),\quad
+\Phi_n(r)=nr-r(r-1)/2.$$
 
-This is a systematic-data-structure problem. Deleting two parity coefficients is not a monotone acceptance refinement and need not be a small change in the rule's behavioral consequences.
+## 2. Main theorem
 
-## 2. Exact optimum
+**Theorem S (sharp first-order rate).** Fix $0<\varepsilon<1/2$. Let $a>0$ be the unique solution of
 
-**Theorem E.** For all $n\geq3$, the minimum memory with one raw probe and zero error is
+$$\eta=2\int_0^1u\tanh(au)\,du.$$
 
-$$
-B_1^*(n)=n-\lfloor\log_2(n+1)\rfloor.
-$$
+Then the full limit exists and
 
-With two probes the exact optimum is one bit. Deleting only one coordinate also needs only the original parity bit and one probe.
-
-### Lower bound and local-to-global property
-
-Fix a nonempty memory cell $C=f^{-1}(m)$. Original parity is constant on $C$. To answer a pair revision, the decoder must compute $X_i\oplus X_j$ on $C$ from at most one observed bit. Every Boolean function of one bit is constant, that bit, or its complement.
-
-In the vector space of Boolean functions on $C$, quotient by constant functions and denote a class by $[g]$. Then
-
-$$
-G=\{[0],[X_1],\ldots,[X_n]\}
-$$
-
-is closed under XOR: the one-probe property puts every sum of two coordinate classes back in $G$. Thus $G$ is a binary vector space. If its dimension is $d_C$, then $2^{d_C}\leq n+1$. Select coordinate classes forming a basis. Every input coordinate restricted to $C$ is an affine function of those selected coordinates. Their values therefore distinguish the inputs in $C$, so
-
-$$
-|C|\leq2^{d_C}\leq2^{\lfloor\log_2(n+1)\rfloor}.
-$$
-
-Partitioning all $2^n$ inputs requires at least $2^{n-\lfloor\log_2(n+1)\rfloor}$ memory values. No linearity assumption was made about the encoder.
-
-The same closure proves a local-to-global statement: any exact one-probe representation for all pair revisions also supports every parity objective with one probe. A sum of any number of coordinate classes is in $G$. This statement is about parity objectives, not arbitrary Boolean functions.
-
-### Matching affine construction
-
-Set $d=\lfloor\log_2(n+1)\rfloor$ and $a=2^d-1$. Number coordinates from 1. Interpret each $i\leq a$ as a nonzero $d$-bit vector. Let $u_b=X_{2^b}$ for $b=0,\ldots,d-1$. Define
-
-$$
-z_i=\begin{cases}
-X_i\oplus\langle i,u\rangle,&1\leq i\leq a,\\
-X_i,&i>a.
-\end{cases}
-$$
-
-For each pivot $i=2^b$, $z_i=0$, so store only the other $n-d$ values. Since $d\geq2$, the XOR of all nonzero $d$-bit labels is zero. Hence original parity is the XOR of the stored values.
-
-To obtain $X_i\oplus X_j$, set $\lambda=(i\text{ if }i\leq a\text{ else }0)\oplus(j\text{ if }j\leq a\text{ else }0)$. If $\lambda=0$, return $z_i\oplus z_j$. Otherwise read $X_\lambda$ and return
-
-$$
-z_i\oplus z_j\oplus X_\lambda\oplus z_\lambda.
-$$
-
-XOR with the known original parity to answer the revision. This is established simplex-code machinery used as a matching construction, not a new code family. Two probes need only stored $p(X)$ and direct reads of $X_i,X_j$; one bit is necessary because the original task is nonconstant.
-
-## 3. Rank-coverage lemma
-
-For a collection $E$ of distinct unordered pairs, choose for each pair a row
-
-$$
-a_{ij}=e_i+e_j+\beta_{ij}e_{k_{ij}},\qquad \beta_{ij}\in\{0,1\},
-$$
-
-where $e_k$ is a coordinate basis vector. These rows are nonzero even if $k$ is an endpoint. Let $W$ be their span and $r=\dim W$.
-
-**Lemma R.**
-
-$$
-|E|\leq\Phi_n(r).
-$$
-
-**Proof.** In the quotient $\mathbb F_2^n/W$, choose $n-r$ coordinate images forming a basis, indexed by $I$. A selected pair with both endpoints in $I$ must satisfy $v_i+v_j=v_k$, with $k$ outside $I$: independence rules out a zero sum or a single basis vector. Distinct pairs of basis vectors have distinct sums. Only $r$ coordinates lie outside $I$, so there are at most $r$ such selected pairs. There are at most $N-\binom{n-r}{2}$ pairs not wholly in $I$. Thus
-
-$$
-|E|\leq N-\binom{n-r}{2}+r=\Phi_n(r).
-$$
-
-The argument holds for every subset of selected rows. The bound may exceed $N$ at large rank; it is not a claim of finite-length attainability at every rank.
-
-## 4. Arbitrary preprocessing with bounded error
-
-**Theorem A.** If the average revised-query error is at most $\varepsilon<1/2$, then
-
-$$
-N[1-h_2(\varepsilon)]\leq\Phi_n(B).
-$$
+$$\boxed{\lim_{n\to\infty}\frac{B_{\rm all}(n,\varepsilon)}n
+=\mathcal R(\varepsilon)
+=\int_0^1c(\tanh(au))\,du
+=\frac{a\eta-\ln\cosh a}{\ln2}.}$$
 
 Equivalently,
 
-$$
-B\geq n+\tfrac12-\sqrt{n(n-1)h_2(\varepsilon)+2n+\tfrac14}.
-$$
+$$\mathcal R(\varepsilon)=\frac1{\ln2}\sup_{a\geq0}
+\left\{\frac{a\eta}{2}-\int_0^1\ln\cosh(au)\,du\right\}.$$
 
-Round upward for integral $B$ and also require $B\geq1$. At zero error this bound is weaker than Theorem E.
+A finite converse, valid for every $s>0$, is
 
-### Conditional information cost
+$$\boxed{B\ln2\ \geq\ sN\eta-\sum_{k=1}^n\ln\cosh(sk).}$$
 
-Fix a seed and a nonempty memory cell. Since original parity is known, an optimal one-probe decoder predicts $X_i+X_j$ as a constant, $X_k$, or its complement. Its conditional error therefore has the form
+This finite inequality is not asserted to be the finite-length optimum. The older finite converses and the exact theorem remain available independently. At $\varepsilon=0$, the baseline exact formula gives limiting rate one; at $\varepsilon=1/2$, one parity bit and a random guess give limiting rate zero. The displayed parameterization concerns the open interval.
 
-$$
-\eta_{ij}=\Pr[a_{ij}\cdot X\ne c_{ij}\mid M=m,R],\qquad0\leq\eta_{ij}\leq\tfrac12,
-$$
+## 3. Converse: preserve the entire independence profile
 
-with rows of the form in Lemma R. Replacing a decoder by its cellwise optimum cannot worsen overall error; it does not mean every cell meets the target $\varepsilon$.
+### 3.1 Pair coverage at a specified rank
 
-Let $w_{ij}=1-h_2(\eta_{ij})$ and $D=n-H(X\mid M=m,R)$. For any independent subset $J$ of rows, extend $J$ to a basis of $\mathbb F_2^n$. An invertible linear change of variables preserves entropy. Subadditivity gives
+For a subset $E$ of distinct pairs, select one residual row for each pair:
 
-$$
-H(X\mid m,R)\leq\sum_{e\in J}h_2(\eta_e)+(n-|J|),
-\qquad D\geq\sum_{e\in J}w_e.
-$$
+$$a_{ij}=e_i+e_j+\beta_{ij}e_{k_{ij}},\qquad\beta_{ij}\in\{0,1\}.$$
 
-This uses no assumption that the conditional distribution is affine.
+All rows are nonzero, including when $k_{ij}$ is an endpoint. If these rows span a space $W$ of binary dimension $r$, then
 
-### Weighted rank and averaging
+$$|E|\leq\Phi_n(r).$$
 
-Sort rows by decreasing weight and greedily retain independent rows. At threshold $s\in[0,1]$, let $q(s)$ be the number of rows of weight at least $s$ and $r(s)$ their rank. The greedy independent set has total weight $L=\int_0^1r(s)\,ds\leq D$. Applying Lemma R at every threshold and then concavity,
+For completeness: in $\mathbb F_2^n/W$, choose $n-r$ coordinate images forming a basis, indexed by $I$. At most $N-\binom{n-r}{2}$ pairs have an endpoint outside $I$. For a selected pair wholly inside $I$, its two independent images must sum to a coordinate image outside $I$. Distinct pairs of basis vectors have distinct sums. Only $r$ coordinates are outside $I$, so at most $r$ such pairs occur. Adding the two counts gives $\Phi_n(r)$. This applies to every subset of the selected pair-labelled rows; it permits repeated residual rows for different pairs. The bound can exceed $N$ and need not be attained at every rank.
 
-$$
-\sum_e w_e=\int_0^1q(s)\,ds
-\leq\int_0^1\Phi_n(r(s))\,ds
-\leq\Phi_n(L)\leq\Phi_n(D).
-$$
+### 3.2 Conditional biases and their greedy basis
+
+Fix a seed and a nonempty memory cell. The total parity is known. A deterministic Boolean function of one observed bit is constant, that bit, or its complement. Consequently a cellwise optimal decoder for a pair predicts a residual parity $a_{ij}\cdot X$ by its more likely value. Its conditional bias is
+
+$$b_{ij}=|\mathbb E[(-1)^{a_{ij}\cdot X}\mid M=m,R]|.$$
+
+Optimizing separately on cells cannot increase average error; it does not assume each cell meets the global error target. A randomized decoder cannot beat this optimum on the cell.
+
+Sort these pair-labelled rows by nonincreasing bias and greedily keep a row whenever it increases rank. Let the retained biases be $t_1\geq\cdots\geq t_d$, padded with zeros to length $n$. At every positive threshold $z$, the selected basis rows above threshold span all rows above threshold. Write $q(z)$ and $r(z)$ for their count and rank. The coverage lemma and its increments give
+
+$$\begin{aligned}
+\sum_{i<j}b_{ij}
+&=\int_0^1q(z)\,dz\leq\int_0^1\Phi_n(r(z))\,dz\\
+&=\sum_{\ell=1}^n(n-\ell+1)t_\ell.
+\end{aligned}$$
+
+Ties do not affect the threshold-span property. Endpoints of threshold intervals have measure zero.
+
+This is the refinement missing from the earlier argument: retain the full list of independent prediction strengths instead of replacing it by a single rank or total entropy deficit.
+
+### 3.3 Entropy budget and scalar conjugacy
+
+Let $D=n-H(X\mid m,R)$. Extend the independent residual rows to a basis of $\mathbb F_2^n$. The resulting invertible linear change of variables preserves entropy. Each selected coordinate has entropy $h_2((1-t_\ell)/2)$ and each remaining coordinate at most one. Subadditivity yields
+
+$$\sum_{\ell=1}^n c(t_\ell)\leq D.$$
+
+The elementary convex identity
+
+$$zb-\ln2\,c(b)\leq\ln\cosh z\qquad(0\leq b\leq1,\ z\geq0)$$
+
+has equality at $b=\tanh z$: differentiating the left side in $b$ gives $z-\operatorname{atanh}b$. Apply it with $z=s(n-\ell+1)$, and sum:
+
+$$s\sum_{i<j}b_{ij}
+\leq D\ln2+\sum_{k=1}^n\ln\cosh(sk).$$
 
 For uniform $X$ independent of the seed,
 
-$$
-\mathbb E D=I(X;M\mid R)\leq H(M\mid R)\leq B.
-$$
+$$\mathbb ED=I(X;M\mid R)\leq B.$$
 
-Average over cells and seeds and use concavity of $\Phi_n$. Finally, concavity of binary entropy yields
+Average over cells and seeds. Average revised error at most $\varepsilon$ implies average total optimal bias at least $N\eta$. This proves the finite converse. No affine-encoding assumption, uniform accuracy within cells, fixed probe address, or endpoint-only restriction was used.
 
-$$
-N[1-h_2(\varepsilon)]\leq
-\mathbb E\sum_e[1-h_2(\eta_e)]\leq\Phi_n(B).
-$$
+### 3.4 Limit and maximizer
 
-This proves Theorem A with memory-dependent addresses, arbitrary preprocessing, and errors concentrated in particular cells.
+Put $s=a/n$ and divide by $n$. Riemann sums show
 
-For fixed $\varepsilon<1/2$, the asymptotic lower rate is $1-\sqrt{h_2(\varepsilon)}>0$. Two probes still succeed exactly with one bit. The extensive one-probe memory requirement is therefore not solely a zero-error effect.
+$$\liminf\frac Bn\geq\frac1{\ln2}
+\left[\frac{a\eta}{2}-\int_0^1\ln\cosh(au)\,du\right]$$
 
-## 5. Affine preprocessing
+for each fixed $a\geq0$. The derivative in $a$ is $\eta/2-\int_0^1u\tanh(au)du$, strictly decreasing from $\eta/2$ to $(\eta-1)/2$. This proves existence and uniqueness of the finite maximizing parameter for $0<\eta<1$.
 
-An affine encoder has $M=A_RX+b_R$ over $\mathbb F_2$; the matrix and offset depend on the independent seed but not otherwise on $X$. Decoders are unrestricted.
+At that parameter, pointwise conjugate equality and integration by parts give
 
-**Theorem L.**
+$$\int_0^1c(\tanh(au))du
+=\frac{a\eta/2-\int_0^1\ln\cosh(au)du}{\ln2}
+=\frac{a\eta-\ln\cosh a}{\ln2}.$$
 
-$$
-N(1-2\varepsilon)\leq\Phi_n(B),
-$$
+## 4. Matching construction: grade stored accuracy and reread the weaker endpoint
 
-and, for every fixed $0<\varepsilon<1/2$,
+### 4.1 An ordinary covering ingredient, credited to prior coding theory
 
-$$
-B_{\mathrm{aff}}(n,\varepsilon)=[1-\sqrt{2\varepsilon}]n+O(1).
-$$
+For a block of $m$ bits and Hamming radius $r$, put $V=\sum_{j=0}^r\binom mj$. There exists a cover of the whole cube with at most
 
-**Converse.** Fix a seed. Write $W$ for the row space of $A_R$, with dimension $r\leq B$. Original parity being exact requires the all-ones row to belong to $W$. A memory cell is a uniform affine coset. Pair parity $q=e_i+e_j$ is determined by the memory and a raw read at $k$ precisely when $q\in W+\operatorname{span}\{e_k\}$. Otherwise it remains balanced after conditioning on both. This holds for every address, including a memory-dependent one. Each query is either recoverable exactly or has minimum error one half. Lemma R limits exactly recoverable pairs to $\Phi_n(r)\leq\Phi_n(B)$. Averaging over seeds proves the bound.
+$$K_{m,r}=\min\left\{2^m,\left\lceil\frac{(m+1)2^m}{V}\right\rceil\right\}$$
 
-**Achievability.** Select an input-independent uniformly random subset of $b$ coordinates. Store their raw values and exact original parity, using $b+1$ bits. If either excluded coordinate is stored, read the other; if both are stored, no read is needed. If neither is stored, guess. For every fixed input and pair,
+centers. If the second expression is used, independently sampled centers leave expected uncovered points at most $2^m\exp(-K_{m,r}V/2^m)<1$; otherwise use the entire cube. Storing a covering-center index costs $\lceil\log_2K_{m,r}\rceil$ bits and ensures at most $r$ reconstruction errors for every block input. For fixed $0<\delta<1/2$, $r=\lfloor\delta m\rfloor$ gives rate $1-h_2(\delta)+O(\log m/m)$.
 
-$$
-\varepsilon_{n,b}=\frac{(n-b)(n-b-1)}{2n(n-1)}.
-$$
+Covering existence, entropy-rate coding, and random-access-code symmetrization are established ingredients; see the [literature comparison](docs/LITERATURE_COMPARISON.md). No new cover family or efficient covering algorithm is claimed.
 
-The least $b$ meeting the target gives the leading rate above. This need not be finite-length optimal; the $O(1)$ assertion fixes positive $\varepsilon$ first.
+### 4.2 Finitely many quality levels
 
-## 6. Explicit nonlinear separation
+Partition the permuted input into $L$ blocks. Block $\ell$ has size $m_\ell$, increasing reconstruction bias $b_\ell$, and error allowance $\delta_\ell=(1-b_\ell)/2$. Store a covering index for each block and one exact total parity bit. For a query, reconstruct the endpoint in the more accurate block and reread the other original coordinate exactly. In a same-block tie use the smaller original query label, independently of the data. Then XOR with the retained parity. The decoder uses exactly one raw read and does not need to inspect a third coordinate.
 
-Use an odd block length $k$ dividing $n$. Store total parity and the majority bit of each block, using $B=n/k+1$ bits. Read $X_i$, estimate $X_j$ from its block majority, and output the revised parity. For uniform input the error for every fixed query is
+For blocks of comparable size, each with its own fixed quality, the storage rate approaches the average $c(b_\ell)$. With cumulative sizes $s_\ell=\sum_{j\leq\ell}m_j$, the probability that the better-quality endpoint is in block $\ell$ is exactly
 
-$$
-\delta_k=\frac12\left[1-\frac{\binom{k-1}{(k-1)/2}}{2^{k-1}}\right].
-$$
+$$w_\ell=\frac{\binom{s_\ell}{2}-\binom{s_{\ell-1}}2}{\binom n2}.$$
 
-The other $k-1$ bits tie with the displayed binomial probability, in which case majority agrees with $X_j$. Otherwise their majority is independent of $X_j$ and is wrong half the time. This remains valid when both queried coordinates are in the same block; the decoder ignores the extra statistical use of its exact read.
+The resulting error is at most $\sum_\ell w_\ell\delta_\ell$.
 
-For a worst-case fixed-input guarantee over public randomness, form majorities of $Y=X\oplus R$ with a uniform public mask and unmask the estimated bit. Retain $p(X)$ itself. For fixed $X$, $Y$ is uniform, so the same error holds. Physical storage of the mask is not charged, consistently with the shared-randomness model.
+### 4.3 Why this covers every fixed input and pair
 
-At $k=7$, error is $11/32$. At $n=49$, eight bits suffice. But
+Let $\Pi$ be a public uniform coordinate permutation and $R$ an independent uniform mask. At permuted position $a$, encode $Y_a=X_{\Pi(a)}\oplus R_a$. For every fixed original $X$, the vector $Y$ is uniform and independent of $\Pi$. Conditioned on the chosen quality block, the endpoint used for reconstruction is uniform within that block and independent of $Y$. A block's average reconstruction error is at most its covering radius divided by its length. Thus the error bound above holds for every fixed input and fixed pair, averaged over the seed. Unmask the estimated endpoint using its known mask bit. Store the original $p(X)$, not merely parity of the reconstructed vector.
 
-$$
-\Phi_{49}(8)=364<\binom{49}{2}\frac5{16}=\frac{735}{2},
-$$
+This proof does not require independent reconstruction errors, independence of two queried bits after compression, or per-coordinate accuracy for every covering center. It uses the public permutation and mask explicitly. Input-dependent information in all indices and the parity bit is charged. Quality levels are public, data-independent choices.
 
-so every affine scheme needs at least nine bits. At $n=1001$, 144 nonlinear bits suffice while the affine converse requires at least 171. These are comparisons, not proofs of nonlinear optimality.
+### 4.4 Passage to the optimum, including an error margin
 
-Majority coding and symmetrization are established random access coding ingredients. The distinction here concerns the encoding map: a majority map is nonlinear although its reconstruction codebook $\{0^k,1^k\}$ is linear. This does not refute exact-computation linearization conjectures. At zero error, Theorem E already has an affine optimum.
+For a fixed number $L$ of asymptotically equal-size blocks, let $u_\ell=(\ell-1/2)/L$ and $b_\ell=\tanh(a'u_\ell)$. As $n\to\infty$,
 
-## 7. Known coding upper bound and open rate
+$$\frac Bn\leq\frac1L\sum_\ell c(b_\ell)+o(1),\qquad
+\text{bias}\geq\sum_\ell\frac{2\ell-1}{L^2}b_\ell+o(1).$$
 
-A classical random access code permits estimation of any selected raw bit with error $\varepsilon$, using $[1-h_2(\varepsilon)]n+O(\log n)$ bits. This is credited to prior work, specifically Theorem 2 and antecedents in Doriguello and Montanaro; see the literature comparison. Add one exact parity bit, read $X_i$, and estimate $X_j$ using the code.
+For target $\eta$, first choose $a'>a$ so the continuous bias is strictly larger than $\eta$. Then choose a sufficiently fine but fixed $L$ and take $n\to\infty$. The positive margin absorbs block rounding and finite-size pair weights; covering overhead $O(L\log n)$ is $o(n)$ in this order of limits. Finally let $a'\downarrow a$ and refine $L$. Continuity gives $\limsup B/n\leq\mathcal R(\varepsilon)$.
 
-A direct covering argument also fits our model. Let $V=\sum_{j=0}^{\lfloor\varepsilon n\rfloor}\binom nj$. Sampling
+This works for all sufficiently large $n$ by using block sizes differing by at most one, not only a divisibility subsequence. One must not set $L=n$ while discarding the covering overhead. The construction completes the matching theorem and establishes the existence of the limiting rate.
 
-$$
-K=\left\lceil\frac{2^n}{V}(n\ln2+1)\right\rceil
-$$
+## 5. Consequences and finite certificate
 
-uniform centers leaves expected uncovered points at most $2^n\exp(-KV/2^n)<1$, so a covering exists. Encode by a nearest center. A public uniform mask and coordinate permutation distribute its at most $\lfloor\varepsilon n\rfloor$ reconstruction errors equally among fixed coordinates, for every fixed input. The center index plus parity has the claimed cost. This proves existence, not efficient encoding; no large cover has been implemented.
+The baseline affine rate is $\mathcal R_{\rm aff}(\varepsilon)=1-\sqrt{2\varepsilon}$. For every fixed $0<\varepsilon<1/2$,
 
-Consequently,
+$$\mathcal R(\varepsilon)<\min\{1-h_2(\varepsilon),\mathcal R_{\rm aff}(\varepsilon)\}.$$
 
-$$
-1-\sqrt{h_2(\varepsilon)}
-\leq\liminf_{n\to\infty}\frac{B_{\mathrm{all}}(n,\varepsilon)}n
-\leq\limsup_{n\to\infty}\frac{B_{\mathrm{all}}(n,\varepsilon)}n
-\leq\min\{1-h_2(\varepsilon),1-\sqrt{2\varepsilon}\}.
-$$
+To see strictness, the variational problem is to minimize $\int_0^1c(b(u))du$ subject to $2\int_0^1ub(u)du\geq\eta$. Strict convexity and conjugate equality give the unique minimizer $b(u)=\tanh(au)$ almost everywhere. Uniform-quality storage has constant bias $\eta$. An affine random-subset scheme has bias zero below $u=\sqrt{2\varepsilon}$ and one above it. Both satisfy the same constraint but differ from the unique minimizer on a positive-measure set. This comparison is about affine encoding maps over $\mathbb F_2$, not linearity of reconstruction codebooks or real-valued layers.
 
-Existence of a limiting optimal rate is not asserted. The ratio of the entropy-rate upper coefficient to the converse coefficient is $1+\sqrt{h_2(\varepsilon)}\leq2$.
+For success $1/2+\gamma$, first take the large-$n$ limit at fixed $\gamma>0$, then $\gamma\downarrow0$. Expanding the parameter equation and entropy gives
 
-For success $1/2+\gamma$, first take large $n$ at fixed $\gamma>0$, then small $\gamma$. The unrestricted memory rate is $\Theta(\gamma^2)$, up to the unresolved constant, whereas the optimal affine rate is $\gamma+O(\gamma^2)$. This is not a uniform finite-$n$ statement for arbitrarily vanishing advantage.
+$$\mathcal R(1/2-\gamma)=\frac{3}{2\ln2}\gamma^2+O(\gamma^4),$$
 
-## 8. Evidence and remaining obligations
+whereas the affine rate is $\gamma+O(\gamma^2)$. This is not a uniform statement for arbitrarily small $\gamma$ depending on $n$.
 
-The unchanged source verifiers and recorded reports are traced in [SOURCE_MANIFEST.json](docs/SOURCE_MANIFEST.json). The [reproduction guide](docs/REPRODUCIBILITY.md) lists exact scopes and numerical tolerances. Finite checks support implementation correctness and help find counterexamples; they do not establish the general theorems or their novelty.
+Illustrative numerical evaluations, not proof inputs:
 
-The next scientific obligations are theorem-level comparison with systematic/common-bits and random access coding literature, investigation of the unrestricted-rate gap, and assessment of whether the result is significant enough for a paper. Neither a novelty claim nor an AI-safety conclusion follows from successful repository validation.
+| Revised error | Sharp unrestricted rate | Best previous upper bound | Affine rate |
+| --- | ---: | ---: | ---: |
+| 1% | 0.814967475 | 0.858578644 | 0.858578644 |
+| 10% | 0.422084894 | 0.531004406 | 0.552786405 |
+| 25% | 0.143921819 | 0.188721876 | 0.292893219 |
+
+A finite covering-existence certificate uses $n=1024$, eight blocks of length 128, with radii (weakest to strongest)
+
+$$56,42,29,20,13,8,5,3.$$
+
+The covering bound gives block index lengths $11,21,40,59,78,95,107,117$. Including exact parity, **529 bits suffice**, with error at most $6245/65472<1/10$. At the same 10% target, the baseline affine converse requires **at least 565 bits**. These are exact integer/rational implications of a covering-existence proof; the large covers were not constructed, and 529 is not asserted to be finite-length optimal.
+
+## 6. Evidence, attribution, and remaining work
+
+[verify_sharp_rate.py](checks/verify_sharp_rate.py) and its [recorded report](results/sharp_rate.json) check all 131,610 nonempty fixed-parity memory cells through five input bits, using integer correlations and ranks for the profile tests. They also check the entropy and dual inequalities numerically, execute a four-bit graded decoder on all 36,864 input-query-mask-permutation cases, verify the finite covering certificate with exact arithmetic, and compare numerical quadratures for the limiting curve. The [reproduction guide](docs/REPRODUCIBILITY.md) states counts and tolerances. Original parity and conjunction checks remain unchanged.
+
+The access model, ordinary Hamming covers, classical random access coding, binary entropy identities, and convex optimization are established. Candidate research content is the pair-specific rank-profile converse, its match with graded endpoint recovery in the fully adaptive-address model, and the resulting sharp rate and strict affine comparison. The [literature audit](docs/LITERATURE_COMPARISON.md) is not complete enough to certify that these are new. In particular, common-bits/help-bit antecedents and more indirect reductions remain relevant.
+
+Remaining mathematical questions include finite-length optimality, efficient explicit constructions approaching the curve, stronger adversarial query quantifiers, and variable-error finite-size regimes. These are distinct from the first-order rate settled by the written argument. No theorem about consciousness, natural-language interpretation, or present-day AI systems is claimed.

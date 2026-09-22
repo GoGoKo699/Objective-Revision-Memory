@@ -1,33 +1,33 @@
-# Research status and next steps
+# Research status
 
-22 September 2026. This is a research checkpoint, not a paper release.
+Updated 22 September 2026, sharp-rate checkpoint.
 
-## Active and separate models
+## Mathematical progress
 
-The active line is **pair-parity revision**: exact original parity, then exclusion of any two coordinates, with one raw-bit reread. Exact and approximate versions of this same model are treated together in [RESEARCH_NOTE.md](../RESEARCH_NOTE.md).
+The unrestricted leading-rate gap tracked in issue #2 is resolved by a written converse and matching construction in [RESEARCH_NOTE.md](../RESEARCH_NOTE.md). The proof also establishes existence of the full limiting optimal rate for fixed revised error strictly between zero and one half. It does not claim finite-length optimality.
 
-The earlier **conjunction refinement** line permits arbitrary subsets of additional binary acceptance requirements. It uses exact worst-case decisions and a variable adaptive-read budget. It is preserved under [explorations/conjunction](../explorations/conjunction/research_note.md), not presented as a strengthening or replacement of the parity theorem. In particular, its half-record inspection result does not apply to the parity model.
+The new converse keeps the complete sequence of greedy independent residual biases. A scalar entropy conjugacy gives a finite lower bound and its integral limit. The construction assigns graded reconstruction accuracy and rereads the less accurately represented queried endpoint. Ordinary covering-code ingredients are credited. The construction respects the previous model and achieves a stronger fixed-input/fixed-query randomized guarantee than the converse needs.
 
-## Claim ledger
+The old exact optimum, affine leading optimum, bounded-error inequalities, and explicit majority examples remain valid. They are preserved in [BASELINE_NOTE.md](../BASELINE_NOTE.md). Its open-rate statements and factor-two gap describe the earlier checkpoint, not current status.
 
-| Claim | Current support | Not established |
-| --- | --- | --- |
-| Exact parity optimum | Written lower bound, construction, original verifier reproduced | Historical originality |
-| Arbitrary-encoder bounded-error converse | Rank-coverage and weighted-entropy proofs; exhaustive small cells | Optimal unrestricted rate; priority |
-| Sharp affine leading rate | Converse and matching random-subset construction | Exact finite-length optimum |
-| Eight-versus-nine and 144-versus-171 comparisons | Exact rational arithmetic and explicit majority algorithm | Optimal nonlinear memory; first occurrence |
-| Majority and RAC achievability | Credited to established coding results | No claim to invent these ingredients |
-| Conjunction dimension bound and count summary | Separate proofs and unchanged verifier reproduced | Novelty, or any transfer to parity without proof |
-| Real-world AI understanding or safety | Motivation only | Empirical or theoretical conclusions about deployed systems |
+## Evidence and limitations
 
-There is no independent expert review or formal proof-assistant verification in this record. Check success and mathematical derivation are distinct from novelty and publication significance.
+The new standard-library verifier tests every nonempty fixed-parity cell through five bits, exact rank-profile inequalities, numerical entropy/conjugate inequalities, a fully seeded counted-read decoder, finite covering-existence arithmetic, and numerical evaluations of the curve. The old imported scripts and reports remain byte-for-byte unchanged. See [REPRODUCIBILITY.md](REPRODUCIBILITY.md).
 
-## Next scientific work
+There is no independent expert review, proof-assistant certificate, or efficient implementation of the large covering codes. Numerical integrations illustrate an analytic theorem rather than establish it. The 1024-bit example's 529-bit upper bound is an existence certificate, not a constructed large encoder.
 
-**First:** complete the exact theorem comparison. The [literature note](LITERATURE_COMPARISON.md) now isolates why a literal scalar-output application of the query-with-sketch min-entropy lemma is insufficient, while leaving batched reductions open. Compare the pair-coverage count, the weighted entropy lift, and the affine rate separately. Record any subsumption explicitly.
+## Publication assessment
 
-**Second:** investigate the unrestricted rate between $1-\sqrt{h_2(\varepsilon)}$ and the smaller of $1-h_2(\varepsilon)$ and $1-\sqrt{2\varepsilon}$. A limiting optimal rate is not yet proved to exist here. Seek a matching converse, a better representation, or a concrete counterexample to a proposed stronger inequality. Avoid treating a failed proof attempt as a failed research direction.
+The previous result gave an exact special case and a bounded-error gap. The current candidate has a matching unrestricted error-memory law and a concrete design principle. This is stronger material for a theoretical paper, but publication readiness is not established.
 
-**Third:** assess whether the surviving result supplies a clear and worthwhile theoretical contribution. The scope is classical information access; an AI-correction title is not a substitute for mathematical novelty. Do not add neural experiments merely to compensate for an unresolved contribution.
+The novelty audit, issue #1, remains open. It must compare the rank-profile statement and resulting sharp curve against systematic/common-bits, help-bit, RAC, and weighted coding results, not merely note terminology differences. A direct scalar use of one neighboring min-entropy lemma is insufficient; indirect reductions remain possible. The original Nisan-Rudich-Saks text has not yet been audited in full.
 
-No manuscript drafting, release tagging, external correspondence, or large simulation is part of this checkpoint. The next work can remain proof-led and locally verifiable.
+## Next decisive work
+
+1. Complete the theorem-level priority comparison for the sharp profile law; record any exact subsumption or standard-corollary reduction.
+2. Stress-test the mathematical proof independently, especially entropy conditioning, public-mask/permutation symmetrization, and the fixed-quality-level/order-of-limits argument.
+3. Only after those checks, assess whether finite-length bounds or efficient explicit constructions are needed for a publishable contribution. Do not train a neural model to substitute for a missing theorem or novelty argument.
+
+The finite-length optimum, second-order terms, algorithmic efficiency, adaptive post-seed query guarantees, and error parameters varying with n are separate open questions. Do not silently expand the current theorem to cover them.
+
+The conjunction/refinement exploration remains separate and unchanged. This repository does not claim a theorem about consciousness, natural-language interpretation, or deployed AI systems. The existing MIT license and source attribution are preserved.
