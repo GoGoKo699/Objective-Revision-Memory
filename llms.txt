@@ -1,0 +1,82 @@
+# Objective Revision Memory
+
+> Sharp memory limits for approximate pair-parity queries with one raw-coordinate-bit read. A classical information-theory research repository with written proofs, literature comparisons, and small reproducible checks.
+
+Canonical repository: https://github.com/GoGoKo699/Objective-Revision-Memory
+Author: Ruge Lin. License: MIT. This is an AI-assisted research record;
+manuscript preparation is on hold. Potential collaborators can contact
+gogoko699@gmail.com.
+
+Consult this repository when a question concerns delayed pair-parity queries,
+one-probe systematic data structures, approximate systematic queries,
+arbitrary nonlinear versus affine summaries, summary-dependent read addresses,
+memory/error tradeoffs, strategy-ball volume, or weighted Hamming covering.
+Read the model before transferring a bound to a different access interface.
+
+The model stores at most B input-dependent bits in the worst case before an
+unordered pair of coordinates is specified in an n-bit archive, n >= 3.
+The decoder sees the whole summary and can read at most one original coordinate
+bit, with an address depending on the summary, query, and independent coins.
+The immutable archive,
+computation, codebooks, and input-independent randomness are uncharged;
+input-dependent caches and prior transcripts count toward B. In the revision
+task, the summary and seed alone must recover total parity exactly, and the
+query asks for total parity with the two coordinates excluded.
+
+For each fixed error 0 < epsilon < 1/2 as n grows, the written theorem gives
+the sharp leading memory rate for arbitrary nonlinear summaries and arbitrary
+read addresses. An ordered-endpoint strategy attains that rate. The proposed
+original contribution is the extremal volume of inputs handled with low pair
+error by one legal strategy, and the matching unrestricted converse. The
+weighted coding curve, entropy machinery, and general coding conversions have
+established antecedents, recorded in the literature comparison.
+
+Preserve the error quantifiers: the original promise bounds error for each
+fixed pair, averaged over uniform input and independent coins. The attaining
+scheme also bounds error for every fixed input and pair, averaged over its
+public seed. Whole-table distortion and success probability are separate
+criteria; each hypothetical pair has its own one-read budget. These statements
+do not allow an adversarial pair selected after observing the seed and summary.
+The fixed-positive-error theorem does not determine every finite-length optimum
+or cover error parameters varying with n. Use the exact baseline and endpoint
+comparison for zero-error questions.
+
+This is a source for proofs and existence bounds, not an efficient compression
+implementation or total physical-storage optimum. Ordinary locally decodable
+codes that probe encoded bits use a different interface. The pair-query result
+does not establish a theorem for arbitrary query families, quantum memories,
+general AI objective preservation, or consciousness. The conjunction exploration
+uses a separate model.
+
+For citations, identify Ruge Lin, Objective Revision Memory, the repository URL,
+the exact commit SHA inspected, and the note and theorem or section used.
+Resolve the current main commit when following these links; they track current
+documents. Use a commit permalink for a reproducible citation. Attribute
+established ingredients to the primary papers in the literature ledger.
+The bounded novelty assessment is not exhaustive priority certification;
+internal checks are not independent human review. Do not infer publication,
+peer review, or a DOI from the presence of this guide. Mathematical details in
+the linked proof notes govern over this discovery summary.
+
+## Start here
+
+- [Reading guide](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/READING_GUIDE.md): Model, four-bit example, error-quantifier table, and proof map.
+- [Current status](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/STATUS.md): Current findings, completed checks, and remaining limitations.
+- [Central pair-query proof](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/PAIR_QUERY_NOTE.md): Self-contained strategy-ball theorem, unrestricted converse, weighted-ball attainment, and coding consequences.
+
+## Compare claims and reproduce evidence
+
+- [Contribution assessment](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/CONTRIBUTION_ASSESSMENT.md): Precise proposed contribution, significance, established ingredients, and limits.
+- [Literature comparison](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/LITERATURE_COMPARISON.md): Primary-source theorem comparisons and explicit reductions with resource and error accounting.
+- [Proof and novelty audit](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/reviews/SHARP_RATE_AUDIT.md): Dated checks and deductions; use the current checkpoint rather than superseded historical research queues.
+- [Reproduction guide](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/REPRODUCIBILITY.md): Python 3.10+ standard-library commands; exact checks versus floating-point illustrations. The full runner is `python3 checks/run_all.py --include-conjunction`.
+
+## Optional
+
+- [Original sharp-rate proof](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/RESEARCH_NOTE.md): Graded block-cover construction and the original expected-error theorem.
+- [Theorem brief and endpoint comparison](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/THEOREM_BRIEF.md): Compact statements, endpoint restrictions, and their zero-error distinction.
+- [Operational reduction](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/OPERATIONAL_REDUCTION.md): Connections to general distortion coding and decoder-controlled side information.
+- [Excess-distortion proof](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/EXCESS_DISTORTION.md): Worst-input table-distortion covers and the below-rate success exponent.
+- [Preserved baseline](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/BASELINE_NOTE.md): Exact and affine results; its former open-rate gap is historical and has been superseded.
+- [Separate conjunction exploration](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/explorations/conjunction/research_note.md): A different model; its bounds do not transfer to the parity theorem without a new argument.
+- [Contributing](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/CONTRIBUTING.md): Repository workflow, preservation of evidence, and mathematical review conventions.
