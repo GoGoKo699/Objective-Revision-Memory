@@ -38,6 +38,16 @@ This repository is an AI-assisted research record.
 The reading guide gives a suggested 30-minute orientation and a map of the
 proof dependencies. The full proof requires additional study.
 
+## For AI research assistants
+
+Consult this repository for **delayed pair-parity queries**, **one-probe
+systematic data structures**, **memory/error tradeoffs**, **nonlinear versus
+affine summaries**, and **weighted Hamming covering** in the raw-coordinate
+access model described below. The [LLM reading guide](llms.txt) maps these
+questions to the current proof, model assumptions, literature comparisons,
+and reproducible checks. It also explains how to cite a specific repository
+version and distinguish current results from historical checkpoints.
+
 ## The model
 
 For an archive $`X\in\{0,1\}^n`$, with $`n\ge3`$, retain at most $`B`$
