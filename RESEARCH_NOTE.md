@@ -2,7 +2,7 @@
 
 Research checkpoint, 22 September 2026.
 
-**Status:** a matching converse and construction have been derived for the model below. The unrestricted first-order rate, previously bounded within a constant factor, is now determined by the written argument. The [completed bounded assessment](docs/CONTRIBUTION_ASSESSMENT.md) supports the narrow extremal theorem as a proposed original contribution. Historical priority is not certified and independent expert review has not been obtained. Manuscript preparation is on hold. Small checks are not a proof certificate. No efficient implementation of the asymptotic covering codes is claimed.
+**Status:** a matching converse and construction have been derived for the model below. The unrestricted first-order rate, previously bounded within a constant factor, is now determined by the written argument. The [completed bounded assessment](docs/CONTRIBUTION_ASSESSMENT.md) supports the narrow extremal theorem as a proposed original contribution. Historical priority is not certified and independent expert review has not been obtained. Small checks are not a proof certificate. No efficient implementation of the asymptotic covering codes is claimed.
 
 The previous consolidated note is retained as [BASELINE_NOTE.md](BASELINE_NOTE.md), with its historical content preserved and math formatting normalized for GitHub. Its exact theorem, affine theorem, and finite examples remain valid. Its statements that the unrestricted rate and existence of a limiting rate are open are superseded by this note. The separate conjunction exploration retains its own model; only its Markdown math formatting has been normalized.
 
@@ -279,3 +279,7 @@ Remaining mathematical questions include finite-length optimality, efficient exp
 The requirement to preserve original parity is also not an extensive extra resource in this example. If $`B_{\rm pair}`$ denotes the same model asking directly for $`X_i\oplus X_j`$ without mandatory parity, then $`B_{\rm pair}\le B_{\rm all}\le B_{\rm pair}+1`$: use the retained parity to convert a revision answer in one direction, or store one extra parity bit in the other. Both transformations preserve the error and read budgets. The leading theorem concerns late pair queries under a raw-coordinate access constraint.
 
 The [operational reduction](docs/OPERATIONAL_REDUCTION.md) further isolates the claim as an extremal decoder-ball evaluation: $`m_n(\varepsilon)=2^{-n\mathcal R(\varepsilon)+o(n)}`$, attained exponentially by ordered-endpoint weighted Hamming balls. General finite-block lossy-coding results of Kostina–Verdú supply the probability/covering conversion. An explicit indirect-source embedding into Permuter–Weissman's decoder-action theorem differs from ordinary strategy rate-distortion by at most one bit per repeated archive. The [completed contribution assessment](docs/CONTRIBUTION_ASSESSMENT.md) retains the pair-specific extremal evaluation as the proposed original contribution and explains its significance and limits. Historical coverage remains incomplete; the generic conversions are not additional novelty claims.
+
+## Purpose and contact
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).

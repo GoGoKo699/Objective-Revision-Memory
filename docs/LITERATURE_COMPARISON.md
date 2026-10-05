@@ -2,6 +2,10 @@
 
 Checked 22 September 2026, most recently against `2b240fa20b9c8d585106edb512a5f18200aafd33`. This is a version-specific primary-source comparison, not an originality certificate. The [baseline audit](LITERATURE_BASELINE.md) retains its historical content; math formatting is normalized for GitHub. The [detailed sharp-rate audit](reviews/SHARP_RATE_AUDIT.md) supplies the full resource ledger and proofs of the reductions summarized here. Source statements and repository deductions are distinguished below. Sections 9–10 attribute the geometry and general coding conversions. Section 11 gives a bounded comparison of the remaining decoder-ball theorem; the [self-contained note](PAIR_QUERY_NOTE.md) supplies its complete central proof.
 
+## Purpose and contact
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
+
 ## 1. Systematic structures: the access model and affine geometry are established
 
 S. Natarajan Ramamoorthy and C. Rashtchian, *Equivalence of Systematic Linear Data Structures and Matrix Rigidity*, ITCS 2020, [arXiv:1910.11921v1](https://arxiv.org/abs/1910.11921v1), Sections 1.1-1.3. The primary [PDF](https://arxiv.org/pdf/1910.11921) was inspected.
@@ -269,8 +273,7 @@ absence of a leading-rate advantage from arbitrary raw-coordinate access over
 a fixed endpoint rule for a canonical overlapping query family. Established
 methods, specialized scope, and nonconstructive codebooks limit the claims but
 do not defeat this focused contribution. Reopen for concrete new evidence;
-independent specialist feedback is welcome. **Manuscript preparation is on
-hold.** No external contact or manuscript release is included.
+independent specialist feedback is welcome.
 
 ## 13. Header-based local compression: a closer architectural precedent
 

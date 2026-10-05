@@ -14,9 +14,9 @@ nonlinear summaries and summary-dependent read addresses. A fixed endpoint
 rule achieves the same rate. Retaining the original total parity adds at most
 one bit to the direct pair-parity problem.
 
-**Manuscript preparation is on hold.** Potential collaborators interested in
-this project are welcome to contact **Ruge Lin** at
-[gogoko699@gmail.com](mailto:gogoko699@gmail.com).
+## Purpose and contact
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
 
 **Research stage:** complete written proof and a completed bounded assessment
 of novelty and significance. The [contribution assessment](docs/CONTRIBUTION_ASSESSMENT.md)

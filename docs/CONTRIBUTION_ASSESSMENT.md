@@ -21,10 +21,9 @@ narrow result. Reopen the decision for a concrete new citation, reduction,
 counterexample, or substantive significance objection; another indefinite
 general search is not the default next step.
 
-**Manuscript preparation remains on hold.** Potential collaborators are
-welcome to contact Ruge Lin at
-[gogoko699@gmail.com](mailto:gogoko699@gmail.com). The research decision does
-not start manuscript drafting or external correspondence.
+## Purpose and contact
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
 
 ## The precise contribution
 
@@ -146,5 +145,5 @@ the proposed originality claim with an attributed worked example and reassess
 its value. If a mathematical defect is identified, record the smallest
 obstruction and revise the affected conclusions. Optional extensions should
 answer a concrete scientific question, rather than enlarge a paper to avoid
-either outcome. The [roadmap](RESEARCH_ROADMAP.md) keeps collaboration and
-manuscript status separate from these scientific judgments.
+either outcome. The [roadmap](RESEARCH_ROADMAP.md) keeps the repository’s
+purpose and contact information separate from these scientific judgments.
