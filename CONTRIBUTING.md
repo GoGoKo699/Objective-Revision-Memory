@@ -6,12 +6,13 @@ possible failure. Small exact checks support the arguments; passing checks do
 not establish a general theorem or historical novelty.
 
 Start with the [reading guide](docs/READING_GUIDE.md) and follow the current
-[research roadmap](docs/RESEARCH_ROADMAP.md). Manuscript preparation is on hold.
-Potential collaborators can contact Ruge Lin using the email in the
-[README](README.md). The completed [contribution assessment](docs/CONTRIBUTION_ASSESSMENT.md)
+[research roadmap](docs/RESEARCH_ROADMAP.md). The completed [contribution assessment](docs/CONTRIBUTION_ASSESSMENT.md)
 sets the present scope; specific new proof objections or prior-result
-implications should update that assessment. Repository maintenance does not
-itself start drafting, submission, or external correspondence.
+implications should update that assessment.
+
+## Purpose and contact
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
 
 ## Coordinate the work
 

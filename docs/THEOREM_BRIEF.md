@@ -34,7 +34,7 @@ The review question is whether a prior theorem evaluates this extremal ball,
 or implies it through an explicit reduction preserving raw-coordinate probes,
 charged summary bits, and error quantifiers. The [completed bounded assessment](CONTRIBUTION_ASSESSMENT.md) supports
 this canonical equality as the contribution of a focused theoretical paper.
-Manuscript preparation is on hold. No efficient
+No efficient
 encoder, new scalar coding law, or general objective-preservation principle is
 being proposed.
 
@@ -138,7 +138,7 @@ B_{\rm pair}\le B_{\rm arb}\le B_{\rm pair}+1.
 
 The first inequality uses the retained exact parity to convert a revision answer to a pair-parity answer. The second stores one additional exact parity bit and converts in reverse. Error and read budgets are unchanged; the argument also applies to endpoint restrictions. Preserving the old objective therefore has no additional leading memory cost in this example.
 
-The completed bounded assessment retains the extremal decoder-ball evaluation and ordered-endpoint attainment as the proposed original contribution. Present unrestricted versus publicly chosen endpoint access, covering, and the success exponent below as its operational consequences, with explicit attribution for general lossy coding as well as geometry and entropy. The affine separation and bipartite benchmark are context, not independent evidence of originality. The action-dependent coding comparison now has a worked indirect-source reduction, rather than just a list of model differences. Historical priority is not certified; the affirmative significance judgment and its limits are recorded in the contribution assessment. Manuscript preparation remains on hold.
+The completed bounded assessment retains the extremal decoder-ball evaluation and ordered-endpoint attainment as the proposed original contribution. Present unrestricted versus publicly chosen endpoint access, covering, and the success exponent below as its operational consequences, with explicit attribution for general lossy coding as well as geometry and entropy. The affine separation and bipartite benchmark are context, not independent evidence of originality. The action-dependent coding comparison now has a worked indirect-source reduction, rather than just a list of model differences. Historical priority is not certified; the affirmative significance judgment and its limits are recorded in the contribution assessment.
 
 ## 6. Stronger operational form: covers and the success exponent
 
@@ -156,3 +156,7 @@ Deterministic ordered-endpoint schemes attain this exponent. Their reconstructio
 The rate $`\mathcal R(\varepsilon)`$ also suffices for a deterministic guarantee $`\Delta(x)\le\varepsilon`$ on **every** input. Block covers with a strict distortion margin prove this for all sufficiently large lengths. Public permutation and masking can then add the original fixed-input/fixed-pair marginal error guarantee while preserving the table-distortion bound for every input and seed.
 
 These statements concern the fraction of incorrect pairs. They do not answer every pair with one total read, ensure every answer is correct, or protect against selecting an erroneous pair after seeing the seed. At the critical rate the success exponent is zero, which need not mean success probability tends to one. The optimal failure exponent above the rate is not claimed.
+
+## Purpose and contact
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).

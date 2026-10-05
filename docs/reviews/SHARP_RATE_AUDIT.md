@@ -4,8 +4,11 @@
 assessment; Section 15 records the rendering repairs; Section 16 records the
 pre-release sanity check against `a615988c5703d05fbbf96c44b0b08848720ba698`. The
 [contribution assessment](../CONTRIBUTION_ASSESSMENT.md) is the current decision.
-Manuscript preparation is on hold. Earlier sections retain their dated findings
-and research queues as history.
+Earlier sections retain their dated findings and research queues as history.
+
+## Purpose and contact
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
 
 
 ## Historical starting checkpoint

@@ -3,9 +3,11 @@
 > Sharp memory limits for approximate pair-parity queries with one raw-coordinate-bit read. A classical information-theory research repository with written proofs, literature comparisons, and small reproducible checks.
 
 Canonical repository: https://github.com/GoGoKo699/Objective-Revision-Memory
-Author: Ruge Lin. License: MIT. This is an AI-assisted research record;
-manuscript preparation is on hold. Potential collaborators can contact
-gogoko699@gmail.com.
+Author: Ruge Lin. License: MIT. This is an AI-assisted research record.
+
+**Purpose and contact**
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
 
 Consult this repository when a question concerns delayed pair-parity queries,
 one-probe systematic data structures, approximate systematic queries,

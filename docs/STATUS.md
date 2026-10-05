@@ -2,12 +2,14 @@
 
 Updated 22 September 2026, following the pre-release sanity check. Reviewed main: `a615988c5703d05fbbf96c44b0b08848720ba698` (merged PR #11). The [reading guide](READING_GUIDE.md) introduces the model and maps the proof; the [self-contained pair-query note](PAIR_QUERY_NOTE.md) remains the central proof packet. The [compact brief](THEOREM_BRIEF.md) gives the review question and the [operational reduction](OPERATIONAL_REDUCTION.md) records the general coding comparisons.
 
-**Manuscript preparation is on hold.** Potential collaborators are welcome to
-contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
+## Purpose and contact
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
+
 The [contribution assessment](CONTRIBUTION_ASSESSMENT.md) supports the sharp
 one-read extremal theorem as the proposed original contribution of a focused
 theoretical paper. The [research roadmap](RESEARCH_ROADMAP.md) separates that
-completed decision from manuscript status.
+completed decision from the repository’s purpose and contact information.
 
 ## Mathematical progress
 
@@ -131,7 +133,7 @@ optimality, or broad technological significance. Specialist feedback is
 welcome, without representing it as an unfinished prerequisite for making
 the current research judgment.
 
-The manuscript remains on hold. Further work should address concrete new
+Further work should address concrete new
 evidence or a worthwhile extension, following the
 [roadmap](RESEARCH_ROADMAP.md). Large simulations and repeated generic searches
 are not needed to maintain this completed research packet.

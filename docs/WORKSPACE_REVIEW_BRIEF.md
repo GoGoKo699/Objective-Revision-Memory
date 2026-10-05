@@ -8,7 +8,11 @@ This brief coordinates work; it does not report a completed review or change any
 
 **22 September 2026 continuation:** the user subsequently authorized continued research and merging. The initial review was completed in PR #3 and merged at `4e2c579795e2e780e132e3feb8072d2260ab3a7f`. This authorization supersedes the no-self-merge convention below. Continue to use dedicated branches and reviewable pull requests, recheck current heads, preserve intervening work and verification artifacts, and state unresolved novelty. The initial assignment text is retained as historical context.
 
-**Current research stage, 22 September 2026:** manuscript preparation is **on hold**, and potential collaborators are welcome to contact Ruge Lin by the email in the [README](../README.md). The [contribution assessment](CONTRIBUTION_ASSESSMENT.md) completes the bounded novelty and significance decision. Begin with it, the [reading guide](READING_GUIDE.md), [status](STATUS.md), and [research roadmap](RESEARCH_ROADMAP.md). Follow a specific new proof concern, prior-result implication, or conceptually motivated extension rather than restarting the initial audit. The [contribution guide](../CONTRIBUTING.md) gives the current collaboration workflow. Submission planning is outside the public research record.
+## Purpose and contact
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
+
+**Historical research stage, 22 September 2026:** manuscript preparation is **on hold**, and potential collaborators are welcome to contact Ruge Lin by the email in the [README](../README.md). The [contribution assessment](CONTRIBUTION_ASSESSMENT.md) completes the bounded novelty and significance decision. Begin with it, the [reading guide](READING_GUIDE.md), [status](STATUS.md), and [research roadmap](RESEARCH_ROADMAP.md). Follow a specific new proof concern, prior-result implication, or conceptually motivated extension rather than restarting the initial audit. The [contribution guide](../CONTRIBUTING.md) gives the current collaboration workflow. Submission planning is outside the public research record.
 
 ## Assignment and research goal
 

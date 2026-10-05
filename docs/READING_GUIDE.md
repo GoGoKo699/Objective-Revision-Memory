@@ -3,8 +3,12 @@
 Start with the [self-contained pair-query note](PAIR_QUERY_NOTE.md). It contains
 the complete central proof and is the main technical entry point. This guide
 explains the model, provides a small example, and locates supporting material.
-Manuscript preparation is on hold; the [research roadmap](RESEARCH_ROADMAP.md)
-and [contribution assessment](CONTRIBUTION_ASSESSMENT.md) record current decisions.
+The [research roadmap](RESEARCH_ROADMAP.md) and
+[contribution assessment](CONTRIBUTION_ASSESSMENT.md) record current decisions.
+
+## Purpose and contact
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
 
 ## What to bring
 
@@ -33,7 +37,7 @@ not mastering or verifying every proof step in half an hour.
 | 5–10 minutes | The four-bit example below; Sections 1–2 of [PAIR_QUERY_NOTE.md](PAIR_QUERY_NOTE.md) | What does a low-error input set mean? |
 | 10–22 minutes | The proof map below; Sections 3–5 of the same note | How do the converse and endpoint construction meet? |
 | 22–27 minutes | [Status](STATUS.md) and the conclusions in the [literature comparison](LITERATURE_COMPARISON.md) | Which facts are proved here, which ingredients are established, and what remains uncertain? |
-| 27–30 minutes | [Reproducibility](REPRODUCIBILITY.md) and [research roadmap](RESEARCH_ROADMAP.md) | What can be checked locally, and what work remains before writing a manuscript? |
+| 27–30 minutes | [Reproducibility](REPRODUCIBILITY.md) and [research roadmap](RESEARCH_ROADMAP.md) | What can be checked locally, and which research questions remain open? |
 
 For a proof audit, return to the central note and check its inequalities and
 quantifiers in order. The longer audit history is supporting evidence rather
