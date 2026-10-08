@@ -155,7 +155,3 @@ Deterministic ordered-endpoint schemes attain this exponent. Their reconstructio
 The rate $`\mathcal R(\varepsilon)`$ also suffices for a deterministic guarantee $`\Delta(x)\le\varepsilon`$ on **every** input. Block covers with a strict distortion margin prove this for all sufficiently large lengths. Public permutation and masking can then add the original fixed-input/fixed-pair marginal error guarantee while preserving the table-distortion bound for every input and seed.
 
 These statements concern the fraction of incorrect pairs. They do not answer every pair with one total read, ensure every answer is correct, or protect against selecting an erroneous pair after seeing the seed. At the critical rate the success exponent is zero, which need not mean success probability tends to one. The optimal failure exponent above the rate is not claimed.
-
-## Purpose and contact
-
-This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).

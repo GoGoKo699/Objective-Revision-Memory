@@ -13,14 +13,10 @@ extremal quantity with the same resources. The positive significance case is
 that a complete optimization over nonlinear summaries and arbitrary read
 addresses has a sharp answer attained by a fixed endpoint rule.
 
-This is a bounded research judgment. It does not claim exhaustive historical
-knowledge, independent human validation, or guaranteed publication. A concrete
-new citation, reduction, counterexample, or substantive significance objection
-can change the assessment.
-
-## Purpose and contact
-
-This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
+This is a bounded research judgment. Historical coverage is incomplete, and
+independent specialist review has not been obtained. A concrete new citation,
+reduction, counterexample, or substantive significance objection can change
+the assessment.
 
 ## The precise contribution
 
@@ -124,19 +120,5 @@ proof or the historical comparison.
 | The archive, computation, and independent code descriptions are uncharged. | State the systematic-access resource model visibly; this is not total physical-storage or running-time optimality. |
 | Historical coverage is necessarily incomplete. | Use the precise proposed originality claim and respond to specific prior implications; do not infer priority from search failure. |
 
-Taken together, these objections support a compact, carefully attributed
-theoretical result. They would defeat a broader claim about general memory,
-new coding machinery, or technological superiority. No such broader claim is
-needed for the present contribution.
-
-## Limits of the assessment
-
-The written proof and bounded source comparison support an affirmative
-significance assessment at the stated scope. Independent specialist review
-has not been obtained and could strengthen or overturn this judgment.
-
-If a resource-preserving prior theorem implies the same extremum, replace
-the proposed originality claim with an attributed worked example and reassess
-its value. A mathematical defect would require revising the affected
-conclusions. The [open questions](OPEN_QUESTIONS.md) describe scientific
-extensions beyond the proved result.
+The [open questions](OPEN_QUESTIONS.md) describe scientific extensions beyond
+the proved result.

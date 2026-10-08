@@ -357,7 +357,3 @@ dependencies of the proof above.
 
 This is a focused sharp result for one canonical query family, assembled from
 classical deductions. The [completed bounded assessment](CONTRIBUTION_ASSESSMENT.md) supports its significance as a focused theoretical contribution. The proof alone does not certify historical priority or establish a general data-structure theorem or a theory of objective preservation.
-
-## Purpose and contact
-
-This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).

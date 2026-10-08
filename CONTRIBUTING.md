@@ -10,14 +10,9 @@ Start with the [reading guide](docs/READING_GUIDE.md) and
 sets the present scope; specific new proof objections or prior-result
 implications should update that assessment.
 
-## Purpose and contact
-
-This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
-
 ## Submit a contribution
 
-Read the current [results and limitations](docs/STATUS.md), then check open
-issues and pull requests for related work. Use a dedicated branch and a
+Check open issues and pull requests for related work. Use a dedicated branch and a
 reviewable pull request. Preserve intervening commits and coordinate
 overlapping changes; do not overwrite another contributor's work.
 

@@ -18,11 +18,7 @@ one bit to the direct pair-parity problem.
 
 This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
 
-The repository contains a complete written proof, literature comparisons,
-and reproducible finite checks. The [contribution assessment](docs/CONTRIBUTION_ASSESSMENT.md)
-supports a focused theoretical contribution: the sharp extremal bound over all
-legal one-read strategies. Its precise claim and limits are recorded there.
-This repository is an AI-assisted research record.
+This is an AI-assisted research record.
 
 ## Start here
 
@@ -31,7 +27,7 @@ This repository is an AI-assisted research record.
 | Understand the question, resources, and a four-bit example | [Reading guide](docs/READING_GUIDE.md) |
 | Check the central theorem and its complete proof | [Pair-query proof note](docs/PAIR_QUERY_NOTE.md) |
 | Assess novelty and conceptual significance | [Contribution assessment](docs/CONTRIBUTION_ASSESSMENT.md), [literature comparison](docs/LITERATURE_COMPARISON.md) |
-| See established results, limitations, and open questions | [Results and limitations](docs/STATUS.md) and [open questions](docs/OPEN_QUESTIONS.md) |
+| Explore further mathematical questions | [Open questions](docs/OPEN_QUESTIONS.md) |
 | Reproduce the small checks | [Reproducibility guide](docs/REPRODUCIBILITY.md) |
 | Contribute a proof correction, comparison, or extension | [Contributing](CONTRIBUTING.md) |
 
@@ -123,14 +119,12 @@ Thus leading-rate equivalence does not imply finite equivalence. The
 
 ## What the evidence establishes
 
-The written proof has survived the recorded internal checks without a central
-defect being found. The systematic access model, elementary geometric count,
-entropy inequality, weighted coding curve, and general coding conversions
-have explicit antecedents. The completed assessment identifies concrete
-limitations of close prior reductions and gives a positive case for a focused
-theoretical contribution. This
-is a bounded research judgment, not a guarantee of historical priority or
-publication. Independent human review has not been obtained.
+The [literature comparison](docs/LITERATURE_COMPARISON.md) attributes the
+systematic access model, geometric count, entropy inequality, weighted coding
+curve, and general coding conversions. The
+[contribution assessment](docs/CONTRIBUTION_ASSESSMENT.md) explains the proposed
+originality and significance of the unrestricted extremal theorem, with the
+limits of that judgment.
 
 The deterministic covering result controls the **fraction of wrong pairs on
 every input**, each hypothetical query with its own one-read budget. Its
@@ -169,9 +163,5 @@ and baseline results. Historical open-gap language in
 The [source manifest](docs/SOURCE_MANIFEST.json) records unchanged imported
 artifacts. The [conjunction exploration](explorations/conjunction/research_note.md)
 uses a separate model.
-
-The project studies a classical information constraint for a specified query
-family. It makes no theorem-level claim about consciousness, human values, or
-deployed AI systems.
 
 [MIT license](LICENSE), Copyright (c) 2026 Ruge Lin.
