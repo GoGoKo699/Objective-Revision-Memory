@@ -1,6 +1,6 @@
-# Literature comparison: sharp-rate audit and continuation
+# Literature comparison
 
-Checked 22 September 2026, most recently against `2b240fa20b9c8d585106edb512a5f18200aafd33`. This is a version-specific primary-source comparison, not an originality certificate. The [baseline audit](LITERATURE_BASELINE.md) retains its historical content; math formatting is normalized for GitHub. The [detailed sharp-rate audit](reviews/SHARP_RATE_AUDIT.md) supplies the full resource ledger and proofs of the reductions summarized here. Source statements and repository deductions are distinguished below. Sections 9–10 attribute the geometry and general coding conversions. Section 11 gives a bounded comparison of the remaining decoder-ball theorem; the [self-contained note](PAIR_QUERY_NOTE.md) supplies its complete central proof.
+Source comparison dated 22 September 2026. This is a version-specific primary-source comparison, not an originality certificate. The [baseline audit](LITERATURE_BASELINE.md) is preserved as a historical comparison. The [detailed sharp-rate audit](reviews/SHARP_RATE_AUDIT.md) supplies the full resource ledger and proofs of the reductions summarized here. Source statements and repository deductions are distinguished below. Sections 9–10 attribute the geometry and general coding conversions. Section 11 gives a bounded comparison of the remaining decoder-ball theorem; the [self-contained note](PAIR_QUERY_NOTE.md) supplies its complete central proof.
 
 ## Purpose and contact
 
@@ -30,7 +30,7 @@ G. Pereira Alves, N. Gigena, and J. Kaniewski, *Biased Random Access Codes*, Phy
 
 This work varies prior probabilities over encoded strings and/or requested characters. It establishes that nonuniformity is already a meaningful RAC design variable. The standard RAC setup described there has no post-encoding raw-archive probe.
 
-**Difference in this checkpoint:** external pair queries are uniform in the converse, and each fixed query is covered by the randomized construction. Quality grades are internal choices, symmetrized by a public permutation; they do not declare some external questions less important. Distinguishing these definitions does not rule out a reduction through biased RAC or weighted source coding results.
+**Model distinction:** external pair queries are uniform in the converse, and each fixed query is covered by the randomized construction. Quality grades are internal choices, symmetrized by a public permutation; they do not declare some external questions less important. Distinguishing these definitions does not rule out a reduction through biased RAC or weighted source coding results.
 
 ## 4. Query-with-sketch: reassess against the sharp statement
 
@@ -72,9 +72,9 @@ Meir and Wigderson, *Prediction from Partial Information and Hindsight, with App
 
 The detailed audit also compares Ko's charged linear-probe theorems, Kondo et al.'s no-shared-randomness RACs, and Permuter-Weissman's decoder-action source coding. Those precise model mismatches have not been promoted into global non-subsumption claims.
 
-## 8. Targeted priority decision: geometry, caching, and local source coding
+## 8. Geometry, caching, and local source coding
 
-This pass reviewed `b9394cd2ea64c45943e66ba7c61ae665f3df77c3`. A prior bound need not reproduce the exact finite formula: a uniform all-subsets envelope $`|E|\le nr-r^2/2+o(n^2)`$ already suffices, together with the established entropy/coding ingredients. The [theorem brief](THEOREM_BRIEF.md) proves that subsumption criterion and states the operational contribution.
+A prior bound need not reproduce the exact finite formula: a uniform all-subsets envelope $`|E|\le nr-r^2/2+o(n^2)`$ already suffices, together with the established entropy/coding ingredients. The [theorem brief](THEOREM_BRIEF.md) proves that subsumption criterion and states the operational contribution.
 
 **Classical matching extremality gives a partial reduction.** Erdős and Gallai, *On Maximal Paths and Circuits of Graphs* (1959), [original PDF](https://www.renyi.hu/~p_erdos/1959-10.pdf), Theorem (4.1), printed p.354, with the extremal function on p.346. A graph of matching number at most $`r`$ has at most $`\max\{\binom{2r+1}{2},nr-r(r+1)/2\}`$ edges for $`n\ge2r+1`$. Our matching-residual independence proves that this applies to every selected pair subset. It recovers the exact coordinate-subspace extremum when $`n\ge(5r+3)/2`$, a substantial part of the previously proved range $`n\ge2r+2`$. At $`r/n\to0.45`$, however, it permits $`0.405n^2+O(n)`$ edges, while the required profile permits $`0.34875n^2+O(n)`$. Thus this particular classical reduction misses leading-order information.
 
@@ -250,11 +250,11 @@ therefore cannot replace the pair-incidence hypothesis.
 exponent by the explicit substitutions above. This is a finite set of
 resource-preserving comparisons, not an originality certificate. The direct
 coordinate-prediction obstruction from Section 7 remains, and the generic
-coding reductions from Section 10 remain established. The next useful object
-is the completed self-contained theorem packet, not another open-ended search
-for novelty in its elementary ingredients.
+coding reductions from Section 10 remain established. The
+[self-contained note](PAIR_QUERY_NOTE.md) supplies the complete argument for
+the task-specific extremal theorem.
 
-## 12. Claim boundary and development decision
+## 12. Contribution and claim boundaries
 
 **Written result:** arbitrary preprocessing, arbitrary memory-dependent one-bit addresses, exact original parity, and a fixed positive error allowance admit the matching rate derived in the [current note](../RESEARCH_NOTE.md). The construction uses only endpoint probes. The [excess-distortion deduction](EXCESS_DISTORTION.md) strengthens the operational statement to deterministic worst-input table distortion and the optimal exponential rate of the probability of a low-distortion table below the memory threshold.
 
@@ -264,16 +264,15 @@ for novelty in its elementary ingredients.
 
 **Not established:** historical novelty, uniqueness of optimal implementations, efficient explicit near-optimal codes, finite-length optimality, uniform vanishing-error or vanishing-advantage asymptotics, a computational speedup, or a theorem about AI alignment. The completed assessment is affirmative at this narrow scope, not an exhaustive priority certificate.
 
-**Decision:** retain this extremal theorem as the proposed original contribution
-of a focused theoretical paper. The [completed assessment](CONTRIBUTION_ASSESSMENT.md)
+**Assessment:** this extremal theorem is the proposed original contribution. The [completed assessment](CONTRIBUTION_ASSESSMENT.md)
 explains the positive significance case and its strongest limitations. The
 comparison identifies concrete losses in inspected reductions; unsuccessful
 searches are not novelty evidence. The mathematical content is the sharp
 absence of a leading-rate advantage from arbitrary raw-coordinate access over
 a fixed endpoint rule for a canonical overlapping query family. Established
 methods, specialized scope, and nonconstructive codebooks limit the claims but
-do not defeat this focused contribution. Reopen for concrete new evidence;
-independent specialist feedback is welcome.
+do not defeat this focused contribution. Concrete new evidence can change
+this bounded assessment; independent specialist feedback is welcome.
 
 ## 13. Header-based local compression: a closer architectural precedent
 

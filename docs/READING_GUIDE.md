@@ -3,8 +3,9 @@
 Start with the [self-contained pair-query note](PAIR_QUERY_NOTE.md). It contains
 the complete central proof and is the main technical entry point. This guide
 explains the model, provides a small example, and locates supporting material.
-The [research roadmap](RESEARCH_ROADMAP.md) and
-[contribution assessment](CONTRIBUTION_ASSESSMENT.md) record current decisions.
+The [open questions](OPEN_QUESTIONS.md) describe the limits of the established
+results; the [contribution assessment](CONTRIBUTION_ASSESSMENT.md) evaluates
+novelty and significance.
 
 ## Purpose and contact
 
@@ -36,8 +37,8 @@ not mastering or verifying every proof step in half an hour.
 | 0–5 minutes | [README](../README.md), then the resource table below | What is charged, and what can a query read? |
 | 5–10 minutes | The four-bit example below; Sections 1–2 of [PAIR_QUERY_NOTE.md](PAIR_QUERY_NOTE.md) | What does a low-error input set mean? |
 | 10–22 minutes | The proof map below; Sections 3–5 of the same note | How do the converse and endpoint construction meet? |
-| 22–27 minutes | [Status](STATUS.md) and the conclusions in the [literature comparison](LITERATURE_COMPARISON.md) | Which facts are proved here, which ingredients are established, and what remains uncertain? |
-| 27–30 minutes | [Reproducibility](REPRODUCIBILITY.md) and [research roadmap](RESEARCH_ROADMAP.md) | What can be checked locally, and which research questions remain open? |
+| 22–27 minutes | [Results and limitations](STATUS.md) and the conclusions in the [literature comparison](LITERATURE_COMPARISON.md) | Which facts are proved here, which ingredients are established, and what remains uncertain? |
+| 27–30 minutes | [Reproducibility](REPRODUCIBILITY.md) and [open questions](OPEN_QUESTIONS.md) | What can be checked locally, and which research questions remain open? |
 
 For a proof audit, return to the central note and check its inequalities and
 quantifiers in order. The longer audit history is supporting evidence rather
@@ -141,18 +142,17 @@ proposed original contribution in the completed bounded assessment. A proof
 using established tools may still establish a new result; these documents do
 not certify historical priority.
 
-## Source index and preserved history
+## Reference index
 
 | Purpose | Canonical location |
 | --- | --- |
 | Complete central argument | [PAIR_QUERY_NOTE.md](PAIR_QUERY_NOTE.md) |
-| Novelty and significance decision | [CONTRIBUTION_ASSESSMENT.md](CONTRIBUTION_ASSESSMENT.md) |
-| Current research decisions and remaining work | [STATUS.md](STATUS.md), [RESEARCH_ROADMAP.md](RESEARCH_ROADMAP.md) |
+| Novelty and significance | [CONTRIBUTION_ASSESSMENT.md](CONTRIBUTION_ASSESSMENT.md) |
+| Established results, limitations, and open questions | [STATUS.md](STATUS.md), [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) |
 | Established ingredients and precise prior-theorem comparisons | [LITERATURE_COMPARISON.md](LITERATURE_COMPARISON.md) |
 | Exact strategy/coding reductions and resource comparisons | [OPERATIONAL_REDUCTION.md](OPERATIONAL_REDUCTION.md) |
 | Earlier full derivation and additional finite accounting | [RESEARCH_NOTE.md](../RESEARCH_NOTE.md), [EXCESS_DISTORTION.md](EXCESS_DISTORTION.md) |
 | Endpoint comparison and optional graph/rank refinements | [THEOREM_BRIEF.md](THEOREM_BRIEF.md), [RANK_PROFILE_EXTENSIONS.md](RANK_PROFILE_EXTENSIONS.md) |
-| Versioned review findings and corrections | [SHARP_RATE_AUDIT.md](reviews/SHARP_RATE_AUDIT.md) |
 | Commands, check scope, and evidence limitations | [REPRODUCIBILITY.md](REPRODUCIBILITY.md) |
 | How to contribute | [CONTRIBUTING.md](../CONTRIBUTING.md) |
 
@@ -160,8 +160,9 @@ not certify historical priority.
 [LITERATURE_BASELINE.md](LITERATURE_BASELINE.md) preserve the earlier checkpoint.
 Their old open-rate language is historical. Original scripts, recorded JSON
 reports, and the [source manifest](SOURCE_MANIFEST.json) are preserved; current
-proofs and Git history supply later developments. A note's reviewed commit
-identifies its own checkpoint, not necessarily the current repository head.
+proofs state the sharp rate. Optional [historical records](archive/README.md),
+including the detailed proof and novelty audit, retain dated findings and
+verification evidence. They are not prerequisites for the central proof.
 
 The [conjunction/refinement exploration](../explorations/conjunction/research_note.md)
 has different queries and assumptions. It is a separate exploratory model and

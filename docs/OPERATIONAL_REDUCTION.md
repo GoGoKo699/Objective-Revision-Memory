@@ -1,16 +1,14 @@
-# Decoder strategies, distortion balls, and the remaining theorem
+# Decoder strategies, distortion balls, and coding reductions
 
-Internal proof and priority note, 22 September 2026. Reviewed main:
-`f1ecb10769f2b6ce0abe215d16f30767a02957d0`.
+Coding comparisons, 22 September 2026.
 The reductions below identify which parts of the
 [excess-distortion theorem](EXCESS_DISTORTION.md) are ordinary lossy coding,
 and isolate its task-specific extremal statement. They introduce no separate
 historical-novelty claim.
 
-The subsequent [self-contained pair-query note](PAIR_QUERY_NOTE.md) supplies
-the complete central proof without following links among earlier deductions.
-This document retains the detailed source-coding reductions and finite
-accounting comparisons.
+The [self-contained pair-query note](PAIR_QUERY_NOTE.md) supplies the complete
+central proof. This document gives the detailed source-coding reductions and
+finite accounting comparisons.
 
 ## 1. Resources and the criterion
 
@@ -67,7 +65,7 @@ Their Theorem 12's Gaussian approximation additionally assumes stationary
 memoryless sources and separable distortion. It does not automatically apply
 to this growing strategy alphabet and its distortion.
 
-## 3. The extremal statement that still needs evaluation
+## 3. The task-specific extremal theorem
 
 Define the largest one-strategy ball mass
 
@@ -287,7 +285,7 @@ $`G_n`$ here concern direct pair parity; retaining old parity exactly on all
 inputs requires at most one additional bit per archive. Repeated coding
 and an expected-distortion constraint must not silently replace that rule.
 
-## 8. Contribution decision
+## 8. Contribution and attribution
 
 The general distortion formulation, sphere-volume converse, random coding,
 translation covering, and the resulting success-exponent conversion are
@@ -299,10 +297,11 @@ machinery. Whether this precise operational evaluation was already known
 remains unresolved. It is the candidate claim to compare, rather than promoting
 the generic coding conversion as another independent research contribution.
 
-The next useful review question is concrete: **does an existing theorem
+The remaining historical-priority question is concrete: **does an existing theorem
 already evaluate $`m_n(\varepsilon)`$, or imply (1) through a verified reduction
 preserving the raw-read rule and error quantifiers?** The ordinary coding
-conversion and the action-dependent information characterization are now
-attributed. A focused internal short note can lead with (1), group the coding
-consequences together, and retain the finite endpoint separation as context.
-Priority and publication significance remain separate unresolved judgments.
+conversion and the action-dependent information characterization have explicit
+prior attribution. The [bounded contribution assessment](CONTRIBUTION_ASSESSMENT.md)
+supports the task-specific extremal theorem as a focused theoretical
+contribution. Historical priority is not certified; the coding consequences
+are not independent novelty claims.

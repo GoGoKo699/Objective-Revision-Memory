@@ -63,22 +63,22 @@ the linked proof notes govern over this discovery summary.
 ## Start here
 
 - [Reading guide](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/READING_GUIDE.md): Model, four-bit example, error-quantifier table, and proof map.
-- [Current status](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/STATUS.md): Current findings, completed checks, and remaining limitations.
+- [Results and limitations](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/STATUS.md): Established results, verification scope, and evidence limits.
+- [Open questions](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/OPEN_QUESTIONS.md): Finite-length, efficient-code, second-order, and variable-error questions beyond the theorem.
 - [Central pair-query proof](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/PAIR_QUERY_NOTE.md): Self-contained strategy-ball theorem, unrestricted converse, weighted-ball attainment, and coding consequences.
 
 ## Compare claims and reproduce evidence
 
 - [Contribution assessment](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/CONTRIBUTION_ASSESSMENT.md): Precise proposed contribution, significance, established ingredients, and limits.
 - [Literature comparison](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/LITERATURE_COMPARISON.md): Primary-source theorem comparisons and explicit reductions with resource and error accounting.
-- [Proof and novelty audit](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/reviews/SHARP_RATE_AUDIT.md): Dated checks and deductions; use the current checkpoint rather than superseded historical research queues.
 - [Reproduction guide](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/REPRODUCIBILITY.md): Python 3.10+ standard-library commands; exact checks versus floating-point illustrations. The full runner is `python3 checks/run_all.py --include-conjunction`.
 
 ## Optional
 
-- [Original sharp-rate proof](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/RESEARCH_NOTE.md): Graded block-cover construction and the original expected-error theorem.
+- [Sharp-rate proof with graded covers](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/RESEARCH_NOTE.md): Graded block-cover construction and the original expected-error theorem.
 - [Theorem brief and endpoint comparison](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/THEOREM_BRIEF.md): Compact statements, endpoint restrictions, and their zero-error distinction.
 - [Operational reduction](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/OPERATIONAL_REDUCTION.md): Connections to general distortion coding and decoder-controlled side information.
 - [Excess-distortion proof](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/EXCESS_DISTORTION.md): Worst-input table-distortion covers and the below-rate success exponent.
 - [Preserved baseline](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/BASELINE_NOTE.md): Exact and affine results; its former open-rate gap is historical and has been superseded.
 - [Separate conjunction exploration](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/explorations/conjunction/research_note.md): A different model; its bounds do not transfer to the parity theorem without a new argument.
-- [Contributing](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/CONTRIBUTING.md): Repository workflow, preservation of evidence, and mathematical review conventions.
+- [Contributing](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/CONTRIBUTING.md): Guidelines for proof corrections, source comparisons, and reproducible contributions.

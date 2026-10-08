@@ -759,7 +759,7 @@ research stage, and directs readers by purpose. The new
 [reading guide](../READING_GUIDE.md) adds prerequisites, a 30-minute orientation,
 a four-bit ordered-endpoint example, resource and error-quantifier tables, a
 proof dependency map, and a current/historical source index. The new
-[roadmap](../RESEARCH_ROADMAP.md) records research completion evidence, with
+[roadmap](../archive/RESEARCH_ROADMAP.md) records research completion evidence, with
 manuscript preparation last. The
 [contribution guide](../../CONTRIBUTING.md) makes the existing branch,
 quantifier, primary-source comparison, and artifact-preservation rules easier

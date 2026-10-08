@@ -18,8 +18,8 @@ one bit to the direct pair-parity problem.
 
 This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
 
-**Research stage:** complete written proof and a completed bounded assessment
-of novelty and significance. The [contribution assessment](docs/CONTRIBUTION_ASSESSMENT.md)
+The repository contains a complete written proof, literature comparisons,
+and reproducible finite checks. The [contribution assessment](docs/CONTRIBUTION_ASSESSMENT.md)
 supports a focused theoretical contribution: the sharp extremal bound over all
 legal one-read strategies. Its precise claim and limits are recorded there.
 This repository is an AI-assisted research record.
@@ -30,8 +30,8 @@ This repository is an AI-assisted research record.
 | --- | --- |
 | Understand the question, resources, and a four-bit example | [Reading guide](docs/READING_GUIDE.md) |
 | Check the central theorem and its complete proof | [Pair-query proof note](docs/PAIR_QUERY_NOTE.md) |
-| Assess novelty and conceptual significance | [Contribution assessment](docs/CONTRIBUTION_ASSESSMENT.md), [literature comparison](docs/LITERATURE_COMPARISON.md), and [audit](docs/reviews/SHARP_RATE_AUDIT.md) |
-| See current findings and remaining research decisions | [Status](docs/STATUS.md) and [research roadmap](docs/RESEARCH_ROADMAP.md) |
+| Assess novelty and conceptual significance | [Contribution assessment](docs/CONTRIBUTION_ASSESSMENT.md), [literature comparison](docs/LITERATURE_COMPARISON.md) |
+| See established results, limitations, and open questions | [Results and limitations](docs/STATUS.md) and [open questions](docs/OPEN_QUESTIONS.md) |
 | Reproduce the small checks | [Reproducibility guide](docs/REPRODUCIBILITY.md) |
 | Contribute a proof correction, comparison, or extension | [Contributing](CONTRIBUTING.md) |
 
@@ -46,7 +46,7 @@ affine summaries**, and **weighted Hamming covering** in the raw-coordinate
 access model described below. The [LLM reading guide](llms.txt) maps these
 questions to the current proof, model assumptions, literature comparisons,
 and reproducible checks. It also explains how to cite a specific repository
-version and distinguish current results from historical checkpoints.
+version and preserve the resource assumptions and error quantifiers.
 
 ## The model
 
@@ -128,7 +128,7 @@ defect being found. The systematic access model, elementary geometric count,
 entropy inequality, weighted coding curve, and general coding conversions
 have explicit antecedents. The completed assessment identifies concrete
 limitations of close prior reductions and gives a positive case for a focused
-theoretical paper. This
+theoretical contribution. This
 is a bounded research judgment, not a guarantee of historical priority or
 publication. Independent human review has not been obtained.
 
@@ -161,10 +161,10 @@ The [reproduction guide](docs/REPRODUCIBILITY.md) separates exact checks from
 floating-point illustrations and lists the optional audit checks. Passing
 finite checks supports specific calculations, not general proof or novelty.
 
-## Research record and scope
+## Supporting results and scope
 
-The [reading guide](docs/READING_GUIDE.md) indexes the current proof, extensions,
-audit history, and preserved baseline. Historical open-gap language in
+The [reading guide](docs/READING_GUIDE.md) indexes the proof, extensions,
+and baseline results. Historical open-gap language in
 [BASELINE_NOTE.md](BASELINE_NOTE.md) is superseded by the sharp-rate proof.
 The [source manifest](docs/SOURCE_MANIFEST.json) records unchanged imported
 artifacts. The [conjunction exploration](explorations/conjunction/research_note.md)
@@ -172,7 +172,6 @@ uses a separate model.
 
 The project studies a classical information constraint for a specified query
 family. It makes no theorem-level claim about consciousness, human values, or
-deployed AI systems. Private conversations and the motivating fiction are not
-republished.
+deployed AI systems.
 
 [MIT license](LICENSE), Copyright (c) 2026 Ruge Lin.

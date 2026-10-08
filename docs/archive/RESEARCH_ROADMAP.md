@@ -7,7 +7,7 @@ Updated 22 September 2026. Reviewed main:
 
 This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
 
-The [contribution assessment](CONTRIBUTION_ASSESSMENT.md) completes the present
+The [contribution assessment](../CONTRIBUTION_ASSESSMENT.md) completes the present
 bounded novelty and significance decision: retain the sharp one-read
 pair-query extremum as the proposed original contribution of a focused
 theoretical paper. This is a positive research judgment with a precise scope,
@@ -17,12 +17,12 @@ not exhaustive certification of historical priority or a publication promise.
 
 | Work | State | Evidence |
 | --- | --- | --- |
-| Resource model and error quantifiers | Explicit | [Reading guide](READING_GUIDE.md), [central proof](PAIR_QUERY_NOTE.md) |
-| Unrestricted converse and matching construction | Complete written proof; no unresolved central defect found in the internal audit | [Central proof](PAIR_QUERY_NOTE.md), [audit](reviews/SHARP_RATE_AUDIT.md) |
-| Established ingredients and closest inspected theorems | Bounded comparison completed | [Literature ledger](LITERATURE_COMPARISON.md), including explicit reduction losses and source caveats |
-| Significance and claim selection | Affirmative for the narrow extremal theorem | [Contribution assessment](CONTRIBUTION_ASSESSMENT.md), including the strongest objections |
-| Small exact evidence and provenance | Reproducible; limitations stated | [Reproducibility guide](REPRODUCIBILITY.md), preserved baselines and reports |
-| Repository purpose | Record of the work and guide for the author’s self-directed learning | [Purpose and contact](../README.md#purpose-and-contact) |
+| Resource model and error quantifiers | Explicit | [Reading guide](../READING_GUIDE.md), [central proof](../PAIR_QUERY_NOTE.md) |
+| Unrestricted converse and matching construction | Complete written proof; no unresolved central defect found in the internal audit | [Central proof](../PAIR_QUERY_NOTE.md), [audit](../reviews/SHARP_RATE_AUDIT.md) |
+| Established ingredients and closest inspected theorems | Bounded comparison completed | [Literature ledger](../LITERATURE_COMPARISON.md), including explicit reduction losses and source caveats |
+| Significance and claim selection | Affirmative for the narrow extremal theorem | [Contribution assessment](../CONTRIBUTION_ASSESSMENT.md), including the strongest objections |
+| Small exact evidence and provenance | Reproducible; limitations stated | [Reproducibility guide](../REPRODUCIBILITY.md), preserved baselines and reports |
+| Repository purpose | Record of the work and guide for the author’s self-directed learning | [Purpose and contact](../../README.md#purpose-and-contact) |
 
 The central theorem evaluates the largest low-error input set handled by one
 arbitrary raw-read strategy. Ordered-endpoint weighted Hamming balls attain
@@ -60,7 +60,7 @@ objective-memory optimality, efficient implementation, or a new coding
 framework.
 
 Use dedicated branches and pull requests under the
-[contribution guide](../CONTRIBUTING.md). Preserve the license, baseline,
+[contribution guide](../../CONTRIBUTING.md). Preserve the license, baseline,
 original verification artifacts, and reviewed-commit handoffs. Issue closure
 records completion of an agreed task; it is not a correctness or priority
 certificate. Reopen the bounded assessment for concrete new evidence rather

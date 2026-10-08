@@ -1,14 +1,14 @@
 # Sharp asymptotic memory for delayed pair-parity revision
 
-Research checkpoint, 22 September 2026.
+Proof note, 22 September 2026.
 
-**Status:** a matching converse and construction have been derived for the model below. The unrestricted first-order rate, previously bounded within a constant factor, is now determined by the written argument. The [completed bounded assessment](docs/CONTRIBUTION_ASSESSMENT.md) supports the narrow extremal theorem as a proposed original contribution. Historical priority is not certified and independent expert review has not been obtained. Small checks are not a proof certificate. No efficient implementation of the asymptotic covering codes is claimed.
+A matching converse and construction determine the unrestricted first-order rate for the model below. The [completed bounded assessment](docs/CONTRIBUTION_ASSESSMENT.md) supports the narrow extremal theorem as a proposed original contribution. Historical priority is not certified and independent expert review has not been obtained. Small checks are not a proof certificate. No efficient implementation of the asymptotic covering codes is claimed.
 
-The previous consolidated note is retained as [BASELINE_NOTE.md](BASELINE_NOTE.md), with its historical content preserved and math formatting normalized for GitHub. Its exact theorem, affine theorem, and finite examples remain valid. Its statements that the unrestricted rate and existence of a limiting rate are open are superseded by this note. The separate conjunction exploration retains its own model; only its Markdown math formatting has been normalized.
+The [baseline note](BASELINE_NOTE.md) contains the exact theorem, affine theorem, and finite examples. Its historical statements that the unrestricted rate and existence of a limiting rate are open are superseded by this proof. The conjunction exploration uses a separate model.
 
 The [theorem and contribution brief](docs/THEOREM_BRIEF.md) isolates the operational result: unrestricted summary-dependent addresses and publicly chosen endpoint reads have the same first-order optimum. It also proves an exact finite separation between them and distinguishes this result from its established coding ingredients.
 
-## 1. Unchanged model and error quantifiers
+## 1. Model and error quantifiers
 
 The input is $`X\in\{0,1\}^n`$, $`n\geq3`$. Before learning a query, an encoder retains at most $`B`$ input-dependent bits $`M=f_R(X)`$. Public randomness $`R`$ is independent of $`X`$. The original total parity
 
@@ -260,13 +260,13 @@ A finite covering-existence certificate uses $`n=1024`$, eight blocks of length 
 
 The covering bound gives block index lengths $`11,21,40,59,78,95,107,117`$. Including exact parity, **529 bits suffice**, with error at most $`6245/65472\lt 1/10`$. At the same 10% target, the baseline affine converse requires **at least 565 bits**. These are exact integer/rational implications of a covering-existence proof; the large covers were not constructed, and 529 is not asserted to be finite-length optimal.
 
-## 6. Evidence, attribution, and remaining work
+## 6. Evidence, attribution, and limitations
 
-The [self-contained pair-query note](docs/PAIR_QUERY_NOTE.md) now gives a shorter
+The [self-contained pair-query note](docs/PAIR_QUERY_NOTE.md) gives a shorter
 route through the same theorem: apply the entropy bound directly to a
 strategy's good-input set, and prove weighted-ball attainment with independent
 tilted bits. It groups the coding consequences and preserves all resource and
-error quantifiers. This is a proof reorganization, not another claimed result.
+error quantifiers.
 
 [verify_sharp_rate.py](checks/verify_sharp_rate.py) and its [recorded report](results/sharp_rate.json) check all 131,610 nonempty fixed-parity memory cells through five input bits, using integer correlations and ranks for the profile tests. They also check the entropy and dual inequalities numerically, execute a four-bit graded decoder on all 36,864 input-query-mask-permutation cases, verify the finite covering certificate with exact arithmetic, and compare numerical quadratures for the limiting curve. The [reproduction guide](docs/REPRODUCIBILITY.md) states counts and tolerances. Original parity and conjunction checks remain unchanged.
 

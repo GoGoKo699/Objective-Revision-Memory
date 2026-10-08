@@ -1,16 +1,15 @@
 # What the sharp pair-query theorem contributes
 
-Internal research and contribution brief, 22 September 2026. Repository base:
-`a258ffc130dad5926551aa6c07e6413505d4aeef`.
-This is a theorem-led working formulation, not a manuscript release or a historical-priority certificate. The [research note](../RESEARCH_NOTE.md) supplies the full sharp-rate proof; the [literature comparison](LITERATURE_COMPARISON.md) identifies established ingredients and the remaining reduction questions.
+Theorem and contribution summary, 22 September 2026.
+The [research note](../RESEARCH_NOTE.md) supplies the full sharp-rate proof; the [literature comparison](LITERATURE_COMPARISON.md) identifies established ingredients and the remaining reduction questions.
 
 For a complete central proof in one place, read the
 [self-contained pair-query note](PAIR_QUERY_NOTE.md). It avoids the intermediate
 moment lemma in the converse and uses a direct tilted-product measure for
-endpoint attainment. The bounded priority comparison now includes explicit
+endpoint attainment. The bounded priority comparison includes explicit
 losses for full-rank fiber counts, threshold direct products, and generic
-polynomial concentration. Those losses justify a focused review of the
-pair-incidence argument, not a claim of historical originality.
+polynomial concentration. Those losses identify what the pair-incidence
+argument contributes; they do not certify historical originality.
 
 **Precise priority question.** For a fixed one-read decoder strategy $`t`$,
 let $`D_n(x,t)`$ be its fraction of wrong direct pair-parity answers. Addresses
@@ -33,7 +32,7 @@ one result, not counted as independent novelty claims.
 The review question is whether a prior theorem evaluates this extremal ball,
 or implies it through an explicit reduction preserving raw-coordinate probes,
 charged summary bits, and error quantifiers. The [completed bounded assessment](CONTRIBUTION_ASSESSMENT.md) supports
-this canonical equality as the contribution of a focused theoretical paper.
+this canonical equality as a focused theoretical contribution.
 No efficient
 encoder, new scalar coding law, or general objective-preservation principle is
 being proposed.
@@ -84,7 +83,7 @@ Take any subset $`E`$ of pair labels whose selected rows span a rank-$`r`$ space
 f_n(r)=\binom n2-\binom{n-r}{2}=nr-\frac{r(r+1)}2.
 ```
 
-This holds for every subset and every permitted address choice, including memory-dependent choices after conditioning. A bound on the rank of the complete query family alone would not suffice. The mechanism is established: fundamental-circuit uniqueness gives at most one completed basis pair per nonbasis coordinate. Equivalently, affine-basis pair sums are distinct. The [literature comparison](LITERATURE_COMPARISON.md) now supplies complete classical reductions, including the exact finite envelope. This is a task-specific elementary lemma, not a standalone geometric novelty claim.
+This holds for every subset and every permitted address choice, including memory-dependent choices after conditioning. A bound on the rank of the complete query family alone would not suffice. The mechanism is established: fundamental-circuit uniqueness gives at most one completed basis pair per nonbasis coordinate. Equivalently, affine-basis pair sums are distinct. The [literature comparison](LITERATURE_COMPARISON.md) supplies complete classical reductions, including the exact finite envelope. This is a task-specific elementary lemma, not a standalone geometric novelty claim.
 
 For comparison, the sharp first-order converse would need only the weaker statement
 
@@ -92,9 +91,9 @@ For comparison, the sharp first-order converse would need only the weaker statem
 |E|\le nr-r^2/2+o(n^2),
 ```
 
-uniformly over ranks and residual families. Indeed, greedy threshold integration turns this into a bias-sum bound with an $`o(n^2)`$ additive remainder. The entropy-dual multiplier is $`s=a/n`$; after dividing memory by $`n`$, that remainder vanishes. The classical reductions now meet even the exact finite criterion. Priority assessment should therefore concern the operational characterization, rather than continue searching for novelty of this basis count.
+uniformly over ranks and residual families. Indeed, greedy threshold integration turns this into a bias-sum bound with an $`o(n^2)`$ additive remainder. The entropy-dual multiplier is $`s=a/n`$; after dividing memory by $`n`$, that remainder vanishes. The classical reductions meet even the exact finite criterion. The proposed contribution concerns the operational characterization; the basis count is an established ingredient.
 
-The [general envelope lemma](RANK_PROFILE_EXTENSIONS.md) organizes the next steps: greedy integration, the independent-character entropy budget from the entropic Chang argument, and scalar conjugacy. It is a reusable deduction, not a separate claim of a new entropy inequality or automatic achievability for every query family.
+The [general envelope lemma](RANK_PROFILE_EXTENSIONS.md) organizes the proof steps: greedy integration, the independent-character entropy budget from the entropic Chang argument, and scalar conjugacy. It is a reusable deduction, not a separate claim of a new entropy inequality or automatic achievability for every query family.
 
 ## 3. Endpoint geometry and its finite converse
 
@@ -128,7 +127,7 @@ For attainment, retain $`X_3,\ldots,X_n`$ and $`X_1\oplus X_2`$. These $`n-1`$ b
 
 The [baseline exact theorem](../BASELINE_NOTE.md) gives unrestricted optimum $`n-\lfloor\log_2(n+1)\rfloor`$. Nonendpoint reads therefore save exactly $`\lfloor\log_2(n+1)\rfloor-1`$ bits at zero error. Already $`n=3`$ gives one versus two bits. First-order equivalence is not finite equivalence, and the fixed-interior-error theorem supplies no uniform vanishing-error claim.
 
-## 5. Scope and drafting decision
+## 5. Scope and contribution
 
 Let $`B_{\rm pair}`$ be the same access model asking directly for $`X_i\oplus X_j`$, without mandatory original parity. Then, at every finite $`n`$ and error allowance,
 
@@ -138,7 +137,7 @@ B_{\rm pair}\le B_{\rm arb}\le B_{\rm pair}+1.
 
 The first inequality uses the retained exact parity to convert a revision answer to a pair-parity answer. The second stores one additional exact parity bit and converts in reverse. Error and read budgets are unchanged; the argument also applies to endpoint restrictions. Preserving the old objective therefore has no additional leading memory cost in this example.
 
-The completed bounded assessment retains the extremal decoder-ball evaluation and ordered-endpoint attainment as the proposed original contribution. Present unrestricted versus publicly chosen endpoint access, covering, and the success exponent below as its operational consequences, with explicit attribution for general lossy coding as well as geometry and entropy. The affine separation and bipartite benchmark are context, not independent evidence of originality. The action-dependent coding comparison now has a worked indirect-source reduction, rather than just a list of model differences. Historical priority is not certified; the affirmative significance judgment and its limits are recorded in the contribution assessment.
+The completed bounded assessment retains the extremal decoder-ball evaluation and ordered-endpoint attainment as the proposed original contribution. Unrestricted versus publicly chosen endpoint access, covering, and the success exponent below are operational consequences, using established general lossy coding, geometry, and entropy. The affine separation and bipartite benchmark are context, not independent evidence of originality. The action-dependent coding comparison gives an explicit indirect-source reduction. Historical priority is not certified; the affirmative significance judgment and its limits are recorded in the contribution assessment.
 
 ## 6. Stronger operational form: covers and the success exponent
 
