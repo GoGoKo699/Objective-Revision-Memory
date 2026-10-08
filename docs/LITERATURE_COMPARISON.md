@@ -2,10 +2,6 @@
 
 Source comparison dated 22 September 2026. This is a version-specific primary-source comparison, not an originality certificate. The [baseline audit](LITERATURE_BASELINE.md) is preserved as a historical comparison. The [detailed sharp-rate audit](reviews/SHARP_RATE_AUDIT.md) supplies the full resource ledger and proofs of the reductions summarized here. Source statements and repository deductions are distinguished below. Sections 9–10 attribute the geometry and general coding conversions. Section 11 gives a bounded comparison of the remaining decoder-ball theorem; the [self-contained note](PAIR_QUERY_NOTE.md) supplies its complete central proof.
 
-## Purpose and contact
-
-This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
-
 ## 1. Systematic structures: the access model and affine geometry are established
 
 S. Natarajan Ramamoorthy and C. Rashtchian, *Equivalence of Systematic Linear Data Structures and Matrix Rigidity*, ITCS 2020, [arXiv:1910.11921v1](https://arxiv.org/abs/1910.11921v1), Sections 1.1-1.3. The primary [PDF](https://arxiv.org/pdf/1910.11921) was inspected.
@@ -262,17 +258,11 @@ the task-specific extremal theorem.
 
 **Proposed original contribution after bounded assessment:** evaluation of the largest low-error input set handled by one arbitrary raw-read strategy, matching an ordered-endpoint weighted Hamming ball in exponential size. General coding converts that evaluation into the operational rate and success exponent. The elementary geometric lemma supports the evaluation and has adequate classical attribution. The exact affine comparison is a consequence. The general rank-envelope lemma, low-rank refinement, bipartite benchmark, finite translation bounds, and excess-distortion deductions are not independently certified new results.
 
-**Not established:** historical novelty, uniqueness of optimal implementations, efficient explicit near-optimal codes, finite-length optimality, uniform vanishing-error or vanishing-advantage asymptotics, a computational speedup, or a theorem about AI alignment. The completed assessment is affirmative at this narrow scope, not an exhaustive priority certificate.
-
-**Assessment:** this extremal theorem is the proposed original contribution. The [completed assessment](CONTRIBUTION_ASSESSMENT.md)
-explains the positive significance case and its strongest limitations. The
-comparison identifies concrete losses in inspected reductions; unsuccessful
-searches are not novelty evidence. The mathematical content is the sharp
-absence of a leading-rate advantage from arbitrary raw-coordinate access over
-a fixed endpoint rule for a canonical overlapping query family. Established
-methods, specialized scope, and nonconstructive codebooks limit the claims but
-do not defeat this focused contribution. Concrete new evidence can change
-this bounded assessment; independent specialist feedback is welcome.
+The result is a fixed-positive-error leading-rate theorem with
+covering-existence constructions. The [contribution assessment](CONTRIBUTION_ASSESSMENT.md)
+evaluates its significance and the limits of the proposed originality claim.
+The comparisons above establish specific losses in the inspected reductions;
+unsuccessful searches are not novelty evidence.
 
 ## 13. Header-based local compression: a closer architectural precedent
 

@@ -7,10 +7,6 @@ The [open questions](OPEN_QUESTIONS.md) describe the limits of the established
 results; the [contribution assessment](CONTRIBUTION_ASSESSMENT.md) evaluates
 novelty and significance.
 
-## Purpose and contact
-
-This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
-
 ## What to bring
 
 A mathematically trained reader needs:
@@ -37,7 +33,7 @@ not mastering or verifying every proof step in half an hour.
 | 0–5 minutes | [README](../README.md), then the resource table below | What is charged, and what can a query read? |
 | 5–10 minutes | The four-bit example below; Sections 1–2 of [PAIR_QUERY_NOTE.md](PAIR_QUERY_NOTE.md) | What does a low-error input set mean? |
 | 10–22 minutes | The proof map below; Sections 3–5 of the same note | How do the converse and endpoint construction meet? |
-| 22–27 minutes | [Results and limitations](STATUS.md) and the conclusions in the [literature comparison](LITERATURE_COMPARISON.md) | Which facts are proved here, which ingredients are established, and what remains uncertain? |
+| 22–27 minutes | [Contribution assessment](CONTRIBUTION_ASSESSMENT.md) and the conclusions in the [literature comparison](LITERATURE_COMPARISON.md) | Which facts are proved here, which ingredients are established, and what remains uncertain? |
 | 27–30 minutes | [Reproducibility](REPRODUCIBILITY.md) and [open questions](OPEN_QUESTIONS.md) | What can be checked locally, and which research questions remain open? |
 
 For a proof audit, return to the central note and check its inequalities and
@@ -137,10 +133,9 @@ The full proof remains in [PAIR_QUERY_NOTE.md](PAIR_QUERY_NOTE.md).
 | Coding consequences | Cover by translated balls and charge their indices plus parity; average posterior entropy for expected error. | Gives the memory rate, worst-input covering rate, and success exponent as consequences of the central ball theorem. |
 
 The elementary basis count, entropy ingredients, and general coding conversion
-are credited to prior work. The task-specific extremal evaluation is the
-proposed original contribution in the completed bounded assessment. A proof
-using established tools may still establish a new result; these documents do
-not certify historical priority.
+are credited to prior work. The
+[contribution assessment](CONTRIBUTION_ASSESSMENT.md) explains the proposed
+originality of the task-specific extremal evaluation.
 
 ## Reference index
 
@@ -148,7 +143,7 @@ not certify historical priority.
 | --- | --- |
 | Complete central argument | [PAIR_QUERY_NOTE.md](PAIR_QUERY_NOTE.md) |
 | Novelty and significance | [CONTRIBUTION_ASSESSMENT.md](CONTRIBUTION_ASSESSMENT.md) |
-| Established results, limitations, and open questions | [STATUS.md](STATUS.md), [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) |
+| Further mathematical questions | [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) |
 | Established ingredients and precise prior-theorem comparisons | [LITERATURE_COMPARISON.md](LITERATURE_COMPARISON.md) |
 | Exact strategy/coding reductions and resource comparisons | [OPERATIONAL_REDUCTION.md](OPERATIONAL_REDUCTION.md) |
 | Earlier full derivation and additional finite accounting | [RESEARCH_NOTE.md](../RESEARCH_NOTE.md), [EXCESS_DISTORTION.md](EXCESS_DISTORTION.md) |

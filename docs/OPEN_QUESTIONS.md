@@ -2,10 +2,7 @@
 
 The [central proof](PAIR_QUERY_NOTE.md) determines the sharp leading memory
 rate at each fixed error strictly between zero and one half. The questions
-below concern regimes or guarantees beyond that theorem. The
-[results and limitations](STATUS.md) summarize what is established, and the
-[contribution assessment](CONTRIBUTION_ASSESSMENT.md) states the bounded
-novelty and significance judgment.
+below concern regimes or guarantees beyond that theorem.
 
 ## Mathematical directions
 
@@ -18,26 +15,7 @@ novelty and significance judgment.
 | What happens when error varies with archive size? | Fixed-positive-error asymptotics do not imply uniform vanishing-error or vanishing-advantage results. |
 | What changes under stronger query guarantees? | The fixed-pair and table-distortion criteria do not protect against a pair selected after observing the seed and summary. |
 
-Each extension needs explicit resource accounting: worst-case retained bits,
-exact total parity for the revision task, one raw-coordinate read per query,
-and the permitted dependence of its address. Independent randomness,
-codebooks, computation, and the immutable archive are uncharged;
-input-dependent caches and transcripts are charged. Changes to the query
-family, error criterion, or order of limits define a different problem.
-
-## Novelty and significance
-
-The proposed original contribution is the task-specific extremal evaluation
-over all legal one-read strategies. The weighted coding curve, entropy
-machinery, geometric count, and general coding conversions have established
-antecedents, documented in the [literature comparison](LITERATURE_COMPARISON.md).
-
-Historical coverage is incomplete. A prior theorem could strengthen, narrow,
-or overturn the proposed originality claim if an explicit reduction preserves
-summary size, raw-read access, the growing single-archive limit, and the error
-quantifiers. Inaccessible sources remain uninspected; search failure is not
-evidence of originality. Independent specialist review has not been obtained.
-
-## Purpose and contact
-
-This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
+Each question uses the [resource model](READING_GUIDE.md#resource-accounting)
+and [error quantifiers](READING_GUIDE.md#keep-the-error-quantifiers-separate)
+stated in the reading guide. Changes to the query family, error criterion,
+or order of limits define a different problem.

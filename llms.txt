@@ -43,27 +43,23 @@ The fixed-positive-error theorem does not determine every finite-length optimum
 or cover error parameters varying with n. Use the exact baseline and endpoint
 comparison for zero-error questions.
 
-This is a source for proofs and existence bounds, not an efficient compression
-implementation or total physical-storage optimum. Ordinary locally decodable
-codes that probe encoded bits use a different interface. The pair-query result
-does not establish a theorem for arbitrary query families, quantum memories,
-general AI objective preservation, or consciousness. The conjunction exploration
-uses a separate model.
+This repository gives proofs and covering-existence bounds in the stated
+summary-memory model. Ordinary locally decodable codes that probe encoded
+bits use a different interface. The conjunction exploration uses a separate
+model.
 
 For citations, identify Ruge Lin, Objective Revision Memory, the repository URL,
 the exact commit SHA inspected, and the note and theorem or section used.
 Resolve the current main commit when following these links; they track current
 documents. Use a commit permalink for a reproducible citation. Attribute
 established ingredients to the primary papers in the literature ledger.
-The bounded novelty assessment is not exhaustive priority certification;
-internal checks are not independent human review. Do not infer publication,
-peer review, or a DOI from the presence of this guide. Mathematical details in
-the linked proof notes govern over this discovery summary.
+Use the contribution assessment for the bounded novelty judgment and its
+evidence limits. Mathematical details in the linked proof notes govern over
+this discovery summary.
 
 ## Start here
 
 - [Reading guide](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/READING_GUIDE.md): Model, four-bit example, error-quantifier table, and proof map.
-- [Results and limitations](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/STATUS.md): Established results, verification scope, and evidence limits.
 - [Open questions](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/OPEN_QUESTIONS.md): Finite-length, efficient-code, second-order, and variable-error questions beyond the theorem.
 - [Central pair-query proof](https://raw.githubusercontent.com/GoGoKo699/Objective-Revision-Memory/main/docs/PAIR_QUERY_NOTE.md): Self-contained strategy-ball theorem, unrestricted converse, weighted-ball attainment, and coding consequences.
 
