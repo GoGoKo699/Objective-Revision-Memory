@@ -1,9 +1,8 @@
-# Rank-profile continuation: general machinery and graph benchmarks
+# Rank-profile bounds and graph benchmarks
 
-Research continuation, 22 September 2026. Base inspected:
-`4e2c579795e2e780e132e3feb8072d2260ab3a7f`.
+Proof note, 22 September 2026.
 
-These are written deductions extending the [sharp-rate audit](reviews/SHARP_RATE_AUDIT.md), not a historical-priority claim. They separate generic entropy machinery from the pair-specific extremal problem, strengthen one finite converse, and identify graph families whose first-order answer follows from established ingredients. The [main theorem](../RESEARCH_NOTE.md) and its original verification artifacts are unchanged.
+These deductions separate generic entropy machinery from the pair-specific extremal problem, strengthen one finite converse, and identify graph families whose first-order answer follows from established ingredients. They complement the [main theorem](../RESEARCH_NOTE.md); their historical priority is not established.
 
 ## 1. A general rank-envelope lemma
 
@@ -165,6 +164,6 @@ For complete bipartite graphs, averaging uniformly chosen maximum matchings make
 
 It fails for arbitrary bipartite graphs. Take a star with $`k^2`$ edges disjoint from $`k`$ isolated edges. Retaining the star center and total parity uses two bits, answers all star queries exactly, and allows random guesses on the isolated edges. Uniform edge-average error is only $`k/[2(k^2+k)]`$, while $`\nu=k+1`$. Thus no growing lower bound proportional to $`\nu`$ holds at fixed positive edge-average error for all such graphs. Arbitrary vertex permutations need not preserve the allowed query set.
 
-## 5. Research interpretation
+## 5. Scope and attribution
 
 The general entropy budget, binary conjugacy, coding ingredient, and matching–cover theorem are established. The generic envelope deduction, cap refinement, low-rank geometry, and graph corollary are proved above; their historical priority is unresolved. In particular, many overlapping-query families already reduce sharply to ordinary coding. The remaining candidate contribution of the all-pairs theorem is its specific residual-rank profile and its sharp operational match for unrestricted summaries and memory-dependent probes, not overlap or the hyperbolic-tangent formula alone.

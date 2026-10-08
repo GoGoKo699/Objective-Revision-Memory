@@ -1,9 +1,8 @@
 # One raw-bit read for approximate pair queries
 
-Internal short-note candidate, 22 September 2026. Reviewed repository base:
-`a258ffc130dad5926551aa6c07e6413505d4aeef`.
-This is a self-contained proof packet, not a manuscript release or a
-historical-priority certificate.
+Self-contained proof, 22 September 2026.
+For the bounded novelty assessment and its limitations, see the
+[contribution assessment](CONTRIBUTION_ASSESSMENT.md).
 
 The central conclusion is that an arbitrary one-read decoder strategy handles
 no exponentially larger set of low-error inputs than a fixed ordered-endpoint
@@ -323,7 +322,7 @@ error probability. They permit erroneous pairs and do not protect a query
 chosen to hit an error after seeing the seed and summary. The codebooks are
 existence constructions, with no efficient encoding claim.
 
-## 6. Attribution and research decision
+## 6. Attribution and scope
 
 The mathematical contribution to assess is (1): arbitrary-address strategy
 balls match ordered-endpoint weighted balls at exponential scale. The

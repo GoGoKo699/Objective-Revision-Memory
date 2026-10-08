@@ -1,14 +1,13 @@
 # A sharp success exponent and worst-input covering theorem
 
-Research deduction, 22 September 2026. Reviewed main:
-`0e91f088cd06376458f63a20f76e2d5b507a690a`.
+Proof note, 22 September 2026.
 The [research note](../RESEARCH_NOTE.md) defines the original model and rate
 $`\mathcal R(\varepsilon)`$. This note develops an excess-distortion formulation,
 using the existing exponential-moment bound and ordinary covering codes. The Chernoff
 bound, union bound over memory labels, entropy duality, and coding ingredients
 are established; this is not a separate historical-novelty claim.
 
-The subsequent [operational reduction](OPERATIONAL_REDUCTION.md) gives an exact
+The [operational reduction](OPERATIONAL_REDUCTION.md) gives an exact
 general-distortion coding formulation and attributes the generic conversion to
 Kostina–Verdú's finite-block theorems. It isolates the largest one-read strategy
 ball as the task-specific quantity, and keeps mandatory parity valid even on

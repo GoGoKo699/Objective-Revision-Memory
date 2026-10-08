@@ -1,25 +1,22 @@
 # Novelty and significance assessment
 
-Completed 22 September 2026 against main
-`2b240fa20b9c8d585106edb512a5f18200aafd33`.
+Source comparison dated 22 September 2026.
 The [central proof](PAIR_QUERY_NOTE.md), [comparison ledger](LITERATURE_COMPARISON.md),
 and [audit](reviews/SHARP_RATE_AUDIT.md) supply the mathematical and source detail.
 
-## Decision
+## Assessment
 
-**Retain the sharp one-read pair-query theorem as the proposed original
-contribution of a focused theoretical paper.** The completed comparisons
+**The sharp one-read pair-query theorem is the proposed original
+contribution.** The completed comparisons
 support that scope: no identified prior implication evaluates the same
 extremal quantity with the same resources. The positive significance case is
 that a complete optimization over nonlinear summaries and arbitrary read
 addresses has a sharp answer attained by a fixed endpoint rule.
 
 This is a bounded research judgment. It does not claim exhaustive historical
-knowledge, independent human validation, or guaranteed publication. It does
-resolve the project's present proceed/reframe/stop question in favor of the
-narrow result. Reopen the decision for a concrete new citation, reduction,
-counterexample, or substantive significance objection; another indefinite
-general search is not the default next step.
+knowledge, independent human validation, or guaranteed publication. A concrete
+new citation, reduction, counterexample, or substantive significance objection
+can change the assessment.
 
 ## Purpose and contact
 
@@ -70,7 +67,7 @@ claims here keep error fixed in the open interval.
 | General distortion coding and decoder actions | A strategy is a valid reproduction object; general formulas characterize related coding problems. | Evaluating this particular strategy-ball volume. The exact action embedding retains the distinction between repeated fixed archives and one growing archive. |
 | Exact rank, matching products, and generic polynomial tails | These give valid ingredients or bounds. | The recorded reductions lose leading-order information; they do not yield the sharp exponent. |
 
-The latest primary-source checks make two boundaries more explicit. Local
+The primary-source comparisons establish two further boundaries. Local
 compression with a freely read header is a closer precedent than ordinary
 encoded-bit locality alone. Counting a ball by the entropy of its uniform
 distribution is also established. Neither architectural description nor
@@ -85,7 +82,7 @@ reductions. They do not prove that no more elaborate implication exists.
 Inaccessible theorem texts remain marked uninspected in the ledger; absence
 of access is not favorable novelty evidence.
 
-## Why the result is worth a focused paper
+## Conceptual significance
 
 **It settles the stronger optimization.** Designing a graded endpoint scheme
 alone would largely be a weighted-coding application. The converse permits
@@ -132,18 +129,14 @@ theoretical result. They would defeat a broader claim about general memory,
 new coding machinery, or technological superiority. No such broader claim is
 needed for the present contribution.
 
-## What is settled, and what can change
+## Limits of the assessment
 
-The written proof and bounded source comparison are complete at this
-checkpoint, and the significance assessment is affirmative at the stated
-scope. Independent specialist feedback can strengthen or overturn this
-judgment; it is not represented as already obtained or left as a substitute
-for making a decision now.
+The written proof and bounded source comparison support an affirmative
+significance assessment at the stated scope. Independent specialist review
+has not been obtained and could strengthen or overturn this judgment.
 
 If a resource-preserving prior theorem implies the same extremum, replace
 the proposed originality claim with an attributed worked example and reassess
-its value. If a mathematical defect is identified, record the smallest
-obstruction and revise the affected conclusions. Optional extensions should
-answer a concrete scientific question, rather than enlarge a paper to avoid
-either outcome. The [roadmap](RESEARCH_ROADMAP.md) keeps the repository’s
-purpose and contact information separate from these scientific judgments.
+its value. A mathematical defect would require revising the affected
+conclusions. The [open questions](OPEN_QUESTIONS.md) describe scientific
+extensions beyond the proved result.

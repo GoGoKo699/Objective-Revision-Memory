@@ -5,8 +5,8 @@ resolve a precise literature comparison, clarify the model, or test a concrete
 possible failure. Small exact checks support the arguments; passing checks do
 not establish a general theorem or historical novelty.
 
-Start with the [reading guide](docs/READING_GUIDE.md) and follow the current
-[research roadmap](docs/RESEARCH_ROADMAP.md). The completed [contribution assessment](docs/CONTRIBUTION_ASSESSMENT.md)
+Start with the [reading guide](docs/READING_GUIDE.md) and
+[open questions](docs/OPEN_QUESTIONS.md). The completed [contribution assessment](docs/CONTRIBUTION_ASSESSMENT.md)
 sets the present scope; specific new proof objections or prior-result
 implications should update that assessment.
 
@@ -14,22 +14,16 @@ implications should update that assessment.
 
 This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
 
-## Coordinate the work
+## Submit a contribution
 
-Inspect current `main`, record its full commit SHA, and read
-[status](docs/STATUS.md), [issue #1](https://github.com/GoGoKo699/Objective-Revision-Memory/issues/1),
-[issue #2](https://github.com/GoGoKo699/Objective-Revision-Memory/issues/2), and
-open pull requests. Issue #2 records the former rate gap; its closure is not
-proof evidence. Check current files rather than relying on an older handoff.
+Read the current [results and limitations](docs/STATUS.md), then check open
+issues and pull requests for related work. Use a dedicated branch and a
+reviewable pull request. Preserve intervening commits and coordinate
+overlapping changes; do not overwrite another contributor's work.
 
-Use a dedicated branch and a reviewable pull request. Check for an existing
-branch before creating one; resume another workspace's branch only by agreement.
-Recheck the branch and its head before writing or pushing, preserve intervening
-commits, and coordinate overlapping file ownership. Do not reset, force-push,
-or overwrite another workspace's work. Existing user authorization governs
-integration; the historical no-self-merge instruction in the
-[review brief](docs/WORKSPACE_REVIEW_BRIEF.md) has been superseded by its
-continuation notice.
+Identify the base commit, explain the change and its scope, and report the
+checks actually run. Issue closure and passing checks do not establish
+correctness or priority.
 
 ## Make mathematical changes reviewable
 
@@ -74,15 +68,15 @@ python checks/run_all.py
 ```
 
 Use `--include-conjunction` when reproducing that separate exploration or the
-full historical review command. Targeted scripts under `checks/reviews/` are
+full validation suite. Targeted scripts under `checks/reviews/` are
 optional checks, run separately; they are not silently included in the runner
 or CI. Select them to address the changed claim or a concrete uncertainty.
 The [reproduction guide](docs/REPRODUCIBILITY.md) lists commands, exact scopes,
 and numerical limitations.
 
 Record what actually ran, its outcome, and the reviewed commit. Distinguish a
-rerun from inspection of committed results. End a substantive handoff with the
-findings, remaining uncertainty, and report commit or pull request identifier.
+rerun from inspection of committed results. Include findings and remaining
+uncertainty in the pull request.
 
 ## Keep mathematics readable on GitHub
 

@@ -7,9 +7,9 @@ python checks/run_all.py
 python checks/run_all.py --include-conjunction
 ```
 
-The runner writes temporary reports outside the checkout, compares them with the recorded JSON, checks the source manifest, resolves local documentation links, and tests original raw-read interfaces. It now includes `verify_sharp_rate.py` in addition to the original exact and bounded-error suites. The optional conjunction suite remains a separate model.
+The runner writes temporary reports outside the checkout, compares them with the recorded JSON, checks the source manifest, resolves local documentation links, and tests original raw-read interfaces. It includes the sharp-rate, exact-parity, and bounded-error suites. The optional conjunction suite remains a separate model.
 
-## New sharp-rate suite
+## Sharp-rate suite
 
 Run it alone with:
 
@@ -37,11 +37,11 @@ The large Hamming covers are not enumerated or built. Their finite size and erro
 
 The original exact and bounded-error scripts and reports, along with the separate conjunction artifacts listed in [SOURCE_MANIFEST.json](SOURCE_MANIFEST.json), remain unchanged. Their original scopes and detailed counts are in the committed result files. Exact parity has one-based raw-coordinate conventions; bounded-error code has zero-based conventions. The runner explicitly checks both and rejects disabled assertions.
 
-[BASELINE_NOTE.md](../BASELINE_NOTE.md) preserves the prior repository note. Its old open-rate language is historical; [RESEARCH_NOTE.md](../RESEARCH_NOTE.md) supplies the new matching proof. Existing imported-file hashes do not purport to authenticate new files; Git records those revisions normally.
+[BASELINE_NOTE.md](../BASELINE_NOTE.md) preserves the prior repository note. Its old open-rate language is historical; [RESEARCH_NOTE.md](../RESEARCH_NOTE.md) supplies the matching proof. Existing imported-file hashes do not purport to authenticate new files; Git records those revisions normally.
 
 No network access, GPU, simulation cluster, third-party optimizer, or training dataset is used by these checks. Passing them supports implementation and finite-counterexample testing, not historical novelty, independent human validation, or a formal proof certificate. CI conclusions must be read from the completed workflow run, not inferred from the presence of a workflow file.
 
-## Optional audit and continuation checks
+## Optional exact checks
 
 These targeted checks supplement the unchanged runner and recorded reports:
 
@@ -56,7 +56,7 @@ python checks/reviews/verify_priority_obstructions.py
 
 The first executes 1,228,800 input/pair/permutation/mask cases with uneven blocks and reconstruction errors concentrated on one coordinate. Every fixed input/pair has exact error $`1/20`$ and one counted raw read; all five summary bits, including parity, are charged. This tests symmetrization, not a memory separation.
 
-The second independently enumerates binary subspaces by reduced row echelon bases, without importing baseline routines. For $`n=3,\ldots,7`$ and $`0\le r\le\lfloor(n-2)/2\rfloor`$, it checks all 3,559 subspaces, direct residual-row membership, enumeration counts against Gaussian binomials, and attainment of $`nr-r(r+1)/2`$ by coordinate subspaces. It also enumerates the 16-vector rank-four Hamming kernel at $`n=7`$, which covers all 21 pairs and disproves a global extension of that formula. All arithmetic is exact. The [continuation note](RANK_PROFILE_EXTENSIONS.md) supplies the proof and range restriction.
+The second independently enumerates binary subspaces by reduced row echelon bases, without importing baseline routines. For $`n=3,\ldots,7`$ and $`0\le r\le\lfloor(n-2)/2\rfloor`$, it checks all 3,559 subspaces, direct residual-row membership, enumeration counts against Gaussian binomials, and attainment of $`nr-r(r+1)/2`$ by coordinate subspaces. It also enumerates the 16-vector rank-four Hamming kernel at $`n=7`$, which covers all 21 pairs and disproves a global extension of that formula. All arithmetic is exact. The [rank-profile note](RANK_PROFILE_EXTENSIONS.md) supplies the proof and range restriction.
 
 The third uses an endpoint-only raw-read oracle and the complete charged $`n-1`$-bit summary for every input/pair at $`n=3,\ldots,7`$ (4,088 executions). It checks all 1,240 same-parity three-point cells through five bits against both endpoint addresses and all Boolean truth tables, finding an impossible pair in every cell. It also verifies the one-bit unrestricted versus two-bit endpoint construction at $`n=3`$, and two dimension-three subspaces of seven bits with the same full weight enumerator but pair coverage six versus seven. It imports no baseline verifier and uses exact integer arithmetic. The [theorem brief](THEOREM_BRIEF.md) and [audit](reviews/SHARP_RATE_AUDIT.md) give the general proofs and scope limitations.
 
